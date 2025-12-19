@@ -2,6 +2,75 @@
     width: 100%;
     background: #FFFFFF;
     padding: 20px 0 30px 0;
+    position: relative;
+}
+
+.header-center-block {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.header-center-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 5px 25px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-width: 400px;
+}
+
+.header-center-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.header-center-icon {
+    flex-shrink: 0;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-center-content {
+    flex: 1;
+    text-align: left;
+}
+
+.header-center-title {
+    font-size: 19px;
+    font-weight: 500;
+    color: #000000;
+    font-family: 'Geist', sans-serif;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.header-center-description {
+    font-size: 14px;
+    font-weight: 300;
+    color: #1A1A1ABF;
+    font-family: 'Geist', sans-serif;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.header-center-arrow {
+    margin-top: 10px;
+    /* flex-shrink: 0; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.header-center-divider {
+    height: 1px;
+    background: #E0E0E0;
+    margin: 0;
 }
 
 .header-container {
@@ -286,6 +355,8 @@
     align-items: center;
     gap: 30px;
     font-family: 'Geist', sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
 .header_nuv-btn-secondary {
@@ -301,6 +372,12 @@
 
 .header_nuv-btn-primary span {
     color: #FFFFFF;
+    transition: color 0.3s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header_nuv-btn-primary:hover span {
+    color: #485B85;
+    transform: translateX(70px);
 }
 
 .header_nuv-btn-icon {
@@ -312,6 +389,44 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.header_nuv-btn-icon svg {
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header_nuv-btn-1:hover .header_nuv-btn-icon svg {
+    transform: translateX(-200px) rotate(40deg);
+}
+
+.header_nuv-btn-1::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.header_nuv-btn-1:hover::after {
+    width: 800px;
+    height: 800px;
+    right: -400px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header_nuv-btn-1 span {
+    position: relative;
+    z-index: 3;
 }
 
 .header_nuv-btn-icon svg {
@@ -376,7 +491,7 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 1px solid #2E3D58;
+    border: none;
     background: #FFFFFF;
     display: flex;
     align-items: center;
@@ -384,13 +499,29 @@
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 0;
+    position: relative;
 }
 
 .header_nuv-nav-btn:hover {
     background: #F5F5F5;
 }
 
-.header_nuv-nav-btn svg {
+.header_nuv-nav-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.header_nuv-nav-arrow {
+    position: relative;
+    z-index: 1;
+    width: 10px;
+    height: 15px;
+}
+
+.header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
     width: 10px;
     height: 15px;
 }
@@ -507,13 +638,12 @@
 
 .header_nuv-carousel-slides {
     display: flex;
-    width: 400%;
     height: 100%;
-    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_nuv-carousel-slide {
-    width: 25%;
+    width: 100%;
+    min-width: 100%;
     height: 100%;
     flex-shrink: 0;
 }
@@ -584,9 +714,9 @@
 
 .header_nuv-carousel-dot.active {
     background: #485B85;
-    /* width: 10px;
-    height: 10px; */
-    box-shadow: 0 0 8px rgba(72, 91, 133, 0.5);
+    /* /* width: 10px; */
+    height: 10px; 
+    /* box-shadow: 0 0 8px rgba(72, 91, 133, 0.5); */
 }
 
 @media (max-width: 1400px) {

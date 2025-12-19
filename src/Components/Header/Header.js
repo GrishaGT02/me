@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from '../../assec/f75f26dc6cd4ff859268de37e425468cec2292a4.png';
 import metro from '../../assec/metro.png';
 import profil from '../../assec/profil.jpg';
@@ -10,18 +10,150 @@ import dockImage from '../../assec/dock.jpg';
 import './Header.css';
 
 const Header = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(1); // Начинаем с 1, так как 0 - это дублированный последний слайд
+    const [isTransitioning, setIsTransitioning] = useState(true);
     const slides = [slaiderHeader, slaiderHeader, slaiderHeader, slaiderHeader];
+    // Дублируем последний слайд в начало и первый в конец для бесконечного эффекта
+    const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
+    const carouselRef = useRef(null);
+
+    // Реальный индекс для отображения (0-3)
+    const realIndex = currentSlide === 0 ? slides.length - 1 : (currentSlide === extendedSlides.length - 1 ? 0 : currentSlide - 1);
+
+    const goToNextSlide = () => {
+        setIsTransitioning(true);
+        setCurrentSlide((prev) => {
+            if (prev === extendedSlides.length - 1) {
+                return 0; // Это не должно произойти, так как useEffect обработает это
+            }
+            return prev + 1;
+        });
+    };
+
+    const goToPrevSlide = () => {
+        setIsTransitioning(true);
+        setCurrentSlide((prev) => {
+            if (prev === 0) {
+                return extendedSlides.length - 1; // Это не должно произойти, так как useEffect обработает это
+            }
+            return prev - 1;
+        });
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
+            setIsTransitioning(true);
+            setCurrentSlide((prev) => {
+                if (prev === extendedSlides.length - 1) {
+                    return 0;
+                }
+                return prev + 1;
+            });
         }, 4000);
         return () => clearInterval(interval);
-    }, [slides.length]);
+    }, [extendedSlides.length]);
+
+    useEffect(() => {
+        if (currentSlide === extendedSlides.length - 1) {
+            // Если дошли до дублированного первого слайда в конце, мгновенно переходим на реальный первый
+            const timer = setTimeout(() => {
+                setIsTransitioning(false);
+                setCurrentSlide(1);
+                setTimeout(() => setIsTransitioning(true), 50);
+            }, 1200);
+            return () => clearTimeout(timer);
+        } else if (currentSlide === 0) {
+            // Если дошли до дублированного последнего слайда в начале, мгновенно переходим на реальный последний
+            const timer = setTimeout(() => {
+                setIsTransitioning(false);
+                setCurrentSlide(slides.length);
+                setTimeout(() => setIsTransitioning(true), 50);
+            }, 1200);
+            return () => clearTimeout(timer);
+        }
+    }, [currentSlide, slides.length, extendedSlides.length]);
 
     return (
         <div className="header">
+            <div className="header-center-block">
+                <div className="header-center-card">
+                    <div className="header-center-item">
+                        <div className="header-center-icon">
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                            </svg>
+                        </div>
+                        <div className="header-center-content">
+                            <div className="header-center-title">Точный рассчет</div>
+                            <div className="header-center-description">стоимости до начала лечения!</div>
+                        </div>
+                        <div className="header-center-arrow">
+                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div className="header-center-divider"></div>
+                    <div className="header-center-item">
+                        <div className="header-center-icon">
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                            </svg>
+                        </div>
+                        <div className="header-center-content">
+                            <div className="header-center-title">Гарантия</div>
+                            <div className="header-center-description">на лечение до 10 лет.</div>
+                        </div>
+                        <div className="header-center-arrow">
+                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div className="header-center-divider"></div>
+                    <div className="header-center-item">
+                        <div className="header-center-icon">
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                            </svg>
+                        </div>
+                        <div className="header-center-content">
+                            <div className="header-center-title">Рассрочка без переплат</div>
+                            <div className="header-center-description">Лечитесь сейчас, платите потом!</div>
+                        </div>
+                        <div className="header-center-arrow">
+                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div className="header-center-divider"></div>
+                    <div className="header-center-item">
+                        <div className="header-center-icon">
+                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                            </svg>
+                        </div>
+                        <div className="header-center-content">
+                            <div className="header-center-title">Лечение во сне</div>
+                            <div className="header-center-description">Уснете с больным зубом, проснетесь со здоровым.</div>
+                        </div>
+                        <div className="header-center-arrow">
+                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className="header-container">
                 <div className="header-logo">
                     <img src={logo} alt="logo" />
@@ -102,9 +234,15 @@ const Header = () => {
                 
                 <div className="header_nuv-right">
                     <div className="header_nuv-carousel-wrapper">
-                        <div className="header_nuv-carousel">
-                            <div className="header_nuv-carousel-slides" style={{ transform: `translateX(-${currentSlide * (100 / slides.length)}%)` }}>
-                                {slides.map((slide, index) => (
+                        <div className="header_nuv-carousel" ref={carouselRef}>
+                            <div 
+                                className="header_nuv-carousel-slides" 
+                                style={{ 
+                                    transform: `translateX(-${currentSlide * 100}%)`,
+                                    transition: isTransitioning ? 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
+                                }}
+                            >
+                                {extendedSlides.map((slide, index) => (
                                     <div key={index} className="header_nuv-carousel-slide">
                                         <img src={slide} alt={`Slide ${index + 1}`} />
                                     </div>
@@ -116,8 +254,11 @@ const Header = () => {
                                 {slides.map((_, index) => (
                                     <button
                                         key={index}
-                                        className={`header_nuv-carousel-dot ${index === currentSlide ? 'active' : ''}`}
-                                        onClick={() => setCurrentSlide(index)}
+                                        className={`header_nuv-carousel-dot ${realIndex === index ? 'active' : ''}`}
+                                        onClick={() => {
+                                            setIsTransitioning(true);
+                                            setCurrentSlide(index + 1);
+                                        }}
                                     />
                                 ))}
                             </div>
@@ -168,14 +309,37 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header_nuv-ratings-nav">
-                        <div className="header_nuv-ratings-counter">1/6</div>
-                        <button className="header_nuv-nav-btn">
+                        <div className="header_nuv-ratings-counter">{realIndex + 1}/{slides.length}</div>
+                        <button className="header_nuv-nav-btn" onClick={goToPrevSlide}>
                             <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.9375 1.06055L2.9375 7.06055L8.9375 13.0605" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
                             </svg>
                         </button>
-                        <button className="header_nuv-nav-btn">
-                            <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button className="header_nuv-nav-btn" onClick={goToNextSlide}>
+                            <svg className="header_nuv-nav-progress" width="60" height="60" viewBox="0 0 60 60">
+                                <circle
+                                    cx="30"
+                                    cy="30"
+                                    r="29"
+                                    fill="none"
+                                    stroke="#E0E0E0"
+                                    strokeWidth="1"
+                                />
+                                <circle
+                                    cx="30"
+                                    cy="30"
+                                    r="29"
+                                    fill="none"
+                                    stroke="#485B85"
+                                    strokeWidth="1"
+                                    strokeDasharray={`${2 * Math.PI * 29}`}
+                                    strokeDashoffset={`${2 * Math.PI * 29 * (1 - (realIndex + 1) / slides.length)}`}
+                                    strokeLinecap="round"
+                                    transform="rotate(-90 30 30)"
+                                    style={{ transition: 'stroke-dashoffset 0.5s ease' }}
+                                />
+                            </svg>
+                            <svg className="header_nuv-nav-arrow" width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.0625 13.0605L7.0625 7.06055L1.0625 1.06055" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
                             </svg>
                         </button>
