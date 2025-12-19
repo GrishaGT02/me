@@ -1,0 +1,278 @@
+.googing {
+    width: 100%;
+    background: #EBEBEB;
+    padding: 50px 50px;
+}
+
+.googing-container {
+    /* max-width: 1400px; */
+    margin: 0 auto;
+}
+
+.googing-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.googing-title {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 100%;
+    color: #000000;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'Geist', sans-serif;
+    margin-bottom: 20px;
+}
+
+.googing-title span {
+    color: #485B85;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.googing-description {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 33px;
+    color: #1A1A1ABF;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+    max-width: 1650px;
+    margin-top: 30px;
+    /* margin: 0 auto; */
+}
+
+.googing-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.googing-left {
+    flex: 1;
+    position: relative;
+}
+
+.googing-doctor-image {
+    width: 100%;
+    height: 700px;
+    background: #E0E0E0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.googing-doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* display: block; */
+}
+
+.googing-doctor-info {
+    background: #FFFFFFA6;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+    /* max-width: 300px; */
+}
+
+.googing-doctor-name {
+    font-size: 18px;
+    text-align: left;
+    font-weight: 700;
+    color: #000000;
+    font-family: 'Geist', sans-serif;
+}
+
+.googing-doctor-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    font-family: 'Geist', sans-serif;
+}
+
+.googing-doctor-contact {
+    width: 60px;
+    height: 60px;
+    background: #485B85;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 8px; */
+    cursor: pointer;
+}
+
+.googing-right {
+    flex: 1;
+}
+
+.googing-form-card {
+    height: 700px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 60px 0 60px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.googing-form-title {
+    width: 550px;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 120%;
+    color: #000000;
+    text-transform: uppercase;
+    font-family: 'Geist', sans-serif;
+    text-align: left;
+    /* width: 100%; */
+}
+
+.googing-form-description {
+    font-size: 16px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 24px;
+    color: #1A1A1ABF;
+    font-family: 'Geist', sans-serif;
+    text-align: left;
+    width: 550px;
+}
+
+.googing-form-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.googing-btn {
+    padding: 28px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 19px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-family: 'Geist', sans-serif;
+}
+
+.googing-btn-secondary {
+    background: #EBEBEB;
+    color: #000000;
+}
+
+.googing-btn-1 {
+    padding: 6px 6px 6px 30px;
+    border-radius: 50px;
+    border: 1px solid #2E3D58;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Geist', sans-serif;
+}
+
+.googing-btn-primary {
+    background: #485B85;
+    color: #FFFFFF;
+}
+
+.googing-btn-primary span {
+    color: #FFFFFF;
+}
+
+.googing-btn-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.googing-btn-icon svg {
+    width: 19px;
+    height: 18px;
+}
+
+.googing-form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.googing-form-checkbox input[type="checkbox"] {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    border: 1px solid #EBEBEB;
+    background: #EBEBEB;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.googing-form-checkbox input[type="checkbox"]:checked {
+    background: #485B85;
+    border-color: #485B85;
+}
+
+.googing-form-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 0px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.googing-form-checkbox label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    font-family: 'Geist', sans-serif;
+    cursor: pointer;
+}
+
+.googing-form-disclaimer {
+    font-size: 12px;
+    font-weight: 400;
+    color: #999999;
+    font-family: 'Geist', sans-serif;
+    font-style: italic;
+    text-align: left;
+    width: 100%;
+    margin-top: auto;
+}
+

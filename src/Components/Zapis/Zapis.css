@@ -1,0 +1,333 @@
+.zapis-container {
+  width: 100%;
+  padding: 40px 100px;
+  box-sizing: border-box;
+  background-color: white;
+  position: relative;
+  margin-top: 100px;
+}
+
+.zapis-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  background-image: url('https://furor-clinic.ru/wp-content/themes/furor-child/assets/img/test-img/index/feedback-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px;
+  border-radius: 12px;
+  overflow: visible;
+  /* min-height: 600px; */
+}
+
+.zapis-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 5;
+  /* padding-right: 200px; */
+}
+
+.zapis-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #2A2A2A;
+  margin: 0;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.zapis-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2A2A2A;
+  margin: 0;
+  text-align: left;
+}
+
+.zapis-description {
+  width: 500px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2A2A2A;
+  margin: 0;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.zapis-center {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 10;
+  pointer-events: none;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.zapis-image-wrapper {
+  position: relative;
+  width: 450px;
+  height: 550px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 15;
+  pointer-events: auto;
+}
+
+.zapis-doctor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  position: relative;
+}
+
+.zapis-person-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.zapis-person-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2A2A2A;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.zapis-person-specialty {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2A2A2A;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.zapis-right {
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  position: relative;
+  z-index: 5;
+  padding-left: 300px;
+}
+
+.zapis-form-intro {
+  font-size: 20px;
+  color: #2A2A2A;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: left;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.zapis-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.zapis-form-label {
+  font-size: 16px;
+  color: #2A2A2A;
+  text-align: left;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+.zapis-phone-input {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.zapis-phone-input:focus {
+  outline: none;
+  border-color: #26966e;
+}
+
+.zapis-phone-input-error {
+  background-color: #ffebee !important;
+  border: 1px solid #f44336 !important;
+}
+
+.zapis-phone-input-error:focus {
+  border-color: #f44336 !important;
+  background-color: #ffebee !important;
+}
+
+.zapis-submit-btn {
+  background-color: #26966e;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zapis-submit-btn:hover {
+  background-color: #1e7a5a;
+}
+
+.zapis-submit-btn:active {
+  transform: scale(0.98);
+}
+
+.zapis-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #2A2A2A;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.zapis-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: #26966e;
+}
+
+.zapis-checkbox-text {
+  text-align: left;
+  flex: 1;
+}
+
+.zapis-divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.zapis-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #533838;
+}
+
+.zapis-divider-text {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0 15px;
+  color: #2A2A2A;
+  font-size: 14px;
+}
+
+.zapis-call-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.zapis-call-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.zapis-call-text {
+  font-size: 20px;
+  color: #2A2A2A;
+  font-weight: 500;
+}
+
+.zapis-call-hours {
+  font-size: 20px;
+  color: #999;
+}
+
+.zapis-phone-link {
+  font-size: 32px;
+  font-weight: 700;
+  color: #26966e;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.zapis-phone-link:hover {
+  color: #1e7a5a;
+}
+
+@media (max-width: 1200px) {
+  .zapis-container {
+    padding: 40px 50px;
+  }
+
+  .zapis-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .zapis-center {
+    order: -1;
+  }
+
+  .zapis-image-wrapper {
+    width: 250px;
+    height: 350px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .zapis-container {
+    padding: 20px 15px;
+  }
+
+  .zapis-title {
+    font-size: 32px;
+  }
+
+  .zapis-subtitle {
+    font-size: 20px;
+  }
+
+  .zapis-phone-link {
+    font-size: 24px;
+  }
+
+  .zapis-call-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

@@ -1,0 +1,136 @@
+.konsultacia-container {
+  width: 100%;
+  padding: 40px 100px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.konsultacia-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #E8E0F5 0%, #D4C5E8 100%);
+  border-radius: 16px;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.konsultacia-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* gap: 12px; */
+  flex: 1;
+}
+
+.konsultacia-text-line1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #2A2A2A;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.konsultacia-text-line2 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #2A2A2A;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.konsultacia-bold {
+  font-weight: 700;
+}
+
+.konsultacia-strikethrough {
+  text-decoration: line-through;
+}
+
+.konsultacia-text-line3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2A2A2A;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.konsultacia-button {
+  background-color: #26966e;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(38, 150, 110, 0.3);
+  flex-shrink: 0;
+}
+
+.konsultacia-button:hover {
+  background-color: #1e7a5a;
+  box-shadow: 0 6px 16px rgba(38, 150, 110, 0.4);
+  transform: translateY(-2px);
+}
+
+.konsultacia-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(38, 150, 110, 0.3);
+}
+
+.konsultacia-button-line1 {
+  display: block;
+  line-height: 1.2;
+}
+
+.konsultacia-button-line2 {
+  display: block;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .konsultacia-container {
+    padding: 40px 50px;
+  }
+
+  .konsultacia-content {
+    padding: 30px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .konsultacia-container {
+    padding: 20px 15px;
+  }
+
+  .konsultacia-content {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 24px;
+  }
+
+  .konsultacia-text-line1,
+  .konsultacia-text-line2 {
+    font-size: 20px;
+  }
+
+  .konsultacia-text-line3 {
+    font-size: 18px;
+  }
+
+  .konsultacia-button {
+    width: 100%;
+    padding: 18px 30px;
+    font-size: 16px;
+  }
+}
+

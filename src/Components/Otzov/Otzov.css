@@ -1,0 +1,205 @@
+.otzov-container {
+  width: 100%;
+  padding: 40px 100px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.otzov-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.otzov-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 40px 0;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.otzov-title-purple {
+  color: #8B5CF6;
+}
+
+.otzov-title-black {
+  color: #2A2A2A;
+}
+
+.otzov-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.otzov-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.otzov-card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.otzov-user-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.otzov-user-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.otzov-user-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.otzov-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+}
+
+.otzov-user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2A2A2A;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.otzov-platform-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.otzov-platform-rating .otzov-platform-logo {
+  margin-bottom: 0;
+}
+
+.otzov-platform-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.otzov-platform-2gis {
+  color: #2FCB5A;
+}
+
+.otzov-platform-2gis span {
+  color: #2FCB5A;
+  font-weight: 600;
+}
+
+.otzov-platform-zoon {
+  color: #8B5CF6;
+}
+
+.otzov-zoon-text {
+  color: #8B5CF6;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.otzov-platform-yell {
+  color: #FF0000;
+}
+
+.otzov-platform-yell span {
+  color: #FF0000;
+  font-weight: 600;
+}
+
+.otzov-2gis-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otzov-yell-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otzov-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.otzov-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.otzov-star {
+  color: #FFD700;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.otzov-rating-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2A2A2A;
+}
+
+.otzov-review-text {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2A2A2A;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+@media (max-width: 1200px) {
+  .otzov-container {
+    padding: 40px 50px;
+  }
+
+  .otzov-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .otzov-container {
+    padding: 20px 15px;
+  }
+
+  .otzov-title {
+    font-size: 32px;
+  }
+
+  .otzov-cards {
+    grid-template-columns: 1fr;
+  }
+}
+

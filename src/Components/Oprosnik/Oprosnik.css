@@ -1,0 +1,405 @@
+.oprosnik-container {
+  background-color: white;
+  padding: 40px 100px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.oprosnik-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  gap: 40px;
+}
+
+.oprosnik-title {
+  width: 700px;
+  font-size: 48px;
+  font-weight: 700;
+  color: #2A2A2A;
+  margin: 0;
+  line-height: 1.3;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.oprosnik-title-green {
+  color: #26966e;
+}
+
+.oprosnik-content {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.oprosnik-left,
+.oprosnik-center,
+.oprosnik-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 450px;
+}
+
+.oprosnik-right {
+  align-self: stretch;
+}
+
+.oprosnik-faq-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.oprosnik-faq-card {
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  flex: 1;
+}
+
+.oprosnik-faq-card.open {
+  flex: 2;
+  background-color: #e8f5e9;
+}
+
+.oprosnik-faq-card:hover {
+  background-color: #eeeeee;
+}
+
+.oprosnik-faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+}
+
+.oprosnik-faq-accordion {
+  flex: 0;
+  overflow: hidden;
+  transition: flex 0.3s ease, padding 0.3s ease, opacity 0.3s ease;
+  padding-top: 0;
+  opacity: 0;
+}
+
+.oprosnik-faq-card.open .oprosnik-faq-accordion {
+  flex: 1;
+  padding-top: 16px;
+  opacity: 1;
+}
+
+.oprosnik-faq-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.oprosnik-faq-answer {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.oprosnik-faq-answer-icon {
+  color: #26966e;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.oprosnik-faq-answer-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.oprosnik-faq-text {
+  font-size: 16px;
+  text-align: left;
+  color: #2A2A2A;
+  margin: 0;
+  /* flex: 1; */
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.oprosnik-play-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.oprosnik-play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.oprosnik-play-btn:hover {
+  transform: scale(1.1);
+}
+
+.oprosnik-wave {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  animation: pulse-wave 2s ease-out infinite;
+}
+
+.oprosnik-wave-1 {
+  animation-delay: 0s;
+}
+
+.oprosnik-wave-2 {
+  animation-delay: 0.4s;
+}
+
+.oprosnik-wave-3 {
+  animation-delay: 0.8s;
+}
+
+@keyframes pulse-wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.33);
+    opacity: 0;
+  }
+}
+
+.oprosnik-video-card {
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  overflow: hidden;
+  /* margin-bottom: 20px; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.oprosnik-video-thumbnail {
+  width: 100%;
+  flex: 1;
+  min-height: 300px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.oprosnik-video-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.oprosnik-video-play-wrapper {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.oprosnik-video-play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+
+.oprosnik-video-play-btn:hover {
+  transform: scale(1.1);
+}
+
+.oprosnik-video-wave {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 0, 0, 0.596);
+  animation: pulse-wave-video 2s ease-out infinite;
+}
+
+@keyframes pulse-wave-video {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+.oprosnik-video-wave-1 {
+  animation-delay: 0s;
+}
+
+.oprosnik-video-wave-2 {
+  animation-delay: 0.4s;
+}
+
+.oprosnik-video-wave-3 {
+  animation-delay: 0.8s;
+}
+
+.oprosnik-video-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+  z-index: 5;
+}
+
+.oprosnik-video-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.oprosnik-video-role {
+  font-size: 14px;
+  color: white;
+  margin: 0 0 5px 0;
+  font-weight: 400;
+}
+
+.oprosnik-video-name {
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+
+.oprosnik-whatsapp-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.oprosnik-whatsapp-btn {
+  background-color: #26966e;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 20px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 450px;
+}
+
+.oprosnik-whatsapp-btn:hover {
+  background-color: #1f7a57;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(38, 150, 110, 0.4);
+}
+
+.oprosnik-whatsapp-btn:active {
+  transform: translateY(0);
+}
+
+.oprosnik-whatsapp-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.oprosnik-whatsapp-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex: 1;
+}
+
+.oprosnik-whatsapp-main-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.3;
+}
+
+.oprosnik-whatsapp-sub-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.3;
+}
+
+@media (max-width: 1200px) {
+  .oprosnik-container {
+    padding: 40px 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .oprosnik-container {
+    padding: 20px 15px;
+  }
+
+  .oprosnik-title {
+    font-size: 28px;
+  }
+
+  .oprosnik-content {
+    flex-direction: column;
+  }
+
+  .oprosnik-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
