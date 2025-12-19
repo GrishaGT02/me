@@ -77,7 +77,7 @@ const Header = () => {
         <div className="header">
             <div className="header-center-block">
                 <div className="header-center-card">
-                    <div className="header-center-item">
+                    <div className="header-center-item" style={{'--content-move': '150px', '--arrow-move': '-380px'}}>
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
@@ -96,7 +96,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header-center-divider"></div>
-                    <div className="header-center-item">
+                    <div className="header-center-item" style={{'--content-move': '150px', '--arrow-move': '-380px'}}>
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
@@ -115,7 +115,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header-center-divider"></div>
-                    <div className="header-center-item">
+                    <div className="header-center-item" style={{'--content-move': '140px', '--arrow-move': '-380px'}}>
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
@@ -134,7 +134,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header-center-divider"></div>
-                    <div className="header-center-item">
+                    <div className="header-center-item" style={{'--content-move': '30px', '--arrow-move': '-380px'}}>
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
