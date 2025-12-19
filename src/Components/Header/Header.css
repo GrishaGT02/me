@@ -372,7 +372,7 @@
 
 .header_nuv-btn-primary span {
     color: #FFFFFF;
-    transition: color 0.3s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_nuv-btn-primary:hover span {
@@ -394,7 +394,7 @@
 }
 
 .header_nuv-btn-icon svg {
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header_nuv-btn-1:hover .header_nuv-btn-icon svg {
