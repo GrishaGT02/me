@@ -35,7 +35,13 @@ const Googing = () => {
                     </div>
                     <div className="googing-right">
                         <div className="googing-form-card">
-                            <h2 className="googing-form-title">СОМНЕВАЕТЕСЬ В ПРЕДЛОЖЕННОМ ПЛАНЕ ЛЕЧЕНИЯ В ДРУГОЙ КЛИНИКЕ?</h2>
+                            <h2 className="googing-form-title">
+                                <span style={{color: '#485B85', textDecoration: 'underline'}}>СОМНЕВАЕТЕСЬ В</span>{' '}
+                                <span>ПРЕДЛОЖЕННОМ</span>{' '}
+                                <span style={{color: '#485B85', textDecoration: 'underline'}}>ПЛАНЕ</span>{' '}
+                                <span style={{color: '#485B85', textDecoration: 'underline'}}>ЛЕЧЕНИЯ</span>{' '}
+                                <span>В ДРУГОЙ КЛИНИКЕ?</span>
+                            </h2>
                             <p className="googing-form-description">
                                 Пришлите Ваши снимки и диагноз на бесплатный аудит консилиума. Наши специалисты изучат Ваш случай и предоставят экспертное мнение и варианты решения проблемы.
                             </p>

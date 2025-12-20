@@ -22,12 +22,12 @@ function App() {
     <div className="App">
         <Header />
         <Googing />
+        <Carousel />
         <Modal />
         <Usluga />
         <Skils />
         <Zayavka />
         <Oprosnik />
-        <Carousel />
         <Zapis />
         <Fich1 />
         <Otzov />

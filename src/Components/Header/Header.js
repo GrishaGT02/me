@@ -12,6 +12,7 @@ import './Header.css';
 const Header = () => {
     const [currentSlide, setCurrentSlide] = useState(1); // Начинаем с 1, так как 0 - это дублированный последний слайд
     const [isTransitioning, setIsTransitioning] = useState(true);
+    const [isPaused, setIsPaused] = useState(false);
     const slides = [slaiderHeader, slaiderHeader, slaiderHeader, slaiderHeader];
     // Дублируем последний слайд в начало и первый в конец для бесконечного эффекта
     const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
@@ -40,7 +41,38 @@ const Header = () => {
         });
     };
 
+    const handleMouseDown = (e) => {
+        const startPos = e.clientX;
+        setIsPaused(true);
+        
+        const handleMouseMove = (moveEvent) => {
+            const diff = startPos - moveEvent.clientX;
+            const threshold = 10;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    goToNextSlide(); // Перетащили влево - следующий слайд
+                } else {
+                    goToPrevSlide(); // Перетащили вправо - предыдущий слайд
+                }
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+            }
+        };
+        
+        const handleMouseUp = () => {
+            setIsPaused(false);
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        };
+        
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+    };
+
     useEffect(() => {
+        if (isPaused) return; // Не запускаем интервал, если карусель на паузе
+        
         const interval = setInterval(() => {
             setIsTransitioning(true);
             setCurrentSlide((prev) => {
@@ -51,7 +83,7 @@ const Header = () => {
             });
         }, 4000);
         return () => clearInterval(interval);
-    }, [extendedSlides.length]);
+    }, [extendedSlides.length, isPaused]);
 
     useEffect(() => {
         if (currentSlide === extendedSlides.length - 1) {
@@ -77,7 +109,7 @@ const Header = () => {
         <div className="header">
             <div className="header-center-block">
                 <div className="header-center-card">
-                    <div className="header-center-item" style={{'--content-move': '150px', '--arrow-move': '-380px'}}>
+                    <div className="header-center-item">
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
@@ -96,7 +128,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header-center-divider"></div>
-                    <div className="header-center-item" style={{'--content-move': '150px', '--arrow-move': '-380px'}}>
+                    <div className="header-center-item">
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
@@ -115,7 +147,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header-center-divider"></div>
-                    <div className="header-center-item" style={{'--content-move': '140px', '--arrow-move': '-380px'}}>
+                    <div className="header-center-item">
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
@@ -134,7 +166,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="header-center-divider"></div>
-                    <div className="header-center-item" style={{'--content-move': '30px', '--arrow-move': '-380px'}}>
+                    <div className="header-center-item">
                         <div className="header-center-icon">
                             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
@@ -233,8 +265,16 @@ const Header = () => {
                     </div>
                 
                 <div className="header_nuv-right">
-                    <div className="header_nuv-carousel-wrapper">
-                        <div className="header_nuv-carousel" ref={carouselRef}>
+                    <div 
+                        className="header_nuv-carousel-wrapper"
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => setIsPaused(false)}
+                    >
+                        <div 
+                            className="header_nuv-carousel" 
+                            ref={carouselRef}
+                            onMouseDown={handleMouseDown}
+                        >
                             <div 
                                 className="header_nuv-carousel-slides" 
                                 style={{ 
@@ -310,12 +350,22 @@ const Header = () => {
                     </div>
                     <div className="header_nuv-ratings-nav">
                         <div className="header_nuv-ratings-counter">{realIndex + 1}/{slides.length}</div>
-                        <button className="header_nuv-nav-btn" onClick={goToPrevSlide}>
+                        <button 
+                            className="header_nuv-nav-btn" 
+                            onClick={goToPrevSlide}
+                            onMouseEnter={() => setIsPaused(true)}
+                            onMouseLeave={() => setIsPaused(false)}
+                        >
                             <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.9375 1.06055L2.9375 7.06055L8.9375 13.0605" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
                             </svg>
                         </button>
-                        <button className="header_nuv-nav-btn" onClick={goToNextSlide}>
+                        <button 
+                            className="header_nuv-nav-btn" 
+                            onClick={goToNextSlide}
+                            onMouseEnter={() => setIsPaused(true)}
+                            onMouseLeave={() => setIsPaused(false)}
+                        >
                             <svg className="header_nuv-nav-progress" width="60" height="60" viewBox="0 0 60 60">
                                 <circle
                                     cx="30"

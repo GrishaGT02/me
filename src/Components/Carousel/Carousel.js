@@ -1,68 +1,101 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import slad1 from '../../assec/slad1.jpg';
+import slad2 from '../../assec/slad2.jpg';
 import './Carousel.css';
 
 const Carousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const animationRef = useRef(null);
+  const wrapperRef = useRef(null);
 
-  // Пример слайдов - можете заменить на свои
+  // Слайды с изображениями и контентом
   const slides = [
-    { id: 1, content: 'Слайд 1' },
-    { id: 2, content: 'Слайд 2' },
-    { id: 3, content: 'Слайд 3' },
+    { 
+      id: 1, 
+      image: slad1,
+      title: 'Все зубы за 1 день за 119,000 рублей или 8,000 руб/в месяц',
+      subtitle: 'С пожизненной гарантией от производителя',
+      buttonText: 'ПОДРОБНЕЕ'
+    },
+    { 
+      id: 2, 
+      image: slad2,
+      title: 'Брекеты + установка от 29,500 рублей. Рассрочка до 36 месяцев.',
+      subtitle: 'С пожизненной гарантией от производителя',
+      buttonText: 'ПОДРОБНЕЕ'
+    },
+    { 
+      id: 3, 
+      image: slad1,
+      title: 'Все зубы за 1 день за 119,000 рублей или 8,000 руб/в месяц',
+      subtitle: 'С пожизненной гарантией от производителя',
+      buttonText: 'ПОДРОБНЕЕ'
+    },
   ];
 
-  // Автоматическая прокрутка каждые 6 секунд
+  // Дублируем слайды для бесконечной прокрутки (нужно минимум 2 копии)
+  const extendedSlides = [...slides, ...slides, ...slides];
+
+  // Непрерывная анимация
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    const speed = 0.5; // скорость движения (пикселей за кадр)
+    let currentOffset = 0;
 
-    return () => clearInterval(interval);
+    const animate = () => {
+      const slideWidth = 960;
+      const gap = 50;
+      const totalSlideWidth = slideWidth + gap; // ширина слайда + gap
+      
+      currentOffset -= speed;
+      
+      // Когда проехали один полный цикл (3 слайда), сбрасываем позицию
+      const cycleWidth = slides.length * totalSlideWidth;
+      if (Math.abs(currentOffset) >= cycleWidth) {
+        currentOffset = currentOffset + cycleWidth; // сбрасываем на начало цикла
+      }
+      
+      setOffset(currentOffset);
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
   }, [slides.length]);
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
 
   return (
     <div className="carousel-container">
-      <div className="carousel-wrapper">
-        <button className="carousel-btn carousel-btn-prev" onClick={prevSlide}>
-          &#10094;
-        </button>
-
-        <div className="carousel-slides">
-          {slides.map((slide, index) => (
+      <div className="carousel-slides-wrapper" ref={wrapperRef}>
+        <div 
+          className="carousel-slides-track"
+          style={{
+            transform: `translateX(${offset}px)`,
+          }}
+        >
+          {extendedSlides.map((slide, index) => (
             <div
-              key={slide.id}
-              className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+              key={`${slide.id}-${index}`}
+              className="carousel-wrapper"
             >
-              {slide.content}
+              <div className="carousel-slide">
+                <div className="carousel-slide-image">
+                  <img src={slide.image} alt={slide.title} />
+                </div>
+                <div className="carousel-slide-content">
+                  <div className="carousel-slide-text">
+                    <h2 className="carousel-slide-title">{slide.title}</h2>
+                    <p className="carousel-slide-subtitle">{slide.subtitle}</p>
+                  </div>
+                  <button className="carousel-slide-button">{slide.buttonText}</button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
-
-        <button className="carousel-btn carousel-btn-next" onClick={nextSlide}>
-          &#10095;
-        </button>
-      </div>
-
-      <div className="carousel-dots">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={`carousel-dot ${index === currentSlide ? 'active' : ''}`}
-            onClick={() => goToSlide(index)}
-          />
-        ))}
       </div>
     </div>
   );
