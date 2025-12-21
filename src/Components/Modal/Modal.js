@@ -10,7 +10,6 @@ const Modal = () => {
   const [callbackOption, setCallbackOption] = useState('now');
 
   useEffect(() => {
-    // Открываем модальное окно при загрузке страницы
     openModal();
   }, []);
 
@@ -141,7 +140,6 @@ const Modal = () => {
             onChange={handlePhoneChange}
             onBlur={handlePhoneBlur}
           />
-          {/* <div className="modal-phone-format">+7 (000) 000-00-00</div> */}
 
           <div className="modal-callback-options">
             <button
@@ -181,7 +179,6 @@ const Modal = () => {
           </label>
         </form>
 
-        {/* <p className="modal-attribution">Сделано в Calltouch</p> */}
       </div>
     </div>
   );

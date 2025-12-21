@@ -1,141 +1,113 @@
 import React from 'react';
 import './Skils.css';
-import serviceImage from '../../assec/dod.png';
+import doctorImage from '../../assec/skils.jpg';
 
 const Skils = () => {
-  const skills = [
+  const fears = [
     {
       id: 1,
-      title: 'Лидерство',
-      description: 'Полностью привержен успеху компании',
-      iconColor: '#FFD700'
+      title: 'Это будет больно...',
+      description: 'Современная анестезия полностью исключает болевые ощущения. Мы используем только проверенные и безопасные препараты.',
+      icon: 'pill'
     },
     {
       id: 2,
-      title: 'Ответственность',
-      description: 'Сотрудники всегда будут моим главным приоритетом',
-      iconColor: '#4169E1'
+      title: 'Мне навяжут ненужные услуги...',
+      description: 'Мы предоставляем полную прозрачность лечения. Все процедуры согласовываются с пациентом заранее.',
+      icon: 'document'
     },
     {
       id: 3,
-      title: 'Гибкость',
-      description: 'Способность переключаться - важный навык',
-      iconColor: '#9370DB'
+      title: 'Попаду к неопытному врачу...',
+      description: 'В нашей клинике работают только сертифицированные специалисты с многолетним опытом работы.',
+      icon: 'list'
+    },
+    {
+      id: 4,
+      title: 'Боюсь халтуры и некачественной работы...',
+      description: 'Мы даем гарантию на все виды лечения. Каждый сложный план утверждается консилиумом врачей.',
+      icon: 'check'
     }
   ];
 
   return (
-      <div className="skils-container">
+    <div className="skils-container">
       <div className="skils-content">
-        <div className="skils-header">
-          <div className="skils-left">
+        <div className="skils-top-header">
+          <div className="skils-top-left">
             <h2 className="skils-title">
-              Получите навыки, которые нужны для работы, которая востребована
+              МНОГИЕ ЛЮДИ <span className="skils-title-highlight"> ДО УЖАСА БОЯТСЯ </span>СТОМАТОЛОГА!
             </h2>
           </div>
-          <div className="skils-right">
-            <p className="skils-description">
-              Современный рынок труда диктует свои условия. Сегодня, чтобы быть конкурентоспособным специалистом, требуется больше, чем профессиональные навыки.
+          <div className="skils-top-right">
+            <p className="skils-subtitle">
+              8 из 10 человек панически боятся стоматолога! Собрали для Вас самые распространенные заблуждения:
             </p>
           </div>
         </div>
-      </div>
-      
-      <div className="skils-bottom">
-        <div className="skils-bottom-content">
-          <div className="skils-skills-section">
-            <div className="skils-skills-list">
-              {skills.map((skill, index) => (
-                <div key={skill.id} className="skils-skill-item">
-                  <div className="skils-skill-icon-wrapper">
-                    <svg 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none"
-                      className="skils-skill-icon"
-                    >
-                      {skill.id === 1 && (
-                        <path 
-                          d="M17 8h-1V6c0-2.76-2.24-5-5-5S6 3.24 6 6v2H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM9 6c0-1.66 1.34-3 3-3s3 1.34 3 3v2H9V6zm9 14H6V10h12v10z" 
-                          fill={skill.iconColor}
-                          stroke={skill.iconColor}
-                          strokeWidth="1.5"
-                        />
+        
+        <div className="skils-header">
+          <div className="skils-left">
+            <div className="skils-fears-list">
+              {fears.map((fear, index) => (
+                <div key={fear.id} className="skils-fear-item">
+                  <div className="skils-fear-icon-wrapper">
+                    <div className="skils-fear-icon">
+                      {fear.icon === 'pill' && (
+                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.80762 10.2993C7.29713 15.6968 11.5362 19.9354 16.9336 21.4253L13.2988 25.061C10.4021 27.9577 5.70529 27.9577 2.80859 25.061L2.17285 24.4253C-0.723842 21.5286 -0.723842 16.8318 2.17285 13.9351L5.80762 10.2993ZM13.9346 2.17236C16.8312 -0.724275 21.5281 -0.724164 24.4248 2.17236L25.0615 2.80908C27.9579 5.70567 27.9578 10.4017 25.0615 13.2983L20.1143 18.2446C14.1987 17.7243 9.50772 13.0335 8.98828 7.11768L13.9346 2.17236Z" fill="white"/>
+                        </svg>
                       )}
-                      {skill.id === 2 && (
-                        <>
-                          <circle 
-                            cx="12" 
-                            cy="12" 
-                            r="10" 
-                            fill="none"
-                            stroke={skill.iconColor}
-                            strokeWidth="2"
-                          />
-                          <path 
-                            d="M12 16v-4M12 8h.01" 
-                            stroke={skill.iconColor}
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                          />
-                        </>
+                      {fear.icon === 'document' && (
+                        <svg width="31" height="22" viewBox="0 0 31 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M25.1338 0C27.5849 0 28.8107 -0.000612407 29.5723 0.760742C30.3338 1.52223 30.334 2.74815 30.334 5.19922V16.791C30.334 19.2422 30.3337 20.468 29.5723 21.2295C28.8107 21.991 27.5851 21.9912 25.1338 21.9912H5.2002C2.74904 21.9912 1.52322 21.991 0.761719 21.2295C0.000424288 20.468 0 19.2421 0 16.791V5.19922C1.88072e-09 2.74815 0.000234183 1.52223 0.761719 0.760742C1.52322 -0.000691492 2.74911 7.36105e-10 5.2002 0H25.1338ZM22.75 15.9785C22.0324 15.9787 21.4504 16.5607 21.4502 17.2783C21.4502 17.9961 22.0322 18.5779 22.75 18.5781H25.7832C26.5012 18.5781 27.083 17.9963 27.083 17.2783C27.0828 16.5605 26.501 15.9785 25.7832 15.9785H22.75ZM15.167 6.2832C12.6542 6.28331 10.6172 8.39352 10.6172 10.9961L10.623 11.2383C10.7451 13.728 12.7328 15.7079 15.167 15.708C17.6012 15.708 19.5889 13.728 19.7109 11.2383L19.7168 10.9961C19.7168 8.39349 17.6798 6.28326 15.167 6.2832ZM15.167 8.88281C16.1587 8.88287 17.1172 9.74268 17.1172 10.9961C17.1168 12.2491 16.1585 13.1083 15.167 13.1084C14.1755 13.1083 13.2171 12.2491 13.2168 10.9961C13.2168 9.74272 14.1753 8.88293 15.167 8.88281ZM4.55078 3.41211C3.83287 3.41211 3.25106 3.99402 3.25098 4.71191C3.25098 5.42988 3.83281 6.01172 4.55078 6.01172H7.58398C8.30179 6.01153 8.88379 5.42976 8.88379 4.71191C8.8837 3.99414 8.30174 3.4123 7.58398 3.41211H4.55078Z" fill="white"/>
+                        </svg>
                       )}
-                      {skill.id === 3 && (
-                        <path 
-                          d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" 
-                          fill={skill.iconColor}
-                          stroke={skill.iconColor}
-                          strokeWidth="1.5"
-                        />
+                      {fear.icon === 'list' && (
+                        <svg width="23" height="28" viewBox="0 0 23 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17.5498 0C20.0011 0 21.2268 0.000197216 21.9883 0.761719C22.7498 1.52324 22.75 2.74889 22.75 5.2002V22.4248C22.75 24.8761 22.7498 26.1018 21.9883 26.8633C21.2268 27.6248 20.0011 27.625 17.5498 27.625H5.2002C2.74889 27.625 1.52324 27.6248 0.761719 26.8633C0.000197216 26.1018 0 24.8761 0 22.4248V5.2002C0 2.74889 0.000196339 1.52324 0.761719 0.761719C1.52324 0.000196339 2.74889 0 5.2002 0H17.5498ZM6.5 19.8252C5.78203 19.8252 5.2002 20.407 5.2002 21.125C5.2002 21.843 5.78203 22.4248 6.5 22.4248H13C13.718 22.4248 14.2998 21.843 14.2998 21.125C14.2998 20.407 13.718 19.8252 13 19.8252H6.5ZM6.5 13.3252C5.78203 13.3252 5.2002 13.907 5.2002 14.625C5.2002 15.343 5.78203 15.9248 6.5 15.9248H16.25C16.968 15.9248 17.5498 15.343 17.5498 14.625C17.5498 13.907 16.968 13.3252 16.25 13.3252H6.5ZM6.5 6.8252C5.78203 6.8252 5.2002 7.40703 5.2002 8.125C5.2002 8.84297 5.78203 9.4248 6.5 9.4248H16.25C16.968 9.4248 17.5498 8.84297 17.5498 8.125C17.5498 7.40703 16.968 6.8252 16.25 6.8252H6.5Z" fill="white"/>
+                        </svg>
                       )}
-                    </svg>
-                    {index < skills.length - 1 && <div className="skils-skill-connector"></div>}
+                      {fear.icon === 'check' && (
+                        <svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.7158 0.459961C12.1056 -0.153118 13.6786 -0.153117 15.0684 0.459961L24.668 4.69531C25.3448 4.99417 25.7842 5.6793 25.7842 6.4375V16.3965C25.784 20.0699 24.06 23.5172 21.1562 25.6523L15.0332 30.1553C13.7525 31.0969 12.0316 31.096 10.751 30.1543L4.62793 25.6523C1.72415 23.5172 0.000142787 20.0699 0 16.3965V6.4375C0 5.6793 0.439349 4.99417 1.11621 4.69531L10.7158 0.459961ZM19.2148 9.84863C18.648 9.40829 17.8312 9.51051 17.3906 10.0771L10.9414 18.375L8.2998 15.6562C7.79954 15.1415 6.97585 15.1298 6.46094 15.6299C5.94605 16.1301 5.93448 16.9538 6.43457 17.4688L9.59668 20.7236C10.4221 21.5733 11.8083 21.4968 12.5352 20.5615L19.4434 11.6729C19.8838 11.106 19.7816 10.2892 19.2148 9.84863Z" fill="white"/>
+                        </svg>
+                      )}
+                    </div>
+                    <div className="skils-fear-connector"></div>
                   </div>
-                  <div className="skils-skill-content">
-                    <h3 className="skils-skill-title">{skill.title}</h3>
-                    <p className="skils-skill-description">{skill.description}</p>
+                  <div className="skils-fear-content">
+                    <h3 className="skils-fear-title">{fear.title}</h3>
+                    <p className="skils-fear-description">{fear.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
           
-          <div className="skils-image-section">
+          <div className="skils-right">
             <div className="skils-image-wrapper">
               <img 
-                src={serviceImage} 
-                alt="Специалист" 
+                src={doctorImage} 
+                alt="Доктор" 
                 className="skils-image"
               />
-            </div>
-            <div className="skils-play-button">
-              <svg 
-                width="250" 
-                height="250" 
-                viewBox="0 0 100 100" 
-                fill="none"
-              >
-                <path 
-                  d="M20 20L20 80L80 50L20 20Z" 
-                  fill="white"
-                />
-              </svg>
-            </div>
-            <div className="skils-banner">
-              <div className="skils-banner-section">
-                <span className="skils-banner-number">10</span>
-                <div className="skils-banner-text-wrapper">
-                  <span className="skils-banner-text">ЛЕТ</span>
-                  <span className="skils-banner-text">ОПЫТА</span>
-                </div>
-              </div>
-              <div className="skils-banner-divider"></div>
-              <div className="skils-banner-section">
-                <span className="skils-banner-number">250</span>
-                <div className="skils-banner-text-wrapper">
-                  <span className="skils-banner-text">ВИДОВ</span>
-                  <span className="skils-banner-text">КУРСОВ</span>
+              <div className="skils-info-card">
+                <div className="skils-info-card-inner">
+                  <div className="skils-info-card-content">
+                    <p className="skils-info-card-text">Каждый сложный план утверждает консилиум врачей.</p>
+                    <p className="skils-info-card-subtext">Двойной контроль исключает вероятность ошибок.</p>
+                  </div>
+                  <div className="skils-info-card-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="23.8828" cy="17.9121" r="7.96094" fill="white"/>
+                      <circle cx="33.8301" cy="17.9121" r="5.9707" fill="white"/>
+                      <circle cx="13.9316" cy="17.9121" r="5.9707" fill="white"/>
+                      <path d="M33.8369 25.873C38.7088 25.873 40.6607 30.7405 41.3936 33.667C41.6796 34.8092 40.7761 35.8242 39.5986 35.8242H34.9717C34.1694 32.8192 32.6184 29.4097 29.6172 27.4629C30.6957 26.5113 32.0747 25.8732 33.8369 25.873Z" fill="white"/>
+                      <path d="M13.9297 25.873C15.6923 25.8731 17.0708 26.512 18.1494 27.4639C15.1496 29.4109 13.599 32.8199 12.7969 35.8242H8.16797C6.9905 35.8242 6.08799 34.8092 6.37402 33.667C7.10694 30.7405 9.05789 25.873 13.9297 25.873Z" fill="white"/>
+                      <path d="M23.8887 27.8633C31.2698 27.8633 33.1761 34.433 33.6684 37.8265C33.8262 38.9143 32.9488 39.8047 31.8496 39.8047H15.9277C14.8286 39.8047 13.9511 38.9143 14.1089 37.8265C14.6013 34.433 16.5076 27.8633 23.8887 27.8633Z" fill="white"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>

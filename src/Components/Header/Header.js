@@ -107,85 +107,6 @@ const Header = () => {
 
     return (
         <div className="header">
-            <div className="header-center-block">
-                <div className="header-center-card">
-                    <div className="header-center-item">
-                        <div className="header-center-icon">
-                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
-                            </svg>
-                        </div>
-                        <div className="header-center-content">
-                            <div className="header-center-title">Точный рассчет</div>
-                            <div className="header-center-description">стоимости до начала лечения!</div>
-                        </div>
-                        <div className="header-center-arrow">
-                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className="header-center-divider"></div>
-                    <div className="header-center-item">
-                        <div className="header-center-icon">
-                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
-                            </svg>
-                        </div>
-                        <div className="header-center-content">
-                            <div className="header-center-title">Гарантия</div>
-                            <div className="header-center-description">на лечение до 10 лет.</div>
-                        </div>
-                        <div className="header-center-arrow">
-                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className="header-center-divider"></div>
-                    <div className="header-center-item">
-                        <div className="header-center-icon">
-                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
-                            </svg>
-                        </div>
-                        <div className="header-center-content">
-                            <div className="header-center-title">Рассрочка без переплат</div>
-                            <div className="header-center-description">Лечитесь сейчас, платите потом!</div>
-                        </div>
-                        <div className="header-center-arrow">
-                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div className="header-center-divider"></div>
-                    <div className="header-center-item">
-                        <div className="header-center-icon">
-                            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
-                                <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
-                            </svg>
-                        </div>
-                        <div className="header-center-content">
-                            <div className="header-center-title">Лечение во сне</div>
-                            <div className="header-center-description">Уснете с больным зубом, проснетесь со здоровым.</div>
-                        </div>
-                        <div className="header-center-arrow">
-                            <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div className="header-container">
                 <div className="header-logo">
                     <img src={logo} alt="logo" />
@@ -262,6 +183,84 @@ const Header = () => {
                             </svg>
                         </div>
                         <div className="header_nuv-about-text">О нашей клинике</div>
+                    </div>
+                    
+                    <div className="header-center-card">
+                        <div className="header-center-item">
+                            <div className="header-center-icon">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div className="header-center-content">
+                                <div className="header-center-title">Точный рассчет</div>
+                                <div className="header-center-description">стоимости до начала лечения!</div>
+                            </div>
+                            <div className="header-center-arrow">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="header-center-divider"></div>
+                        <div className="header-center-item">
+                            <div className="header-center-icon">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div className="header-center-content">
+                                <div className="header-center-title">Гарантия</div>
+                                <div className="header-center-description">на лечение до 10 лет.</div>
+                            </div>
+                            <div className="header-center-arrow">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="header-center-divider"></div>
+                        <div className="header-center-item">
+                            <div className="header-center-icon">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div className="header-center-content">
+                                <div className="header-center-title">Рассрочка без переплат</div>
+                                <div className="header-center-description">Лечитесь сейчас, платите потом!</div>
+                            </div>
+                            <div className="header-center-arrow">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="header-center-divider"></div>
+                        <div className="header-center-item">
+                            <div className="header-center-icon">
+                                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 5.29224)" fill="#191919" fillOpacity="0.7"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 12.5688)" fill="#191919"/>
+                                    <rect width="5.29213" height="5.29213" rx="2.64606" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 7.27344 12.5688)" fill="#191919" fillOpacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div className="header-center-content">
+                                <div className="header-center-title">Лечение во сне</div>
+                                <div className="header-center-description">Уснете с больным зубом, проснетесь со здоровым.</div>
+                            </div>
+                            <div className="header-center-arrow">
+                                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.8318 1.98856L17.7994 2.07321L17.8841 1.1056L16.9165 1.02095L16.8318 1.98856ZM0.343894 14.5556C-0.067041 14.9004 -0.120641 15.5131 0.224175 15.924C0.56899 16.3349 1.18165 16.3886 1.59258 16.0437L0.968238 15.2997L0.343894 14.5556ZM15.8108 13.6584L16.7784 13.7431L17.7994 2.07321L16.8318 1.98856L15.8642 1.9039L14.8432 13.5738L15.8108 13.6584ZM16.8318 1.98856L16.9165 1.02095L5.24659 -3.36673e-05L5.16193 0.967577L5.07728 1.93519L16.7472 2.95617L16.8318 1.98856ZM16.8318 1.98856L16.2075 1.24449L0.343894 14.5556L0.968238 15.2997L1.59258 16.0437L17.4561 2.73262L16.8318 1.98856Z" fill="#33363F"/>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 
                 <div className="header_nuv-right">

@@ -4,6 +4,7 @@ import Header from './Components/Header/Header';
 import Googing from './Components/Googing/Googing';
 import Usluga from './Components/Usluga/Usluga';
 import Skils from './Components/Skils/Skils';
+import TreatmentWarning from './Components/TreatmentWarning/TreatmentWarning';
 import Zayavka from './Components/Zayavka/Zayavka';
 import Oprosnik from './Components/Oprosnik/Oprosnik';
 import Zapis from './Components/Zapis/Zapis';
@@ -23,9 +24,10 @@ function App() {
         <Header />
         <Googing />
         <Carousel />
-        <Modal />
-        <Usluga />
         <Skils />
+        <TreatmentWarning />
+        <Usluga />
+        <Modal />
         <Zayavka />
         <Oprosnik />
         <Zapis />
