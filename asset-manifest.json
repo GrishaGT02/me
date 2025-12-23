@@ -1,12 +1,17 @@
 {
   "files": {
-    "main.css": "/me/static/css/main.b23d74c0.css",
-    "main.js": "/me/static/js/main.ef8fb14c.js",
+    "main.css": "/me/static/css/main.277fed35.css",
+    "main.js": "/me/static/js/main.95a109a0.js",
     "static/js/453.cc89949c.chunk.js": "/me/static/js/453.cc89949c.chunk.js",
     "static/media/profil.jpg": "/me/static/media/profil.6f1e4aae31c115a61a3b.jpg",
+    "static/media/(2).png": "/me/static/media/(2).ac2974ce4e098ddb82d3.png",
+    "static/media/(1).png": "/me/static/media/(1).476df71a0f62b98e0241.png",
+    "static/media/2.png": "/me/static/media/2.402cb3863534fc4dfa20.png",
+    "static/media/3.png": "/me/static/media/3.5ef7004c0457cfb09827.png",
     "static/media/dod.png": "/me/static/media/dod.ae6451a09ff6fae3f496.png",
     "static/media/1.jpg": "/me/static/media/1.1d9f26136a98247282ec.jpg",
     "static/media/skils.jpg": "/me/static/media/skils.1d9f26136a98247282ec.jpg",
+    "static/media/ker.jpg": "/me/static/media/ker.ca5605c7a3674141d114.jpg",
     "static/media/dock.jpg": "/me/static/media/dock.b2ba92a98b1f0a023614.jpg",
     "static/media/slad1.jpg": "/me/static/media/slad1.4112e4eb7b152ceae1dc.jpg",
     "static/media/slad2.jpg": "/me/static/media/slad2.0e4666c514196502a69f.jpg",
@@ -16,12 +21,12 @@
     "static/media/zoon.png": "/me/static/media/zoon.6db6a535813b493ec417.png",
     "static/media/gis.png": "/me/static/media/gis.f28677f759b714430132.png",
     "index.html": "/me/index.html",
-    "main.b23d74c0.css.map": "/me/static/css/main.b23d74c0.css.map",
-    "main.ef8fb14c.js.map": "/me/static/js/main.ef8fb14c.js.map",
+    "main.277fed35.css.map": "/me/static/css/main.277fed35.css.map",
+    "main.95a109a0.js.map": "/me/static/js/main.95a109a0.js.map",
     "453.cc89949c.chunk.js.map": "/me/static/js/453.cc89949c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b23d74c0.css",
-    "static/js/main.ef8fb14c.js"
+    "static/css/main.277fed35.css",
+    "static/js/main.95a109a0.js"
   ]
 }
