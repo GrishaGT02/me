@@ -70,7 +70,7 @@
 }
 
 .fich1-title {
-  font-size: 32px;
+  font-size: var(--font-size-h3);
   font-weight: 700;
   color: #2A2A2A;
   margin: 0;
@@ -83,7 +83,7 @@
 }
 
 .fich1-description {
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   color: #666;
   margin: 0;
   text-align: left;
@@ -105,7 +105,7 @@
   padding: 14px 20px;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 500;
   width: 100%;
   box-sizing: border-box;
@@ -134,7 +134,7 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--font-size-body-small);
   color: #2A2A2A;
   font-weight: 500;
   line-height: 1.5;
@@ -159,7 +159,7 @@
   border: none;
   border-radius: 12px;
   padding: 16px 24px;
-  font-size: 18px;
+  font-size: var(--font-size-body);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -199,11 +199,11 @@
   }
 
   .fich1-title {
-    font-size: 24px;
+    font-size: var(--font-size-h7);
   }
 
   .fich1-submit-btn {
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
     padding: 14px 20px;
   }
 }

@@ -83,7 +83,7 @@
 
 .carousel-slide-title {
   text-align: left;
-  font-size: 22px;
+  font-size: var(--font-size-h8);
   font-weight: 600;
   color: #000000;
   margin: 0;
@@ -93,7 +93,7 @@
 
 .carousel-slide-subtitle {
   text-align: left;
-  font-size: 15px;
+  font-size: var(--font-size-body-small-2);
   font-weight: 300;
   color: #1A1A1ABF;
   margin: 0;
@@ -108,7 +108,7 @@
   border: 1px solid #2E3D58;
   color: #FFFFFF;
   border: none;
-  font-size: 13px;
+  font-size: var(--font-size-body-xs);
   font-weight: 700;
   cursor: pointer;
   font-family: 'Geist', sans-serif;
@@ -132,7 +132,7 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.9);
   color: #333;
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -192,13 +192,13 @@
   }
 
   .carousel-slide {
-    font-size: 28px;
+    font-size: var(--font-size-h5);
   }
 
   .carousel-btn {
     width: 40px;
     height: 40px;
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
   }
 
   .carousel-btn-prev {

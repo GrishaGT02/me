@@ -11,6 +11,9 @@ import Zapis from './Components/Zapis/Zapis';
 import Fich1 from './Components/Fich1/Fich1';
 import Otzov from './Components/Otzov/Otzov';
 import Konsultacia from './Components/Konsultacia/Konsultacia';
+import Stoimost from './Components/Stoimost/Stoimost';
+import WhyChooseUs from './Components/WhyChooseUs/WhyChooseUs';
+import Smiles from './Components/Smiles/Smiles';
 import Kvis from './Components/Kvis/Kvis';
 import Footer from './Components/Footer/Footer';
 import Modal from './Components/Modal/Modal';
@@ -26,6 +29,10 @@ function App() {
         <Carousel />
         <Skils />
         <TreatmentWarning />
+        <Konsultacia />
+        <WhyChooseUs />
+        <Stoimost />
+        <Smiles />
         <Usluga />
         <Modal />
         <Zayavka />
@@ -33,7 +40,6 @@ function App() {
         <Zapis />
         <Fich1 />
         <Otzov />
-        <Konsultacia />
         <Kvis />
         <Footer />
     </div>

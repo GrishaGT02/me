@@ -261,6 +261,7 @@ const Header = () => {
                                 </svg>
                             </div>
                         </div>
+                        <div className="header-center-divider"></div>
                     </div>
                 
                 <div className="header_nuv-right">

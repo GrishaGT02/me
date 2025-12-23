@@ -8,12 +8,12 @@
 .header-center-card {
     position: absolute;
     top: 10%;
-    left: 80%;
+    left: 86%;
     width: 100%;
     max-width: 380px;
     background: #EBEBEB;
     border-radius: 20px;
-    padding: 5px 25px;
+    padding: 10px 25px 20px 25px;
     z-index: 10;
     /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 }
@@ -22,7 +22,7 @@
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    padding: 15px 0;
+    padding: 10px 0;
     cursor: pointer;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .header-center-title {
-    font-size: 19px;
+    font-size: var(--font-size-body);
     font-weight: 500;
     color: #000000;
     font-family: 'Geist', sans-serif;
@@ -49,7 +49,7 @@
 }
 
 .header-center-description {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
     font-weight: 300;
     color: #1A1A1ABF;
     font-family: 'Geist', sans-serif;
@@ -63,9 +63,11 @@
 }
 
 .header-center-divider {
-    height: 0.5px;
-    background: #1A1A1ABF;
+    height: 1px;
+    background: #1a1a1a59;
     margin: 0;
+    transform: scaleY(0.5);
+    transform-origin: center;
 }
 
 .header-container {
@@ -93,7 +95,7 @@
 
 .header-clinic-text {
     text-align: left;
-    font-size: 18px;
+    font-size: var(--font);
     color: #1A1A1ABF;
     font-weight: 300;
     /* white-space: nowrap; */
@@ -125,7 +127,7 @@
 
 .header-metro-text {
     text-align: left;
-    font-size: 18px;
+    font-size: var(--font-size-body);
     font-weight: 500;
     color: #000000;
     line-height: 1.2;
@@ -133,7 +135,7 @@
 
 .header-street {
     text-align: left;
-    font-size: 14px;
+    font-size: var(--font-size-body-xxs);
     font-weight: 300;
     color: #1A1A1ABF;
     line-height: 1.2;
@@ -158,7 +160,7 @@
 }*/
 
 .header-calculator-btn span {
-    font-size: 16px;
+    font-size: var(--font-size-button);
     color: #000000;
     font-weight: 500;
     line-height: 18px;
@@ -173,7 +175,7 @@
 .header-contact-wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 5px;
     flex-shrink: 0;
 }
 
@@ -202,6 +204,7 @@
     background: #EBEBEB;
     border-radius: 50px;
     flex-shrink: 0;
+    margin-right: 5px;
 }
 
 .header-phone-info {
@@ -219,7 +222,7 @@
 }
 
 .header-phone-hours {
-    font-size: 12px;
+    font-size: var(--font-size-body-xxs);
     color: #1A1A1ABF;
     line-height: 100%;
     text-align: right;
@@ -255,7 +258,7 @@
 }
 
 .header-menu-btn span {
-    font-size: 18px;
+    font-size: var(--font-size-body);
     color: #FFFFFF;
     font-weight: 500;
 }
@@ -288,7 +291,7 @@
 .header_nuv-left-text {
     width: 730px;
     font-weight: 600;
-    font-size: 50px;
+    font-size: var(--font-size-h1);
     line-height: 60px;
     color: #000000;
     text-align: left;
@@ -305,7 +308,7 @@
 .header_nuv-left-text-description {
     width: 580px;
     font-weight: 300;
-    font-size: 22px;
+    font-size: var(--font-size-h8);
     line-height: 33px;
     text-align: left;
     color: #1A1A1ABF;
@@ -324,7 +327,7 @@
     border-radius: 50px;
     font-weight: 600;
     border: none;
-    font-size: 12px;
+    font-size: var(--font-size-body-xxs);
     font-weight: 500;
     line-height: 19px;
     cursor: pointer;
@@ -340,7 +343,7 @@
     border-radius: 50px;
     border: 1px solid #2E3D58;
     font-weight: 700;
-    font-size: 13px;
+    font-size: var(--font-size-button);
     line-height: 17px;
     /* border: none; */
     /* font-size: 16px; */
@@ -454,7 +457,7 @@
 }
 
 .header_nuv-about-text {
-    font-size: 20px;
+    font-size: var(--font-size-body);
     font-weight: 300;
     color: #1A1A1ABF;
     font-family: 'Geist', sans-serif;
@@ -475,7 +478,7 @@
 }
 
 .header_nuv-ratings-counter {
-    font-size: 16px;
+    font-size: var(--font-size-body);
     font-weight: 400;
     color: #000000;
     font-family: 'Geist', sans-serif;
@@ -531,20 +534,21 @@
     padding: 12px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 8px;
 }
 
 .header_nuv-rating-icon {
-    width: 100%;
+    width: auto;
     height: 21px;
     object-fit: contain;
     flex-shrink: 0;
+    align-self: flex-start;
 }
 
 .header_nuv-rating-logo-text {
-    font-size: 20px;
+    font-size: var(--font-size-h9);
     font-weight: 700;
     color: #2E3D58;
     font-family: 'Geist', sans-serif;
@@ -556,12 +560,12 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 }
 
 .header_nuv-rating-title {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
     font-weight: 600;
     color: #000000;
     font-family: 'Geist', sans-serif;
@@ -576,7 +580,7 @@
 }
 
 .header_nuv-rating-value {
-    font-size: 14px;
+    font-size: var(--font);
     font-weight: 700;
     color: #000000;
     font-family: 'Geist', sans-serif;
@@ -606,7 +610,9 @@
 
 .header_nuv-doctor-image {
     width: 100%;
-    height: 911px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
     border-radius: 20px;
     overflow: hidden;
     flex-shrink: 0;
@@ -614,9 +620,12 @@
 
 .header_nuv-doctor-image img {
     width: 100%;
+    max-width: 100%;
     height: 100%;
-    object-fit: cover;
+    max-height: 911px;
     display: block;
+    object-fit: cover;
+    object-position: center 30%;
 }
 
 .header_nuv-carousel-wrapper {
@@ -691,14 +700,14 @@
 .header_nuv-carousel-dots {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 5px;
     position: relative;
     z-index: 2;
 }
 
 .header_nuv-carousel-dot {
-    width: 8px;
-    height: 8px;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
     border: none;
     background: rgba(0, 0, 0, 0.3);
@@ -710,367 +719,1001 @@
 }
 
 .header_nuv-carousel-dot.active {
-    background: #485B85;
+    background: #000000;
     /* /* width: 10px; */
     height: 10px; 
     /* box-shadow: 0 0 8px rgba(72, 91, 133, 0.5); */
 }
 
-@media (max-width: 1750px) {
-    .header-clinic-text {
-        font-size: 12px;
-    }
-    .header-calculator-btn {
-        padding: 15px 10px 15px 5px;
-    }
-    .header_nuv-left-text {
-        font-size: 30px;
-        width: 500px;
-    }
-    .header_nuv-left-text-description {
-        font-size: 18px;
-        width: 400px;
-    }
-    .header_nuv-carousel-wrapper {
-        gap: 10px;
-    }
-}
-
-@media (max-width: 1650px) {
-    .header_nuv-carousel {
-        width: 500px;
-    }
-    
-    .header_nuv-ratings {
-        gap: 8px;
-        margin-top: 40px;
-    }
-    
-    .header_nuv-rating-card {
-        width: 130px;
-        height: 50px;
-        padding: 8px;
-        gap: 6px;
-    }
-    
-    .header_nuv-rating-icon {
-        height: 16px;
-    }
-    
-    .header_nuv-rating-logo-text {
-        font-size: 16px;
-    }
-    
-    .header_nuv-rating-value {
-        font-size: 12px;
-    }
-    
-    .header_nuv-rating-stars svg {
-        width: 14px;
-        height: 13px;
-    }
-    
-    .header_nuv-ratings-nav {
-        gap: 8px;
-        margin-left: 15px;
-    }
-    
-    .header_nuv-ratings-counter {
-        font-size: 14px;
-        min-width: 35px;
-    }
-    
-    .header_nuv-nav-btn {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .header_nuv-nav-progress {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .header_nuv-nav-arrow {
-        width: 8px;
-        height: 12px;
-    }
-    
-    .header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
-        width: 8px;
-        height: 12px;
-    }
-}
-
-@media (max-width: 1600px) {
-    .header-calculator-btn span {
-        font-size: 12px;
-    }
-    .header-metro-text {
-        font-size: 12px;
-    }
-    .header-street {
-        font-size: 12px;
-    }
+@media (max-width: 1520px) {
+    /* Логотип */
     .header-logo img {
-        width: 80px;
-        height: 30px;
+        height: 36px;
+        width: 115px;
     }
-}
 
-@media (max-width: 1420px) {
-    .header-phone-number {
-        font-size: 12px;
+    /* Иконка метро */
+    .header-metro-icon img {
+        width: 19px;
+        height: 23px;
     }
-    .header-menu-btn span {
-        font-size: 12px;
+
+    /* Телефон и иконка внутри */
+    .header-phone-icon {
+        width: 44px;
+        height: 44px;
     }
-    .header-menu-icons svg{
-        width: 20px;
+
+    .header-phone-icon svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    /* Кнопка калькулятора */
+    .header-calculator-btn {
+        padding: 16px 35px 16px 21px;
+    }
+
+    .header-contact-block {
+        padding: 4px 4.5px 4px 7px;
+    }
+
+    .header_nuv-left-text {
+        width: 600px;
+    }
+
+    .header_nuv-left-text-description {
+        width: 450px;
+    }
+
+    /* Кнопка ПОДРОБНЕЕ (второстепенная) */
+    .header_nuv-btn {
+        padding: 22px 32px;
+    }
+
+    /* Иконка кнопки записи на приём */
+    .header_nuv-btn-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .header_nuv-btn-1 {
+        padding: 5px 5px 5px 24px;
+        gap: 24px;
+    }
+
+    .header_nuv-btn-icon svg {
+        width: 11px;
+        height: 9px;
+    }
+
+    .header_nuv-btn-1::after {
+        width: 48px;
+        height: 48px;
+    }
+
+    /* Анимация SVG стрелки - уменьшенное движение */
+    .header_nuv-btn-1:hover .header_nuv-btn-icon svg {
+        transform: translateX(-180px) rotate(40deg);
+    }
+
+    .header_nuv-btn-primary:hover span {
+        transform: translateX(60px);
+    }
+
+    /* Анимация расширяющегося круга - уменьшенный размер */
+    .header_nuv-btn-1:hover::after {
+        width: 640px;
+        height: 640px;
+        right: -320px;
+    }
+
+    /* Иконка зуба и круг */
+    .header_nuv-tooth-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .header_nuv-tooth-icon svg {
+        width: 11px;
         height: 10px;
     }
-    .header-container {
-        gap: 10px
-    }
-}
 
-@media (max-width: 1400px) {
     .header-center-card {
-        max-width: 320px;
-        padding: 4px 20px;
-        border-radius: 16px;
+        padding: 5px 18px 10px 18px;
     }
-    
-    .header-center-item {
-        gap: 12px;
-        padding: 12px 0;
+
+    /* Слайдер  */
+    .header_nuv-carousel {
+        max-width: 593px;
     }
-    
-    .header-center-icon {
-        margin-top: 3px;
+
+    /* Карточки рейтингов */
+    .header_nuv-rating-card {
+        width: 100%;
+        /* height: 17px; */
+        padding: 6px;
+        gap: 4px;
     }
-    
-    .header-center-icon svg {
-        width: 11px;
-        height: 11px;
-    }
-    
-    .header-center-title {
-        font-size: 16px;
-        margin-bottom: 3px;
-    }
-    
-    .header-center-description {
-        font-size: 12px;
-        line-height: 1.3;
-    }
-    
-    .header-center-arrow {
-        margin-top: 8px;
-    }
-    
-    .header-center-arrow svg {
-        width: 15px;
+
+    /* .header_nuv-rating-icon {
         height: 14px;
+    } */
+
+    .header_nuv-rating-stars svg {
+        width: 13px;
+        height: 13px;
+    }
+
+    /* Кнопки навигации слайдера */
+    .header_nuv-nav-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .header_nuv-nav-progress {
+        width: 48px;
+        height: 48px;
+    }
+
+    .header-phone-number {
+        font-size: 18px;
+    }
+
+    .header-avatar {
+        width: 40px;
+        height: 40px;
     }
 }
 
-@media (max-width: 1350px) {
-    .header-center-card {
-        top: 8%;
+@media (max-width: 1367px) {
+    .header-logo img {
+        height: 33px;
+        width: 104px;
     }
-    .header_nuv {
-        padding: 40px 10px 0 10px;
+
+    /* Логотип (буква М возле "2 мин") */
+    .header-metro-icon img {
+        width: 17px;
+        height: 21px;
     }
-    .header-container {
-        padding: 0 10px;
+
+    /* Стрелка возле калькулятора */
+    .header-calculator-btn svg {
+        width: 11px;
+        height: 10px;
+    }
+
+    /* Паддинги для кнопки калькулятора */
+    .header-calculator-btn {
+        padding: 14px 20px 14px 18px;
+    }
+
+    /* Кнопка телефона */
+    .header-phone-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-phone-icon svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    /* Кнопка меню */
+    .header-menu-btn {
+        padding: 14px 25px 14px 25px;
+    }
+
+    .header-menu-icons svg {
+        width: 26px;
+        height: 13px;
+    }
+
+    .header-phone-number {
+        font-size: 16px;
+    }
+
+    .header-avatar {
+        width: 36px;
+        height: 36px;
     }
 
     .header-menu-btn {
-        padding: 16px 15px;
+        padding: 14px 20px 14px 20px;
+    }
+
+    .header-contact-block {
+        gap: 10px;
+        padding: 4px 4.5px 4px 15px;
+    }
+
+    .header_nuv-left-text {
+        width: 500px;
+    }
+
+    .header_nuv-left-text span {
+        text-underline-offset: 4px;
+    }
+
+    .header_nuv-left-text-description {
+        width: 410px;
+        margin-top: 11px;
+    }
+
+    .header_nuv-btn {
+        padding: 20px 28px;
+    }
+
+    /* Иконка кнопки записи на приём */
+    .header_nuv-btn-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .header_nuv-btn-icon svg {
+        width: 10px;
+        height: 8px;
+    }
+
+    .header_nuv-btn-1::after {
+        width: 43px;
+        height: 43px;
+    }
+
+    .header_nuv-left-about {
+        margin-top: 35px;
+    }
+
+    /* Слайдер */
+    .header_nuv-carousel {
+        max-width: 530px;
+    }
+
+    /* Точки навигации слайдера */
+    .header_nuv-carousel-dot {
+        width: 4px;
+        height: 4px;
+    }
+
+    .header_nuv-carousel-dot.active {
+        height: 8px;
+    }
+
+    .header_nuv-carousel-line {
+        width: 6px;
+    }
+
+    .header_nuv-carousel-dots {
+        gap: 4px;
+    }
+
+    .header_nuv-carousel-wrapper {
+        gap: 21px;
     }
 
     .header_nuv-ratings {
-        gap: 6px;
-        margin-top: 30px;
+        margin-top: 14px;
     }
-    
+
+    /* Карточки рейтингов */
     .header_nuv-rating-card {
-        width: 110px;
-        height: 42px;
-        padding: 6px;
-        gap: 4px;
-        border-radius: 10px;
+        width: 108px;
+        height: 47px;
+        padding: 10px;
+        gap: 3px;
     }
-    
+
     .header_nuv-rating-icon {
-        height: 14px;
+        height: 12px;
     }
-    
-    .header_nuv-rating-logo-text {
-        font-size: 14px;
-    }
-    
-    .header_nuv-rating-value {
-        font-size: 11px;
-    }
-    
+
     .header_nuv-rating-stars svg {
         width: 12px;
+        height: 12px;
+    }
+
+    /* Кнопки навигации слайдера */
+    .header_nuv-nav-btn {
+        width: 47.5px;
+        height: 47.5px;
+    }
+
+    .header_nuv-nav-progress {
+        width: 47.5px;
+        height: 47.5px;
+    }
+
+    .header_nuv-nav-arrow {
+        width: 4.75px;
+        height: 9.5px;
+    }
+
+    /* Левая стрелка навигации */
+    .header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
+        width: 4.75px;
+        height: 9.5px;
+    }
+
+    .header-center-item {
+        gap: 10px;
+    }
+
+    /* .header_nuv-ratings-nav {
+        margin-left: 10px;
+    } */
+
+    .header_nuv-rating-stars {
+        gap: 1px;
+    }
+
+    .header-center-card {
+        width: 300px;
+        left: 92%;
+    }
+
+    /* SVG в карточке */
+    .header-center-icon svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .header-center-arrow svg {
+        width: 15px;
+        height: 12px;
+    }
+
+    /* Фото врача */
+    .header_nuv-doctor-image img {
+        max-height: 851px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-clinic-text {
+        display: none;
+    }
+
+    /* Логотип */
+    .header-logo img {
+        height: 30px;
+        width: 95px;
+    }
+
+    /* Логотип (буква М возле "2 мин") */
+    .header-metro-icon img {
+        width: 15px;
+        height: 18px;
+    }
+
+    /* Стрелка возле калькулятора */
+    .header-calculator-btn svg {
+        width: 7px;
+        height: 6px;
+    }
+
+    /* Паддинги для кнопки калькулятора */
+    .header-calculator-btn {
+        padding: 12px 16px 12px 16px;
+    }
+
+    /* Кнопка телефона */
+    .header-phone-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .header-phone-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Кнопка меню */
+    .header-menu-btn {
+        padding: 12px 18px 12px 18px;
+        gap: 6px;
+    }
+
+    .header-menu-icons svg {
+        width: 24px;
+        height: 12px;
+    }
+
+    .header-phone-number {
+        font-size: 15px;
+    }
+
+    .header-avatar {
+        width: 31px;
+        height: 31px;
+    }
+
+    .header-contact-block {
+        gap: 8px;
+        padding: 3px 3px 3px 15px;
+    }
+
+    .header_nuv-left-text {
+        width: 450px;
+    }
+
+    .header_nuv-left-text span {
+        text-underline-offset: 3px;
+    }
+
+    .header_nuv-left-text-description {
+        width: 380px;
+        margin-top: 10px;
+    }
+
+    .header_nuv-btn {
+        padding: 18px 24px;
+    }
+
+    /* Иконка кнопки записи на приём */
+    .header_nuv-btn-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .header_nuv-btn-icon svg {
+        width: 9px;
+        height: 7px;
+    }
+
+    .header_nuv-btn-1::after {
+        width: 38px;
+        height: 38px;
+    }
+
+    .header_nuv-btn-1 {
+        padding: 4px 4px 4px 20px;
+        gap: 20px;
+    }
+
+    /* Анимация SVG стрелки */
+    .header_nuv-btn-1:hover .header_nuv-btn-icon svg {
+        transform: translateX(-150px) rotate(40deg);
+    }
+
+    .header_nuv-btn-primary:hover span {
+        transform: translateX(50px);
+    }
+
+    /* Анимация расширяющегося круга */
+    .header_nuv-btn-1:hover::after {
+        width: 560px;
+        height: 560px;
+        right: -280px;
+    }
+
+    .header_nuv-left-about {
+        margin-top: 30px;
+    }
+
+    /* Слайдер */
+    .header_nuv-carousel {
+        max-width: 468.75px;
+        max-height: 200px;
+    }
+
+    /* Точки навигации слайдера */
+    .header_nuv-carousel-dot {
+        width: 3.5px;
+        height: 3.5px;
+    }
+
+    .header_nuv-carousel-dot.active {
+        height: 7px;
+    }
+
+    .header_nuv-carousel-line {
+        width: 5px;
+    }
+
+    .header_nuv-carousel-dots {
+        gap: 3px;
+    }
+
+    .header_nuv-carousel-wrapper {
+        gap: 18px;
+    }
+
+    .header_nuv-ratings {
+        margin-top: 12px;
+    }
+
+    /* Карточки рейтингов */
+    .header_nuv-rating-card {
+        width: 100px;
+        height: 37.5px;
+        padding: 8px;
+        gap: 2px;
+    }
+
+    .header_nuv-rating-icon {
         height: 11px;
     }
-    
+
+    .header_nuv-rating-stars svg {
+        width: 10.78px;
+        height: 10.44px;
+    }
+
+    /* Кнопки навигации слайдера */
+    .header_nuv-nav-btn {
+        width: 37.5px;
+        height: 37.5px;
+    }
+
+    .header_nuv-nav-progress {
+        width: 37.5px;
+        height: 37.5px;
+    }
+
+    .header_nuv-nav-arrow {
+        width: 4px;
+        height: 8px;
+    }
+
+    /* Левая стрелка навигации */
+    .header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
+        width: 4px;
+        height: 8px;
+    }
+
+    .header-center-item {
+        gap: 8px;
+    }
+
     .header_nuv-rating-stars {
-        gap: 3px;
+        gap: 1px;
+    }
+
+    .header-center-card {
+        width: 280px;
+        left: 90%;
+        padding: 8px 15px 15px 15px;
+    }
+
+    .header-center-item {
+        gap: 8px;
+    }
+
+    /* SVG в карточке */
+    .header-center-icon svg {
+        width: 9px;
+        height: 9px;
+    }
+
+    .header-center-arrow svg {
+        width: 13px;
+        height: 11px;
+    }
+
+    /* Фото врача */
+    .header_nuv-doctor-image img {
+        max-height: 750px;
+    }
+
+    .header_nuv-left-text {
+        line-height: 45px;
+    }
+
+    .header_nuv-left-text-description {
+        width: 420px;
+        line-height: 22px;
+    }
+    /* Фото врача */
+    .header_nuv-doctor-image img {
+        max-height: 620px;
+    }
+
+    /* Иконка зуба и круг */
+    .header_nuv-tooth-icon {
+        width: 18.75px;
+        height: 18.75px;
+    }
+
+    .header_nuv-tooth-icon svg {
+        width: 8.75px;
+        height: 8.24px;
+    }
+
+    .header_nuv-left-about {
+        margin-top: 42px;
+    }
+
+    .header_nuv-left-buttons {
+        margin-top: 19px;
+    }
+
+    .header_nuv-ratings-nav {
+        gap: 10px;
+    }
+
+    .header-center-item {
+        padding: 5px 0;
+    }
+
+    .header_nuv-btn-1:hover .header_nuv-btn-icon svg {
+        transform: translateX(-180px) rotate(40deg);
+    }
+
+    .header_nuv-btn-primary:hover span {
+        transform: translateX(50px);
+    }
+}
+
+@media (max-width: 1025px) {
+    .header-container {
+        padding: 0 25px;
+    }
+
+    .header-location {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .header-metro-icon {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .header-metro-icon img {
+        margin-bottom: 0;
+    }
+
+    .header-address {
+        display: contents;
+    }
+
+    .header-metro-text {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        order: 2;
+    }
+
+    .header-street {
+        order: 3;
+        width: 100%;
+    }
+
+    /* Создаем обертку для иконки и верхнего текста */
+    .header-location {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 5px;
+        align-items: start;
+    }
+
+    .header-metro-icon {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .header-metro-text {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .header-street {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .header-clinic-text {
+        display: none;
+    }
+
+    /* Логотип */
+    .header-logo img {
+        height: 30px;
+        width: 95px;
+    }
+
+    /* Логотип (буква М возле "2 мин") */
+    .header-metro-icon img {
+        width: 12.59px;
+        height: 15.21px;
+    }
+
+    /* Стрелка возле калькулятора */
+    /* .header-calculator-btn svg {
+        width: 6px;
+        height: 5px;
+    } */
+
+    /* Паддинги для кнопки калькулятора */
+    .header-calculator-btn {
+        gap: 11px;
+        padding: 10px 14px 10px 14px;
+    }
+
+    /* Кнопка телефона */
+    .header-phone-icon {
+        width: 29.36px;
+        height: 29.36px;
+    }
+
+    .header-phone-icon svg {
+        width: 11.74px;
+        height: 11.74px;
+    }
+
+    /* Кнопка меню */
+    .header-menu-btn {
+        padding: 10px 16px 10px 16px;
+        gap: 5px;
+    }
+
+    .header-menu-icons svg {
+        width: 16.02px;
+        height: 8.01px;
+    }
+
+    .header-phone-hours {
+        margin-top: 3px;
+    }
+
+    .header-contact-block {
+        gap: 14px;
+    }
+
+    .header-phone-number {
+        font-size: 13px;
+    }
+
+    .header_nuv-left-text {
+        width: 400px;
+        line-height: 40px;
+    }
+
+    .header_nuv-left-text-description {
+        width: 380px;
+        margin-top: 8px;
+    }
+
+    .header_nuv-btn {
+        padding: 11px 21px;
+    }
+
+    /* Иконка кнопки записи на приём */
+    .header_nuv-btn-icon {
+        width: 32.03px;
+        height: 32.03px;
+    }
+
+    .header_nuv-btn-1::after {
+        width: 32.03px;
+        height: 32.03px;
+    }
+
+    .header_nuv-btn-1 {
+        padding: 3.5px 3.5px 3.5px 16px;
+    }
+
+    .header_nuv-left-buttons {
+        margin-top: 16px;
+        gap: 8px;
+    }
+
+    /* Слайдер */
+    .header_nuv-carousel {
+        max-width: 400px;
+        max-height: 160px;
+    }
+
+    /* Точки навигации слайдера */
+    .header_nuv-carousel-dot {
+        width: 3px;
+        height: 3px;
+    }
+
+    .header_nuv-carousel-dot.active {
+        height: 6px;
+    }
+
+    .header_nuv-carousel-line {
+        width: 4px;
+    }
+
+    .header_nuv-carousel-dots {
+        gap: 2.5px;
+    }
+
+    .header_nuv-carousel-wrapper {
+        gap: 15px;
+    }
+
+    .header_nuv-ratings {
+        margin-top: 10px;
+    }
+
+    /* Кнопки навигации слайдера */
+    .header_nuv-nav-btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    .header_nuv-nav-progress {
+        width: 34px;
+        height: 34px;
+    }
+
+    .header_nuv-nav-arrow {
+        width: 3.5px;
+        height: 7px;
+    }
+
+    /* Левая стрелка навигации */
+    .header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
+        width: 3.5px;
+        height: 7px;
+    }
+
+    /* Карточки рейтингов */
+    .header_nuv-rating-card {
+        width: 88px;
+        height: 38px;
+        /* padding: 6px; */
+        gap: 2px;
+    }
+
+    .header_nuv-ratings {
+        gap: 5px;
     }
     
     .header_nuv-ratings-nav {
-        gap: 6px;
-        margin-left: 12px;
+        gap: 8px;
+        margin-left: 10px;
     }
-    
-    .header_nuv-ratings-counter {
-        font-size: 12px;
-        min-width: 30px;
+
+    .header_nuv-rating-icon {
+        height: 11px;
     }
-    
-    .header_nuv-nav-btn {
-        width: 42px;
-        height: 42px;
+
+    .header_nuv-rating-stars svg {
+        width: 9.21px;
+        height: 8.92px;
     }
-    
-    .header_nuv-nav-progress {
-        width: 42px;
-        height: 42px;
+
+    .header_nuv-rating-stars {
+        gap: 1px;
     }
-    
-    .header_nuv-nav-arrow {
-        width: 7px;
-        height: 10px;
+
+    .header_nuv-doctor-image img {
+        max-height: 540px;
     }
-    
-    .header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
-        width: 7px;
-        height: 10px;
+
+    .header-center-card {
+        top: 7%;
+        left: 95%;
+        padding: 5px 12px 12px 12px;
     }
 }
 
-/* @media (max-width: 1750px) {
-    .header-clinic-info {
-        display: none;
-    }
-}
-
-@media (max-width: 1500px) {
-    .header-center-block {
-        display: none;
-    }
-}
-
-@media (max-width: 1450px) {
-    .header-calculator-btn {
-        display: none;
-    }
-}
-
-@media (max-width: 1200px) {
-    .header_nuv > div:last-child {
-        display: none;
-    }
-    
-    .header_nuv {
-        gap: 0;
-        flex-direction: column;
-    }
-    
-    .header_nuv-left {
-        width: 100%;
-    }
-    
-    .header_nuv-left-text {
-        width: 100%;
-    }
-    
-    .header_nuv-left-text-description {
-        width: 100%;
-    }
-    
-    .header_nuv-right {
-        width: 100%;
-        margin-top: 30px;
-    }
-    
-    .header_nuv-ratings {
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-
-@media (max-width: 1400px) {
-    .header-container {
-        padding: 0 50px;
-        gap: 20px;
-    }
-    
-    .header-clinic-text {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .header-container {
-        padding: 0 30px;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 880px) {
     .header-location {
         display: none;
     }
-}
 
-@media (max-width: 780px) {
-    .header_nuv-rating-card {
-        display: none;
-    }
-}
-
-@media (max-width: 750px) {
-    .header-phone-icon {
-        display: none;
-    }
-}
-
-@media (max-width: 650px) {
-    .header-contact-block {
-        display: none;
-    }
-}
-
-@media (max-width: 500px) {
-    .header_nuv-right {
-        display: none;
-    }
-    
-    .header_nuv-ratings-nav {
-        display: none;
-    }
-    
-    .header_nuv-left-buttons {
-        display: block;
-    }
-    
-    .header_nuv-left-buttons button {
-        margin-bottom: 10px;
-    }
-    
     .header_nuv-left-text {
-        font-size: 36px;
+        width: 300px;
+        line-height: 35px;
     }
-    
+
     .header_nuv-left-text-description {
-        font-size: 18px;
-        line-height: 26px;
+        width: 320px;
+        line-height: 18px;
+        margin-top: 6px;
+    }
+
+    .header_nuv-btn {
+        padding: 11px 18px;
+    }
+
+    .header-center-card {
+        width: 246px;
+        left: 98%;
+        top: -4%;
+    }
+
+    .header_nuv-left-about {
+        margin-top: 15px;
+    }
+
+        /* Слайдер */
+        .header_nuv-carousel {
+            max-width: 340px;
+            max-height: 140px;
+        }
+
+        /* Точки навигации слайдера */
+        .header_nuv-carousel-dot {
+            width: 2px;
+            height: 2px;
+        }
+
+        .header_nuv-carousel-dot.active {
+            height: 5px;
+        }
+
+        .header_nuv-carousel-line {
+            width: 3px;
+        }
+
+        .header_nuv-carousel-dots {
+            gap: 2px;
+        }
+
+        .header_nuv-carousel-wrapper {
+            gap: 12px;
+        }
+
+        .header_nuv-ratings {
+            margin-top: 8px;
+        }
+
+        /* Карточки рейтингов */
+        .header_nuv-rating-card {
+            width: 73px;
+            height: 27px;
+            padding: 4px;
+            gap: 1px;
+        }
+
+        .header_nuv-rating-icon {
+            height: 9px;
+        }
+
+        .header_nuv-rating-stars svg {
+            width: 7px;
+            height: 7px;
+        }
+
+        .header_nuv-rating-stars {
+            gap: 1px;
+        }
+
+        /* Кнопки навигации слайдера */
+        .header_nuv-nav-btn {
+            width: 27px;
+            height: 27px;
+        }
+
+        .header_nuv-nav-progress {
+            width: 27px;
+            height: 27px;
+        }
+
+        .header_nuv-nav-arrow {
+            width: 3px;
+            height: 6px;
+        }
+
+        /* Левая стрелка навигации */
+        .header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
+            width: 3px;
+            height: 6px;
+        }
+
+        .header_nuv-ratings-nav {
+            gap: 6px;
+        }
+    .header_nuv-right {
+        margin-top: 8px;
+    }
+
+    .header_nuv-rating-card {
+        border-radius: 8px;
+    }
+
+    .header_nuv-doctor-image img {
+        max-height: 460px;
     }
 }
- */

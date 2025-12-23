@@ -28,7 +28,7 @@
   right: 20px;
   background: none;
   border: none;
-  font-size: 32px;
+  font-size: var(--font-size-h3);
   color: #2A2A2A;
   cursor: pointer;
   line-height: 1;
@@ -67,7 +67,7 @@
 
 .modal-logo-md {
   color: white;
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   font-weight: 700;
 }
 
@@ -76,7 +76,7 @@
   top: 4px;
   right: 4px;
   color: white;
-  font-size: 12px;
+  font-size: var(--font-size-body-xxs);
   font-weight: 700;
 }
 
@@ -88,20 +88,20 @@
 
 .modal-logo-since {
   text-align: left;
-  font-size: 12px;
+  font-size: var(--font-size-body-xxs);
   color: #999;
   font-weight: 400;
 }
 
 .modal-logo-name {
-  font-size: 24px;
+  font-size: var(--font-size-h7);
   color: #26966e;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 .modal-title {
-  font-size: 32px;
+  font-size: var(--font-size-h3);
   font-weight: 700;
   color: #2A2A2A;
   margin: 0 0 16px 0;
@@ -110,7 +110,7 @@
 }
 
 .modal-description {
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   color: #2A2A2A;
   margin: 0 0 30px 0;
   line-height: 1.5;
@@ -127,7 +127,7 @@
   padding: 14px 16px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   width: 100%;
   box-sizing: border-box;
   transition: all 0.2s ease;
@@ -151,7 +151,7 @@
 }
 
 .modal-phone-format {
-  font-size: 14px;
+  font-size: var(--font-size-body-small);
   color: #999;
   margin-top: -16px;
   padding-left: 16px;
@@ -168,7 +168,7 @@
   background: none;
   border: none;
   padding: 0;
-  font-size: 14px;
+  font-size: var(--font-size-body-small);
   color: #000000;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -190,7 +190,7 @@
   background: none;
   border: none;
   padding: 0;
-  font-size: 14px;
+  font-size: var(--font-size-body-small);
   color: #000000;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -220,7 +220,7 @@
   border: none;
   border-radius: 8px;
   padding: 16px 24px;
-  font-size: 18px;
+  font-size: var(--font-size-body);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -248,7 +248,7 @@
   align-items: flex-start;
   gap: 12px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: var(--font-size-body-xxs);
   color: #2A2A2A;
   line-height: 1.5;
 }
@@ -263,14 +263,14 @@
 }
 
 .modal-checkbox-text {
-  font-size: 14px;
+  font-size: var(--font-size-body-small);
   font-weight: 500;
   text-align: left;
   flex: 1;
 }
 
 .modal-attribution {
-  font-size: 11px;
+  font-size: var(--font-size-body-xxxs);
   color: #999;
   text-align: left;
   margin: 20px 0 0 0;
@@ -283,11 +283,11 @@
   }
 
   .modal-title {
-    font-size: 24px;
+    font-size: var(--font-size-h7);
   }
 
   .modal-logo-name {
-    font-size: 20px;
+    font-size: var(--font-size-h9);
   }
 }
 

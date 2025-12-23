@@ -11,7 +11,7 @@
 }
 
 .usluga-title {
-  font-size: 48px;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   color: #2A2A2A;
   text-align: center;
@@ -89,7 +89,7 @@
   color: white;
   padding: 14px 28px;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 600;
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(38, 150, 110, 0.3);
@@ -97,7 +97,7 @@
 }
 
 .usluga-card.active .usluga-card-label {
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   padding: 18px 36px;
   box-shadow: 0 6px 16px rgba(38, 150, 110, 0.4);
 }
@@ -113,7 +113,7 @@
   }
 
   .usluga-title {
-    font-size: 40px;
+    font-size: var(--font-size-h3-5);
     margin-bottom: 50px;
   }
 
@@ -128,7 +128,7 @@
   }
 
   .usluga-title {
-    font-size: 36px;
+    font-size: var(--font-size-h4-5);
   }
 
   .usluga-cards {
@@ -140,12 +140,12 @@
   }
 
   .usluga-card-label {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
     padding: 12px 20px;
   }
 
   .usluga-card.active .usluga-card-label {
-    font-size: 18px;
+    font-size: var(--font-size-body);
     padding: 16px 28px;
   }
 }
@@ -156,7 +156,7 @@
   }
 
   .usluga-title {
-    font-size: 28px;
+    font-size: var(--font-size-h5);
     margin-bottom: 40px;
   }
 
@@ -169,12 +169,12 @@
   }
 
   .usluga-card-label {
-    font-size: 12px;
+    font-size: var(--font-size-body-xxs);
     padding: 10px 16px;
   }
 
   .usluga-card.active .usluga-card-label {
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
     padding: 14px 24px;
   }
 }

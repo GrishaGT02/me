@@ -1,0 +1,181 @@
+/* ============================================
+   Централизованное управление шрифтами
+   ============================================ */
+
+:root {
+  /* Основные размеры заголовков */
+  --font-size-h1: 50px;           /* Главные заголовки секций */
+  --font-size-h2-5: 42px;          /* Промежуточный размер */
+  --font-size-h3: 32px;            /* Заголовки третьего уровня */
+  --font-size-h3-5: 40px;          /* Промежуточный размер */
+  --font-size-h4: 30px;            /* Заголовки четвертого уровня */
+  --font-size-h4-5: 36px;          /* Промежуточный размер */
+  --font-size-h5: 28px;            /* Заголовки пятого уровня */
+  --font-size-h6: 25px;            /* Заголовки шестого уровня */
+  --font-size-h7: 24px;            /* Малые заголовки */
+  --font-size-h8: 22px;            /* Очень малые заголовки */
+  --font-size-h9: 20px;            /* Минимальные заголовки */
+  --font-size-h9-5: 19px;          /* Промежуточный размер */
+
+  /* Основные размеры текста */
+  --font-size-body: 18px;          /* Обычный текст */
+  --font: 18px; /*для отдельных случаев*/
+  --font-size-body-medium: 16px;   /* Средний текст */
+  --font-size-body-small: 14px;    /* Малый текст */
+  --font-size-body-xs: 13px;      /* Очень малый текст */
+  --font-size-body-xxs: 14px;     /* Минимальный текст */
+  --font-size-body-small-2: 15px; /* Промежуточный малый текст */
+
+  /* Размеры для кнопок */
+  --font-size-button: 13px;       /* Основная кнопка */
+  --font-size-button-secondary: 12px; /* Второстепенная кнопка */
+
+  /* Веса шрифтов */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Высоты строк */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.5;
+  --line-height-loose: 1.6;
+  --line-height-100: 100%;
+  --line-height-120: 120%;
+  --line-height-33: 33px;
+  --line-height-40: 40px;
+  --line-height-60: 60px;
+}
+/* ============================================
+   АДАПТАЦИЯ ДЛЯ РАЗНЫХ ЭКРАНОВ
+   ============================================ */
+
+@media (max-width: 1520px) {
+  :root {
+    --font-size-h1: 40px;
+    --font-size-h3-5: 32px;
+    --font-size-h5: 22px;
+    --font-size-h6: 20px;
+    --font-size-h8: 18px;
+    --font-size-body: 14px;
+    --font-size-body-small: 12px;
+    --font-size-body-xxs: 12px;
+    --font-size-button: 12px;
+    --font-size-button-secondary: 12px;
+    --font-size-h9: 18px;
+    --font: 14px;
+  }
+}
+
+@media (max-width: 1367px) {
+  :root {
+    --font-size-h1: 35px;
+    --font-size-h3-5: 29px;
+    --font-size-h5: 20px;
+    --font-size-h6: 18px;
+    --font-size-h8: 16px;
+    --font-size-body: 14px;
+    --font-size-body-small: 12px;
+    --font-size-body-xxs: 12px;
+    --font-size-button: 12px;
+    --font-size-button-secondary: 12px;
+    --font: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --font-size-h1: 31px;
+    --font-size-h3-5: 25px;
+    --font-size-h5: 17px;
+    --font-size-h6: 16px;
+    --font-size-h8: 15px;
+    --font-size-body: 13px;
+    --font-size-body-small: 12px;
+    --font-size-body-xxs: 12px;
+    --font-size-button: 12px;
+    --font-size-button-secondary: 12px;
+  }
+}
+
+@media (max-width: 1025px) {
+  :root {
+    --font-size-h1: 27px;
+    --font-size-h3-5: 22px;
+    --font-size-h5: 15px;
+    --font-size-h6: 15px;
+    --font-size-h8: 14px;
+    --font-size-body: 13px;
+    --font-size-body-small: 12px;
+    --font-size-body-xxs: 12px;
+    --font-size-button: 12px;
+    --font-size-button-secondary: 12px;
+  }
+}
+
+@media (max-width: 880px) {
+  :root {
+    --font-size-h1: 24px;
+    --font-size-h3-5: 19px;
+    --font-size-h5: 13px;
+    --font-size-h6: 14px;
+    --font-size-h8: 13px;
+    --font-size-body: 12px;
+    --font-size-body-small: 12px;
+    --font-size-body-xxs: 12px;
+    --font-size-button: 12px;
+    --font-size-button-secondary: 12px;
+    --font: 8px;
+  }
+}
+
+/* ============================================
+   УТИЛИТАРНЫЕ КЛАССЫ ДЛЯ БЫСТРОГО ПРИМЕНЕНИЯ
+   ============================================ */
+
+/* Заголовки */
+.text-h1 { font-size: var(--font-size-h1); }
+.text-h2-5 { font-size: var(--font-size-h2-5); }
+.text-h3 { font-size: var(--font-size-h3); }
+.text-h3-5 { font-size: var(--font-size-h3-5); }
+.text-h4 { font-size: var(--font-size-h4); }
+.text-h4-5 { font-size: var(--font-size-h4-5); }
+.text-h5 { font-size: var(--font-size-h5); }
+.text-h6 { font-size: var(--font-size-h6); }
+.text-h7 { font-size: var(--font-size-h7); }
+.text-h8 { font-size: var(--font-size-h8); }
+.text-h9 { font-size: var(--font-size-h9); }
+.text-h9-5 { font-size: var(--font-size-h9-5); }
+
+/* Текст */
+.text-body { font-size: var(--font-size-body); }
+.text-body-medium { font-size: var(--font-size-body-medium); }
+.text-body-small { font-size: var(--font-size-body-small); }
+.text-body-xs { font-size: var(--font-size-body-xs); }
+.text-body-xxs { font-size: var(--font-size-body-xxs); }
+.text-body-small-2 { font-size: var(--font-size-body-small-2); }
+
+/* Кнопки */
+.text-button { font-size: var(--font-size-button); }
+.text-button-secondary { font-size: var(--font-size-button-secondary); }
+
+/* Веса */
+.font-light { font-weight: var(--font-weight-light); }
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* Высоты строк */
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+.leading-loose { line-height: var(--line-height-loose); }
+.leading-100 { line-height: var(--line-height-100); }
+.leading-120 { line-height: var(--line-height-120); }
+.leading-33 { line-height: var(--line-height-33); }
+.leading-40 { line-height: var(--line-height-40); }
+.leading-60 { line-height: var(--line-height-60); }
+

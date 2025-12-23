@@ -47,7 +47,7 @@
 
 .skils-title {
   width: 800px;
-  font-size: 50px;
+  font-size: var(--font-size-h1);
   font-weight: 600;
   color: #000000;
   line-height: 60px;
@@ -65,7 +65,7 @@
 
 .skils-subtitle {
   width: 560px;
-  font-size: 18px;
+  font-size: var(--font-size-body);
   font-weight: 300;
   color: #1A1A1ABF;
   line-height: 1.5;
@@ -131,7 +131,7 @@
 }
 
 .skils-fear-title {
-  font-size: 25px;
+  font-size: var(--font-size-h6);
   font-weight: 500;
   color: #2E3D58;
   margin: 0 0 10px 0;
@@ -140,7 +140,7 @@
 }
 
 .skils-fear-description {
-  font-size: 22px;
+  font-size: var(--font-size-h8);
   font-weight: 300;
   color: #1A1A1ABF;
   margin: 0;
@@ -202,7 +202,7 @@
 }
 
 .skils-info-card-text {
-  font-size: 30px;
+  font-size: var(--font-size-h4);
   font-weight: 700;
   color: #2E3D58;
   margin: 0 0 10px 0;
@@ -211,7 +211,7 @@
 }
 
 .skils-info-card-subtext {
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 300;
   color: #1A1A1ABF;
   margin: 0;
@@ -255,20 +255,20 @@
   }
 
   .skils-title {
-    font-size: 42px;
+    font-size: var(--font-size-h2-5);
     line-height: 50px;
   }
 
   .skils-subtitle {
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
   }
 
   .skils-fear-title {
-    font-size: 18px;
+    font-size: var(--font-size-body);
   }
 
   .skils-fear-description {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
   }
 }
 
@@ -310,12 +310,12 @@
   }
 
   .skils-title {
-    font-size: 36px;
+    font-size: var(--font-size-h4-5);
     line-height: 44px;
   }
 
   .skils-subtitle {
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
   }
 
   .skils-info-card {
@@ -337,12 +337,12 @@
   }
 
   .skils-title {
-    font-size: 28px;
+    font-size: var(--font-size-h5);
     line-height: 36px;
   }
 
   .skils-subtitle {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
   }
 
   .skils-fear-icon {
@@ -351,11 +351,11 @@
   }
 
   .skils-fear-title {
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
   }
 
   .skils-fear-description {
-    font-size: 13px;
+    font-size: var(--font-size-body-xs);
   }
 
   .skils-top-header {
@@ -364,12 +364,12 @@
   }
 
   .skils-title {
-    font-size: 28px;
+    font-size: var(--font-size-h5);
     line-height: 36px;
   }
 
   .skils-subtitle {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
   }
 
   .skils-right {

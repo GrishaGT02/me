@@ -15,7 +15,7 @@
 }
 
 .googing-title {
-    font-size: 50px;
+    font-size: var(--font-size-h1);
     font-weight: 600;
     line-height: 60px;
     color: #000000;
@@ -33,7 +33,7 @@
 }
 
 .googing-description {
-    font-size: 25px;
+    font-size: var(--font-size-h6);
     font-weight: 300;
     line-height: 33px;
     color: #1A1A1ABF;
@@ -85,7 +85,7 @@
 }
 
 .googing-doctor-name {
-    font-size: 18px;
+    font-size: var(--font-size-body);
     text-align: left;
     font-weight: 700;
     color: #000000;
@@ -93,7 +93,7 @@
 }
 
 .googing-doctor-title {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
     font-weight: 400;
     text-align: left;
     color: #666666;
@@ -134,7 +134,7 @@
 .googing-form-title {
     width: 550px;
     margin: 0;
-    font-size: 32px;
+    font-size: var(--font-size-h3);
     font-weight: 600;
     line-height: 45px;
     color: #000000;
@@ -150,7 +150,7 @@
 }
 
 .googing-form-description {
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
     margin: 0;
     font-weight: 400;
     line-height: 24px;
@@ -173,7 +173,7 @@
     border-radius: 50px;
     font-weight: 600;
     border: none;
-    font-size: 12px;
+    font-size: var(--font-size-body-xxs);
     font-weight: 500;
     line-height: 19px;
     cursor: pointer;
@@ -193,7 +193,7 @@
     border-radius: 50px;
     border: 1px solid #2E3D58;
     font-weight: 700;
-    font-size: 13px;
+    font-size: var(--font-size-body-xs);
     line-height: 17px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -308,7 +308,7 @@
 }
 
 .googing-form-checkbox label {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
     font-weight: 400;
     color: #666666;
     font-family: 'Geist', sans-serif;
@@ -316,7 +316,7 @@
 }
 
 .googing-form-disclaimer {
-    font-size: 14px;
+    font-size: var(--font-size-body-small);
     font-weight: 400;
     color: #1A1A1ABF;
     font-family: 'Geist', sans-serif;
@@ -360,60 +360,60 @@
     
     .googing-form-title {
         width: 100%;
-        font-size: 28px;
+        font-size: var(--font-size-h5);
         line-height: 38px;
     }
     
     .googing-title {
         line-height: 50px;
-        font-size: 40px;
+        font-size: var(--font-size-h3-5);
     }
     
     .googing-description {
-        font-size: 20px;
+        font-size: var(--font-size-h9);
         line-height: 28px;
     }
 }
 
 @media (max-width: 768px) {
     .googing-title {
-        font-size: 32px;
+        font-size: var(--font-size-h3-5);
     }
     
     .googing-description {
-        font-size: 18px;
+        font-size: var(--font-size-body);
         line-height: 26px;
     }
     
     .googing-form-title {
-        font-size: 24px;
+        font-size: var(--font-size-h7);
         line-height: 32px;
     }
     
     .googing-form-description {
         width: 100%;
-        font-size: 14px;
+        font-size: var(--font-size-body-small);
         line-height: 20px;
     }
 }
 
 @media (max-width: 500px) {
     .googing-title {
-        font-size: 28px;
+        font-size: var(--font-size-h5);
     }
     
     .googing-description {
-        font-size: 16px;
+        font-size: var(--font-size-body-medium);
         line-height: 24px;
     }
     
     .googing-form-title {
-        font-size: 20px;
+        font-size: var(--font-size-h9);
         line-height: 28px;
     }
     
     .googing-form-description {
-        font-size: 14px;
+        font-size: var(--font-size-body-small);
         line-height: 20px;
     }
 }

@@ -36,7 +36,7 @@
 }
 
 .zapis-title {
-  font-size: 48px;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   color: #2A2A2A;
   margin: 0;
@@ -45,7 +45,7 @@
 }
 
 .zapis-subtitle {
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 600;
   color: #2A2A2A;
   margin: 0;
@@ -54,7 +54,7 @@
 
 .zapis-description {
   width: 500px;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 500;
   color: #2A2A2A;
   margin: 0;
@@ -107,7 +107,7 @@
 }
 
 .zapis-person-name {
-  font-size: 18px;
+  font-size: var(--font-size-body);
   font-weight: 600;
   color: #2A2A2A;
   margin: 0 0 8px 0;
@@ -115,7 +115,7 @@
 }
 
 .zapis-person-specialty {
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 500;
   color: #2A2A2A;
   margin: 0;
@@ -132,7 +132,7 @@
 }
 
 .zapis-form-intro {
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   color: #2A2A2A;
   font-weight: 500;
   margin-bottom: 16px;
@@ -148,7 +148,7 @@
 }
 
 .zapis-form-label {
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   color: #2A2A2A;
   text-align: left;
   font-weight: 500;
@@ -159,7 +159,7 @@
   padding: 12px 20px;
   border: none;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 500;
   width: 100%;
   box-sizing: border-box;
@@ -188,7 +188,7 @@
   border: none;
   border-radius: 12px;
   padding: 14px 20px;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -207,7 +207,7 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: var(--font-size-body-small);
   color: #2A2A2A;
   font-weight: 500;
   line-height: 1.5;
@@ -248,7 +248,7 @@
   background-color: rgba(255, 255, 255, 0.95);
   padding: 0 15px;
   color: #2A2A2A;
-  font-size: 14px;
+  font-size: var(--font-size-body-small);
 }
 
 .zapis-call-info {
@@ -265,18 +265,18 @@
 }
 
 .zapis-call-text {
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   color: #2A2A2A;
   font-weight: 500;
 }
 
 .zapis-call-hours {
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   color: #999;
 }
 
 .zapis-phone-link {
-  font-size: 32px;
+  font-size: var(--font-size-h3);
   font-weight: 700;
   color: #26966e;
   text-decoration: none;
@@ -314,15 +314,15 @@
   }
 
   .zapis-title {
-    font-size: 32px;
+    font-size: var(--font-size-h3);
   }
 
   .zapis-subtitle {
-    font-size: 20px;
+    font-size: var(--font-size-h9);
   }
 
   .zapis-phone-link {
-    font-size: 24px;
+    font-size: var(--font-size-h7);
   }
 
   .zapis-call-header {

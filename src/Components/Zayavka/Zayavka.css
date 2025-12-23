@@ -13,7 +13,7 @@
 }
 
 .zayavka-title {
-  font-size: 48px;
+  font-size: var(--font-size-h2);
   font-weight: 700;
   color: #2A2A2A;
   margin: 0 0 16px 0;
@@ -25,7 +25,7 @@
 }
 
 .zayavka-subtitle {
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   font-weight: 700;
   color: #2A2A2A;
   margin: 0;
@@ -57,7 +57,7 @@
 
 .zayavka-card-title {
   max-width: 65%;
-  font-size: 28px;
+  font-size: var(--font-size-h5);
   font-weight: 500;
   color: #FFFFFF;
   margin-bottom: 20px;
@@ -67,12 +67,12 @@
 
 .zayavka-highlight {
   color: #26966e;
-  font-size: 28px;
+  font-size: var(--font-size-h5);
   font-weight: 700;
 }
 
 .zayavka-card-description {
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   color: #FFFFFF;
   font-weight: 600;
   margin: 0;
@@ -87,7 +87,7 @@
   border: none;
   border-radius: 8px;
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -127,7 +127,7 @@
 }
 
 .zayavka-card-instruction {
-  font-size: 20px;
+  font-size: var(--font-size-h9);
   color: #2A2A2A;
   font-weight: 500;
   margin: 0;
@@ -152,13 +152,13 @@
 
 .zayavka-stat-label {
   margin-bottom: auto;
-  font-size: 16px;
+  font-size: var(--font-size-body-medium);
   color: #26966e;
   font-weight: 600;
 }
 
 .zayavka-stat-value {
-  font-size: 96px;
+  font-size: var(--font-size-h1);
   font-weight: 600;
   line-height: 1;
 }
@@ -191,11 +191,11 @@
   }
 
   .zayavka-title {
-    font-size: 24px;
+    font-size: var(--font-size-h7);
   }
 
   .zayavka-subtitle {
-    font-size: 16px;
+    font-size: var(--font-size-body-medium);
   }
 
   .zayavka-card {
@@ -213,15 +213,15 @@
   }
 
   .zayavka-card-title {
-    font-size: 20px;
+    font-size: var(--font-size-h9);
   }
 
   .zayavka-highlight {
-    font-size: 24px;
+    font-size: var(--font-size-h7);
   }
 
   .zayavka-stat-value {
-    font-size: 36px;
+    font-size: var(--font-size-h4-5);
   }
 }
 
