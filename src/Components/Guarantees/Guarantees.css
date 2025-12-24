@@ -1,0 +1,245 @@
+.guarantees {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 80px 0;
+}
+
+.guarantees-container {
+    padding: 0 50px;
+}
+
+.guarantees-top {
+    display: grid;
+    grid-template-columns: 1fr 558px;
+    gap: 60px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+}
+
+.guarantees-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.guarantees-small-title {
+    font-size: var(--font-size-body);
+    font-weight: 300;
+    color: #1A1A1ABF;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+}
+
+.guarantees-main-title {
+    font-size: var(--font-size-h1);
+    font-weight: 600;
+    line-height: 60px;
+    color: #000000;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+}
+
+.guarantees-main-title span {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    color: #485B85;
+}
+
+.guarantees-description {
+    font-size: var(--font-size-h8);
+    font-weight: 300;
+    line-height: 33px;
+    color: #1A1A1A;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+}
+
+.guarantees-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.guarantees-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.guarantees-years {
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+    color: #485B85;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+    line-height: 1.2;
+}
+
+.guarantees-item-description {
+    font-size: var(--font-size-body);
+    font-weight: 300;
+    color: #1A1A1ABF;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+}
+
+.guarantees-divider {
+    height: 1px;
+    background: #1A1A1A59;
+    transform: scaleY(0.5);
+    transform-origin: center;
+    margin-top: 20px;
+}
+
+.guarantees-consultation {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #EBEBEB;
+    border-radius: 20px;
+}
+
+.guarantees-consultation-content {
+    background: transparent;
+    padding: 10px 30px 10px 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.guarantees-consultation-doctor-image {
+    flex-shrink: 0;
+    width: 346px;
+    height: 220px;
+    min-width: 280px;
+    max-width: 346px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: -40px;
+    position: relative;
+    z-index: 1;
+}
+
+.guarantees-consultation-doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+}
+
+.guarantees-consultation-text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    min-width: 0;
+}
+
+.guarantees-consultation-title {
+    text-align: left;
+    font-size: var(--font-size-h3-5);
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    line-height: 1.2;
+    font-family: 'Geist', sans-serif;
+    text-transform: uppercase;
+}
+
+.guarantees-consultation-description {
+    text-align: left;
+    font-size: var(--font-size-h8);
+    font-weight: 300;
+    color: #1A1A1ABF;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Geist', sans-serif;
+}
+
+.guarantees-consultation-button {
+    padding: 6px 6px 6px 30px;
+    border-radius: 50px;
+    border: 1px solid #2E3D58;
+    font-weight: 500;
+    font-size: var(--font-size-button);
+    line-height: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Geist', sans-serif;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.guarantees-consultation-btn-primary {
+    background: #485B85;
+    color: #FFFFFF;
+}
+
+.guarantees-consultation-btn-primary span {
+    color: #FFFFFF;
+    transition: color 0.3s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 3;
+}
+
+.guarantees-consultation-btn-primary:hover span {
+    color: #485B85;
+    transform: translateX(80px);
+}
+
+.guarantees-consultation-btn-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.guarantees-consultation-btn-icon svg {
+    width: 19px;
+    height: 18px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.guarantees-consultation-button:hover .guarantees-consultation-btn-icon svg {
+    transform: translateX(-200px) rotate(40deg);
+}
+
+.guarantees-consultation-button::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.guarantees-consultation-button:hover::after {
+    width: 800px;
+    height: 800px;
+    right: -400px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+

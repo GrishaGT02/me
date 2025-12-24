@@ -52,7 +52,7 @@
    АДАПТАЦИЯ ДЛЯ РАЗНЫХ ЭКРАНОВ
    ============================================ */
 
-@media (max-width: 1520px) {
+@media (max-width: 1650px) {
   :root {
     --font-size-h1: 40px;
     --font-size-h3-5: 32px;

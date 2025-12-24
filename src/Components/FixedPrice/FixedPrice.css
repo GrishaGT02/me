@@ -1,0 +1,371 @@
+.fixed-price {
+    width: 100%;
+    background: #FFFFFF;
+    padding: 80px 0;
+}
+
+.fixed-price-container {
+    padding: 0 50px;
+}
+
+.fixed-price-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: stretch;
+}
+
+.fixed-price-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+}
+
+.fixed-price-carousel-wrapper {
+    margin-top: auto;
+}
+
+.fixed-price-main-title {
+    font-size: var(--font-size-h1);
+    font-weight: 600;
+    line-height: 60px;
+    color: #000000;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+.fixed-price-description {
+    font-size: var(--font-size-h8);
+    font-weight: 300;
+    line-height: 1.6;
+    color: #1A1A1A;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+    margin: 0;
+}
+
+/* Carousel styles */
+.fixed-price-carousel-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.fixed-price-carousel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.fixed-price-carousel-slides {
+    display: flex;
+    height: 100%;
+}
+
+.fixed-price-carousel-slide {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.fixed-price-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fixed-price-carousel-dots-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 4px 0;
+}
+
+.fixed-price-carousel-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    background: linear-gradient(180deg, #485B85 0%, rgba(72, 91, 133, 0.8) 100%);
+    border-radius: 2px;
+    z-index: 0;
+    pointer-events: none;
+    box-shadow: 0 0 4px rgba(72, 91, 133, 0.3);
+    opacity: 0;
+}
+
+.fixed-price-carousel-line-animating {
+    animation: slideLine 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideLine {
+    0% {
+        top: var(--prev-top, 10px);
+        opacity: 1;
+    }
+    100% {
+        top: var(--current-top, 10px);
+        opacity: 1;
+    }
+}
+
+.fixed-price-carousel-dots {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.fixed-price-carousel-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.fixed-price-carousel-dot.active {
+    background: #000000;
+    height: 10px;
+}
+
+.fixed-price-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 100%;
+}
+
+.fixed-price-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.fixed-price-years {
+    font-size: var(--font-size-h1);
+    font-weight: 700;
+    color: #485B85;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+    line-height: 1.2;
+}
+
+.fixed-price-item-description {
+    font-size: var(--font-size-body);
+    font-weight: 300;
+    color: #1A1A1ABF;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+}
+
+.fixed-price-divider {
+    height: 1px;
+    background: #1A1A1A59;
+    transform: scaleY(0.5);
+    transform-origin: center;
+    margin-top: 20px;
+}
+
+.fixed-price-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.fixed-price-warning-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.fixed-price-warning-text {
+    font-size: var(--font-size-body);
+    font-weight: 300;
+    color: #1A1A1A;
+    line-height: 1.6;
+    text-align: left;
+    font-family: 'Geist', sans-serif;
+}
+
+.fixed-price-consultation {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #EBEBEB;
+    border-radius: 20px;
+    margin-top: 60px;
+}
+
+.fixed-price-consultation-content {
+    background: transparent;
+    padding: 10px 30px 10px 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.fixed-price-consultation-doctor-image {
+    flex-shrink: 0;
+    width: 346px;
+    height: 220px;
+    min-width: 280px;
+    max-width: 346px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-left: -40px;
+    position: relative;
+    z-index: 1;
+}
+
+.fixed-price-consultation-doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+}
+
+.fixed-price-consultation-text-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+    min-width: 0;
+}
+
+.fixed-price-consultation-title {
+    text-align: left;
+    font-size: var(--font-size-h3-5);
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+    line-height: 1.2;
+    font-family: 'Geist', sans-serif;
+    text-transform: uppercase;
+}
+
+.fixed-price-consultation-description {
+    text-align: left;
+    font-size: var(--font-size-h8);
+    font-weight: 300;
+    color: #1A1A1ABF;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Geist', sans-serif;
+}
+
+.fixed-price-consultation-button {
+    padding: 6px 6px 6px 30px;
+    border-radius: 50px;
+    border: 1px solid #2E3D58;
+    font-weight: 500;
+    font-size: var(--font-size-button);
+    line-height: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Geist', sans-serif;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.fixed-price-consultation-btn-primary {
+    background: #485B85;
+    color: #FFFFFF;
+}
+
+.fixed-price-consultation-btn-primary span {
+    color: #FFFFFF;
+    transition: color 0.3s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 3;
+}
+
+.fixed-price-consultation-btn-primary:hover span {
+    color: #485B85;
+    transform: translateX(80px);
+}
+
+.fixed-price-consultation-btn-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.fixed-price-consultation-btn-icon svg {
+    width: 19px;
+    height: 18px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fixed-price-consultation-button:hover .fixed-price-consultation-btn-icon svg {
+    transform: translateX(-200px) rotate(40deg);
+}
+
+.fixed-price-consultation-button::after {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.fixed-price-consultation-button:hover::after {
+    width: 800px;
+    height: 800px;
+    right: -400px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .fixed-price-container {
+        padding: 0 20px;
+    }
+
+    .fixed-price-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .fixed-price-carousel {
+        height: 200px;
+    }
+}
+

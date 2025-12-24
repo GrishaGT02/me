@@ -14,6 +14,10 @@ import Konsultacia from './Components/Konsultacia/Konsultacia';
 import Stoimost from './Components/Stoimost/Stoimost';
 import WhyChooseUs from './Components/WhyChooseUs/WhyChooseUs';
 import Smiles from './Components/Smiles/Smiles';
+import MedicatedSleep from './Components/MedicatedSleep/MedicatedSleep';
+import Guarantees from './Components/Guarantees/Guarantees';
+import Installment from './Components/Installment/Installment';
+import FixedPrice from './Components/FixedPrice/FixedPrice';
 import Kvis from './Components/Kvis/Kvis';
 import Footer from './Components/Footer/Footer';
 import Modal from './Components/Modal/Modal';
@@ -33,6 +37,10 @@ function App() {
         <WhyChooseUs />
         <Stoimost />
         <Smiles />
+        <MedicatedSleep />
+        <Guarantees />
+        <Installment />
+        <FixedPrice />
         <Usluga />
         <Modal />
         <Zayavka />

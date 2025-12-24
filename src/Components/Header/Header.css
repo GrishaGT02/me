@@ -95,7 +95,7 @@
 
 .header-clinic-text {
     text-align: left;
-    font-size: var(--font);
+    font-size: var(--font-size-body-small);
     color: #1A1A1ABF;
     font-weight: 300;
     /* white-space: nowrap; */
@@ -148,29 +148,43 @@
     padding: 20px 25px 20px 20px;
     border: 1px solid #485B85;
     border-radius: 50px;
-    /* background: #FFFFFF; */
     cursor: pointer;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
 }
-
-/* .header-calculator-btn:hover {
-    border-color: #4A90E2;
-    background: #F8F9FA;
-}*/
 
 .header-calculator-btn span {
     font-size: var(--font-size-button);
     color: #000000;
     font-weight: 500;
     line-height: 18px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
 }
 
-/* .header-calculator-btn svg {
-    width: 16px;
-    height: 16px;
-    color: #333333;
-}  */
+.header-calculator-btn:hover span {
+    transform: translateX(50px);
+}
+
+.header-calculator-btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.header-calculator-btn-icon svg {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-calculator-btn:hover .header-calculator-btn-icon svg {
+    transform: translateX(-230px) rotate(40deg);
+}
 
 .header-contact-wrapper {
     display: flex;
@@ -228,6 +242,7 @@
     text-align: right;
     margin-top: 5px;
     font-weight: 300;
+    position: relative;
 }
 
 .header-avatar {
@@ -276,7 +291,7 @@
 
 .header_nuv {
     display: flex;
-    /* align-items: flex-start; */
+    align-items: stretch;
     justify-content: space-between;
     gap: 50px;
     padding: 40px 50px 0 50px;
@@ -284,7 +299,7 @@
 }
 
 .header_nuv-left {
-    flex: 0 0 45%;
+    flex: 0 0 950px;
     position: relative;
 }
 
@@ -594,28 +609,30 @@
 }
 
 .header_nuv-right {
-    flex: 0 0 55%;
+    flex: 1;
     display: flex;
     justify-content: flex-start;
     margin-top: 22px;
 }
 
 .header_nuv > div:last-child {
-    flex: 0 0 55%;
+    flex: 1;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: flex-end;
-    padding-right: 50px;
+    align-self: stretch;
 }
 
 .header_nuv-doctor-image {
     width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     max-height: 100%;
     border-radius: 20px;
     overflow: hidden;
     flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
 }
 
 .header_nuv-doctor-image img {
@@ -626,6 +643,7 @@
     display: block;
     object-fit: cover;
     object-position: center 30%;
+    border-radius: 20px;
 }
 
 .header_nuv-carousel-wrapper {
@@ -724,8 +742,19 @@
     height: 10px; 
     /* box-shadow: 0 0 8px rgba(72, 91, 133, 0.5); */
 }
+@media (max-width: 1920px) {
+    .header_nuv-left {
+        flex: 0 0 750px;
+    }
+}
 
-@media (max-width: 1520px) {
+@media (max-width: 1650px) {
+    .header-container {
+        gap: 10px;
+    }
+    .header_nuv-left {
+        flex: 0 0 570px;
+    }
     /* Логотип */
     .header-logo img {
         height: 36px;
@@ -867,6 +896,23 @@
 }
 
 @media (max-width: 1367px) {
+
+    .header-calculator-btn:hover .header-calculator-btn-icon svg {
+        transform: translateX(-220px) rotate(40deg);
+    }
+
+    .header-calculator-btn:hover span {
+        transform: translateX(40px);
+    }
+
+    .header-container {
+        gap: 10px;
+    }
+    /* Текст в шапке */
+    .header-clinic-info {
+        display: none;
+    }
+    
     .header-logo img {
         height: 33px;
         width: 104px;
@@ -1070,7 +1116,26 @@
 }
 
 @media (max-width: 1200px) {
-    .header-clinic-text {
+    .header-calculator-btn:hover .header-calculator-btn-icon svg {
+        transform: translateX(-220px) rotate(40deg);
+    }
+
+    .header-calculator-btn:hover span {
+        transform: translateX(30px);
+    }
+
+    .header-container {
+        padding: 0 25px;
+    }
+
+    .header_nuv {
+        padding: 40px 25px 0 25px;
+    }
+    
+    .header_nuv-left {
+        flex: 0 0 490px;
+    }
+    .header-clinic-info {
         display: none;
     }
 
@@ -1346,6 +1411,32 @@
 }
 
 @media (max-width: 1025px) {
+    .header-calculator-btn:hover .header-calculator-btn-icon svg {
+        transform: translateX(-200px) rotate(40deg);
+    }
+
+    .header-calculator-btn:hover span {
+        transform: translateX(20px);
+    }
+    .header-phone-hours {
+        font-size: 0;
+    }
+
+    .header-phone-hours::after {
+        content: 'с 9:00 до 21:00';
+        font-size: var(--font-size-body-xxs);
+        color: #1A1A1ABF;
+        line-height: 100%;
+        text-align: right;
+        font-weight: 300;
+    }
+    
+    .header_nuv {
+        padding: 40px 25px 0 25px;
+    }
+    .header_nuv-left {
+        flex: 0 0 400px;
+    }
     .header-container {
         padding: 0 25px;
     }
@@ -1431,7 +1522,7 @@
     /* Паддинги для кнопки калькулятора */
     .header-calculator-btn {
         gap: 11px;
-        padding: 10px 14px 10px 14px;
+        padding: 10px 11px 10px 11px;
     }
 
     /* Кнопка телефона */
@@ -1447,7 +1538,7 @@
 
     /* Кнопка меню */
     .header-menu-btn {
-        padding: 10px 16px 10px 16px;
+        padding: 10px 13px 10px 13px;
         gap: 5px;
     }
 
@@ -1461,7 +1552,7 @@
     }
 
     .header-contact-block {
-        gap: 14px;
+        padding: 3px 3px 3px 10px;
     }
 
     .header-phone-number {
@@ -1598,6 +1689,9 @@
 }
 
 @media (max-width: 880px) {
+    .header_nuv-left {
+        flex: 0 0 350px;
+    }
     .header-location {
         display: none;
     }

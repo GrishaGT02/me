@@ -20,7 +20,7 @@ const Googing = () => {
                             <img src={doctorImage} alt="Киракосян Карен Егишевич" />
                         </div>
                         <div className="googing-doctor-info">
-                            <div style={{ background: '#FFFFFF', padding: '10px', gap: '30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: '20px'}}>
+                            <div style={{ background: '#FFFFFF', padding: '10px 20px', gap: '30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: '20px'}}>
                                 <div>
                                     <div className="googing-doctor-name">Киракосян Карен Егишевич</div>
                                     <div className="googing-doctor-title">Основатель, главный врач, хирург, имплантолог</div>
