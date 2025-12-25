@@ -20,7 +20,7 @@ const Googing = () => {
                             <img src={doctorImage} alt="Киракосян Карен Егишевич" />
                         </div>
                         <div className="googing-doctor-info">
-                            <div style={{ background: '#FFFFFF', padding: '10px 20px', gap: '30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: '20px'}}>
+                            <div className="googing-doctor-info-card" style={{ background: '#FFFFFF', padding: '10px 20px', gap: '30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: '20px'}}>
                                 <div>
                                     <div className="googing-doctor-name">Киракосян Карен Егишевич</div>
                                     <div className="googing-doctor-title">Основатель, главный врач, хирург, имплантолог</div>
@@ -36,11 +36,8 @@ const Googing = () => {
                     <div className="googing-right">
                         <div className="googing-form-card">
                             <h2 className="googing-form-title">
-                                <span style={{color: '#485B85', textDecoration: 'underline'}}>СОМНЕВАЕТЕСЬ В</span>{' '}
-                                <span>ПРЕДЛОЖЕННОМ</span>{' '}
-                                <span style={{color: '#485B85', textDecoration: 'underline'}}>ПЛАНЕ</span>{' '}
-                                <span style={{color: '#485B85', textDecoration: 'underline'}}>ЛЕЧЕНИЯ</span>{' '}
-                                <span>В ДРУГОЙ КЛИНИКЕ?</span>
+                                <span style={{color: '#485B85', textDecoration: 'underline'}}>СОМНЕВАЕТЕСЬ</span>{' '}
+                                <span>В ПРЕДЛОЖЕННОМ ПЛАНЕ ЛЕЧЕНИЯ В ДРУГОЙ КЛИНИКЕ?</span>
                             </h2>
                             <p className="googing-form-description">
                                 Пришлите Ваши снимки и диагноз на бесплатный аудит консилиума. Наши специалисты изучат Ваш случай и предоставят экспертное мнение и варианты решения проблемы.

@@ -374,7 +374,7 @@ const Header = () => {
                                     cy="30"
                                     r="29"
                                     fill="none"
-                                    stroke="#E0E0E0"
+                                    // stroke="#E0E0E0"
                                     strokeWidth="1"
                                 />
                                 <circle

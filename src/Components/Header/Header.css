@@ -1,5 +1,7 @@
 .header {
     width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
     background: #FFFFFF;
     padding: 20px 0 30px 0;
     position: relative;
@@ -60,6 +62,14 @@
 .header-center-arrow {
     margin-top: 10px;
     flex-shrink: 0;
+}
+
+.header-center-arrow svg {
+    transition: transform 0.3s ease;
+}
+
+.header-center-item:hover .header-center-arrow svg {
+    transform: rotate(40deg);
 }
 
 .header-center-divider {
@@ -153,6 +163,11 @@
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
+    background: #FFFFFF;
+}
+
+.header-calculator-btn:hover {
+    background: #485B85;
 }
 
 .header-calculator-btn span {
@@ -160,13 +175,14 @@
     color: #000000;
     font-weight: 500;
     line-height: 18px;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 2;
 }
 
 .header-calculator-btn:hover span {
     transform: translateX(50px);
+    color: #FFFFFF;
 }
 
 .header-calculator-btn-icon {
@@ -179,11 +195,19 @@
 }
 
 .header-calculator-btn-icon svg {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-calculator-btn-icon svg path {
+    transition: fill 0.3s ease;
 }
 
 .header-calculator-btn:hover .header-calculator-btn-icon svg {
     transform: translateX(-230px) rotate(40deg);
+}
+
+.header-calculator-btn:hover .header-calculator-btn-icon svg path {
+    fill: #FFFFFF;
 }
 
 .header-contact-wrapper {
@@ -191,6 +215,27 @@
     align-items: center;
     gap: 5px;
     flex-shrink: 0;
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .header-phone-icon {
@@ -202,11 +247,22 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.header-phone-icon:hover {
+    animation: pulse 2s infinite;
+}
+
+.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon {
+    animation: pulse 2s infinite;
 }
 
 .header-phone-icon svg {
     width: 20px;
     height: 20px;
+    transform-origin: center;
+    animation: swing 2s ease-in-out infinite;
 }
 
 .header-contact-block {
@@ -294,7 +350,7 @@
     align-items: stretch;
     justify-content: space-between;
     gap: 50px;
-    padding: 40px 50px 0 50px;
+    padding: 20px 50px 0 50px;
     /* position: relative; */
 }
 
@@ -517,7 +573,25 @@
 }
 
 .header_nuv-nav-btn:hover {
-    background: #F5F5F5;
+    background: #485B85;
+}
+
+.header_nuv-nav-btn:hover svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) path {
+    stroke: #FFFFFF;
+    stroke-opacity: 1;
+}
+
+.header_nuv-nav-btn:hover .header_nuv-nav-arrow path {
+    stroke: #FFFFFF;
+    stroke-opacity: 1;
+}
+
+.header_nuv-nav-btn:hover .header_nuv-nav-progress circle:nth-child(2) {
+    stroke: #ffffff !important;
+}
+
+.header_nuv-nav-btn:hover .header_nuv-nav-progress circle:first-child {
+    stroke: #485B85 !important;
 }
 
 .header_nuv-nav-progress {
@@ -526,6 +600,12 @@
     left: 0;
     width: 60px;
     height: 60px;
+    z-index: 2;
+}
+
+.header_nuv-nav-progress circle {
+    transition: stroke 0.3s ease;
+    stroke-width: 2 !important;
 }
 
 .header_nuv-nav-arrow {
@@ -535,9 +615,17 @@
     height: 15px;
 }
 
+.header_nuv-nav-arrow path {
+    transition: stroke 0.3s ease, stroke-opacity 0.3s ease;
+}
+
 .header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) {
     width: 10px;
     height: 15px;
+}
+
+.header_nuv-nav-btn svg:not(.header_nuv-nav-progress):not(.header_nuv-nav-arrow) path {
+    transition: stroke 0.3s ease, stroke-opacity 0.3s ease;
 }
 
 .header_nuv-rating-card {
@@ -552,6 +640,12 @@
     align-items: flex-start;
     justify-content: center;
     gap: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.header_nuv-rating-card:hover {
+    transform: scale(1.05);
 }
 
 .header_nuv-rating-icon {
@@ -746,9 +840,16 @@
     .header_nuv-left {
         flex: 0 0 750px;
     }
+
+    .header_nuv-left-text span {
+        text-decoration-thickness: 2.8px;
+    }
 }
 
 @media (max-width: 1650px) {
+    .header_nuv-doctor-image img {
+        max-height: 800px;
+    }
     .header-container {
         gap: 10px;
     }
@@ -789,10 +890,18 @@
 
     .header_nuv-left-text {
         width: 600px;
+        line-height: 50px;
+    }
+
+    .header_nuv-left-text span {
+        text-decoration-thickness: 2.5px;
+        text-underline-offset: 4px;
     }
 
     .header_nuv-left-text-description {
         width: 450px;
+        margin-top: 11px;
+        line-height: 27px;
     }
 
     /* Кнопка ПОДРОБНЕЕ (второстепенная) */
@@ -893,16 +1002,48 @@
         width: 40px;
         height: 40px;
     }
+
+    .header_nuv-left-buttons {
+        margin-top: 24px;
+    }
+
+    .header_nuv-left-about {
+        margin-top: 23px;
+    }
+
+    .header_nuv-right {
+        margin-top: 15px;
+    }
+
+    .header_nuv-ratings {
+        margin-top: 15px;
+    }
 }
 
 @media (max-width: 1367px) {
+    .header_nuv-carousel {
+        height: 215px;
+    }
+
+    .header_nuv-left-buttons {
+        margin-top: 20px;
+    }
+
+    .header-calculator-btn:hover {
+        background: #485B85;
+    }
 
     .header-calculator-btn:hover .header-calculator-btn-icon svg {
         transform: translateX(-220px) rotate(40deg);
     }
 
+    .header-calculator-btn:hover .header-calculator-btn-icon svg path {
+        fill: #FFFFFF;
+    }
+
     .header-calculator-btn:hover span {
         transform: translateX(40px);
+        color: #FFFFFF;
     }
 
     .header-container {
@@ -976,15 +1117,18 @@
 
     .header_nuv-left-text {
         width: 500px;
+        line-height: 45px;
     }
 
     .header_nuv-left-text span {
+        text-decoration-thickness: 2.5px;
         text-underline-offset: 4px;
     }
 
     .header_nuv-left-text-description {
         width: 410px;
         margin-top: 11px;
+        line-height: 24px;
     }
 
     .header_nuv-btn {
@@ -1008,7 +1152,7 @@
     }
 
     .header_nuv-left-about {
-        margin-top: 35px;
+        margin-top: 42px;
     }
 
     /* Слайдер */
@@ -1111,17 +1255,26 @@
 
     /* Фото врача */
     .header_nuv-doctor-image img {
-        max-height: 851px;
+        max-height: 678.5px;
     }
 }
 
 @media (max-width: 1200px) {
+    .header-calculator-btn:hover {
+        background: #485B85;
+    }
+
     .header-calculator-btn:hover .header-calculator-btn-icon svg {
         transform: translateX(-220px) rotate(40deg);
     }
 
+    .header-calculator-btn:hover .header-calculator-btn-icon svg path {
+        fill: #FFFFFF;
+    }
+
     .header-calculator-btn:hover span {
         transform: translateX(30px);
+        color: #FFFFFF;
     }
 
     .header-container {
@@ -1129,7 +1282,7 @@
     }
 
     .header_nuv {
-        padding: 40px 25px 0 25px;
+        padding: 20px 25px 0 25px;
     }
     
     .header_nuv-left {
@@ -1200,9 +1353,11 @@
 
     .header_nuv-left-text {
         width: 450px;
+        line-height: 40px;
     }
 
     .header_nuv-left-text span {
+        text-decoration-thickness: 2px;
         text-underline-offset: 3px;
     }
 
@@ -1259,7 +1414,11 @@
     /* Слайдер */
     .header_nuv-carousel {
         max-width: 468.75px;
-        max-height: 200px;
+        max-height: 185px;
+    }
+
+    .header_nuv-doctor-image  {
+        max-height: 570px;
     }
 
     /* Точки навигации слайдера */
@@ -1357,21 +1516,10 @@
     }
 
     /* Фото врача */
-    .header_nuv-doctor-image img {
-        max-height: 750px;
-    }
-
-    .header_nuv-left-text {
-        line-height: 45px;
-    }
 
     .header_nuv-left-text-description {
         width: 420px;
-        line-height: 22px;
-    }
-    /* Фото врача */
-    .header_nuv-doctor-image img {
-        max-height: 620px;
+        line-height: 21px;
     }
 
     /* Иконка зуба и круг */
@@ -1386,7 +1534,7 @@
     }
 
     .header_nuv-left-about {
-        margin-top: 42px;
+        margin-top: 35px;
     }
 
     .header_nuv-left-buttons {
@@ -1411,12 +1559,21 @@
 }
 
 @media (max-width: 1025px) {
+    .header-calculator-btn:hover {
+        background: #485B85;
+    }
+
     .header-calculator-btn:hover .header-calculator-btn-icon svg {
         transform: translateX(-200px) rotate(40deg);
     }
 
+    .header-calculator-btn:hover .header-calculator-btn-icon svg path {
+        fill: #FFFFFF;
+    }
+
     .header-calculator-btn:hover span {
         transform: translateX(20px);
+        color: #FFFFFF;
     }
     .header-phone-hours {
         font-size: 0;
@@ -1430,9 +1587,13 @@
         text-align: right;
         font-weight: 300;
     }
+
+    .header_nuv-left-about {
+        margin-top: 25px;
+    }
     
     .header_nuv {
-        padding: 40px 25px 0 25px;
+        padding: 25px 25px 0 25px;
     }
     .header_nuv-left {
         flex: 0 0 400px;
@@ -1561,12 +1722,18 @@
 
     .header_nuv-left-text {
         width: 400px;
-        line-height: 40px;
+        line-height: 36px;
+    }
+
+    .header_nuv-left-text span {
+        text-decoration-thickness: 1.8px;
+        text-underline-offset: 2.5px;
     }
 
     .header_nuv-left-text-description {
         width: 380px;
         margin-top: 8px;
+        line-height: 20px;
     }
 
     .header_nuv-btn {
@@ -1677,14 +1844,18 @@
         gap: 1px;
     }
 
-    .header_nuv-doctor-image img {
-        max-height: 540px;
-    }
-
     .header-center-card {
         top: 7%;
         left: 95%;
         padding: 5px 12px 12px 12px;
+    }
+
+    .header_nuv-right {
+        margin-top: 10px;
+    }
+
+    .header_nuv-doctor-image img {
+        max-height: 494px;
     }
 }
 
@@ -1698,7 +1869,12 @@
 
     .header_nuv-left-text {
         width: 300px;
-        line-height: 35px;
+        line-height: 32px;
+    }
+
+    .header_nuv-left-text span {
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 2px;
     }
 
     .header_nuv-left-text-description {
@@ -1711,14 +1887,18 @@
         padding: 11px 18px;
     }
 
+    .header_nuv-left-buttons {
+        margin-top: 10px;
+    }
+    
     .header-center-card {
         width: 246px;
         left: 98%;
-        top: -4%;
+        top: 4%;
     }
 
     .header_nuv-left-about {
-        margin-top: 15px;
+        margin-top: 10px;
     }
 
         /* Слайдер */
@@ -1808,6 +1988,14 @@
     }
 
     .header_nuv-doctor-image img {
-        max-height: 460px;
+        max-height: 436.7px;
+    }
+
+    .header {
+        padding: 10px 25px 30px 25px;
+    }
+
+    .header_nuv {
+        padding: 10px 25px 0 25px;
     }
 }
