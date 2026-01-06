@@ -6,6 +6,9 @@
 }
 
 .konsultacia-content {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   background: #EBEBEB;
   border-radius: 20px;
   padding: 10px 15px 10px 50px;
@@ -148,23 +151,203 @@
   transform: translateY(-50%);
 }
 
-@media (max-width: 1200px) {
-  .konsultacia-container {
-    padding: 40px 50px;
-  }
-
+@media (max-width: 1650px) {
   .konsultacia-content {
-    padding: 30px 40px;
+    gap: 40px;
+  }
+  .konsultacia-doctor-image {
+    width: 273px;
+    height: 175px;
+    min-width: 273px;
+    max-width: 273px;
   }
 
-  .konsultacia-doctor-image {
-    width: 240px;
-    height: 240px;
-    margin-left: -30px;
+  .konsultacia-btn-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .konsultacia-button {
+    padding: 5px 5px 5px 24px;
+    gap: 24px;
+  }
+
+  .konsultacia-btn-icon svg {
+    width: 11px;
+    height: 9px;
+  }
+
+  .konsultacia-button::after {
+    width: 48px;
+    height: 48px;
+  }
+
+  .konsultacia-button:hover .konsultacia-btn-icon svg {
+    transform: translateX(-180px) rotate(40deg);
+  }
+
+  .konsultacia-btn-primary:hover span {
+    transform: translateX(60px);
+  }
+
+  .konsultacia-button:hover::after {
+    width: 640px;
+    height: 640px;
+    right: -320px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1367px) {
+  .konsultacia-content {
+    gap: 30px;
+  }
+  .konsultacia-button {
+    font-size: 9px;
+  }
+  .konsultacia-container {
+    padding: 0px 35px 35px 35px;
+  }
+  .konsultacia-description {
+    line-height: 28px;
+  }
+  .konsultacia-content {
+    padding: 7px 10px 7px 47px;
+  }
+
+  .konsultacia-button:hover .konsultacia-btn-icon svg {
+    transform: translateX(-160px) rotate(40deg);
+  }
+
+  .konsultacia-btn-primary:hover span {
+    transform: translateX(60px);
+  }
+
+  .konsultacia-doctor-image {
+    width: 246px;
+    height: 157px;
+    min-width: 246px;
+    max-width: 246px;
+  }
+
+  .konsultacia-btn-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .konsultacia-btn-icon svg {
+    width: 10px;
+    height: 8px;
+  }
+
+  .konsultacia-button::after {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .konsultacia-button {
+    font-size: 8px;
+  }
+
+  .konsultacia-description {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  /* .konsultacia-container {
+    padding: 40px 50px;
+  } */
+  
+  /* .konsultacia-content {
+    padding: 30px 40px;
+  } */
+
+  .konsultacia-doctor-image {
+    width: 216px;
+    height: 137px;
+    min-width: 216px;
+    max-width: 216px;
+    margin-left: -40px;
+  }
+
+  .konsultacia-btn-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .konsultacia-btn-icon svg {
+    width: 9px;
+    height: 7px;
+  }
+
+  .konsultacia-button::after {
+    width: 38px;
+    height: 38px;
+  }
+
+  .konsultacia-button {
+    padding: 4px 4px 4px 20px;
+    gap: 20px;
+  }
+
+  .konsultacia-button:hover .konsultacia-btn-icon svg {
+    transform: translateX(-140px) rotate(40deg);
+  }
+
+  .konsultacia-btn-primary:hover span {
+    transform: translateX(50px);
+  }
+
+  .konsultacia-button:hover::after {
+    width: 560px;
+    height: 560px;
+    right: -280px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .konsultacia-description {
+    font-size: 11px;
+  }
+  
+  .konsultacia-doctor-image {
+    width: 184px;
+    height: 117px;
+    min-width: 184px;
+    max-width: 184px;
+    margin-left: -40px;
+  }
+
+  .konsultacia-btn-icon {
+    width: 32.03px;
+    height: 32.03px;
+  }
+
+  .konsultacia-button::after {
+    width: 32.03px;
+    height: 32.03px;
+  }
+
+  .konsultacia-button {
+    padding: 3.5px 3.5px 3.5px 16px;
+  }
+
+  .konsultacia-button:hover .konsultacia-btn-icon svg {
+    transform: translateX(-130px) rotate(40deg);
+  }
+
+  .konsultacia-btn-primary:hover span {
+    transform: translateX(40px);
+  }
+}
+
+@media (max-width: 890px) {
+  .konsultacia-container {
+    padding: 0px 25px 25px 25px;
+  }
+}
+
+/* @media (max-width: 768px) {
   .konsultacia-container {
     padding: 20px 15px;
   }
@@ -178,6 +361,8 @@
   .konsultacia-doctor-image {
     width: 200px;
     height: 200px;
+    min-width: 200px;
+    max-width: 200px;
     margin-left: 0;
     align-self: flex-start;
   }
@@ -194,4 +379,5 @@
     width: 100%;
     justify-content: center;
   }
-}
+} */
+

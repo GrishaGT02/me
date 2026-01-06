@@ -13,7 +13,7 @@ const Installment = () => {
     <div className="installment-container">
       <div className="installment-header">
         <h1 className="installment-title">
-          <span>ЗАБОТЬТЕСЬ О ЗДОРОВЬЕ ЗУБОВ СЕЙЧАС</span>, А ОПЛАЧИВАЙТЕ ПОТОМ!
+          <span>ЗАБОТЬТЕСЬ О ЗДОРОВЬЕ ЗУБОВ СЕЙЧАС</span>, А ПЛАТИТЕ ПОТОМ!
         </h1>
         <p className="installment-subtitle">
           Лечение сразу, а оплата удобными частями от 6 до 36 месяцев - без скрытых комиссий и переплат.

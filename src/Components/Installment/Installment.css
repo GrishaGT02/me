@@ -2,23 +2,30 @@
   background-color: #FFFFFF;
   padding: 80px 50px;
   width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   box-sizing: border-box;
-  max-width: 100%;
   overflow-x: hidden;
 }
 
 .installment-header {
-  margin-bottom: 40px;
-  text-align: left;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .installment-title {
+  width: calc(50% - 5px);
   font-size: var(--font-size-h1);
-  font-weight: 700;
+  font-weight: 600;
   color: #000000;
-  margin: 0 0 20px 0;
-  line-height: 1.3;
+  margin: 0;
+  line-height: 60px;
   text-transform: uppercase;
+  flex-shrink: 0;
+  text-align: left;
 }
 
 .installment-title span {
@@ -29,11 +36,14 @@
 }
 
 .installment-subtitle {
+  width: calc(50% - 5px);
   font-size: var(--font-size-h8);
   font-weight: 300;
   color: #1A1A1ABF;
   margin: 0;
-  line-height: 1.6;
+  line-height: 33px;
+  text-align: left;
+  flex-shrink: 0;
 }
 
 .installment-card {
@@ -42,7 +52,7 @@
   border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(85.29deg, #2E3D58 -10.2%, #6384BE 90.17%);
-  padding: 20px 20px 20px 30px;
+  padding: 50px;
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
   gap: 0;
   position: relative;
@@ -56,8 +66,9 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border-radius: 20px 0 0 20px;
-  flex: 0 0 50%;
+  /* border-radius: 20px 0 0 20px; */
+  flex: 0 0 45%;
+  padding-right: 30px;
   box-sizing: border-box;
   overflow: hidden;
   /* align-items: center; */
@@ -66,20 +77,21 @@
 }
 
 .installment-card-title {
-  font-size: var(--font-size-h3-5);
+  font-size: var(--font-size-h1);
   font-weight: 700;
   color: #FFFFFF;
   margin: 0;
-  line-height: 1.4;
+  line-height: 60px;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .installment-card-description {
-  font-size: var(--font-size-h8);
-  color: #FFFFFF;
+  font-size: var(--font-size-h6);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 300;
   margin: 0;
-  line-height: 1.6;
+  line-height: 40px;
   text-align: left;
   opacity: 0.9;
 }
@@ -88,7 +100,6 @@
   padding: 6px 6px 6px 30px;
   border-radius: 50px;
   border: 1px solid #2E3D58;
-  background-color: #FFFFFF;
   font-weight: 700;
   font-size: var(--font-size-button);
   line-height: 17px;
@@ -101,14 +112,15 @@
   font-family: 'Geist', sans-serif;
   position: relative;
   overflow: hidden;
+  background: #FFFFFF;
   width: fit-content;
 }
 
 .installment-button span {
   color: #485B85;
-  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   z-index: 3;
+  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .installment-button:hover span {
@@ -136,7 +148,7 @@
 }
 
 .installment-button:hover .installment-button-icon svg {
-  transform: translateX(-230px) rotate(40deg);
+  transform: translateX(-200px) rotate(40deg);
 }
 
 .installment-button::after {
@@ -162,19 +174,15 @@
   transform: translateY(-50%);
 }
 
-.installment-button:active {
-  transform: scale(0.98);
-}
-
 .installment-card-right {
   background-color: #FFFFFF;
-  height: 660px;
+  height: 576px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   border-radius: 20px;
-  flex: 0 0 50%;
+  flex: 0 0 55%;
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
@@ -223,54 +231,31 @@
   margin-top: auto;
 }
 
-@media (max-width: 768px) {
-  .installment-container {
-    padding: 40px 20px;
-  }
-
-  .installment-card {
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .installment-card-left {
-    border-radius: 20px 20px 0 0;
-    padding: 40px 30px;
-  }
-
-  .installment-card-right {
-    border-radius: 0 0 20px 20px;
-    padding: 40px 30px;
-  }
-
+@media (max-width: 1650px) {
   .installment-title {
-    font-size: var(--font-size-h3-5);
+    line-height: 50px;
+  }
+
+  .installment-title span {
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
   }
 
   .installment-subtitle {
-    font-size: var(--font-size-body);
+    line-height: 27px;
   }
 
-  .installment-stats {
-    gap: 40px;
+  .installment-card-title {
+    line-height: 50px;
   }
 
-  .installment-stat-value {
-    font-size: 80px;
-  }
-
-  .installment-stat-label {
-    font-size: 24px;
+  .installment-card-description {
+    line-height: 24px;
   }
 
   .installment-button {
     padding: 5px 5px 5px 24px;
     gap: 24px;
-  }
-
-  .installment-button-icon {
-    width: 48px;
-    height: 48px;
   }
 
   .installment-button-icon svg {
@@ -284,7 +269,7 @@
   }
 
   .installment-button:hover .installment-button-icon svg {
-    transform: translateX(-180px) rotate(40deg);
+    transform: translateX(-200px) rotate(40deg);
   }
 
   .installment-button:hover span {
@@ -295,6 +280,245 @@
     width: 640px;
     height: 640px;
     right: -320px;
+  }
+
+  .installment-card-right {
+    height: 512px;
+  }
+
+  .installment-stat-value {
+    font-size: 180px;
+  }
+
+  .installment-stat-label {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1367px) {
+  .installment-card-right {
+    height: 450px;
+  }
+
+  .installment-card {
+    padding: 30px;
+  }
+
+  .installment-stat-value {
+    font-size: 140px;
+  }
+
+  .installment-stat-label {
+    font-size: 30px;
+  }
+
+  .installment-stats {
+    gap: 50px;
+  }
+
+  .installment-header {
+    margin-bottom: 30px;
+  }
+
+  .installment-title {
+    line-height: 45px;
+  }
+
+  .installment-title span {
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 4px;
+  }
+
+  .installment-subtitle {
+    line-height: 24px;
+  }
+
+  .installment-card-title {
+    line-height: 45px;
+  }
+
+  .installment-card-description {
+    line-height: 21px;
+  }
+
+  .installment-button-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .installment-button-icon svg {
+    width: 10px;
+    height: 8px;
+  }
+
+  .installment-button::after {
+    width: 43px;
+    height: 43px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .installment-card-right {
+    gap: 20px;
+  }
+
+  .installment-title {
+    line-height: 40px;
+  }
+
+  .installment-title span {
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+
+  .installment-card-title {
+    line-height: 40px;
+  }
+
+  .installment-card-description {
+    line-height: 19px;
+  }
+
+  .installment-button-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .installment-button {
+    padding: 4px 4px 4px 20px;
+    gap: 20px;
+  }
+
+  .installment-button-icon svg {
+    width: 9px;
+    height: 7px;
+  }
+
+  .installment-button::after {
+    width: 38px;
+    height: 38px;
+  }
+
+  .installment-button:hover .installment-button-icon svg {
+    transform: translateX(-200px) rotate(40deg);
+  }
+
+  .installment-button:hover span {
+    transform: translateX(50px);
+  }
+
+  .installment-button:hover::after {
+    width: 560px;
+    height: 560px;
+    right: -280px;
+  }
+}
+
+@media (max-width: 1025px) {
+
+  .installment-card-left {
+    flex: 0 0 50%;
+    padding-right: 10px;
+  }
+
+  .installment-card-right {
+    flex: 0 0 50%;
+  }
+
+  .installment-stat-value {
+    font-size: 100px;
+  }
+
+  .installment-stat-label {
+    font-size: 20px;
+  }
+
+  .installment-card-right {
+    height: 400px;
+    padding: 10px;
+  }
+
+  .installment-card {
+    padding: 10px;
+  }
+
+  .installment-header {
+    margin-bottom: 20px;
+  }
+
+  .installment-title {
+    line-height: 36px;
+  }
+
+  .installment-title span {
+    text-decoration-thickness: 1.8px;
+    text-underline-offset: 2.5px;
+  }
+
+  .installment-subtitle {
+    line-height: 20px;
+  }
+
+  .installment-card-title {
+    line-height: 36px;
+  }
+
+  .installment-card-description {
+    line-height: 18px;
+  }
+
+  .installment-button-icon {
+    width: 32.03px;
+    height: 32.03px;
+  }
+
+  .installment-button {
+    padding: 3.5px 3.5px 3.5px 16px;
+  }
+
+  .installment-button::after {
+    width: 32.03px;
+    height: 32.03px;
+  }
+}
+
+@media (max-width: 890px) {
+  .installment-container {
+    padding: 25px 25px;
+  }
+
+  .installment-card {
+    min-height: 370px;
+    height: 350px;
+  }
+
+  .installment-card-left {
+    height: 350px;
+  }
+  
+  .installment-card-right {
+    height: 350px;
+  }
+
+  .installment-title {
+    line-height: 32px;
+  }
+
+  .installment-title span {
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+
+  .installment-subtitle {
+    line-height: 18px;
+  }
+
+  .installment-card-title {
+    line-height: 32px;
+  }
+
+  .installment-card-description {
+    line-height: 16px;
   }
 }
 

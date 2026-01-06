@@ -32,6 +32,35 @@ const TreatmentWarning = () => {
         });
     };
 
+    const handleMouseDown = (e) => {
+        const startPos = e.clientX;
+        setIsPaused(true);
+        
+        const handleMouseMove = (moveEvent) => {
+            const diff = startPos - moveEvent.clientX;
+            const threshold = 10;
+            
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    goToNextSlide(); // Перетащили влево - следующий слайд
+                } else {
+                    goToPrevSlide(); // Перетащили вправо - предыдущий слайд
+                }
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+            }
+        };
+        
+        const handleMouseUp = () => {
+            setIsPaused(false);
+            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mouseup', handleMouseUp);
+        };
+        
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', handleMouseUp);
+    };
+
     useEffect(() => {
         if (currentSlide === extendedSlides.length - 1) {
             const timer = setTimeout(() => {
@@ -101,7 +130,7 @@ const TreatmentWarning = () => {
                             onMouseEnter={() => setIsPaused(true)}
                             onMouseLeave={() => setIsPaused(false)}
                         >
-                            <div className="treatment-warning-carousel" ref={carouselRef}>
+                            <div className="treatment-warning-carousel" ref={carouselRef} onMouseDown={handleMouseDown}>
                                 <div 
                                     className="treatment-warning-carousel-slides" 
                                     style={{ 

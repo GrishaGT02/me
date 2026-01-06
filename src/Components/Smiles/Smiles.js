@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import kerImage from '../../assec/ker.jpg';
 import image2 from '../../assec/2.png';
 import image3 from '../../assec/3.png';
@@ -6,16 +7,155 @@ import dockImage from '../../assec/dock.jpg';
 import './Smiles.css';
 
 const Smiles = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 6;
+  const [currentSlide, setCurrentSlide] = useState(1); // Начинаем с 1, так как 0 - это дублированный последний слайд
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
+  const slides = [kerImage, kerImage, kerImage, kerImage, kerImage, kerImage]; // 6 слайдов
+  
+  // Данные для каждого слайда
+  const slideData = [
+    {
+      problem: "Имплантация нижней челюсти all-",
+      solution: "Установка дентального имплантата на место 24 зуба верхней челюсти."
+    },
+    {
+      problem: "Проблема 2",
+      solution: "Решение 2"
+    },
+    {
+      problem: "Проблема 3",
+      solution: "Решение 3"
+    },
+    {
+      problem: "Проблема 4",
+      solution: "Решение 4"
+    },
+    {
+      problem: "Проблема 5",
+      solution: "Решение 5"
+    },
+    {
+      problem: "Проблема 6",
+      solution: "Решение 6"
+    }
+  ];
+  
+  // Дублируем последний слайд в начало и первый в конец для бесконечного эффекта
+  const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
+  const carouselRef = useRef(null);
+
+  // Реальный индекс для отображения (0-5)
+  const realIndex = currentSlide === 0 ? slides.length - 1 : (currentSlide === extendedSlides.length - 1 ? 0 : currentSlide - 1);
+  const totalSlides = slides.length;
+  
+  const [hasStartedAnimation, setHasStartedAnimation] = useState(false); // Анимация началась
+
+  // Запускаем анимацию только после первой смены слайда
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setCurrentSlide((prev) => {
+        if (prev === extendedSlides.length - 1) {
+          return 0;
+        }
+        return prev + 1;
+      });
+      // Включаем анимацию после первой смены слайда
+      if (!hasStartedAnimation) {
+        setHasStartedAnimation(true);
+      }
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [extendedSlides.length, isPaused, hasStartedAnimation]);
+  
+  // Получаем данные для текущего слайда
+  const currentSlideData = slideData[realIndex] || slideData[0];
+  
+  // Разбиваем текст на строки (как в оригинальной структуре)
+  const problemParts = currentSlideData.problem.split(' ');
+  const solutionParts = currentSlideData.solution.split(' ');
+  
+  // Формируем строки для проблемы (2 строки)
+  const problemLine1 = problemParts.slice(0, 2).join(' ');
+  const problemLine2 = problemParts.slice(2).join(' ');
+  
+  // Формируем строки для решения (3 строки)
+  const solutionLine1 = solutionParts.slice(0, 2).join(' ');
+  const solutionLine2 = solutionParts.slice(2, 5).join(' ');
+  const solutionLine3 = solutionParts.slice(5).join(' ');
 
   const goToNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => {
+      if (prev === extendedSlides.length - 1) {
+        return 0; // Это не должно произойти, так как useEffect обработает это
+      }
+      return prev + 1;
+    });
   };
 
   const goToPrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => {
+      if (prev === 0) {
+        return extendedSlides.length - 1; // Это не должно произойти, так как useEffect обработает это
+      }
+      return prev - 1;
+    });
   };
+
+  const handleMouseDown = (e) => {
+    const startPos = e.clientX;
+    setIsPaused(true);
+    
+    const handleMouseMove = (moveEvent) => {
+      const diff = startPos - moveEvent.clientX;
+      const threshold = 10;
+      
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          goToNextSlide(); // Перетащили влево - следующий слайд
+        } else {
+          goToPrevSlide(); // Перетащили вправо - предыдущий слайд
+        }
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseup', handleMouseUp);
+      }
+    };
+    
+    const handleMouseUp = () => {
+      setIsPaused(false);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', handleMouseUp);
+  };
+
+
+  useEffect(() => {
+    if (currentSlide === extendedSlides.length - 1) {
+      // Если дошли до дублированного первого слайда в конце, мгновенно переходим на реальный первый
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentSlide(1);
+        setTimeout(() => setIsTransitioning(true), 50);
+      }, 1200);
+      return () => clearTimeout(timer);
+    } else if (currentSlide === 0) {
+      // Если дошли до дублированного последнего слайда в начале, мгновенно переходим на реальный последний
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        setCurrentSlide(slides.length);
+        setTimeout(() => setIsTransitioning(true), 50);
+      }, 1200);
+      return () => clearTimeout(timer);
+    }
+  }, [currentSlide, slides.length, extendedSlides.length]);
 
   return (
     <div className="smiles-container">
@@ -29,34 +169,190 @@ const Smiles = () => {
           <div className="smiles-main-content">
             {/* Левая часть: фото пациента и текст */}
             <div className="smiles-top-section">
-              <div className="smiles-patient-image">
-                <img src={kerImage} alt="Patient" />
+              <div 
+                className="smiles-carousel-wrapper"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                <div 
+                  className="smiles-carousel" 
+                  ref={carouselRef}
+                  onMouseDown={handleMouseDown}
+                >
+                  <div 
+                    className="smiles-carousel-slides" 
+                    style={{ 
+                      transform: `translateX(-${currentSlide * 100}%)`,
+                      transition: isTransitioning ? 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
+                    }}
+                  >
+                    {extendedSlides.map((slide, index) => (
+                      <div key={index} className="smiles-carousel-slide">
+                        <img src={slide} alt={`Slide ${index + 1}`} />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="smiles-carousel-dots-wrapper">
+                  <div className="smiles-carousel-dots">
+                    {slides.map((_, index) => (
+                      <button
+                        key={index}
+                        className={`smiles-carousel-dot ${realIndex === index ? 'active' : ''}`}
+                        onClick={() => {
+                          setIsTransitioning(true);
+                          setCurrentSlide(index + 1);
+                        }}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
               <div className="smiles-panel-text">
                 <div className="smiles-text-content">
                   <div className="smiles-problem">
-                    <strong>Проблема</strong>
-                    <p>Имплантация нижней челюсти all-</p>
+                    <div className="smiles-text-line">
+                      <AnimatePresence mode="wait">
+                        <motion.strong
+                          key={`problem-title-${realIndex}`}
+                          className="smiles-text-span"
+                          initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                          animate={{ y: 0, opacity: 1 }}
+                          exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                          transition={{
+                            duration: 0.8,
+                            ease: [0.25, 0.40, 0.70, 0.94]
+                          }}
+                        >
+                          Проблема
+                        </motion.strong>
+                      </AnimatePresence>
+                    </div>
+                    <div className="smiles-text-line">
+                      <p>
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`problem-1-${realIndex}`}
+                            className="smiles-text-span"
+                            initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            transition={{
+                              duration: 0.8,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }}
+                          >
+                            {problemLine1}
+                          </motion.span>
+                        </AnimatePresence>
+                        {' '}
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`problem-2-${realIndex}`}
+                            className="smiles-text-span"
+                            initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            transition={{
+                              duration: 0.8,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }}
+                          >
+                            {problemLine2}
+                          </motion.span>
+                        </AnimatePresence>
+                      </p>
+                    </div>
                   </div>
                   <div className="smiles-solution">
-                    <strong>Решение</strong>
-                    <p>Установка дентального имплантата на место 24 зуба верхней челюсти.</p>
+                    <div className="smiles-text-line">
+                      <AnimatePresence mode="wait">
+                        <motion.strong
+                          key={`solution-title-${realIndex}`}
+                          className="smiles-text-span"
+                          initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                          animate={{ y: 0, opacity: 1 }}
+                          exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                          transition={{
+                            duration: 0.8,
+                            ease: [0.25, 0.40, 0.70, 0.94]
+                          }}
+                        >
+                          Решение
+                        </motion.strong>
+                      </AnimatePresence>
+                    </div>
+                    <div className="smiles-text-line">
+                      <p>
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`solution-1-${realIndex}`}
+                            className="smiles-text-span"
+                            initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            transition={{
+                              duration: 0.8,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }}
+                          >
+                            {solutionLine1}
+                          </motion.span>
+                        </AnimatePresence>
+                        {' '}
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`solution-2-${realIndex}`}
+                            className="smiles-text-span"
+                            initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            transition={{
+                              duration: 0.8,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }}
+                          >
+                            {solutionLine2}
+                          </motion.span>
+                        </AnimatePresence>
+                        {' '}
+                        <AnimatePresence mode="wait">
+                          <motion.span
+                            key={`solution-3-${realIndex}`}
+                            className="smiles-text-span"
+                            initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
+                            transition={{
+                              duration: 0.8,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }}
+                          >
+                            {solutionLine3}
+                          </motion.span>
+                        </AnimatePresence>
+                      </p>
+                    </div>
                   </div>
                 </div>
                 {/* Навигация */}
                 <div className="smiles-navigation">
-                  <span className="smiles-slide-counter">{currentSlide + 1}/{totalSlides}</span>
+                  <span className="smiles-slide-counter">{realIndex + 1}/{totalSlides}</span>
                   <button 
                     className="smiles-nav-btn" 
                     onClick={goToPrevSlide}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
                   >
                     <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.9375 1.06055L2.9375 7.06055L8.9375 13.0605" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
                     </svg>
                   </button>
                   <button 
-                    className="smiles-nav-btn smiles-nav-btn-next" 
+                    className="smiles-nav-btn" 
                     onClick={goToNextSlide}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
                   >
                     <svg className="smiles-nav-progress" width="60" height="60" viewBox="0 0 60 60">
                       <circle
@@ -72,17 +368,17 @@ const Smiles = () => {
                         cy="30"
                         r="29"
                         fill="none"
-                        stroke="#FFFFFF"
+                        stroke="#485B85"
                         strokeWidth="1"
                         strokeDasharray={`${2 * Math.PI * 29}`}
-                        strokeDashoffset={`${2 * Math.PI * 29 * (1 - (currentSlide + 1) / totalSlides)}`}
+                        strokeDashoffset={`${2 * Math.PI * 29 * (1 - (realIndex + 1) / totalSlides)}`}
                         strokeLinecap="round"
                         transform="rotate(-90 30 30)"
                         style={{ transition: 'stroke-dashoffset 0.5s ease' }}
                       />
                     </svg>
                     <svg className="smiles-nav-arrow" width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1.0625 13.0605L7.0625 7.06055L1.0625 1.06055" stroke="#FFFFFF" strokeOpacity="1" strokeWidth="3"/>
+                      <path d="M1.0625 13.0605L7.0625 7.06055L1.0625 1.06055" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
                     </svg>
                   </button>
                 </div>

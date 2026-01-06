@@ -1,5 +1,7 @@
 .smiles-container {
   width: 100%;
+  max-width: 2020px;
+  margin: 0 auto;
   padding: 80px 50px;
   box-sizing: border-box;
   background-color: #FFFFFF;
@@ -70,19 +72,104 @@
   min-height: 0;
 }
 
-.smiles-patient-image {
+/* Карусель */
+.smiles-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
   flex-shrink: 0;
-  border-radius: 30px;
-  overflow: hidden;
   width: 360px;
   height: 100%;
 }
 
-.smiles-patient-image img {
+.smiles-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.smiles-carousel-slides {
+  display: flex;
+  height: 100%;
+}
+
+.smiles-carousel-slide {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.smiles-carousel-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
   display: block;
+}
+
+.smiles-carousel-dots-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 4px 0;
+}
+
+.smiles-carousel-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  background: linear-gradient(180deg, #485B85 0%, rgba(72, 91, 133, 0.8) 100%);
+  border-radius: 2px;
+  z-index: 0;
+  pointer-events: none;
+  box-shadow: 0 0 4px rgba(72, 91, 133, 0.3);
+  opacity: 0;
+}
+
+.smiles-carousel-line-animating {
+  animation: slideLine 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideLine {
+  0% {
+    top: var(--prev-top, 10px);
+    opacity: 1;
+  }
+  100% {
+    top: var(--current-top, 10px);
+    opacity: 1;
+  }
+}
+
+.smiles-carousel-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  z-index: 2;
+}
+
+.smiles-carousel-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.smiles-carousel-dot.active {
+  background: #000000;
+  height: 10px;
 }
 
 .smiles-panel-text {
@@ -117,7 +204,20 @@
   font-weight: 600;
   color: #2E3D58;
   font-family: 'Geist', sans-serif;
+  position: relative;
+  display: block;
 }
+
+.smiles-text-line {
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: auto;
+  min-height: 1em;
+  display: flex;
+  align-items: center;
+}
+
 
 .smiles-problem p,
 .smiles-solution p {
@@ -128,7 +228,15 @@
   margin: 0;
   line-height: 1.6;
   font-family: 'Geist', sans-serif;
+  position: relative;
+  display: block;
 }
+
+.smiles-text-span {
+  display: block;
+  position: relative;
+}
+
 
 .smiles-navigation {
   display: flex;
@@ -154,19 +262,25 @@
 }
 
 .smiles-nav-btn:hover {
-  background: #F5F5F5;
-}
-
-.smiles-nav-btn-next {
   background: #485B85;
 }
 
-.smiles-nav-btn-next:hover {
-  background: #3d4f70;
+.smiles-nav-btn:hover svg:not(.smiles-nav-progress):not(.smiles-nav-arrow) path {
+  stroke: #FFFFFF;
+  stroke-opacity: 1;
 }
 
-.smiles-nav-btn-next .smiles-nav-arrow path {
+.smiles-nav-btn:hover .smiles-nav-arrow path {
   stroke: #FFFFFF;
+  stroke-opacity: 1;
+}
+
+.smiles-nav-btn:hover .smiles-nav-progress circle:nth-child(2) {
+  stroke: #ffffff !important;
+}
+
+.smiles-nav-btn:hover .smiles-nav-progress circle:first-child {
+  stroke: #485B85 !important;
 }
 
 .smiles-nav-progress {
@@ -175,6 +289,12 @@
   left: 0;
   width: 60px;
   height: 60px;
+  z-index: 2;
+}
+
+.smiles-nav-progress circle {
+  transition: stroke 0.3s ease;
+  stroke-width: 2 !important;
 }
 
 .smiles-nav-arrow {
@@ -184,9 +304,17 @@
   height: 15px;
 }
 
+.smiles-nav-arrow path {
+  transition: stroke 0.3s ease, stroke-opacity 0.3s ease;
+}
+
 .smiles-nav-btn svg:not(.smiles-nav-progress):not(.smiles-nav-arrow) {
   width: 10px;
   height: 15px;
+}
+
+.smiles-nav-btn svg:not(.smiles-nav-progress):not(.smiles-nav-arrow) path {
+  transition: stroke 0.3s ease, stroke-opacity 0.3s ease;
 }
 
 .smiles-slide-counter {
@@ -218,7 +346,7 @@
 
 .smiles-mouth-before,
 .smiles-mouth-after {
-  width: 475px;
+  /* width: 475px; */
   height: 250px;
   border-radius: 30px;
   overflow: hidden;
@@ -270,7 +398,266 @@
   display: block;
 }
 
+@media (max-width: 1650px) {
+  .smiles-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .smiles-panel-right {
+    display: none;
+  }
+
+  /* Кнопки навигации слайдера */
+  .smiles-nav-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .smiles-nav-progress {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 1367px) {
+  .smiles-mouth-section {
+    padding: 28px 28px 40px 28px;
+    height: 526px;
+  }
+
+  .smiles-container {
+    padding: 80px 35px;
+  }
+
+  .smiles-content{
+    height: 569px;
+  }
+
+  .smiles-panel-left {
+    height: 569px;
+    padding: 20px;
+  }
+
+  .smiles-main-content {
+    height: 526px;
+    flex: none;
+  }
+
+  .smiles-panel-text {
+    flex: none;
+    min-height: auto;
+    height: 526px;
+  }
+
+  .smiles-carousel-wrapper {
+    width: 258px;
+    height: 526px;
+  }
+
+  .smiles-panel-info-main {
+    font-size: 14px;
+  }
+
+  .smiles-panel-info-small {
+    font-size: 10px;
+  }
+
+  .smiles-mouth-before,
+  .smiles-mouth-after {
+    height: 177px;
+  }
+
+  /* Кнопки навигации слайдера */
+  .smiles-nav-btn {
+    width: 47.5px;
+    height: 47.5px;
+  }
+
+  .smiles-nav-progress {
+    width: 47.5px;
+    height: 47.5px;
+  }
+
+  .smiles-nav-arrow {
+    width: 4.75px;
+    height: 9.5px;
+  }
+
+  /* Левая стрелка навигации */
+  .smiles-nav-btn svg:not(.smiles-nav-progress):not(.smiles-nav-arrow) {
+    width: 4.75px;
+    height: 9.5px;
+  }
+}
+
 @media (max-width: 1200px) {
+  .smiles-mouth-section {
+    height: 526px;
+  }
+
+  .smiles-carousel-wrapper {
+    width: 258px;
+    height: 526px;
+  }
+
+  .smiles-mouth-before,
+  .smiles-mouth-after {
+    height: 177px;
+  }
+
+  /* Кнопки навигации слайдера */
+  .smiles-nav-btn {
+    width: 37.5px;
+    height: 37.5px;
+  }
+
+  .smiles-nav-progress {
+    width: 37.5px;
+    height: 37.5px;
+  }
+
+  .smiles-nav-arrow {
+    width: 4px;
+    height: 8px;
+  }
+
+  /* Левая стрелка навигации */
+  .smiles-nav-btn svg:not(.smiles-nav-progress):not(.smiles-nav-arrow) {
+    width: 4px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .smiles-mouth-section {
+    padding: 20px 20px 30px 20px;
+    height: 395px;
+  }
+
+  .smiles-content{
+    height: 395px;
+  }
+
+  .smiles-title {
+    margin-bottom: 25px;
+  }
+
+  .smiles-container {
+    padding: 25px 25px 50px 25px;
+  }
+
+  .smiles-panel-text {
+    flex: none;
+    min-height: auto;
+    width: 162px;
+    height: 395px;
+  }
+  
+  .smiles-carousel-wrapper {
+    width: 258px;
+    height: 395px;
+  }
+
+  .smiles-top-section {
+    gap: 25px;
+  }
+
+  .smiles-panel-left {
+    height: 427px;
+    padding: 16px;
+  }
+
+  .smiles-mouth-before,
+  .smiles-mouth-after {
+    height: 133px;
+  }
+
+  /* Кнопки навигации слайдера */
+  .smiles-nav-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .smiles-nav-progress {
+    width: 34px;
+    height: 34px;
+  }
+
+  .smiles-nav-arrow {
+    width: 3.5px;
+    height: 7px;
+  }
+
+  /* Левая стрелка навигации */
+  .smiles-nav-btn svg:not(.smiles-nav-progress):not(.smiles-nav-arrow) {
+    width: 3.5px;
+    height: 7px;
+  }
+}
+
+@media (max-width: 880px) {
+  .smiles-container {
+    padding: 25px 25px 25px 25px;
+  }
+  .smiles-panel-info-small {
+    font-size: 7px;
+  }
+  .smiles-mouth-images {
+    margin-bottom: 10px;
+  }
+
+  .smiles-panel-info-main {
+    font-size: 9px;
+  }
+
+  .smiles-panel {
+    height: 366px;
+  }
+  
+  .smiles-panel-text {
+    width: 139px;
+    height: 339px;
+  }
+
+  .smiles-mouth-section {
+    padding: 10px 10px 20px 10px;
+    height: 339px;
+  }
+
+  .smiles-carousel-wrapper {
+    width: 258px;
+    height: 339px;
+  }
+
+  .smiles-mouth-before,
+  .smiles-mouth-after {
+    height: 114px;
+  }
+
+  /* Кнопки навигации слайдера */
+  .smiles-nav-btn {
+    width: 27px;
+    height: 27px;
+  }
+
+  .smiles-nav-progress {
+    width: 27px;
+    height: 27px;
+  }
+
+  .smiles-nav-arrow {
+    width: 3px;
+    height: 6px;
+  }
+
+  /* Левая стрелка навигации */
+  .smiles-nav-btn svg:not(.smiles-nav-progress):not(.smiles-nav-arrow) {
+    width: 3px;
+    height: 6px;
+  }
+}
+
+/* @media (max-width: 1200px) {
   .smiles-content {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -290,5 +677,6 @@
     font-size: var(--font-size-h3-5);
     margin-bottom: 40px;
   }
-}
+} */
+
 

@@ -29,12 +29,16 @@ const WhyChooseUs = () => {
 
   return (
     <div className="why-choose-us-container">
+      <h2 className="why-choose-us-title why-choose-us-title-top">
+        ПОЧЕМУ ЖИТЕЛИ РАССКАЗОВКИ <span className="why-choose-us-title-highlight">ВЫБИРАЮТ НАС</span>?
+      </h2>
       <div className="why-choose-us-content">
         <div className="why-choose-us-left">
-          <h2 className="why-choose-us-title">
-            ПОЧЕМУ ЖИТЕЛИ РАССКАЗОВКИ <span className="why-choose-us-title-highlight">ВЫБИРАЮТ НАС?</span>
+          <h2 className="why-choose-us-title why-choose-us-title-inline">
+            ПОЧЕМУ ЖИТЕЛИ РАССКАЗОВКИ <span className="why-choose-us-title-highlight">ВЫБИРАЮТ НАС</span>?
           </h2>
-          <div className="why-choose-us-items">
+          <div className="why-choose-us-left-content">
+            <div className="why-choose-us-items">
             {items.map((item, index) => (
               <React.Fragment key={index}>
                 <div className="why-choose-us-item">
@@ -58,6 +62,7 @@ const WhyChooseUs = () => {
                 <div className="why-choose-us-item-divider"></div>
               </React.Fragment>
             ))}
+            </div>
           </div>
         </div>
         <div className="why-choose-us-right">

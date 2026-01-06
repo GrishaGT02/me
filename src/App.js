@@ -10,12 +10,15 @@ import Oprosnik from './Components/Oprosnik/Oprosnik';
 import Zapis from './Components/Zapis/Zapis';
 import Fich1 from './Components/Fich1/Fich1';
 import Otzov from './Components/Otzov/Otzov';
+import Reviews from './Components/Reviews/Reviews';
+import GuaranteeFAQ from './Components/GuaranteeFAQ/GuaranteeFAQ';
 import Konsultacia from './Components/Konsultacia/Konsultacia';
 import Stoimost from './Components/Stoimost/Stoimost';
 import WhyChooseUs from './Components/WhyChooseUs/WhyChooseUs';
 import Smiles from './Components/Smiles/Smiles';
 import MedicatedSleep from './Components/MedicatedSleep/MedicatedSleep';
 import Guarantees from './Components/Guarantees/Guarantees';
+import PersonalGuarantee from './Components/PersonalGuarantee/PersonalGuarantee';
 import Installment from './Components/Installment/Installment';
 import FixedPrice from './Components/FixedPrice/FixedPrice';
 import Kvis from './Components/Kvis/Kvis';
@@ -40,6 +43,9 @@ function App() {
         <MedicatedSleep />
         <Guarantees />
         <Installment />
+        <PersonalGuarantee />
+        <Reviews />
+        <GuaranteeFAQ />
         <FixedPrice />
         <Usluga />
         <Modal />

@@ -30,22 +30,32 @@ const Guarantees = () => {
             <div className="guarantees-container">
                 <div className="guarantees-top">
                     <div className="guarantees-left">
-                        <div className="guarantees-small-title">Мы даём гарантии</div>
+                        <div className="guarantees-small-title">
+                            <div className="guarantees-small-title-bar"></div>
+                            <span>Лечитесь без тревоги за будущее. Все наши гарантии — в договоре!</span>
+                        </div>
                         <div className="guarantees-main-title">
                             Мы на стороне пациента! Поэтому все наши обязательства - не просто слова, а пункты договора, которые <span>защищают Ваши интересы!</span>
                         </div>
                         <div className="guarantees-description">
-                            Наша цель — сохранить ваши зубы. Применяем микроинвазивные технологии для максимально бережного лечения. Начните с бесплатной консультации и получите свой план лечения.
+                            Мы уверены в качестве своей работы настолько, что даём официальные, юридически закреплённые гарантии. Ваша уверенность в завтрашнем дне - наш главный приоритет.
                         </div>
                     </div>
                     <div className="guarantees-right">
                         {guarantees.map((guarantee, index) => (
                             <div key={index} className="guarantees-item">
-                                <div className="guarantees-years">{guarantee.years}</div>
-                                <div className="guarantees-item-description">{guarantee.description}</div>
-                                {index < guarantees.length - 1 && (
-                                    <div className="guarantees-divider"></div>
-                                )}
+                                <div className="guarantees-item-content-wrapper">
+                                    <div className="guarantees-item-icon">
+                                        <svg width="47" height="55" viewBox="0 0 47 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19.3936 0.808594C21.909 -0.269473 24.757 -0.269473 27.2725 0.808594L44.6465 8.25488C45.8718 8.78017 46.6659 9.98521 46.666 11.3184V28.8281C46.666 35.2871 43.5469 41.3493 38.291 45.1035L27.208 53.0195C24.89 54.6752 21.776 54.6752 19.458 53.0195L8.375 45.1035C3.11908 41.3493 0 35.2871 0 28.8281V11.3184C0.00015748 9.98521 0.794227 8.78017 2.01953 8.25488L19.3936 0.808594ZM35.415 16.5186C33.9776 15.3688 31.8805 15.6018 30.7305 17.0391L19.7236 30.7969L15.6904 26.7637C14.3887 25.4622 12.2773 25.4622 10.9756 26.7637C9.67391 28.0653 9.67406 30.1768 10.9756 31.4785L16.3262 36.8281C18.4334 38.9352 21.904 38.7429 23.7656 36.416L35.9355 21.2031C37.0853 19.7656 36.8525 17.6685 35.415 16.5186Z" fill="#2E3D58"/>
+                                        </svg>
+                                    </div>
+                                    <div className="guarantees-item-text">
+                                        <div className="guarantees-years">{guarantee.years}</div>
+                                        <div className="guarantees-item-description">{guarantee.description}</div>
+                                    </div>
+                                </div>
+                                <div className="guarantees-divider"></div>
                             </div>
                         ))}
                     </div>
