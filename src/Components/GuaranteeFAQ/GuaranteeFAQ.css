@@ -186,7 +186,7 @@
   max-width: 558px;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 558 / 730;
+  aspect-ratio: 0.764;
 }
 
 .guarantee-faq-doctor-image img {

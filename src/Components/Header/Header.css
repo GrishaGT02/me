@@ -832,7 +832,6 @@
 
 .header_nuv-carousel-dot.active {
     background: #000000;
-    /* /* width: 10px; */
     height: 10px; 
     /* box-shadow: 0 0 8px rgba(72, 91, 133, 0.5); */
 }
@@ -1654,7 +1653,8 @@
     }
 
     .header-street {
-        grid-column: 1 / -1;
+        grid-column-start: 1;
+        grid-column-end: -1;
         grid-row: 2;
     }
 
