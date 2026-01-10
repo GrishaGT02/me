@@ -1,6 +1,6 @@
 import React from 'react';
 import './Skils.css';
-import doctorImage from '../../assec/skils.jpg';
+import doctorImage from '../../assec/block4.png';
 
 const Skils = () => {
   const fears = [
@@ -82,6 +82,18 @@ const Skils = () => {
                   </div>
                 </div>
               ))}
+            </div>
+            
+            <div className="skils-tip">
+              <div className="skils-tip-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="12" fill="#485B85"/>
+                  <path d="M12 7V13M12 17H12.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <p className="skils-tip-text">
+              Из-за страха перед лечением зубов, люди годами откладывают визит к стоматологу
+              </p>
             </div>
           </div>
           

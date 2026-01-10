@@ -1,11 +1,11 @@
 .googing {
     width: 100%;
     background: #EBEBEB;
-    padding: 4vw 2.6vw;
+    padding: 4vw 10%;
 }
 
 .googing-container {
-    max-width: 1920px;
+    /* max-width: 1920px; */
     width: 100%;
     margin: 0 auto;
 }
@@ -16,8 +16,8 @@
 }
 
 .googing-title {
-    /* font-size: 2.6vw; */
-    font-size: var(--font-size-h1);
+    font-size: 2.1vw;
+    /* font-size: var(--font-size-h1); */
     font-weight: 600;
     line-height: 3.125vw;
     color: #000000;
@@ -31,14 +31,14 @@
     color: #485B85;
     text-decoration: underline;
     text-decoration-thickness: 0.16vw;
-    text-underline-offset: 0.26vw;
+    text-underline-offset: 0.31vw;
 }
 
 .googing-description {
     /* font-size: 1.3vw; */
     font-size: var(--font-size-h6);
     font-weight: 300;
-    line-height: 1.72vw;
+    line-height: 2vw;
     color: #1A1A1ABF;
     text-align: left;
     font-family: 'Geist', sans-serif;
@@ -75,7 +75,10 @@
 }
 
 .googing-doctor-info {
-    background: #FFFFFFA6;
+    /* background: #FFFFFFA6; */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 1.04vw;
     padding: 0.52vw;
     display: flex;
@@ -85,6 +88,7 @@
     bottom: 0.8vw;
     right: 0.8vw;
     border: 0.078vw solid rgba(255, 255, 255, 1);
+    border-top: 0.178vw solid rgba(255, 255, 255, 1);
     /* max-width: 300px; */
 }
 
@@ -156,7 +160,7 @@
     margin: 0;
     font-size: var(--font-size-h3-5);
     font-weight: 600;
-    line-height: 2.45vw;
+    line-height: 2.7vw;
     color: #000000;
     text-transform: uppercase;
     font-family: 'Geist', sans-serif;
@@ -173,7 +177,7 @@
     font-size: 1.15vw;
     margin: 0;
     font-weight: 300;
-    line-height: 1.46vw;
+    line-height: 1.7vw;
     color: #1A1A1ABF;
     font-family: 'Geist', sans-serif;
     text-align: left;
@@ -346,3 +350,11 @@
     margin-top: auto;
 }
 
+@media (max-width: 2200px) {
+    .googing { 
+        padding: 4vw 2.6vw;
+    }
+    .googing-title {
+        font-size: 2.6vw;
+    }
+}
