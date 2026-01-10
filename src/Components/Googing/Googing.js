@@ -20,7 +20,7 @@ const Googing = () => {
                             <img src={doctorImage} alt="Киракосян Карен Егишевич" />
                         </div>
                         <div className="googing-doctor-info">
-                            <div className="googing-doctor-info-card" style={{ background: '#FFFFFF', padding: '10px 20px', gap: '30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: '20px'}}>
+                            <div className="googing-doctor-info-card">
                                 <div>
                                     <div className="googing-doctor-name">Киракосян Карен Егишевич</div>
                                     <div className="googing-doctor-title">Основатель, главный врач, хирург, имплантолог</div>
@@ -36,7 +36,7 @@ const Googing = () => {
                     <div className="googing-right">
                         <div className="googing-form-card">
                             <h2 className="googing-form-title">
-                                <span style={{color: '#485B85', textDecoration: 'underline'}}>СОМНЕВАЕТЕСЬ</span>{' '}
+                                <span style={{color: '#485B85'}}>СОМНЕВАЕТЕСЬ</span>{' '}
                                 <span>В ПРЕДЛОЖЕННОМ ПЛАНЕ ЛЕЧЕНИЯ В ДРУГОЙ КЛИНИКЕ?</span>
                             </h2>
                             <p className="googing-form-description">

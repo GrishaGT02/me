@@ -1,23 +1,25 @@
 .googing {
     width: 100%;
     background: #EBEBEB;
-    padding: 50px 50px;
+    padding: 4vw 2.6vw;
 }
 
 .googing-container {
     max-width: 1920px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .googing-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 2.6vw;
 }
 
 .googing-title {
+    /* font-size: 2.6vw; */
     font-size: var(--font-size-h1);
     font-weight: 600;
-    line-height: 60px;
+    line-height: 3.125vw;
     color: #000000;
     text-align: left;
     text-transform: uppercase;
@@ -28,25 +30,26 @@
 .googing-title span {
     color: #485B85;
     text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
+    text-decoration-thickness: 0.16vw;
+    text-underline-offset: 0.26vw;
 }
 
 .googing-description {
+    /* font-size: 1.3vw; */
     font-size: var(--font-size-h6);
     font-weight: 300;
-    line-height: 33px;
+    line-height: 1.72vw;
     color: #1A1A1ABF;
     text-align: left;
     font-family: 'Geist', sans-serif;
-    max-width: 1650px;
-    margin-top: 30px;
+    max-width: 85.94vw;
+    margin-top: 0.56vw;
     /* margin: 0 auto; */
 }
 
 .googing-content {
     display: flex;
-    gap: 40px;
+    gap: 2.08vw;
     align-items: flex-start;
 }
 
@@ -57,9 +60,9 @@
 
 .googing-doctor-image {
     width: 100%;
-    height: 700px;
+    height: 36.77vw;
     background: #E0E0E0;
-    border-radius: 20px;
+    border-radius: 1.04vw;
     overflow: hidden;
 }
 
@@ -73,16 +76,26 @@
 
 .googing-doctor-info {
     background: #FFFFFFA6;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 1.04vw;
+    padding: 0.52vw;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.42vw;
     position: absolute;
-    bottom: 30px;
-    right: 10px;
-    border: 1.5px solid rgba(255, 255, 255, 1);
+    bottom: 0.8vw;
+    right: 0.8vw;
+    border: 0.078vw solid rgba(255, 255, 255, 1);
     /* max-width: 300px; */
+}
+
+.googing-doctor-info-card {
+    background: #FFFFFF;
+    padding: 0.52vw 1.04vw;
+    gap: 1.56vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1.04vw;
 }
 
 .googing-doctor-name {
@@ -91,7 +104,7 @@
     font-weight: 700;
     color: rgba(46, 61, 88, 1);
     font-family: 'Geist', sans-serif;
-    margin-bottom: 5px;
+    margin-bottom: 0.26vw;
 }
 
 .googing-doctor-title {
@@ -103,10 +116,10 @@
 }
 
 .googing-doctor-contact {
-    width: 60px;
-    height: 60px;
+    width: 3.125vw;
+    height: 3.125vw;
     background: #485B85;
-    border-radius: 50px;
+    border-radius: 2.6vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,18 +127,23 @@
     cursor: pointer;
 }
 
+.googing-doctor-contact svg {
+    width: 1.2vw;
+    height: 0.94vw;
+}
+
 .googing-right {
     flex: 1;
 }
 
 .googing-form-card {
-    height: 700px;
+    height: 36.77vw;
     background: #FFFFFF;
-    border-radius: 20px;
-    padding: 60px 30px 60px 30px;
+    border-radius: 1.04vw;
+    padding: 3.125vw 1.56vw;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 1.56vw;
     align-items: flex-start;
 }
 
@@ -134,11 +152,11 @@
 }
 
 .googing-form-title {
-    width: 650px;
+    width: 30.85vw;
     margin: 0;
     font-size: var(--font-size-h3-5);
     font-weight: 600;
-    line-height: 45px;
+    line-height: 2.45vw;
     color: #000000;
     text-transform: uppercase;
     font-family: 'Geist', sans-serif;
@@ -147,37 +165,37 @@
 }
 
 .googing-form-title span[style*="underline"] {
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
+    text-decoration-thickness: 0.16vw;
+    text-underline-offset: 0.26vw;
 }
 
 .googing-form-description {
-    font-size: 22px;
+    font-size: 1.15vw;
     margin: 0;
-    font-weight: 400;
-    line-height: 28px;
+    font-weight: 300;
+    line-height: 1.46vw;
     color: #1A1A1ABF;
     font-family: 'Geist', sans-serif;
     text-align: left;
-    width: 550px;
+    width: 28.65vw;
 }
 
 .googing-form-buttons {
     display: flex;
-    gap: 15px;
+    gap: 0.78vw;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
 }
 
 .googing-btn {
-    padding: 28px 40px;
-    border-radius: 50px;
+    padding: 1.46vw 2.08vw;
+    border-radius: 2.6vw;
     font-weight: 600;
     border: none;
     font-size: var(--font-size-button-secondary);
     font-weight: 500;
-    line-height: 19px;
+    line-height: 0.99vw;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -191,17 +209,17 @@
 }
 
 .googing-btn-1 {
-    padding: 6px 6px 6px 30px;
-    border-radius: 50px;
-    border: 1px solid #2E3D58;
+    padding: 0.31vw 0.31vw 0.31vw 1.56vw;
+    border-radius: 2.6vw;
+    border: 0.052vw solid #2E3D58;
     font-weight: 700;
     font-size: var(--font-size-button);
-    line-height: 17px;
+    line-height: 0.89vw;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 1.56vw;
     font-family: 'Geist', sans-serif;
     position: relative;
     overflow: hidden;
@@ -221,12 +239,12 @@
 
 .googing-btn-primary:hover span {
     color: #485B85;
-    transform: translateX(70px);
+    transform: translateX(3.65vw);
 }
 
 .googing-btn-icon {
-    width: 60px;
-    height: 60px;
+    width: 3.125vw;
+    height: 3.125vw;
     border-radius: 50%;
     background: #FFFFFF;
     display: flex;
@@ -238,23 +256,23 @@
 }
 
 .googing-btn-icon svg {
-    width: 19px;
-    height: 18px;
+    width: 0.99vw;
+    height: 0.94vw;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .googing-btn-1:hover .googing-btn-icon svg {
-    transform: translateX(-250px) rotate(40deg);
+    transform: translateX(-13.02vw) rotate(40deg);
 }
 
 .googing-btn-1::after {
     content: '';
     position: absolute;
-    right: 6px;
+    right: 0.31vw;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
+    width: 3.125vw;
+    height: 3.125vw;
     border-radius: 50%;
     background: #FFFFFF;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -263,9 +281,9 @@
 }
 
 .googing-btn-1:hover::after {
-    width: 800px;
-    height: 800px;
-    right: -400px;
+    width: 41.67vw;
+    height: 41.67vw;
+    right: -20.83vw;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -273,7 +291,7 @@
 .googing-form-checkbox {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.63vw;
     justify-content: flex-start;
     width: 100%;
 }
@@ -300,12 +318,12 @@
 .googing-form-checkbox input[type="checkbox"]:checked::after {
     content: '';
     position: absolute;
-    left: 2px;
+    left: 0.1vw;
     top: 0px;
-    width: 3px;
-    height: 6px;
+    width: 0.16vw;
+    height: 0.31vw;
     border: solid white;
-    border-width: 0 2px 2px 0;
+    border-width: 0 0.1vw 0.1vw 0;
     transform: rotate(45deg);
 }
 
@@ -326,430 +344,5 @@
     text-align: left;
     width: 100%;
     margin-top: auto;
-}
-
-@media (max-width: 1650px) {
-    .googing-form-description {
-        width: 550px;
-    }
-
-    .googing-form-title {
-        width: 550px;
-    }
-
-    .googing-doctor-image {
-        height: 580px;
-    }
-
-    .googing-form-card {
-        padding: 47px 24px;
-        height: 580px;
-    }
-    .googing-header {
-        margin-bottom: 40px;
-    }
-
-    .googing {
-        padding: 40px;
-    }
-    .googing-title span {
-        text-decoration-thickness: 2.5px;
-        text-underline-offset: 4px;
-    }
-
-    .googing-form-title span[style*="underline"] {
-        text-decoration-thickness: 2.5px;
-        text-underline-offset: 4px;
-    }
-
-    .googing-description {
-        width: 1300px;
-        margin-top: 24px;
-    }
-
-    .googing-btn {
-        padding: 22px 32px;
-    }
-
-    /* Иконка кнопки записи на приём */
-    .googing-btn-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .googing-btn-1 {
-        padding: 5px 5px 5px 24px;
-        gap: 24px;
-    }
-
-    .googing-btn-icon svg {
-        width: 11px;
-        height: 9px;
-    }
-
-    .googing-btn-1::after {
-        width: 48px;
-        height: 48px;
-    }
-
-    /* Анимация SVG стрелки - уменьшенное движение */
-    .googing-btn-1:hover .googing-btn-icon svg {
-        transform: translateX(-180px) rotate(40deg);
-    }
-
-    .googing-btn-primary:hover span {
-        transform: translateX(60px);
-    }
-
-    /* Анимация расширяющегося круга - уменьшенный размер */
-    .googing-btn-1:hover::after {
-        width: 640px;
-        height: 640px;
-        right: -320px;
-    }
-}
-
-@media (max-width: 1367px) {
-    .googing-doctor-image {
-        height: 500px;
-    }
-
-    .googing-form-card {
-        height: 500px;
-    }
-
-    .googing {
-        padding: 35px;
-    }
-
-    .googing-description {
-        margin-top: 21px;
-        line-height: 28px;
-        width: 1150px;
-    }
-
-    .googing-header {
-        margin-bottom: 35px;
-    }
-
-    .googing-content {
-        gap: 35px;
-    }
-
-    .googing-form-title {
-        width: 500px;
-        line-height: 38px;
-    }
-
-    .googing-form-card {
-        gap: 21px;
-    }
-
-    .googing-title span {
-        text-decoration-thickness: 2.5px;
-        text-underline-offset: 4px;
-    }
-
-    .googing-form-title span[style*="underline"] {
-        text-decoration-thickness: 2.5px;
-        text-underline-offset: 4px;
-    }
-
-    .googing-btn {
-        padding: 20px 28px;
-    }
-
-    /* Иконка кнопки записи на приём */
-    .googing-btn-icon {
-        width: 43px;
-        height: 43px;
-    }
-
-    .googing-btn-icon svg {
-        width: 10px;
-        height: 8px;
-    }
-
-    .googing-btn-1::after {
-        width: 43px;
-        height: 43px;
-    }
-
-    .googing-form-description {
-        width: 440px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .googing-doctor-image {
-        height: 440px;
-    }
-
-    .googing-form-card {
-        height: 440px;
-    }
-
-    .googing-form-description {
-        line-height: 22px;
-        font-size: 14px;
-    }
-
-    .googing-form-card {
-        padding: 37px 18px;
-    }
-
-    .googing-form-title {
-        width: 400px;
-        line-height: 33px;
-    }
-
-    .googing-header {
-        margin-bottom: 31px;
-    }
-
-    .googing-description {
-        margin-top: 18px;
-        width: 1050px;
-    }
-    .googing {
-        padding: 35px;
-    }
-
-    .googing-title span {
-        text-decoration-thickness: 2px;
-        text-underline-offset: 3px;
-    }
-
-    .googing-form-title span[style*="underline"] {
-        text-decoration-thickness: 2px;
-        text-underline-offset: 3px;
-    }
-
-    .googing-btn {
-        padding: 18px 24px;
-    }
-
-    /* Иконка кнопки записи на приём */
-    .googing-btn-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .googing-btn-icon svg {
-        width: 9px;
-        height: 7px;
-    }
-
-    .googing-btn-1::after {
-        width: 38px;
-        height: 38px;
-    }
-
-    .googing-btn-1 {
-        padding: 4px 4px 4px 20px;
-        gap: 20px;
-    }
-
-    /* Анимация SVG стрелки */
-    .googing-btn-1:hover .googing-btn-icon svg {
-        transform: translateX(-150px) rotate(40deg);
-    }
-
-    .googing-btn-primary:hover span {
-        transform: translateX(50px);
-    }
-
-    /* Анимация расширяющегося круга */
-    .googing-btn-1:hover::after {
-        width: 560px;
-        height: 560px;
-        right: -280px;
-    }
-}
-
-@media (max-width: 1025px) {
-    .googing-doctor-info {
-        padding: 5px;
-    }
-
-    .googing-doctor-title {
-        font-size: 14px;
-        margin-bottom: 2.5px;
-    }
-
-    .googing-doctor-title {
-        font-size: 8.5px;
-    }
-
-    .googing-doctor-info {
-        bottom: 10px;
-    }
-
-    .googing-doctor-info-card {
-        padding: 5px 10px !important;
-        gap: 20px !important;
-    }
-
-    .googing-doctor-contact {
-        width: 32.03px;
-        height: 32.03px;
-    }
-
-    .googing-doctor-contact svg {
-        width: 12.01px;
-        height: 9.34px;
-    }
-
-    .googing-doctor-image {
-        height: 376px;
-    }
-
-    .googing-btn {
-        font-size: 7px;
-    }
-
-    .googing-btn-1 {
-        font-size: 8px;
-    }
-
-    .googing-form-disclaimer {
-        font-size: 7px;
-    }
-
-    .googing-form-checkbox label {
-        font-size: 7px;
-    }
-
-    .googing-form-description {
-        font-size: 12px;
-    }
-
-    .googing-form-title {
-        width: 376px;
-        line-height: 28px;
-    }
-    .googing-form-card {
-        height: 376px;
-        gap: 16px;
-        padding: 31px 16px;
-    }
-
-    .googing-header {
-        margin-bottom: 26px;
-    }
-    .googing-description {
-        line-height: 21px;
-    }
-    .googing-description {
-        margin-top: 15px;
-        width: 876px;
-    }
-
-    .googing {
-        padding: 25px;
-    }
-    .googing-title span {
-        text-decoration-thickness: 1.8px;
-        text-underline-offset: 2.5px;
-    }
-
-    .googing-form-title span[style*="underline"] {
-        text-decoration-thickness: 1.8px;
-        text-underline-offset: 2.5px;
-    }
-
-    .googing-btn {
-        padding: 11px 21px;
-    }
-
-    /* Иконка кнопки записи на приём */
-    .googing-btn-icon {
-        width: 32.03px;
-        height: 32.03px;
-    }
-
-    .googing-btn-1::after {
-        width: 32.03px;
-        height: 32.03px;
-    }
-
-    .googing-btn-1 {
-        padding: 3.5px 3.5px 3.5px 16px;
-    }
-}
-
-@media (max-width: 880px) {
-    .googing-form-card {
-        padding: 27px 14px;
-        height: 323px;
-    }
-    .googing-header {
-        margin-bottom: 22px;
-    }
-
-    .googing-description {
-        margin-top: 13px;
-        width: 753px;
-    }
-
-    .googing {
-        padding: 22px;
-    }
-
-    .googing-title span {
-        text-decoration-thickness: 1.5px;
-        text-underline-offset: 2px;
-    }
-
-    .googing-form-title span[style*="underline"] {
-        text-decoration-thickness: 1.5px;
-        text-underline-offset: 2px;
-    }
-
-    .googing-btn {
-        padding: 11px 18px;
-    }
-
-    .googing-doctor-image {
-        height: 323px;
-    }
-
-    /* Иконка кнопки записи на приём */
-    /* .googing-btn-icon {
-        width: 48px;
-        height: 48px;
-    } */
-
-    /* .googing-btn-1 {
-        padding: 5px 5px 5px 24px;
-        gap: 24px;
-    } */
-
-    /* .googing-btn-icon svg {
-        width: 11px;
-        height: 9px;
-    } */
-
-    /* .googing-btn-1::after {
-        width: 48px;
-        height: 48px;
-    }
-
-    /* Анимация SVG стрелки - уменьшенное движение */
-    .googing-btn-1:hover .googing-btn-icon svg {
-        transform: translateX(-140px) rotate(40deg);
-    } */
-
-    .googing-btn-primary:hover span {
-        transform: translateX(60px);
-    }
-
-    /* Анимация расширяющегося круга - уменьшенный размер */
-    /* .googing-btn-1:hover::after {
-        width: 640px;
-        height: 640px;
-        right: -320px;
-    } */
 }
 
