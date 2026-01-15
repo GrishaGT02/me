@@ -260,13 +260,13 @@
 }
 
 .googing-btn-icon svg {
-    width: 0.99vw;
-    height: 0.94vw;
+    width: 0.73vw;
+    height: 0.63vw;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .googing-btn-1:hover .googing-btn-icon svg {
-    transform: translateX(-13.02vw) rotate(40deg);
+    transform: translateX(-12.6vw) rotate(40deg);
 }
 
 .googing-btn-1::after {

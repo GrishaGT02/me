@@ -5,6 +5,10 @@
   background-color: #191919;
   position: relative;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .carousel-slides-wrapper {
@@ -20,6 +24,10 @@
   display: flex;
   gap: 2.6vw;
   width: fit-content;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .carousel-wrapper {

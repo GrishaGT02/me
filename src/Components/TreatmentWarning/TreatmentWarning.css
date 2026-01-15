@@ -1,12 +1,11 @@
 .treatment-warning-container {
     width: 100%;
-    padding: 50px;
+    padding: 4vw 10% 2.6vw 10%;
     background-color: #FFFFFF;
     box-sizing: border-box;
 }
 
 .treatment-warning-content {
-    max-width: 1920px;
     margin: 0 auto;
     width: 100%;
 }
@@ -15,8 +14,8 @@
     font-size: var(--font-size-h1);
     font-weight: 600;
     color: #000000;
-    line-height: 60px;
-    margin: 0 0 30px 0;
+    line-height: 3.125vw;
+    margin: 0 0 1.56vw 0;
     text-align: left;
     text-transform: uppercase;
     font-family: 'Geist', sans-serif;
@@ -25,15 +24,15 @@
 .treatment-warning-title-highlight {
     color: #485B85;
     text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
+    text-decoration-thickness: 0.16vw;
+    text-underline-offset: 0.26vw;
 }
 
 .treatment-warning-intro {
     font-size: var(--font-size-h6);
     font-weight: 300;
     color: #1A1A1ABF;
-    line-height: 40px;
+    line-height: 2.08vw;
     margin: 0;
     text-align: left;
     font-family: 'Geist', sans-serif;
@@ -41,22 +40,22 @@
 
 .treatment-warning-intro-highlight {
     text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+    text-decoration-thickness: 0.052vw;
+    text-underline-offset: 0.16vw;
     font-weight: 500;
 }
 
 .treatment-warning-main {
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 60px;
-    align-items: flex-start;
+    gap: 3.125vw;
+    align-items: stretch;
 }
 
 .treatment-warning-left {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 1.56vw;
 }
 
 .treatment-warning-title {
@@ -70,15 +69,15 @@
 .treatment-warning-carousel-wrapper {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 1.56vw;
 }
 
 .treatment-warning-carousel {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 20.83vw;
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 1.56vw;
 }
 
 .treatment-warning-carousel-slides {
@@ -105,20 +104,20 @@
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    padding: 4px 0;
+    padding: 0.21vw 0;
 }
 
 .treatment-warning-carousel-dots {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.26vw;
     position: relative;
     z-index: 2;
 }
 
 .treatment-warning-carousel-dot {
-    width: 5px;
-    height: 5px;
+    width: 0.26vw;
+    height: 0.26vw;
     border-radius: 50%;
     border: none;
     background: rgba(0, 0, 0, 0.3);
@@ -131,19 +130,19 @@
 
 .treatment-warning-carousel-dot.active {
     background: #000000;
-    height: 10px;
+    height: 0.52vw;
 }
 
 .treatment-warning-carousel-line {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 8px;
+    width: 0.42vw;
     background: linear-gradient(180deg, #485B85 0%, rgba(72, 91, 133, 0.8) 100%);
-    border-radius: 2px;
+    border-radius: 0.1vw;
     z-index: 0;
     pointer-events: none;
-    box-shadow: 0 0 4px rgba(72, 91, 133, 0.3);
+    box-shadow: 0 0 0.21vw rgba(72, 91, 133, 0.3);
     opacity: 0;
 }
 
@@ -153,11 +152,11 @@
 
 @keyframes slideLine {
     0% {
-        top: var(--prev-top, 10px);
+        top: var(--prev-top, 0.52vw);
         opacity: 1;
     }
     100% {
-        top: var(--current-top, 10px);
+        top: var(--current-top, 0.52vw);
         opacity: 1;
     }
 }
@@ -165,19 +164,20 @@
 .treatment-warning-right {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    padding-right: 50px;
+    gap: 2.08vw;
+    padding-right: 2.6vw;
+    height: 100%;
 }
 
 .treatment-warning-reasons-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 2.08vw;
 }
 
 .treatment-warning-reason-item {
     display: flex;
-    gap: 30px;
+    gap: 1.56vw;
     align-items: flex-start;
 }
 
@@ -187,12 +187,12 @@
     align-items: center;
     position: relative;
     flex-shrink: 0;
-    gap: 20px;
+    gap: 1.04vw;
 }
 
 .treatment-warning-reason-number {
-    width: 73px;
-    height: 73px;
+    width: 3.8vw;
+    height: 3.8vw;
     border-radius: 50%;
     background: #485B85;
     display: flex;
@@ -206,31 +206,31 @@
 }
 
 .treatment-warning-reason-connector {
-    width: 1.5px;
-    height: 64.5px;
+    width: 0.078vw;
+    height: 3.36vw;
     /* margin-top: 10px; */
-    background-image: radial-gradient(circle, #2E3D58 1.5px, transparent 1.5px);
-    background-size: 1.5px 4.5px;
+    background-image: radial-gradient(circle, #2E3D58 0.078vw, transparent 0.078vw);
+    background-size: 0.078vw 0.23vw;
     background-repeat: repeat-y;
     background-position: center;
 }
 
 .treatment-warning-reason-content {
     flex: 1;
-    padding-top: 10px;
+    padding-top: 0.52vw;
 }
 
 .treatment-warning-reason-title {
     font-size: var(--font-size-h6);
     font-weight: 500;
     color: #2E3D58;
-    margin: 0 0 10px 0;
-    line-height: 33px;
+    margin: 0 0 0.52vw 0;
+    line-height: 1.72vw;
     text-align: left;
     font-family: 'Geist', sans-serif;
     /* text-decoration: underline; */
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+    text-decoration-thickness: 0.052vw;
+    text-underline-offset: 0.16vw;
 }
 
 .treatment-warning-reason-description {
@@ -238,7 +238,7 @@
     font-weight: 300;
     color: #1A1A1ABF;
     margin: 0;
-    line-height: 33px;
+    line-height: 1.72vw;
     text-align: left;
     font-family: 'Geist', sans-serif;
 }
@@ -250,26 +250,39 @@
 
 .treatment-warning-tip {
     display: flex;
-    gap: 20px;
+    gap: 1.04vw;
     align-items: flex-start;
-    padding: 20px;
+    padding: 1.04vw 1.04vw 0vw 1.04vw;
     /* background: #F5F5F5; */
-    border-radius: 20px;
+    border-radius: 1.04vw;
+    margin-top: auto;
 }
 
 .treatment-warning-tip-icon {
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
+    width: 1.5vw;
+    height: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.treatment-warning-tip-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.treatment-warning-tip-icon svg path {
+    stroke-width: 0.1vw;
 }
 
 .treatment-warning-tip-text {
-    width: 805px;
+    width: 41.93vw;
     font-size: var(--font-size-body);
     font-weight: 300;
     color: #1A1A1ABF;
     margin: 0;
-    line-height: 28px;
+    line-height: 1.46vw;
     text-align: left;
     font-family: 'Geist', sans-serif;
 }
@@ -279,284 +292,10 @@
     color: #2E3D58;
 }
 
-@media (max-width: 1650px) {
-    .treatment-warning-tip-text {
-        line-height: 16px;
-    }
-    .treatment-warning-tip {
-        gap: 5px;
-    }
+@media (max-width: 2200px) {
 
-    .treatment-warning-reason-description {
-        line-height: 26px;
-    }
-
-    .treatment-warning-reasons-list {
-        gap: 23px;
-    }
-
-    .treatment-warning-reason-number {
-        width: 58px;
-        height: 58px;
-    }
-
-    .treatment-warning-container {
-        padding: 40px;
-    }
-
-    .treatment-warning-left {
-        gap: 20px;
-    }
-
-    .treatment-warning-carousel {
-        /* max-width: 593px; */
-        height: 332px;
-    }
-
-    .treatment-warning-title {
-        line-height: 50px;
-    }
+.treatment-warning-container {
+    padding: 4vw 2.6vw 2.6vw 2.6vw;
 }
 
-@media (max-width: 1367px) {
-    .treatment-warning-reason-content {
-        padding-top: 4px;
-    }
-
-    .treatment-warning-reason-title {
-        margin-bottom: 6px;
-    }
-
-    .treatment-warning-tip-text {
-        line-height: 24px;
-    }
-
-    .treatment-warning-reason-connector {
-        height: 45px;
-    }
-
-    .treatment-warning-reason-number {
-        width: 51px;
-        height: 51px;
-    }
-    .treatment-warning-intro {
-        line-height: 28px;
-    }
-
-    .treatment-warning-carousel {
-        height: 285px;
-    }
-
-    .treatment-warning-title {
-        line-height: 45px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .treatment-warning-tip {
-        padding: 0px 5px 0px 10px;
-    }
-    .treatment-warning-tip-icon svg {
-        width: 18px;
-        height: 18px;
-    }
-
-    .treatment-warning-reason-description {
-        line-height: 20px;
-    }
-
-    .treatment-warning-reason-connector {
-        height: 40px;
-    }
-
-    .treatment-warning-reason-number-wrapper {
-        gap: 15px;
-    }
-
-    .treatment-warning-reason-number {
-        width: 45px;
-        height: 45px;
-    }
-    .treatment-warning-carousel {
-        height: 250px;
-    }
-
-    .treatment-warning-intro {
-        line-height: 25px;
-    }
-
-    .treatment-warning-main {
-        gap: 30px;
-    }
-
-    .treatment-warning-container {
-        padding: 30px;
-    }
-    .treatment-warning-title {
-        line-height: 40px;
-    }
-
-    .treatment-warning-carousel {
-        max-width: 530px;
-    }
-
-    /* Точки навигации слайдера */
-    .treatment-warning-carousel-dot {
-        width: 4px;
-        height: 4px;
-    }
-
-    .treatment-warning-carousel-dot.active {
-        height: 8px;
-    }
-
-    .treatment-warning-carousel-line {
-        width: 6px;
-    }
-
-    .treatment-warning-carousel-dots {
-        gap: 4px;
-    }
-
-    .treatment-warning-carousel-wrapper {
-        gap: 21px;
-    }
-}
-
-@media (max-width: 1025px) {
-    .treatment-warning-tip-text {
-        font-size: 11px;
-        line-height: 18px;
-    }
-    .treatment-warning-right {
-        padding-right: 21px;
-    }
-    .treatment-warning-right {
-        gap: 35px;
-    }
-    .treatment-warning-reason-item {
-        gap: 25px;
-    }
-
-    .treatment-warning-reason-connector {
-        height: 33px;
-    }
-
-    .treatment-warning-reason-description {
-        font-size: 12px;
-    }
-    .treatment-warning-reason-title {
-        margin-bottom: 1px;
-    }
-    .treatment-warning-reason-content {
-        margin-top: 0px;
-        padding-top: 0px;
-    }
-    .treatment-warning-main {
-        gap: 25px;
-    }
-    .treatment-warning-reason-number {
-        width: 37px;
-        height: 37px;
-        font-size: 13px;
-    }
-
-    .treatment-warning-container {
-        padding: 25px;
-    }
-
-    .treatment-warning-title {
-        line-height: 36px;
-    }
-
-    .treatment-warning-carousel {
-        max-width: 468.75px;
-        max-height: 185px;
-    }
-
-    /* Точки навигации слайдера */
-    .treatment-warning-carousel-dot {
-        width: 3.5px;
-        height: 3.5px;
-    }
-
-    .treatment-warning-carousel-dot.active {
-        height: 7px;
-    }
-
-    .treatment-warning-carousel-line {
-        width: 5px;
-    }
-
-    .treatment-warning-carousel-dots {
-        gap: 3px;
-    }
-
-    .treatment-warning-carousel-wrapper {
-        gap: 18px;
-    }
-}
-
-@media (max-width: 880px) {
-    .treatment-warning-right {
-        gap: 30px;
-    }
-    
-    .treatment-warning-reason-number {
-        width: 33px;
-        height: 33px;
-        font-size: 12px;
-    }
-    .treatment-warning-reason-title {
-        font-size: 12px;
-    }
-
-    .treatment-warning-reason-description {
-        font-size: 10px;
-        line-height: 15px;
-    }
-
-    .treatment-warning-reason-number-wrapper {
-        gap: 10px;
-    }
-    .treatment-warning-reasons-list {
-        gap: 14px;
-    }
-    .treatment-warning-intro {
-        font-size: 12px;
-        line-height: 18px;
-    }
-    .treatment-warning-left {
-        gap: 14px;
-    }
-    .treatment-warning-title {
-        line-height: 32px;
-    }
-
-    .treatment-warning-carousel {
-        max-width: 400px;
-        max-height: 180px;
-    }
-
-    /* Точки навигации слайдера */
-    .treatment-warning-carousel-dot {
-        width: 3px;
-        height: 3px;
-    }
-
-    .treatment-warning-carousel-dot.active {
-        height: 6px;
-    }
-
-    .treatment-warning-carousel-line {
-        width: 4px;
-    }
-
-    .treatment-warning-carousel-dots {
-        gap: 2.5px;
-    }
-
-    .treatment-warning-carousel-wrapper {
-        gap: 15px;
-    }
 }

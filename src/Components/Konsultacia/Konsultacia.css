@@ -1,20 +1,19 @@
 .konsultacia-container {
   width: 100%;
-  padding: 0px 50px 50px 50px;
+  padding: 0 10% 4vw 10%;
   box-sizing: border-box;
   background-color: white;
 }
 
 .konsultacia-content {
   width: 100%;
-  max-width: 1920px;
   margin: 0 auto;
   background: #EBEBEB;
-  border-radius: 20px;
-  padding: 10px 15px 10px 50px;
+  border-radius: 1.04vw;
+  padding: 0.52vw 2.6vw 0.52vw 1.6vw;
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 2.6vw;
   position: relative;
   overflow: hidden;
   min-width: 0;
@@ -22,13 +21,13 @@
 
 .konsultacia-doctor-image {
   flex-shrink: 0;
-  width: 346px;
-  height: 220px;
-  min-width: 280px;
-  max-width: 346px;
-  border-radius: 20px;
+  width: 18.02vw;
+  height: 11.46vw;
+  min-width: 14.58vw;
+  max-width: 18.02vw;
+  border-radius: 1.04vw;
   overflow: hidden;
-  margin-left: -40px;
+  margin-right: -2.08vw;
   position: relative;
   z-index: 1;
 }
@@ -45,16 +44,16 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.52vw;
   z-index: 2;
   min-width: 0;
 }
 
 .konsultacia-title {
   text-align: left;
-  font-size: var(--font-size-h3-5);
+  font-size: var(--font-size-h5);
   font-weight: 700;
-  color: #000000;
+  color: rgba(17, 47, 85, 1);
   margin: 0;
   line-height: 1.2;
   font-family: 'Geist', sans-serif;
@@ -71,17 +70,17 @@
 }
 
 .konsultacia-button {
-  padding: 6px 6px 6px 30px;
-  border-radius: 50px;
-  border: 1px solid #2E3D58;
+  padding: 0.31vw 0.31vw 0.31vw 1.56vw;
+  border-radius: 2.6vw;
+  border: 0.052vw solid #2E3D58;
   font-weight: 500;
   font-size: var(--font-size-button);
-  line-height: 17px;
+  line-height: 0.89vw;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 1.56vw;
   font-family: 'Geist', sans-serif;
   position: relative;
   overflow: hidden;
@@ -102,12 +101,12 @@
 
 .konsultacia-btn-primary:hover span {
   color: #485B85;
-  transform: translateX(80px);
+  transform: translateX(3.7vw);
 }
 
 .konsultacia-btn-icon {
-  width: 60px;
-  height: 60px;
+  width: 3.125vw;
+  height: 3.125vw;
   border-radius: 50%;
   background: #FFFFFF;
   display: flex;
@@ -119,23 +118,23 @@
 }
 
 .konsultacia-btn-icon svg {
-  width: 19px;
-  height: 18px;
+  width: 0.73vw;
+  height: 0.63vw;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .konsultacia-button:hover .konsultacia-btn-icon svg {
-  transform: translateX(-200px) rotate(40deg);
+  transform: translateX(-11.1vw) rotate(40deg);
 }
 
 .konsultacia-button::after {
   content: '';
   position: absolute;
-  right: 6px;
+  right: 0.31vw;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
+  width: 3.125vw;
+  height: 3.125vw;
   border-radius: 50%;
   background: #FFFFFF;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -144,240 +143,15 @@
 }
 
 .konsultacia-button:hover::after {
-  width: 800px;
-  height: 800px;
-  right: -400px;
+  width: 41.67vw;
+  height: 41.67vw;
+  right: -20.83vw;
   top: 50%;
   transform: translateY(-50%);
 }
 
-@media (max-width: 1650px) {
-  .konsultacia-content {
-    gap: 40px;
-  }
-  .konsultacia-doctor-image {
-    width: 273px;
-    height: 175px;
-    min-width: 273px;
-    max-width: 273px;
-  }
-
-  .konsultacia-btn-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .konsultacia-button {
-    padding: 5px 5px 5px 24px;
-    gap: 24px;
-  }
-
-  .konsultacia-btn-icon svg {
-    width: 11px;
-    height: 9px;
-  }
-
-  .konsultacia-button::after {
-    width: 48px;
-    height: 48px;
-  }
-
-  .konsultacia-button:hover .konsultacia-btn-icon svg {
-    transform: translateX(-180px) rotate(40deg);
-  }
-
-  .konsultacia-btn-primary:hover span {
-    transform: translateX(60px);
-  }
-
-  .konsultacia-button:hover::after {
-    width: 640px;
-    height: 640px;
-    right: -320px;
-  }
-}
-
-@media (max-width: 1367px) {
-  .konsultacia-content {
-    gap: 30px;
-  }
-  .konsultacia-button {
-    font-size: 9px;
-  }
+@media (max-width: 2200px) { 
   .konsultacia-container {
-    padding: 0px 35px 35px 35px;
-  }
-  .konsultacia-description {
-    line-height: 28px;
-  }
-  .konsultacia-content {
-    padding: 7px 10px 7px 47px;
-  }
-
-  .konsultacia-button:hover .konsultacia-btn-icon svg {
-    transform: translateX(-160px) rotate(40deg);
-  }
-
-  .konsultacia-btn-primary:hover span {
-    transform: translateX(60px);
-  }
-
-  .konsultacia-doctor-image {
-    width: 246px;
-    height: 157px;
-    min-width: 246px;
-    max-width: 246px;
-  }
-
-  .konsultacia-btn-icon {
-    width: 43px;
-    height: 43px;
-  }
-
-  .konsultacia-btn-icon svg {
-    width: 10px;
-    height: 8px;
-  }
-
-  .konsultacia-button::after {
-    width: 43px;
-    height: 43px;
+    padding: 0 2.6vw 4vw 2.6vw;
   }
 }
-
-@media (max-width: 1200px) {
-  .konsultacia-button {
-    font-size: 8px;
-  }
-
-  .konsultacia-description {
-    font-size: 13px;
-    line-height: 20px;
-  }
-  /* .konsultacia-container {
-    padding: 40px 50px;
-  } */
-  
-  /* .konsultacia-content {
-    padding: 30px 40px;
-  } */
-
-  .konsultacia-doctor-image {
-    width: 216px;
-    height: 137px;
-    min-width: 216px;
-    max-width: 216px;
-    margin-left: -40px;
-  }
-
-  .konsultacia-btn-icon {
-    width: 38px;
-    height: 38px;
-  }
-
-  .konsultacia-btn-icon svg {
-    width: 9px;
-    height: 7px;
-  }
-
-  .konsultacia-button::after {
-    width: 38px;
-    height: 38px;
-  }
-
-  .konsultacia-button {
-    padding: 4px 4px 4px 20px;
-    gap: 20px;
-  }
-
-  .konsultacia-button:hover .konsultacia-btn-icon svg {
-    transform: translateX(-140px) rotate(40deg);
-  }
-
-  .konsultacia-btn-primary:hover span {
-    transform: translateX(50px);
-  }
-
-  .konsultacia-button:hover::after {
-    width: 560px;
-    height: 560px;
-    right: -280px;
-  }
-}
-
-@media (max-width: 1025px) {
-  .konsultacia-description {
-    font-size: 11px;
-  }
-  
-  .konsultacia-doctor-image {
-    width: 184px;
-    height: 117px;
-    min-width: 184px;
-    max-width: 184px;
-    margin-left: -40px;
-  }
-
-  .konsultacia-btn-icon {
-    width: 32.03px;
-    height: 32.03px;
-  }
-
-  .konsultacia-button::after {
-    width: 32.03px;
-    height: 32.03px;
-  }
-
-  .konsultacia-button {
-    padding: 3.5px 3.5px 3.5px 16px;
-  }
-
-  .konsultacia-button:hover .konsultacia-btn-icon svg {
-    transform: translateX(-130px) rotate(40deg);
-  }
-
-  .konsultacia-btn-primary:hover span {
-    transform: translateX(40px);
-  }
-}
-
-@media (max-width: 890px) {
-  .konsultacia-container {
-    padding: 0px 25px 25px 25px;
-  }
-}
-
-/* @media (max-width: 768px) {
-  .konsultacia-container {
-    padding: 20px 15px;
-  }
-
-  .konsultacia-content {
-    flex-direction: column;
-    padding: 30px 20px;
-    gap: 24px;
-  }
-
-  .konsultacia-doctor-image {
-    width: 200px;
-    height: 200px;
-    min-width: 200px;
-    max-width: 200px;
-    margin-left: 0;
-    align-self: flex-start;
-  }
-
-  .konsultacia-title {
-    font-size: var(--font-size-h3-5);
-  }
-
-  .konsultacia-description {
-    font-size: var(--font-size-body-small);
-  }
-
-  .konsultacia-button {
-    width: 100%;
-    justify-content: center;
-  }
-} */
-

@@ -32,8 +32,8 @@ function App() {
     <ModalProvider>
     <div className="App">
         <Header />
-        <Googing />
         <Carousel />
+        <Googing />
         <Skils />
         <TreatmentWarning />
         <Konsultacia />

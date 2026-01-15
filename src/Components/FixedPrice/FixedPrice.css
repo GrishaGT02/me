@@ -322,8 +322,8 @@
 }
 
 .fixed-price-consultation-btn-icon svg {
-    width: 19px;
-    height: 18px;
+    width: 0.73vw;
+    height: 0.63vw;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

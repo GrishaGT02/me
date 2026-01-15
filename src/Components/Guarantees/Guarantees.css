@@ -254,8 +254,8 @@
 }
 
 .guarantees-consultation-btn-icon svg {
-    width: 19px;
-    height: 18px;
+    width: 0.73vw;
+    height: 0.63vw;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -335,8 +335,8 @@
     }
 
     .guarantees-consultation-btn-icon svg {
-        width: 11px;
-        height: 9px;
+        width: 0.67vw;
+        height: 0.55vw;
     }
 
     .guarantees-consultation-button::after {
@@ -418,8 +418,8 @@
     }
 
     .guarantees-consultation-btn-icon svg {
-        width: 10px;
-        height: 8px;
+        width: 0.71vw;
+        height: 0.57vw;
     }
 
     .guarantees-consultation-button::after {
@@ -475,8 +475,8 @@
     }
 
     .guarantees-consultation-btn-icon svg {
-        width: 9px;
-        height: 7px;
+        width: 0.75vw;
+        height: 0.58vw;
     }
 
     .guarantees-consultation-button::after {
