@@ -14,7 +14,7 @@
     font-size: var(--font-size-h1);
     font-weight: 600;
     color: #000000;
-    line-height: 3.125vw;
+    line-height: 4.125vw;
     margin: 0 0 1.56vw 0;
     text-align: left;
     text-transform: uppercase;
@@ -177,7 +177,7 @@
 
 .treatment-warning-reason-item {
     display: flex;
-    gap: 1.56vw;
+    gap: 2.46vw;
     align-items: flex-start;
 }
 
@@ -194,7 +194,7 @@
     width: 3.8vw;
     height: 3.8vw;
     border-radius: 50%;
-    background: #485B85;
+    background: rgba(17, 47, 85, 1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -241,16 +241,20 @@
     line-height: 1.72vw;
     text-align: left;
     font-family: 'Geist', sans-serif;
+    width: 37.65vw;
 }
 
 .treatment-warning-reason-description strong {
-    font-weight: 600;
-    color: #2E3D58;
+    font-weight: 700;
+    color: rgba(26, 26, 26, 0.75);
+    text-decoration: underline;
+    text-decoration-thickness: 0.06vw;
+    text-underline-offset: 0.10vw;
 }
 
 .treatment-warning-tip {
     display: flex;
-    gap: 1.04vw;
+    gap: 0.8vw;
     align-items: flex-start;
     padding: 1.04vw 1.04vw 0vw 1.04vw;
     /* background: #F5F5F5; */
@@ -278,7 +282,7 @@
 
 .treatment-warning-tip-text {
     width: 41.93vw;
-    font-size: var(--font-size-body);
+    font-size: var(--font-size-h8);
     font-weight: 300;
     color: #1A1A1ABF;
     margin: 0;
@@ -288,14 +292,14 @@
 }
 
 .treatment-warning-tip-text strong {
-    font-weight: 600;
-    color: #2E3D58;
+    font-weight: 300;
+    color: rgba(26, 26, 26, 0.75);
 }
 
 @media (max-width: 2200px) {
 
 .treatment-warning-container {
-    padding: 4vw 2.6vw 2.6vw 2.6vw;
+    padding: 4.2vw 2.6vw 2.6vw 2.6vw;
 }
 
 }

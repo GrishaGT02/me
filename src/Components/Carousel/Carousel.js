@@ -14,6 +14,10 @@ const Carousel = () => {
   const dragStartRef = useRef(0);
   const dragOffsetRef = useRef(0);
   const currentOffsetRef = useRef(0);
+  const slideWidthRef = useRef(0);
+  const gapRef = useRef(0);
+  const cycleWidthRef = useRef(0);
+  const isInitializedRef = useRef(false);
 
   // Слайды с изображениями и контентом
   const slides = [
@@ -40,8 +44,43 @@ const Carousel = () => {
     },
   ];
 
-  // Дублируем слайды для бесконечной прокрутки (нужно минимум 2 копии)
+  // Дублируем слайды для бесконечной прокрутки (нужно минимум 3 копии для плавного перехода)
   const extendedSlides = [...slides, ...slides, ...slides];
+
+  // Вычисляем размеры слайдов
+  useEffect(() => {
+    const updateSizes = () => {
+      if (trackRef.current && trackRef.current.children.length > 0) {
+        const firstSlide = trackRef.current.children[0];
+        const slideRect = firstSlide.getBoundingClientRect();
+        slideWidthRef.current = slideRect.width;
+        
+        // Получаем gap из computed styles
+        const trackStyles = window.getComputedStyle(trackRef.current);
+        const gapValue = trackStyles.gap;
+        gapRef.current = parseFloat(gapValue) || 0;
+        
+        // Вычисляем ширину одного цикла (3 слайда)
+        cycleWidthRef.current = slides.length * (slideWidthRef.current + gapRef.current);
+        
+        // Устанавливаем начальную позицию в середине (на второй копии слайдов) только один раз
+        // Это позволяет двигаться в обе стороны без видимых скачков
+        if (!isInitializedRef.current && cycleWidthRef.current > 0) {
+          baseOffsetRef.current = -cycleWidthRef.current;
+          currentOffsetRef.current = -cycleWidthRef.current;
+          setOffset(-cycleWidthRef.current);
+          isInitializedRef.current = true;
+        }
+      }
+    };
+
+    updateSizes();
+    window.addEventListener('resize', updateSizes);
+    
+    return () => {
+      window.removeEventListener('resize', updateSizes);
+    };
+  }, [slides.length]);
 
   // Непрерывная анимация
   useEffect(() => {
@@ -52,16 +91,23 @@ const Carousel = () => {
     const animate = () => {
       if (isPaused || isDragging) return;
       
-      const slideWidth = 960;
-      const gap = 50;
-      const totalSlideWidth = slideWidth + gap; // ширина слайда + gap
+      if (cycleWidthRef.current === 0) {
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
       
       baseOffsetRef.current -= speed;
       
-      // Когда проехали один полный цикл (3 слайда), сбрасываем позицию
-      const cycleWidth = slides.length * totalSlideWidth;
-      if (Math.abs(baseOffsetRef.current) >= cycleWidth) {
-        baseOffsetRef.current = baseOffsetRef.current + cycleWidth; // сбрасываем на начало цикла
+      // Когда проехали один полный цикл, сбрасываем позицию незаметно
+      // Нормализуем позицию в пределах цикла
+      if (cycleWidthRef.current > 0) {
+        while (Math.abs(baseOffsetRef.current) >= cycleWidthRef.current) {
+          if (baseOffsetRef.current < 0) {
+            baseOffsetRef.current += cycleWidthRef.current;
+          } else {
+            baseOffsetRef.current -= cycleWidthRef.current;
+          }
+        }
       }
       
       const newOffset = baseOffsetRef.current + dragOffsetRef.current;
@@ -104,6 +150,18 @@ const Carousel = () => {
     
     // Обновляем baseOffsetRef с учетом нового положения после перетаскивания
     baseOffsetRef.current = baseOffsetRef.current + dragOffsetRef.current;
+    
+    // Нормализуем позицию в пределах цикла
+    if (cycleWidthRef.current > 0) {
+      while (Math.abs(baseOffsetRef.current) >= cycleWidthRef.current) {
+        if (baseOffsetRef.current < 0) {
+          baseOffsetRef.current += cycleWidthRef.current;
+        } else {
+          baseOffsetRef.current -= cycleWidthRef.current;
+        }
+      }
+    }
+    
     dragOffsetRef.current = 0;
     setIsDragging(false);
     setIsPaused(false);

@@ -2,7 +2,7 @@
   width: 100%;
   padding: 2.6vw 0px;
   box-sizing: border-box;
-  background-color: #191919;
+  background-color: rgba(235, 235, 235, 1);
   position: relative;
   overflow: hidden;
   user-select: none;
@@ -115,7 +115,6 @@
   background: #485B85;
   border: 1px solid #2E3D58;
   color: #FFFFFF;
-  border: none;
   font-size: var(--font-size-button);
   font-weight: 700;
   cursor: pointer;
@@ -127,7 +126,8 @@
 }
 
 .carousel-slide-button:hover {
-  background: #3a4a6b;
+  background: #FFFFFF;
+  color: #485B85;
 }
 
 .carousel-btn {

@@ -31,7 +31,7 @@
     color: #485B85;
     text-decoration: underline;
     text-decoration-thickness: 0.16vw;
-    text-underline-offset: 0.31vw;
+    text-underline-offset: 0.41vw;
 }
 
 .googing-description {
@@ -64,6 +64,7 @@
     background: #E0E0E0;
     border-radius: 1.04vw;
     overflow: hidden;
+    position: relative;
 }
 
 .googing-doctor-image img {
@@ -72,6 +73,32 @@
     object-fit: cover;
     object-position: center 30%;
     display: block;
+}
+
+.googing-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.17vw;
+    height: 4.17vw;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.googing-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.googing-play-button svg {
+    width: 1.16vw;
+    height: 1.4vw;
 }
 
 .googing-doctor-info {
@@ -122,7 +149,7 @@
 .googing-doctor-contact {
     width: 3.125vw;
     height: 3.125vw;
-    background: #485B85;
+    background: rgba(46, 61, 88, 1);
     border-radius: 2.6vw;
     display: flex;
     align-items: center;
@@ -156,7 +183,7 @@
 }
 
 .googing-form-title {
-    width: 30.85vw;
+    width: 39.85vw;
     margin: 0;
     font-size: var(--font-size-h3-5);
     font-weight: 600;
@@ -181,7 +208,7 @@
     color: #1A1A1ABF;
     font-family: 'Geist', sans-serif;
     text-align: left;
-    width: 28.65vw;
+    width: 33.65vw;
 }
 
 .googing-form-buttons {
@@ -210,6 +237,11 @@
 .googing-btn-secondary {
     background: #EBEBEB;
     color: #000000;
+    border: 0.052vw solid #E0E0E0;
+}
+
+.googing-btn-secondary:hover {
+    background: #FFFFFF;
 }
 
 .googing-btn-1 {
@@ -243,7 +275,7 @@
 
 .googing-btn-primary:hover span {
     color: #485B85;
-    transform: translateX(3.65vw);
+    transform: translateX(min(3.65vw, 15.31vw));
 }
 
 .googing-btn-icon {
@@ -266,7 +298,7 @@
 }
 
 .googing-btn-1:hover .googing-btn-icon svg {
-    transform: translateX(-12.6vw) rotate(40deg);
+    transform: translateX(max(-12.7vw, calc(-10% - 30.56vw))) rotate(40deg);
 }
 
 .googing-btn-1::after {
@@ -295,16 +327,16 @@
 .googing-form-checkbox {
     display: flex;
     align-items: center;
-    gap: 0.63vw;
+    gap: 0.53vw;
     justify-content: flex-start;
     width: 100%;
 }
 
 .googing-form-checkbox input[type="checkbox"] {
-    width: 10px;
-    height: 10px;
-    border-radius: 2px;
-    border: 1px solid #EBEBEB;
+    width: 0.78vw;
+    height: 0.78vw;
+    border-radius: 0.1vw;
+    border: 0.052vw solid #EBEBEB;
     background: #EBEBEB;
     cursor: pointer;
     appearance: none;
@@ -315,20 +347,20 @@
 }
 
 .googing-form-checkbox input[type="checkbox"]:checked {
-    background: #485B85;
-    border-color: #485B85;
+    background: rgba(46, 61, 88, 1);
+    border-color: rgba(46, 61, 88, 1);
 }
 
 .googing-form-checkbox input[type="checkbox"]:checked::after {
     content: '';
     position: absolute;
-    left: 0.1vw;
-    top: 0px;
-    width: 0.16vw;
-    height: 0.31vw;
+    left: 50%;
+    top: 50%;
+    width: 0.26vw;
+    height: 0.52vw;
     border: solid white;
-    border-width: 0 0.1vw 0.1vw 0;
-    transform: rotate(45deg);
+    border-width: 0 0.16vw 0.16vw 0;
+    transform: translate(-50%, -60%) rotate(45deg);
 }
 
 .googing-form-checkbox label {
@@ -341,10 +373,10 @@
 
 .googing-form-disclaimer {
     font-size: var(--font-size-body-small);
-    font-weight: 400;
+    font-weight: 300;
     color: #1A1A1ABF;
     font-family: 'Geist', sans-serif;
-    font-style: italic;
+    /* font-style: italic; */
     text-align: left;
     width: 100%;
     margin-top: auto;
@@ -352,7 +384,7 @@
 
 @media (max-width: 2200px) {
     .googing { 
-        padding: 4vw 2.6vw;
+        padding: 4.2vw 2.6vw;
     }
     .googing-title {
         font-size: 2.6vw;

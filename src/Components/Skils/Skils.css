@@ -61,10 +61,16 @@
 
 .skils-title-highlight {
   color: #485B85;
+  text-decoration: underline;
+  text-decoration-thickness: 0.16vw;
+  text-underline-offset: 0.41vw;
 }
 
 .skils-title span {
   color: #485B85;
+  text-decoration: underline;
+  text-decoration-thickness: 0.16vw;
+  text-underline-offset: 0.41vw;
 }
 
 .skils-subtitle {
@@ -72,7 +78,7 @@
   font-size: var(--font-size-h6);
   font-weight: 300;
   color: #1A1A1ABF;
-  line-height: 1.8;
+  line-height: 2.1vw;
   margin: 0;
   text-align: left;
 }
@@ -103,7 +109,7 @@
   width: 3.8vw;
   height: 3.8vw;
   border-radius: 50%;
-  background: #485B85;
+  background: rgba(17, 47, 85, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,7 +140,7 @@
 .skils-fear-title {
   font-size: var(--font-size-h6);
   font-weight: 500;
-  color: #2E3D58;
+  color: rgba(17, 47, 85, 1);
   margin: 0 0 0.52vw 0;
   line-height: 1.3;
   text-align: left;
@@ -180,7 +186,7 @@
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 1.04vw;
+  border-radius: 0.8vw;
   border: 0.078vw solid rgba(255, 255, 255, 1);
   border-top: 0.178vw solid rgba(255, 255, 255, 1);
   padding: 0.52vw;
@@ -197,7 +203,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 1.04vw;
+  border-radius: 0.55vw;
 }
 
 .skils-info-card-content {
@@ -229,7 +235,7 @@
   width: 4.69vw;
   height: 4.69vw;
   border-radius: 2.6vw;
-  background: #485B85;
+  background: rgba(17, 47, 85, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -244,9 +250,9 @@
 
 .skils-tip {
   display: flex;
-  gap: 1.04vw;
+  gap: 0.8vw;
   align-items: flex-start;
-  padding: 1.04vw;
+  padding: 1.04vw 0vw 1.04vw 1.04vw;
   border-radius: 1.04vw;
 }
 
@@ -263,7 +269,7 @@
 
 .skils-tip-text {
   width: 100%;
-  font-size: var(--font-size-h9);
+  font-size: var(--font-size-h8);
   font-weight: 300;
   color: rgba(26, 26, 26, 0.75);
   margin: 0;
@@ -274,7 +280,7 @@
 
 @media (max-width: 2200px) {
   .skils-container { 
-      padding: 4vw 2.6vw;
+      padding: 4.2vw 2.6vw;
   }
   /* .googing-title {
       font-size: 2.6vw;

@@ -1,5 +1,5 @@
 import React from 'react';
-import doctorImage from '../../assec/1.jpg';
+import doctorImage from '../../assec/block33.jpg';
 import './Googing.css';
 
 const Googing = () => {
@@ -18,6 +18,11 @@ const Googing = () => {
                     <div className="googing-left">
                         <div className="googing-doctor-image">
                             <img src={doctorImage} alt="Киракосян Карен Егишевич" />
+                            <div className="googing-play-button">
+                                <svg viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.14062 20.8873V4.2563C1.14062 2.88492 1.14062 2.19847 1.38456 1.79272C1.59747 1.43858 1.92563 1.20607 2.28995 1.15048C2.70722 1.08681 3.219 1.40972 4.2411 2.05461L17.4204 10.3701L17.4252 10.3726C18.5547 11.0853 19.1197 11.4418 19.3051 11.917C19.4668 12.3315 19.4668 12.81 19.3051 13.2245C19.1195 13.7003 18.5531 14.0583 17.4204 14.773L4.2411 23.0885C3.21827 23.7338 2.70737 24.0555 2.28995 23.9918C1.92563 23.9362 1.59747 23.7037 1.38456 23.3496C1.14062 22.9438 1.14062 22.2587 1.14062 20.8873Z" fill="#112F55" stroke="#112F55" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                            </div>
                         </div>
                         <div className="googing-doctor-info">
                             <div className="googing-doctor-info-card">

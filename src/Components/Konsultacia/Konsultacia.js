@@ -1,6 +1,6 @@
 import React from 'react';
 import { useModal } from '../../context/ModalContext';
-import dockImage from '../../assec/block6.png';
+import dockImage from '../../assec/block6.ipg';
 import './Konsultacia.css';
 
 const Konsultacia = () => {
