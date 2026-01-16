@@ -104,7 +104,7 @@
 .googing-doctor-info {
     /* background: #FFFFFFA6; */
     background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 1.04vw;
     padding: 0.52vw;
@@ -126,7 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 1.04vw;
+    border-radius: 0.5vw;
 }
 
 .googing-doctor-name {
@@ -335,7 +335,7 @@
 .googing-form-checkbox input[type="checkbox"] {
     width: 0.78vw;
     height: 0.78vw;
-    border-radius: 0.1vw;
+    border-radius: 0.2vw;
     border: 0.052vw solid #EBEBEB;
     background: #EBEBEB;
     cursor: pointer;
@@ -347,7 +347,7 @@
 }
 
 .googing-form-checkbox input[type="checkbox"]:checked {
-    background: rgba(46, 61, 88, 1);
+    background: rgba(72, 91, 133, 1);
     border-color: rgba(46, 61, 88, 1);
 }
 
@@ -356,8 +356,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 0.26vw;
-    height: 0.52vw;
+    width: 0.12vw;
+    height: 0.38vw;
     border: solid white;
     border-width: 0 0.16vw 0.16vw 0;
     transform: translate(-50%, -60%) rotate(45deg);

@@ -18,6 +18,7 @@ const Carousel = () => {
   const gapRef = useRef(0);
   const cycleWidthRef = useRef(0);
   const isInitializedRef = useRef(false);
+  const isMouseOverRef = useRef(false);
 
   // Слайды с изображениями и контентом
   const slides = [
@@ -126,10 +127,12 @@ const Carousel = () => {
   }, [slides.length, isPaused, isDragging]);
 
   const handleMouseEnter = useCallback(() => {
+    isMouseOverRef.current = true;
     setIsPaused(true);
   }, []);
 
   const handleMouseLeave = useCallback(() => {
+    isMouseOverRef.current = false;
     if (!isDragging) {
       setIsPaused(false);
     }
@@ -164,7 +167,14 @@ const Carousel = () => {
     
     dragOffsetRef.current = 0;
     setIsDragging(false);
-    setIsPaused(false);
+    
+    // После перетаскивания проверяем, находится ли мышь над блоком
+    // Если да - оставляем паузу, если нет - снимаем паузу
+    if (isMouseOverRef.current) {
+      setIsPaused(true);
+    } else {
+      setIsPaused(false);
+    }
   }, [isDragging]);
 
   const handleMouseDown = useCallback((e) => {
