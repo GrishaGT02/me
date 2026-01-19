@@ -130,58 +130,58 @@ const Header = () => {
         <div className="header">
             <div className="header-container" ref={headerContainerRef}>
                 <div className="header-top-row">
-                    <div className="header-logo">
-                        <img src={logo} alt="logo" />
+                <div className="header-logo">
+                    <img src={logo} alt="logo" />
+                </div>
+                
+                <div className="header-clinic-info">
+                    <div className="header-clinic-text">Современная стоматологическая <br/> клиника в Рассказовке</div>
+                </div>
+                
+                <div className="header-location">
+                    <div className="header-metro-icon">
+                        <img src={metro} alt="metro" />
                     </div>
-                    
-                    <div className="header-clinic-info">
-                        <div className="header-clinic-text">Современная стоматологическая <br/> клиника в Рассказовке</div>
+                    <div className="header-address">
+                        <div className="header-metro-text">2 мин от м.Рассказовка</div>
+                        <div className="header-street">ул. Анны Ахматовой 11 корп. 1</div>
                     </div>
-                    
-                    <div className="header-location">
-                        <div className="header-metro-icon">
-                            <img src={metro} alt="metro" />
-                        </div>
-                        <div className="header-address">
-                            <div className="header-metro-text">2 мин от м.Рассказовка</div>
-                            <div className="header-street">ул. Анны Ахматовой 11 корп. 1</div>
-                        </div>
-                    </div>
-                    
-                    <div className="header-calculator-btn">
-                        <span>Калькулятор стоимости лечения</span>
-                        <div className="header-calculator-btn-icon">
+                </div>
+                
+                <div className="header-calculator-btn">
+                    <span>Калькулятор стоимости лечения</span>
+                    <div className="header-calculator-btn-icon">
                             <svg viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9.97601 1.71526L11.1234 1.81565L11.2238 0.668218L10.0764 0.56783L9.97601 1.71526ZM0.412221 8.23665C-0.0750831 8.64554 -0.138645 9.37206 0.270252 9.85936C0.679148 10.3467 1.40566 10.4102 1.89297 10.0013L1.15259 9.11899L0.412221 8.23665ZM9.40813 8.20612L10.5556 8.30651L11.1234 1.81565L9.97601 1.71526L8.82858 1.61488L8.2607 8.10573L9.40813 8.20612ZM9.97601 1.71526L10.0764 0.56783L3.58554 -4.58476e-05L3.48515 1.14739L3.38477 2.29482L9.87562 2.86269L9.97601 1.71526ZM9.97601 1.71526L9.23564 0.832921L0.412221 8.23665L1.15259 9.11899L1.89297 10.0013L10.7164 2.5976L9.97601 1.71526Z"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div className="header-contact-wrapper">
+                    <div className="header-phone-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.03405 1.04936L2.74416 0.339263C3.19634 -0.112923 3.92948 -0.112924 4.38167 0.339262L7.37574 3.33333C7.82792 3.78552 7.82792 4.51866 7.37574 4.97084L5.30031 7.04627C4.95424 7.39234 4.86844 7.92104 5.08732 8.35879C6.35261 10.8894 8.40456 12.9413 10.9352 14.2066C11.3729 14.4255 11.9016 14.3397 12.2477 13.9936L14.3231 11.9182C14.7753 11.466 15.5084 11.466 15.9606 11.9182L18.9547 14.9123C19.4069 15.3645 19.4069 16.0976 18.9547 16.5498L18.2446 17.2599C15.7999 19.7046 11.9295 19.9797 9.16363 17.9053L7.76441 16.8558C5.74559 15.3417 3.95222 13.5484 2.4381 11.5295L1.38869 10.1303C-0.685727 7.36443 -0.410668 3.49409 2.03405 1.04936Z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div className="header-contact-block">
+                        <div className="header-phone-info">
+                            <div className="header-phone-number">+7 (499) 704-46-75</div>
+                            <div className="header-phone-hours">Ежедневно с 9:00 до 21:00</div>
+                        </div>
+                        <div className="header-avatar">
+                            <img src={profil} alt="profile" />
+                        </div>
+                    </div>
+                    <div className="header-menu-btn">
+                        <span>Меню</span>
+                        <div className="header-menu-icons">
+                            <svg width="30" height="15" viewBox="0 0 30 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="30" height="5" fill="white"/>
+                                <rect x="5" y="10" width="25" height="5" fill="white"/>
                             </svg>
                         </div>
                     </div>
-                    
-                    <div className="header-contact-wrapper">
-                        <div className="header-phone-icon">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.03405 1.04936L2.74416 0.339263C3.19634 -0.112923 3.92948 -0.112924 4.38167 0.339262L7.37574 3.33333C7.82792 3.78552 7.82792 4.51866 7.37574 4.97084L5.30031 7.04627C4.95424 7.39234 4.86844 7.92104 5.08732 8.35879C6.35261 10.8894 8.40456 12.9413 10.9352 14.2066C11.3729 14.4255 11.9016 14.3397 12.2477 13.9936L14.3231 11.9182C14.7753 11.466 15.5084 11.466 15.9606 11.9182L18.9547 14.9123C19.4069 15.3645 19.4069 16.0976 18.9547 16.5498L18.2446 17.2599C15.7999 19.7046 11.9295 19.9797 9.16363 17.9053L7.76441 16.8558C5.74559 15.3417 3.95222 13.5484 2.4381 11.5295L1.38869 10.1303C-0.685727 7.36443 -0.410668 3.49409 2.03405 1.04936Z" fill="white"/>
-                            </svg>
-                        </div>
-                        <div className="header-contact-block">
-                            <div className="header-phone-info">
-                                <div className="header-phone-number">+7 (499) 704-46-75</div>
-                                <div className="header-phone-hours">Ежедневно с 9:00 до 21:00</div>
-                            </div>
-                            <div className="header-avatar">
-                                <img src={profil} alt="profile" />
-                            </div>
-                        </div>
-                        <div className="header-menu-btn">
-                            <span>Меню</span>
-                            <div className="header-menu-icons">
-                                <svg width="30" height="15" viewBox="0 0 30 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="30" height="5" fill="white"/>
-                                    <rect x="5" y="10" width="25" height="5" fill="white"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+                </div>
                 </div>
                 <nav className="header-nav">
                     <div className="header-nav-container">

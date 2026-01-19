@@ -25,6 +25,7 @@ import Kvis from './Components/Kvis/Kvis';
 import Footer from './Components/Footer/Footer';
 import Modal from './Components/Modal/Modal';
 import Carousel from './Components/Carousel/Carousel';
+import ProfileCards from './Components/ProfileCards/ProfileCards';
 import './App.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     <div className="App">
         <Header />
         <Carousel />
+        <ProfileCards />
         <Googing />
         <Skils />
         <TreatmentWarning />
