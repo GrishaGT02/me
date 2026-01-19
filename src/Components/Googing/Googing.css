@@ -114,7 +114,7 @@
     position: absolute;
     bottom: 0.8vw;
     right: 0.8vw;
-    border: 0.078vw solid rgba(255, 255, 255, 1);
+    /* border: 0.078vw solid rgba(255, 255, 255, 1); */
     border-top: 0.178vw solid rgba(255, 255, 255, 1);
     /* max-width: 300px; */
 }

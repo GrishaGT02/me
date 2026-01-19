@@ -17,6 +17,7 @@ const Header = () => {
     // Дублируем последний слайд в начало и первый в конец для бесконечного эффекта
     const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
     const carouselRef = useRef(null);
+    const headerContainerRef = useRef(null);
 
     // Реальный индекс для отображения (0-3)
     const realIndex = currentSlide === 0 ? slides.length - 1 : (currentSlide === extendedSlides.length - 1 ? 0 : currentSlide - 1);
@@ -105,9 +106,29 @@ const Header = () => {
         }
     }, [currentSlide, slides.length, extendedSlides.length]);
 
+    // Вычисляем высоту header-container и добавляем отступ для контента
+    useEffect(() => {
+        const updatePadding = () => {
+            if (headerContainerRef.current) {
+                const height = headerContainerRef.current.offsetHeight;
+                document.documentElement.style.setProperty('--header-height', `${height}px`);
+                // Добавляем отступ к body, чтобы контент не перекрывался
+                document.body.style.paddingTop = `${height}px`;
+            }
+        };
+        
+        updatePadding();
+        window.addEventListener('resize', updatePadding);
+        
+        return () => {
+            window.removeEventListener('resize', updatePadding);
+            document.body.style.paddingTop = '0';
+        };
+    }, []);
+
     return (
         <div className="header">
-            <div className="header-container">
+            <div className="header-container" ref={headerContainerRef}>
                 <div className="header-top-row">
                     <div className="header-logo">
                         <img src={logo} alt="logo" />

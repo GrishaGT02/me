@@ -1,59 +1,83 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import slad1 from '../../assec/slad1.jpg';
 import slad2 from '../../assec/slad2.jpg';
 import './Carousel.css';
 
+// Слайды с изображениями и контентом - выносим за пределы компонента
+const SLIDES = [
+  { 
+    id: 1, 
+    image: slad1,
+    title: 'Все зубы за 1 день за 119,000 рублей или 8,000 руб/в месяц',
+    subtitle: 'С пожизненной гарантией от производителя',
+    buttonText: 'ПОДРОБНЕЕ'
+  },
+  { 
+    id: 2, 
+    image: slad2,
+    title: 'Брекеты + установка от 29,500 рублей. Рассрочка до 36 месяцев.',
+    subtitle: 'С пожизненной гарантией от производителя',
+    buttonText: 'ПОДРОБНЕЕ'
+  },
+  { 
+    id: 3, 
+    image: slad1,
+    title: 'Все зубы за 1 день за 119,000 рублей или 8,000 руб/в месяц',
+    subtitle: 'С пожизненной гарантией от производителя',
+    buttonText: 'ПОДРОБНЕЕ'
+  },
+];
+
+// Дублируем слайды для бесконечной прокрутки по кругу
+// Добавляем первый слайд в конец и последний в начало для плавного перехода
+const EXTENDED_SLIDES = [SLIDES[SLIDES.length - 1], ...SLIDES, ...SLIDES, SLIDES[0]];
+
 const Carousel = () => {
-  const [offset, setOffset] = useState(0);
+  // Вычисляем начальную позицию СРАЗУ при инициализации компонента
+  // Это гарантирует, что карточки будут видны с первого рендера
+  const getInitialOffset = () => {
+    if (typeof window !== 'undefined') {
+      const vwToPx = window.innerWidth / 100;
+      // Ширина слайда 50vw, gap 2.6vw, цикл = 3 * (50vw + 2.6vw)
+      const estimatedCycleWidth = SLIDES.length * (50 + 2.6) * vwToPx;
+      return -estimatedCycleWidth; // Начинаем со второй копии
+    }
+    return 0;
+  };
+  
+  const initialOffset = getInitialOffset();
+  const [offset, setOffset] = useState(initialOffset);
   const [isPaused, setIsPaused] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const animationRef = useRef(null);
   const wrapperRef = useRef(null);
   const trackRef = useRef(null);
-  const baseOffsetRef = useRef(0);
+  const baseOffsetRef = useRef(initialOffset);
   const dragStartRef = useRef(0);
   const dragOffsetRef = useRef(0);
-  const currentOffsetRef = useRef(0);
+  const currentOffsetRef = useRef(initialOffset);
   const slideWidthRef = useRef(0);
   const gapRef = useRef(0);
   const cycleWidthRef = useRef(0);
   const isInitializedRef = useRef(false);
   const isMouseOverRef = useRef(false);
 
-  // Слайды с изображениями и контентом
-  const slides = [
-    { 
-      id: 1, 
-      image: slad1,
-      title: 'Все зубы за 1 день за 119,000 рублей или 8,000 руб/в месяц',
-      subtitle: 'С пожизненной гарантией от производителя',
-      buttonText: 'ПОДРОБНЕЕ'
-    },
-    { 
-      id: 2, 
-      image: slad2,
-      title: 'Брекеты + установка от 29,500 рублей. Рассрочка до 36 месяцев.',
-      subtitle: 'С пожизненной гарантией от производителя',
-      buttonText: 'ПОДРОБНЕЕ'
-    },
-    { 
-      id: 3, 
-      image: slad1,
-      title: 'Все зубы за 1 день за 119,000 рублей или 8,000 руб/в месяц',
-      subtitle: 'С пожизненной гарантией от производителя',
-      buttonText: 'ПОДРОБНЕЕ'
-    },
-  ];
-
-  // Дублируем слайды для бесконечной прокрутки (нужно минимум 3 копии для плавного перехода)
-  const extendedSlides = [...slides, ...slides, ...slides];
-
-  // Вычисляем размеры слайдов
-  useEffect(() => {
+  // Вычисляем размеры слайдов - используем useLayoutEffect для синхронной установки позиции
+  // ВАЖНО: этот эффект должен работать НЕЗАВИСИМО от состояния мыши
+  useLayoutEffect(() => {
+    let rafId = null;
+    
     const updateSizes = () => {
       if (trackRef.current && trackRef.current.children.length > 0) {
         const firstSlide = trackRef.current.children[0];
         const slideRect = firstSlide.getBoundingClientRect();
+        
+        // Если размеры еще не вычислены, ждем следующего кадра
+        if (slideRect.width === 0) {
+          rafId = requestAnimationFrame(updateSizes);
+          return;
+        }
+        
         slideWidthRef.current = slideRect.width;
         
         // Получаем gap из computed styles
@@ -62,35 +86,113 @@ const Carousel = () => {
         gapRef.current = parseFloat(gapValue) || 0;
         
         // Вычисляем ширину одного цикла (3 слайда)
-        cycleWidthRef.current = slides.length * (slideWidthRef.current + gapRef.current);
+        cycleWidthRef.current = SLIDES.length * (slideWidthRef.current + gapRef.current);
+        // Вычисляем ширину одного слайда с gap
+        const slideWidthWithGap = slideWidthRef.current + gapRef.current;
         
-        // Устанавливаем начальную позицию в середине (на второй копии слайдов) только один раз
-        // Это позволяет двигаться в обе стороны без видимых скачков
-        if (!isInitializedRef.current && cycleWidthRef.current > 0) {
-          baseOffsetRef.current = -cycleWidthRef.current;
-          currentOffsetRef.current = -cycleWidthRef.current;
-          setOffset(-cycleWidthRef.current);
+        // ВСЕГДА устанавливаем начальную позицию на первом слайде из основной копии
+        // Начинаем с позиции -slideWidthWithGap (пропускаем последний слайд из первой копии)
+        // КРИТИЧЕСКИ ВАЖНО: делаем это НЕЗАВИСИМО от isPaused, isInitializedRef и состояния мыши
+        if (cycleWidthRef.current > 0) {
+          const targetOffset = -slideWidthWithGap; // Начинаем с первого слайда основной копии
+          baseOffsetRef.current = targetOffset;
+          currentOffsetRef.current = targetOffset;
+          // Принудительно устанавливаем позицию - НЕ зависит от isPaused или состояния мыши
+          setOffset(targetOffset);
           isInitializedRef.current = true;
         }
+      } else {
+        // Если элементы еще не отрендерены, пробуем снова на следующем кадре
+        rafId = requestAnimationFrame(updateSizes);
       }
     };
 
+    // Вызываем сразу синхронно
     updateSizes();
-    window.addEventListener('resize', updateSizes);
+    
+    // Также обновляем при изменении размера окна
+    const handleResize = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      updateSizes();
+    };
+    window.addEventListener('resize', handleResize);
     
     return () => {
-      window.removeEventListener('resize', updateSizes);
+      if (rafId) cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', handleResize);
     };
-  }, [slides.length]);
+  }, []);
+
+  // Дополнительная проверка: принудительно устанавливаем позицию
+  // ВАЖНО: этот эффект работает НЕЗАВИСИМО от состояния мыши и isPaused
+  useEffect(() => {
+    const trySetPosition = () => {
+      if (trackRef.current && trackRef.current.children.length > 0) {
+        const firstSlide = trackRef.current.children[0];
+        const slideRect = firstSlide.getBoundingClientRect();
+        if (slideRect.width > 0) {
+          const trackStyles = window.getComputedStyle(trackRef.current);
+          const gapValue = trackStyles.gap;
+          const gap = parseFloat(gapValue) || 0;
+          const cycleWidth = SLIDES.length * (slideRect.width + gap);
+          const slideWidthWithGap = slideRect.width + gap;
+          if (cycleWidth > 0) {
+            const targetOffset = -slideWidthWithGap; // Начинаем с первого слайда основной копии
+            baseOffsetRef.current = targetOffset;
+            currentOffsetRef.current = targetOffset;
+            // Принудительно устанавливаем позицию - НЕ зависит от isPaused или состояния мыши
+            setOffset(targetOffset);
+            cycleWidthRef.current = cycleWidth;
+            slideWidthRef.current = slideRect.width;
+            gapRef.current = gap;
+            isInitializedRef.current = true;
+            
+            // Если мышь уже на блоке, устанавливаем паузу ПОСЛЕ установки позиции
+            if (isMouseOverRef.current) {
+              setIsPaused(true);
+            }
+            
+            return true; // Позиция установлена
+          }
+        }
+      }
+      return false; // Позиция не установлена
+    };
+
+    // Пробуем установить позицию сразу
+    trySetPosition();
+
+    // Если не получилось, пробуем через небольшую задержку
+    const timeoutId1 = setTimeout(() => {
+      trySetPosition();
+    }, 10);
+
+    // Также пробуем через requestAnimationFrame
+    const rafId1 = requestAnimationFrame(() => {
+      trySetPosition();
+      
+      // Еще одна попытка через следующий кадр
+      requestAnimationFrame(() => {
+        trySetPosition();
+      });
+    });
+
+    return () => {
+      clearTimeout(timeoutId1);
+      cancelAnimationFrame(rafId1);
+    };
+  }, []);
 
   // Непрерывная анимация
   useEffect(() => {
-    if (isPaused || isDragging) return; // Не запускаем анимацию, если на паузе или перетаскиваем
+    // Не запускаем анимацию, если перетаскиваем, на паузе или не инициализирована
+    if (isDragging || isPaused || !isInitializedRef.current) return;
 
     const speed = 0.5; // скорость движения (пикселей за кадр)
 
     const animate = () => {
-      if (isPaused || isDragging) return;
+      // Проверяем состояние перед каждым кадром
+      if (isDragging || isPaused || !isInitializedRef.current) return;
       
       if (cycleWidthRef.current === 0) {
         animationRef.current = requestAnimationFrame(animate);
@@ -99,15 +201,19 @@ const Carousel = () => {
       
       baseOffsetRef.current -= speed;
       
-      // Когда проехали один полный цикл, сбрасываем позицию незаметно
-      // Нормализуем позицию в пределах цикла
+      // Нормализация для циклической прокрутки
+      // Структура: [последний, 1, 2, 3, 1, 2, 3, первый]
+      // Начинаем с позиции -slideWidthWithGap (первый слайд основной копии)
+      // Когда доходим до конца последнего слайда основной копии, возвращаемся к началу
+      // ВАЖНО: используем цикл while для гарантированной нормализации
       if (cycleWidthRef.current > 0) {
-        while (Math.abs(baseOffsetRef.current) >= cycleWidthRef.current) {
-          if (baseOffsetRef.current < 0) {
-            baseOffsetRef.current += cycleWidthRef.current;
-          } else {
-            baseOffsetRef.current -= cycleWidthRef.current;
-          }
+        const slideWidthWithGap = slideWidthRef.current + gapRef.current;
+        // Нормализуем в цикле: [-cycleWidth - slideWidthWithGap, slideWidthWithGap)
+        while (baseOffsetRef.current <= -cycleWidthRef.current - slideWidthWithGap) {
+          baseOffsetRef.current += cycleWidthRef.current;
+        }
+        while (baseOffsetRef.current >= slideWidthWithGap) {
+          baseOffsetRef.current -= cycleWidthRef.current;
         }
       }
       
@@ -124,12 +230,16 @@ const Carousel = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [slides.length, isPaused, isDragging]);
+  }, [isDragging, isPaused]);
 
   const handleMouseEnter = useCallback(() => {
     isMouseOverRef.current = true;
-    setIsPaused(true);
-  }, []);
+    // Устанавливаем паузу только если позиция уже инициализирована и не перетаскиваем
+    // Это гарантирует, что начальная позиция установится до паузы
+    if (isInitializedRef.current && !isDragging) {
+      setIsPaused(true);
+    }
+  }, [isDragging]);
 
   const handleMouseLeave = useCallback(() => {
     isMouseOverRef.current = false;
@@ -143,7 +253,25 @@ const Carousel = () => {
     
     const diff = e.clientX - dragStartRef.current; // Перетаскивание вправо двигает карусель вправо, влево - влево
     dragOffsetRef.current = diff;
-    const newOffset = baseOffsetRef.current + diff;
+    let newOffset = baseOffsetRef.current + diff;
+    
+    // Нормализуем позицию во время перетаскивания, чтобы слайды всегда были видны
+    if (cycleWidthRef.current > 0) {
+      const slideWidthWithGap = slideWidthRef.current + gapRef.current;
+      // Если ушли слишком далеко влево, возвращаемся
+      if (newOffset <= -cycleWidthRef.current - slideWidthWithGap) {
+        newOffset += cycleWidthRef.current;
+        baseOffsetRef.current += cycleWidthRef.current;
+        dragOffsetRef.current = diff - cycleWidthRef.current;
+      }
+      // Если ушли слишком далеко вправо, возвращаемся
+      if (newOffset >= slideWidthWithGap) {
+        newOffset -= cycleWidthRef.current;
+        baseOffsetRef.current -= cycleWidthRef.current;
+        dragOffsetRef.current = diff + cycleWidthRef.current;
+      }
+    }
+    
     currentOffsetRef.current = newOffset;
     setOffset(newOffset);
   }, [isDragging]);
@@ -154,15 +282,22 @@ const Carousel = () => {
     // Обновляем baseOffsetRef с учетом нового положения после перетаскивания
     baseOffsetRef.current = baseOffsetRef.current + dragOffsetRef.current;
     
-    // Нормализуем позицию в пределах цикла
+    // Нормализуем позицию в пределах цикла после перетаскивания
+    // ВАЖНО: делаем это ПРИНУДИТЕЛЬНО, чтобы слайды всегда были видны
     if (cycleWidthRef.current > 0) {
-      while (Math.abs(baseOffsetRef.current) >= cycleWidthRef.current) {
-        if (baseOffsetRef.current < 0) {
-          baseOffsetRef.current += cycleWidthRef.current;
-        } else {
-          baseOffsetRef.current -= cycleWidthRef.current;
-        }
+      const slideWidthWithGap = slideWidthRef.current + gapRef.current;
+      
+      // Нормализуем в цикле: [-cycleWidth - slideWidthWithGap, slideWidthWithGap)
+      while (baseOffsetRef.current <= -cycleWidthRef.current - slideWidthWithGap) {
+        baseOffsetRef.current += cycleWidthRef.current;
       }
+      while (baseOffsetRef.current >= slideWidthWithGap) {
+        baseOffsetRef.current -= cycleWidthRef.current;
+      }
+      
+      // Принудительно устанавливаем нормализованную позицию
+      currentOffsetRef.current = baseOffsetRef.current;
+      setOffset(baseOffsetRef.current);
     }
     
     dragOffsetRef.current = 0;
@@ -214,7 +349,7 @@ const Carousel = () => {
           }}
           onMouseDown={handleMouseDown}
         >
-          {extendedSlides.map((slide, index) => (
+          {EXTENDED_SLIDES.map((slide, index) => (
             <div
               key={`${slide.id}-${index}`}
               className="carousel-wrapper"
