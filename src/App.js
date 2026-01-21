@@ -34,6 +34,7 @@ function App() {
     <div className="App">
         <Header />
         <Carousel />
+        <Kvis />
         <ProfileCards />
         <Googing />
         <Skils />
@@ -56,7 +57,6 @@ function App() {
         <Zapis />
         <Fich1 />
         <Otzov />
-        <Kvis />
         <Footer />
     </div>
     </ModalProvider>
