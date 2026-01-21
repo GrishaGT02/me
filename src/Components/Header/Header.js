@@ -13,11 +13,14 @@ const Header = () => {
     const [currentSlide, setCurrentSlide] = useState(1); // Начинаем с 1, так как 0 - это дублированный последний слайд
     const [isTransitioning, setIsTransitioning] = useState(true);
     const [isPaused, setIsPaused] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const slides = [slaiderHeader, slaiderHeader, slaiderHeader, slaiderHeader];
     // Дублируем последний слайд в начало и первый в конец для бесконечного эффекта
     const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
     const carouselRef = useRef(null);
     const headerContainerRef = useRef(null);
+    const headerNavContainerRef = useRef(null);
+    const headerTopRowRef = useRef(null);
 
     // Реальный индекс для отображения (0-3)
     const realIndex = currentSlide === 0 ? slides.length - 1 : (currentSlide === extendedSlides.length - 1 ? 0 : currentSlide - 1);
@@ -106,13 +109,31 @@ const Header = () => {
         }
     }, [currentSlide, slides.length, extendedSlides.length]);
 
-    // Вычисляем высоту header-container и добавляем отступ для контента
+    // Отслеживаем скролл и скрываем верхнюю часть хедера
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+        
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Вычисляем высоту только навигации и добавляем отступ для контента
     useEffect(() => {
         const updatePadding = () => {
-            if (headerContainerRef.current) {
-                const height = headerContainerRef.current.offsetHeight;
+            if (headerNavContainerRef.current) {
+                const navHeight = headerNavContainerRef.current.offsetHeight;
+                const topRowHeight = headerTopRowRef.current ? headerTopRowRef.current.offsetHeight : 0;
+                // Изначально учитываем всю высоту, при скролле - только навигацию
+                const height = isScrolled ? navHeight : navHeight + topRowHeight + 20; // 20px - padding-top
                 document.documentElement.style.setProperty('--header-height', `${height}px`);
-                // Добавляем отступ к body, чтобы контент не перекрывался
                 document.body.style.paddingTop = `${height}px`;
             }
         };
@@ -124,12 +145,12 @@ const Header = () => {
             window.removeEventListener('resize', updatePadding);
             document.body.style.paddingTop = '0';
         };
-    }, []);
+    }, [isScrolled]);
 
     return (
         <div className="header">
             <div className="header-container" ref={headerContainerRef}>
-                <div className="header-top-row">
+                <div className={`header-top-row ${isScrolled ? 'header-top-row-hidden' : ''}`} ref={headerTopRowRef}>
                 <div className="header-logo">
                     <img src={logo} alt="logo" />
                 </div>
@@ -177,14 +198,14 @@ const Header = () => {
                         <div className="header-menu-icons">
                             <svg width="30" height="15" viewBox="0 0 30 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect width="30" height="5" fill="white"/>
-                                <rect x="5" y="10" width="25" height="5" fill="white"/>
+                                <rect className="header-menu-bottom-line" x="5" y="10" width="25" height="5" fill="white"/>
                             </svg>
                         </div>
                     </div>
                 </div>
                 </div>
                 <nav className="header-nav">
-                    <div className="header-nav-container">
+                    <div className="header-nav-container" ref={headerNavContainerRef}>
                         <a href="#services" className="header-nav-item">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M23.3359 11.6084C23.3359 18.0517 18.1123 23.2754 11.6689 23.2754C5.22562 23.2754 0.00195234 18.0517 0.00195262 11.6084C0.00195309 5.55896 4.6066 0.585524 10.502 -5.60989e-07L10.502 11.125L6.66016 7.2832L5.01074 8.93262L10.8437 14.7666L11.6689 15.5918L12.4932 14.7666L18.3271 8.93262L17.502 8.1084L16.6768 7.2832L12.835 11.125L12.835 -4.59012e-07C18.7308 0.585077 23.3359 5.55863 23.3359 11.6084Z" fill="#485B85"/>

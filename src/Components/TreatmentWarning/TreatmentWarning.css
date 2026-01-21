@@ -264,8 +264,8 @@
 
 .treatment-warning-tip-icon {
     flex-shrink: 0;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.6vw;
+    height: 1.6vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -274,6 +274,11 @@
 .treatment-warning-tip-icon svg {
     width: 100%;
     height: 100%;
+}
+
+.treatment-warning-tip-icon svg .treatment-warning-exclamation-mark {
+    transform: scale(0.5);
+    transform-origin: center;
 }
 
 .treatment-warning-tip-icon svg path {

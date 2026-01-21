@@ -86,9 +86,12 @@ const Skils = () => {
             
             <div className="skils-tip">
               <div className="skils-tip-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="12" fill="#485B85"/>
-                  <path d="M12 7V13M12 17H12.01" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="7.5" cy="7.5" r="7.5" fill="#485B85"/>
+                  <g className="skils-exclamation-mark">
+                    <path d="M5.71837 4.89457C5.36034 3.70112 6.254 2.5 7.5 2.5C8.746 2.5 9.63966 3.70112 9.28163 4.89457L8.30459 8.15136C8.27775 8.24085 8.26432 8.28559 8.2475 8.32426C8.14711 8.55499 7.93186 8.71515 7.68201 8.745C7.64015 8.75 7.59343 8.75 7.5 8.75C7.40657 8.75 7.35985 8.75 7.31798 8.745C7.06814 8.71515 6.85289 8.55499 6.7525 8.32426C6.73568 8.28559 6.72225 8.24085 6.69541 8.15136L5.71837 4.89457Z" fill="white" stroke="white" strokeWidth="1.41667"/>
+                    <circle cx="7.5" cy="11.875" r="1.25" fill="white" stroke="white" strokeWidth="1.41667"/>
+                  </g>
                 </svg>
               </div>
               <p className="skils-tip-text">

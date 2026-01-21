@@ -99,6 +99,7 @@
 .googing-play-button svg {
     width: 1.16vw;
     height: 1.4vw;
+    transform: translateX(0.1vw);
 }
 
 .googing-doctor-info {
