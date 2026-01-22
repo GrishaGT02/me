@@ -92,10 +92,10 @@
 .header-container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 10% 1vw 10%;
+    padding: 0 10% 0.5vw 10%;
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: 10px;
     gap: 0;
     position: fixed;
     top: 0;
@@ -103,8 +103,8 @@
     right: 0;
     width: 100%;
     z-index: 1000;
-    background: #FFFFFF;
-    transition: transform 0.3s ease;
+    /* background: #FFFFFF; */
+    transition: transform 0.6s ease;
 }
 
 .header-top-row {
@@ -114,16 +114,23 @@
     gap: 1.56vw;
     width: 100%;
     margin-bottom: 0.78vw;
-    transition: transform 0.3s ease, opacity 0.3s ease, margin-bottom 0.3s ease;
+    max-height: 200px;
+    transition: transform 0.5s ease, opacity 0.5s ease, max-height 0.5s ease;
     transform-origin: top;
+    overflow: hidden;
+    position: relative;
 }
 
 .header-top-row-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     transform: translateY(-100%);
     opacity: 0;
+    pointer-events: none;
     margin-bottom: 0;
-    height: 0;
-    overflow: hidden;
+    height: auto;
 }
 
 .header-logo {
@@ -243,8 +250,10 @@
 
 .header-nav {
     width: 100%;
-    background: rgba(235, 235, 235, 0.3);
+    background: #FFF;
     border-radius: 0.55vw;
+    position: relative;
+    transition: margin-top 0.5s ease;
 }
 
 .header-nav-container {
@@ -339,13 +348,15 @@
 
 @keyframes pulse {
     0% {
-        transform: scale(1);
+        transform: scale(0.8);
+        opacity: 0;
     }
     50% {
-        transform: scale(1.1);
+        opacity: 1;
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.1);
+        opacity: 0;
     }
 }
 
@@ -358,15 +369,44 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
-.header-phone-icon:hover {
-    animation: pulse 2s infinite;
+.header-phone-icon:hover::before,
+.header-phone-icon:hover::after {
+    content: '';
+    position: absolute;
+    border: 0.1vw solid #485B85;
+    left: -0.7vw;
+    opacity: 0;
+    right: -0.7vw;
+    top: -0.7vw;
+    bottom: -0.7vw;
+    border-radius: 50%;
+    animation: pulse 2.5s linear infinite;
 }
 
-.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon {
-    animation: pulse 2s infinite;
+.header-phone-icon:hover::after {
+    animation-delay: 1.25s;
+}
+
+.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon::before,
+.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon::after {
+    content: '';
+    position: absolute;
+    border: 0.1vw solid #485B85;
+    left: -0.7vw;
+    opacity: 0;
+    right: -0.7vw;
+    top: -0.7vw;
+    bottom: -0.7vw;
+    border-radius: 50%;
+    animation: pulse 2.5s linear infinite;
+}
+
+.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon::after {
+    animation-delay: 1.25s;
 }
 
 .header-phone-icon svg {
@@ -973,8 +1013,8 @@
     }
 
     .header-container {
-        padding: 0 2.6vw 1vw 2.6vw;
-        padding-top: 20px;
+        padding: 0 2.6vw 0.5vw 2.6vw;
+        padding-top: 10px;
     }
 }
 

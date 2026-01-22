@@ -366,6 +366,7 @@
 
 .googing-form-checkbox label {
     font-size: var(--font-size-body-small);
+    /* line-height: 1.5; */
     font-weight: 400;
     color: #666666;
     font-family: 'Geist', sans-serif;

@@ -29,12 +29,12 @@ const Kvis = () => {
   const [veneersTeethCount, setVeneersTeethCount] = useState('');
   const [consultationFor, setConsultationFor] = useState('');
   const [lastDentistVisit, setLastDentistVisit] = useState('');
-  const [messengerType, setMessengerType] = useState('');
   const [privacyConsent, setPrivacyConsent] = useState(false);
   const [userName, setUserName] = useState('');
   const [userPhone, setUserPhone] = useState('');
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showPolicyModal, setShowPolicyModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Функция для форматирования номера телефона
   const formatPhoneNumber = (value) => {
@@ -289,6 +289,33 @@ const Kvis = () => {
     }, 600);
   };
 
+  // Функция для отправки данных на backend
+  const sendFormData = async (formData) => {
+    try {
+      // URL вашего backend API (для разработки используйте localhost, для продакшна - URL деплоя)
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      
+      const response = await fetch(`${API_URL}/api/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Ошибка при отправке заявки');
+      }
+
+      return result;
+    } catch (error) {
+      console.error('Ошибка отправки:', error);
+      throw error;
+    }
+  };
+
   const handleNext = useCallback(() => {
     let nextStep = step;
     
@@ -342,16 +369,28 @@ const Kvis = () => {
       }
       nextStep = 6;
     } else if (step === 6) {
-      if (!messengerType) {
-        alert('Пожалуйста, выберите способ связи');
-        return;
-      }
       if (!privacyConsent) {
         alert('Пожалуйста, согласитесь на обработку персональных данных');
         return;
       }
+      if (!userPhone || userPhone.trim() === '') {
+        alert('Пожалуйста, введите номер телефона');
+        return;
+      }
+      // Проверка валидности телефона (минимум 10 цифр)
+      const phoneDigits = userPhone.replace(/\D/g, '');
+      if (phoneDigits.length < 10) {
+        alert('Пожалуйста, введите корректный номер телефона');
+        return;
+      }
       // Финальный шаг - отправка данных
-      console.log('Form submitted:', {
+      if (isSubmitting) return; // Предотвращаем повторную отправку
+      
+      setIsSubmitting(true);
+      
+      const formData = {
+        name: userName,
+        phone: userPhone,
         service: selectedService,
         dentalSituation,
         painArea,
@@ -375,10 +414,22 @@ const Kvis = () => {
         veneersTeethCount,
         consultationFor,
         lastDentistVisit,
-        messengerType,
         privacyConsent
-      });
-      alert('Спасибо! Ваша заявка отправлена.');
+      };
+
+      sendFormData(formData)
+        .then(() => {
+          alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+          // Можно сбросить форму здесь, если нужно
+        })
+        .catch((error) => {
+          console.error('Ошибка отправки:', error);
+          alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
+        })
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+      
       return;
     } else if (step === 7) {
       if (!toothToRemove) {
@@ -503,7 +554,7 @@ const Kvis = () => {
       }, 50);
     }, 600); // Задержка 600ms для анимации прогресс-бара
     
-  }, [step, selectedService, dentalSituation, painArea, painFeeling, visualChanges, toothToRemove, toothCondition, removalVisualChanges, crownSituation, crownGoal, crownTeeth, implantSituation, implantTeethCount, implantPriority, implantDiagnostics, whiteningFillings, whiteningMethod, hygieneReason, hygieneLastVisit, veneersSituation, veneersTeethCount, consultationFor, lastDentistVisit, messengerType, privacyConsent]);
+  }, [step, selectedService, dentalSituation, painArea, painFeeling, visualChanges, toothToRemove, toothCondition, removalVisualChanges, crownSituation, crownGoal, crownTeeth, implantSituation, implantTeethCount, implantPriority, implantDiagnostics, whiteningFillings, whiteningMethod, hygieneReason, hygieneLastVisit, veneersSituation, veneersTeethCount, consultationFor, lastDentistVisit, privacyConsent, userName, userPhone, isSubmitting]);
 
   const handleBack = () => {
     let prevStep = step;
@@ -1377,14 +1428,14 @@ const Kvis = () => {
             checked={privacyConsent}
             onChange={(e) => setPrivacyConsent(e.target.checked)}
           />
-          <label htmlFor="kvis-consent">
+          <label htmlFor="kvis-consent" style={{ lineHeight: '1.5' }}>
             Подтверждаю, что ознакомлен(а) с текстом{' '}
             <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }}>
-              <strong>Согласия на обработку персональных данных</strong>
+              согласия на обработку персональных данных
             </a>
             {' '}и согласен с{' '}
             <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPolicyModal(true); }}>
-              <strong>Политикой конфиденциальности</strong>
+              политикой конфиденциальности
             </a>
           </label>
         </div>
@@ -1507,7 +1558,12 @@ const Kvis = () => {
                   >
                     Назад
                   </button>
-                  <button className="kvis-btn-next kvis-btn-submit header_nuv-btn-1 header_nuv-btn-primary" onClick={handleNext}>
+                  <button 
+                    className="kvis-btn-next kvis-btn-submit header_nuv-btn-1 header_nuv-btn-primary" 
+                    onClick={handleNext}
+                    disabled={!privacyConsent || isSubmitting}
+                    type="button"
+                  >
                     <span>Получить расчёт и подарки</span>
                     <div className="header_nuv-btn-icon">
                       <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

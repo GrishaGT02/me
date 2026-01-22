@@ -205,7 +205,7 @@ const Header = () => {
                 </div>
                 </div>
                 <nav className="header-nav">
-                    <div className="header-nav-container" ref={headerNavContainerRef}>
+                    <div style={{ background: 'rgba(235, 235, 235, 0.3)' }} className="header-nav-container" ref={headerNavContainerRef}>
                         <a href="#services" className="header-nav-item">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M23.3359 11.6084C23.3359 18.0517 18.1123 23.2754 11.6689 23.2754C5.22562 23.2754 0.00195234 18.0517 0.00195262 11.6084C0.00195309 5.55896 4.6066 0.585524 10.502 -5.60989e-07L10.502 11.125L6.66016 7.2832L5.01074 8.93262L10.8437 14.7666L11.6689 15.5918L12.4932 14.7666L18.3271 8.93262L17.502 8.1084L16.6768 7.2832L12.835 11.125L12.835 -4.59012e-07C18.7308 0.585077 23.3359 5.55863 23.3359 11.6084Z" fill="#485B85"/>
