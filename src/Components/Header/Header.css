@@ -1,9 +1,10 @@
 .header {
     width: 100%;
     margin: 0 auto;
-    background: #FFFFFF;
+    background: transparent;
     padding: 1.04vw 0 1.56vw 0;
     position: relative;
+    overflow: visible;
 }
 
 .header-center-card {
@@ -92,19 +93,13 @@
 .header-container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 10% 0.5vw 10%;
+    padding: 0vw 10% 0.78vw 10%;
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
     gap: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    z-index: 1000;
-    /* background: #FFFFFF; */
-    transition: transform 0.6s ease;
+    background: transparent;
+    overflow: visible;
 }
 
 .header-top-row {
@@ -113,25 +108,11 @@
     justify-content: space-between;
     gap: 1.56vw;
     width: 100%;
-    margin-bottom: 0.78vw;
-    max-height: 200px;
-    transition: transform 0.5s ease, opacity 0.5s ease, max-height 0.5s ease;
-    transform-origin: top;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
+    background: transparent;
 }
 
-.header-top-row-hidden {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-    margin-bottom: 0;
-    height: auto;
-}
 
 .header-logo {
     flex-shrink: 0;
@@ -248,12 +229,41 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.header-nav-wrapper {
+    position: relative;
+}
+
+.header-nav-anchor {
+    height: 0;
+    transition: height 0.3s ease;
+}
+
 .header-nav {
     width: 100%;
     background: #FFF;
     border-radius: 0.55vw;
     position: relative;
     transition: margin-top 0.5s ease;
+}
+
+.header-nav.fixed {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10%;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.header-nav.fixed .header-nav-container {
+    width: 100%;
+    background: #FFF;
+    border-radius: 0.55vw;
 }
 
 .header-nav-container {
@@ -335,6 +345,8 @@
     align-items: center;
     gap: 0.26vw;
     flex-shrink: 0;
+    position: relative;
+    overflow: visible;
 }
 
 @keyframes swing {
@@ -370,7 +382,8 @@
     justify-content: center;
     flex-shrink: 0;
     position: relative;
-    z-index: 1;
+    z-index: 100;
+    overflow: visible;
 }
 
 .header-phone-icon:hover::before,
@@ -385,6 +398,8 @@
     bottom: -0.7vw;
     border-radius: 50%;
     animation: pulse 2.5s linear infinite;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .header-phone-icon:hover::after {
@@ -403,6 +418,8 @@
     bottom: -0.7vw;
     border-radius: 50%;
     animation: pulse 2.5s linear infinite;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon::after {
@@ -414,6 +431,60 @@
     height: 1.04vw;
     transform-origin: center;
     animation: swing 2s ease-in-out infinite;
+    position: relative;
+    z-index: 101;
+}
+
+.header-phone-icon-fixed {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: #485B85;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+    z-index: 1000;
+    overflow: visible;
+    cursor: pointer;
+    box-shadow: 0 0.26vw 0.78vw rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-phone-icon-fixed:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0.39vw 1.04vw rgba(0, 0, 0, 0.3);
+}
+
+.header-phone-icon-fixed:hover::before,
+.header-phone-icon-fixed:hover::after {
+    content: '';
+    position: absolute;
+    border: 0.1vw solid #485B85;
+    left: -1vw;
+    opacity: 0;
+    right: -1vw;
+    top: -1vw;
+    bottom: -1vw;
+    border-radius: 50%;
+    animation: pulse 2.5s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.header-phone-icon-fixed:hover::after {
+    animation-delay: 1.25s;
+}
+
+.header-phone-icon-fixed svg {
+    width: 1.46vw;
+    height: 1.46vw;
+    transform-origin: center;
+    animation: swing 2s ease-in-out infinite;
+    position: relative;
+    z-index: 101;
 }
 
 .header-contact-block {
@@ -1014,7 +1085,10 @@
 
     .header-container {
         padding: 0 2.6vw 0.5vw 2.6vw;
-        padding-top: 10px;
+        /* padding-top: 10px; */
+    }
+    .header-nav.fixed {
+        padding: 0 2.6vw 0vw 2.6vw;
     }
 }
 
@@ -1121,6 +1195,18 @@
     .header-menu-icons svg {
         width: 1.36vw;
         height: 0.68vw;
+    }
+
+    .header-phone-icon-fixed {
+        width: 3.5vw;
+        height: 3.5vw;
+        bottom: 1.75vw;
+        right: 1.75vw;
+    }
+
+    .header-phone-icon-fixed svg {
+        width: 1.27vw;
+        height: 1.27vw;
     }
 }
 

@@ -13,7 +13,6 @@ const Header = () => {
     const [currentSlide, setCurrentSlide] = useState(1); // Начинаем с 1, так как 0 - это дублированный последний слайд
     const [isTransitioning, setIsTransitioning] = useState(true);
     const [isPaused, setIsPaused] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
     const slides = [slaiderHeader, slaiderHeader, slaiderHeader, slaiderHeader];
     // Дублируем последний слайд в начало и первый в конец для бесконечного эффекта
     const extendedSlides = [slides[slides.length - 1], ...slides, slides[0]];
@@ -21,6 +20,9 @@ const Header = () => {
     const headerContainerRef = useRef(null);
     const headerNavContainerRef = useRef(null);
     const headerTopRowRef = useRef(null);
+    const stickyAnchorRef = useRef(null);
+    const stickyContentRef = useRef(null);
+    const [isStickyFixed, setIsStickyFixed] = useState(false);
 
     // Реальный индекс для отображения (0-3)
     const realIndex = currentSlide === 0 ? slides.length - 1 : (currentSlide === extendedSlides.length - 1 ? 0 : currentSlide - 1);
@@ -109,48 +111,42 @@ const Header = () => {
         }
     }, [currentSlide, slides.length, extendedSlides.length]);
 
-    // Отслеживаем скролл и скрываем верхнюю часть хедера
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
+        const onScroll = () => {
+            if (!stickyAnchorRef.current || !stickyContentRef.current) return;
             
-            if (scrollY > 50) {
-                setIsScrolled(true);
+            const anchorRect = stickyAnchorRef.current.getBoundingClientRect();
+            
+            // Проверяем, когда anchor достигает верха экрана
+            if (anchorRect.top <= 0) {
+                if (!isStickyFixed) {
+                    const contentHeight = stickyContentRef.current.offsetHeight;
+                    stickyAnchorRef.current.style.height = `${contentHeight}px`;
+                    setIsStickyFixed(true);
+                }
             } else {
-                setIsScrolled(false);
+                if (isStickyFixed) {
+                    stickyAnchorRef.current.style.height = '0px';
+                    setIsStickyFixed(false);
+                }
             }
         };
-        
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
-    // Вычисляем высоту только навигации и добавляем отступ для контента
-    useEffect(() => {
-        const updatePadding = () => {
-            if (headerNavContainerRef.current) {
-                const navHeight = headerNavContainerRef.current.offsetHeight;
-                const topRowHeight = headerTopRowRef.current ? headerTopRowRef.current.offsetHeight : 0;
-                // Изначально учитываем всю высоту, при скролле - только навигацию
-                const height = isScrolled ? navHeight : navHeight + topRowHeight + 20; // 20px - padding-top
-                document.documentElement.style.setProperty('--header-height', `${height}px`);
-                document.body.style.paddingTop = `${height}px`;
-            }
-        };
-        
-        updatePadding();
-        window.addEventListener('resize', updatePadding);
-        
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('resize', onScroll);
+        onScroll();
+
         return () => {
-            window.removeEventListener('resize', updatePadding);
-            document.body.style.paddingTop = '0';
+            window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('resize', onScroll);
         };
-    }, [isScrolled]);
+    }, [isStickyFixed]);
+
 
     return (
         <div className="header">
             <div className="header-container" ref={headerContainerRef}>
-                <div className={`header-top-row ${isScrolled ? 'header-top-row-hidden' : ''}`} ref={headerTopRowRef}>
+                <div className="header-top-row" ref={headerTopRowRef}>
                 <div className="header-logo">
                     <img src={logo} alt="logo" />
                 </div>
@@ -204,8 +200,10 @@ const Header = () => {
                     </div>
                 </div>
                 </div>
-                <nav className="header-nav">
-                    <div style={{ background: 'rgba(235, 235, 235, 0.3)' }} className="header-nav-container" ref={headerNavContainerRef}>
+                <div className="header-nav-wrapper">
+                    <div className="header-nav-anchor" ref={stickyAnchorRef}></div>
+                    <nav className={`header-nav ${isStickyFixed ? 'fixed' : ''}`} ref={stickyContentRef}>
+                        <div style={{ }} className="header-nav-container" ref={headerNavContainerRef}>
                         <a href="#services" className="header-nav-item">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M23.3359 11.6084C23.3359 18.0517 18.1123 23.2754 11.6689 23.2754C5.22562 23.2754 0.00195234 18.0517 0.00195262 11.6084C0.00195309 5.55896 4.6066 0.585524 10.502 -5.60989e-07L10.502 11.125L6.66016 7.2832L5.01074 8.93262L10.8437 14.7666L11.6689 15.5918L12.4932 14.7666L18.3271 8.93262L17.502 8.1084L16.6768 7.2832L12.835 11.125L12.835 -4.59012e-07C18.7308 0.585077 23.3359 5.55863 23.3359 11.6084Z" fill="#485B85"/>
@@ -223,8 +221,9 @@ const Header = () => {
                             <span className="header-nav-badge">100+</span>
                         </a>
                         <a href="#contacts" className="header-nav-item">Контакты</a>
-                    </div>
-                </nav>
+                        </div>
+                    </nav>
+                </div>
             </div>
             <div className="header_nuv">
                 <div className="header_nuv-left">
@@ -478,6 +477,11 @@ const Header = () => {
                         <img src={dockImage} alt="Doctor" />
                     </div>
                 </div>
+            </div>
+            <div className="header-phone-icon-fixed">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.03405 1.04936L2.74416 0.339263C3.19634 -0.112923 3.92948 -0.112924 4.38167 0.339262L7.37574 3.33333C7.82792 3.78552 7.82792 4.51866 7.37574 4.97084L5.30031 7.04627C4.95424 7.39234 4.86844 7.92104 5.08732 8.35879C6.35261 10.8894 8.40456 12.9413 10.9352 14.2066C11.3729 14.4255 11.9016 14.3397 12.2477 13.9936L14.3231 11.9182C14.7753 11.466 15.5084 11.466 15.9606 11.9182L18.9547 14.9123C19.4069 15.3645 19.4069 16.0976 18.9547 16.5498L18.2446 17.2599C15.7999 19.7046 11.9295 19.9797 9.16363 17.9053L7.76441 16.8558C5.74559 15.3417 3.95222 13.5484 2.4381 11.5295L1.38869 10.1303C-0.685727 7.36443 -0.410668 3.49409 2.03405 1.04936Z" fill="white"/>
+                </svg>
             </div>
         </div>
     );
