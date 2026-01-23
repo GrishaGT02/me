@@ -244,7 +244,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.56vw;
+    margin-bottom: 1.0vw;
+    /* gap: 1.56vw; */
     width: 100%;
     overflow: visible;
     position: relative;
@@ -1013,7 +1014,7 @@ img {
     height: 3.5vw;
     background: #FFFFFF;
     border: none;
-    box-shadow: 0 0 0 0.5px rgba(72, 91, 133, 1);
+    box-shadow: 0 0 0 0.5px rgba(235, 235, 235, 1);
     border-radius: 0.63vw;
     padding: 0.63vw;
     display: flex;
@@ -9728,7 +9729,6 @@ img {
   flex: 1 1;
   text-align: left;
   line-height: var(--line-height-normal);
-  text-transform: capitalize;
 }
 
 .kvis-navigation {
@@ -12044,4 +12044,4 @@ img {
 }
 
 
-/*# sourceMappingURL=main.f16dd867.css.map*/
+/*# sourceMappingURL=main.63647bf2.css.map*/
