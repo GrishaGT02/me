@@ -16,9 +16,9 @@
 }
 
 .googing-title {
-    font-size: 2.1vw;
-    /* font-size: var(--font-size-h1); */
-    font-weight: 600;
+    /* font-size: 2.1vw; */
+    font-size: var(--font-size-h1);
+    font-weight: 700;
     line-height: 3.125vw;
     color: #000000;
     text-align: left;
@@ -163,19 +163,19 @@
     position: absolute;
     bottom: 0.8vw;
     right: 0.8vw;
-    border: 0.008vw solid rgba(255, 255, 255, 1);
+    border: 0.03vw solid rgba(255, 255, 255, 1);
     border-top: 0.1vw solid rgba(255, 255, 255, 1);
     /* max-width: 300px; */
 }
 
 .googing-doctor-info-card {
     background: #FFFFFF;
-    padding: 0.52vw 1.04vw;
+    padding: 0.52vw 1.25vw;
     gap: 1.56vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 0.5vw;
+    border-radius: 0.95vw;
 }
 
 .googing-doctor-name {
@@ -437,6 +437,6 @@
         padding: 4.2vw 2.6vw;
     }
     .googing-title {
-        font-size: 2.35vw;
+        font-size: var(--font-size-h1);
     }
 }

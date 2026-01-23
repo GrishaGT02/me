@@ -12,9 +12,9 @@
 
 .treatment-warning-title {
     font-size: var(--font-size-h1);
-    font-weight: 600;
+    font-weight: 700;
     color: #000000;
-    line-height: 4.125vw;
+    line-height: 3.4vw;
     margin: 0 0 1.56vw 0;
     text-align: left;
     text-transform: uppercase;
@@ -193,7 +193,7 @@
 .treatment-warning-reason-number {
     width: 3.8vw;
     height: 3.8vw;
-    border-radius: 50%;
+    border-radius: 0.8vw;
     background: rgba(17, 47, 85, 1);
     display: flex;
     align-items: center;
@@ -209,8 +209,8 @@
     width: 0.078vw;
     height: 3.36vw;
     /* margin-top: 10px; */
-    background-image: radial-gradient(circle, #2E3D58 0.078vw, transparent 0.078vw);
-    background-size: 0.078vw 0.23vw;
+    background-image: radial-gradient(circle, #2E3D58 0.75px, transparent 0.75px);
+    background-size: 1.5px 4.5px;
     background-repeat: repeat-y;
     background-position: center;
 }
@@ -223,7 +223,7 @@
 .treatment-warning-reason-title {
     font-size: var(--font-size-h6);
     font-weight: 500;
-    color: #2E3D58;
+    color: rgba(25, 25, 25, 1);
     margin: 0 0 0.52vw 0;
     line-height: 1.72vw;
     text-align: left;

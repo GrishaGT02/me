@@ -41,7 +41,7 @@ const Skils = () => {
           </div>
           <div className="skils-top-right">
             <p className="skils-subtitle">
-              8 из 10 человек панически боятся стоматолога! Собрали для Вас самые распространенные заблуждения:
+              8 из 10 человек панически боятся стоматолога! Собрали для <br /> Вас самые распространенные заблуждения:
             </p>
           </div>
         </div>
@@ -111,7 +111,7 @@ const Skils = () => {
                 <div className="skils-info-card-inner">
                   <div className="skils-info-card-content">
                     <p className="skils-info-card-text">Каждый сложный план утверждает консилиум врачей.</p>
-                    <p className="skils-info-card-subtext">Двойной контроль исключает вероятность ошибок.</p>
+                    {/* <p className="skils-info-card-subtext">Двойной контроль исключает вероятность ошибок.</p> */}
                   </div>
                   <div className="skils-info-card-icon">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
