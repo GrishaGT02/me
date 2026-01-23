@@ -40,7 +40,7 @@ img {
 
    :root {
     /* Основные размеры заголовков */
-    --font-size-h1: 2.604vw;           /* Главные заголовки секций */
+    --font-size-h1: 2.35vw;           /* Главные заголовки секций */
     --font-size-h2-5: 2.188vw;          /* Промежуточный размер */
     --font-size-h3: 1.667vw;            /* Заголовки третьего уровня */
     --font-size-h3-5: 2.083vw;          /* Промежуточный размер */
@@ -92,7 +92,7 @@ img {
      ============================================ */
   
   /* Заголовки */
-  .text-h1 { font-size: 2.604vw; font-size: var(--font-size-h1); }
+  .text-h1 { font-size: 2.35vw; font-size: var(--font-size-h1); }
   .text-h2-5 { font-size: 2.188vw; font-size: var(--font-size-h2-5); }
   .text-h3 { font-size: 1.667vw; font-size: var(--font-size-h3); }
   .text-h3-5 { font-size: 2.083vw; font-size: var(--font-size-h3-5); }
@@ -742,8 +742,8 @@ img {
 
 .header_nuv-left-text {
     width: 38.02vw;
-    font-weight: 600;
-    font-size: var(--font-size-h1);
+    font-weight: 700;
+    font-size: 2.61vw;
     line-height: 3.925vw;
     color: #000000;
     text-align: left;
@@ -1370,9 +1370,9 @@ img {
 }
 
 .googing-title {
-    font-size: 2.1vw;
-    /* font-size: var(--font-size-h1); */
-    font-weight: 600;
+    /* font-size: 2.1vw; */
+    font-size: var(--font-size-h1);
+    font-weight: 700;
     line-height: 3.125vw;
     color: #000000;
     text-align: left;
@@ -1517,19 +1517,19 @@ img {
     position: absolute;
     bottom: 0.8vw;
     right: 0.8vw;
-    border: 0.008vw solid rgba(255, 255, 255, 1);
+    border: 0.03vw solid rgba(255, 255, 255, 1);
     border-top: 0.1vw solid rgba(255, 255, 255, 1);
     /* max-width: 300px; */
 }
 
 .googing-doctor-info-card {
     background: #FFFFFF;
-    padding: 0.52vw 1.04vw;
+    padding: 0.52vw 1.25vw;
     gap: 1.56vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 0.5vw;
+    border-radius: 0.95vw;
 }
 
 .googing-doctor-name {
@@ -1791,7 +1791,7 @@ img {
         padding: 4.2vw 2.6vw;
     }
     .googing-title {
-        font-size: 2.35vw;
+        font-size: var(--font-size-h1);
     }
 }
 .usluga-container {
@@ -1993,7 +1993,7 @@ img {
 
 .skils-top-header {
   display: grid;
-  grid-template-columns: 55% 42%;
+  grid-template-columns: 50% 50%;
   grid-gap: 3.125vw;
   gap: 3.125vw;
   align-items: flex-start;
@@ -2031,9 +2031,9 @@ img {
 .skils-title {
   /* width: 38.02vw; */
   font-size: var(--font-size-h1);
-  font-weight: 600;
+  font-weight: 700;
   color: #000000;
-  line-height: 4.125vw;
+  line-height: 3.425vw;
   margin: 0;
   text-align: left;
   text-transform: uppercase;
@@ -2050,7 +2050,7 @@ img {
   color: #485B85;
   text-decoration: underline;
   text-decoration-thickness: 0.16vw;
-  text-underline-offset: 0.41vw;
+  text-underline-offset: 0.21vw;
 }
 
 .skils-subtitle {
@@ -2088,7 +2088,7 @@ img {
 .skils-fear-icon {
   width: 3.8vw;
   height: 3.8vw;
-  border-radius: 50%;
+  border-radius: 0.8vw;
   background: rgba(17, 47, 85, 1);
   display: flex;
   align-items: center;
@@ -2120,7 +2120,7 @@ img {
 .skils-fear-title {
   font-size: var(--font-size-h6);
   font-weight: 500;
-  color: rgba(17, 47, 85, 1);
+  color: rgba(25, 25, 25, 1);
   margin: 0 0 0.52vw 0;
   line-height: 1.3;
   text-align: left;
@@ -2159,17 +2159,17 @@ img {
 }
 
 .skils-info-card {
-  width: 28.65vw;
+  width: 34.65vw;
   position: absolute;
   bottom: 2vw;
-  left: 3vw;
+  left: 8.5vw;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 0.8vw;
-  border: 0.078vw solid rgba(255, 255, 255, 1);
-  border-top: 0.178vw solid rgba(255, 255, 255, 1);
-  padding: 0.52vw;
+  border-radius: 1vw;
+  border: 0.03vw solid rgba(255, 255, 255, 1);
+  border-top: 0.108vw solid rgba(255, 255, 255, 1);
+  padding: 0.25vw;
   display: flex;
   flex-direction: column;
   gap: 0.42vw;
@@ -2178,12 +2178,12 @@ img {
 
 .skils-info-card-inner {
   background: #FFFFFF;
-  padding: 0.52vw;
+  padding: 0.52vw 0.52vw 0.52vw 1vw;
   gap: 1.56vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 0.55vw;
+  border-radius: 0.8vw;
 }
 
 .skils-info-card-content {
@@ -2196,7 +2196,7 @@ img {
 .skils-info-card-text {
   font-size: var(--font-size-h5);
   font-weight: 700;
-  color: #2E3D58;
+  color: rgba(25, 25, 25, 1);
   margin: 0 0 0.52vw 0;
   line-height: 1.4;
   text-align: left;
@@ -2214,7 +2214,7 @@ img {
 .skils-info-card-icon {
   width: 4.69vw;
   height: 4.69vw;
-  border-radius: 2.6vw;
+  border-radius: 0.8vw;
   background: rgba(17, 47, 85, 1);
   display: flex;
   align-items: center;
@@ -2288,9 +2288,9 @@ img {
 
 .treatment-warning-title {
     font-size: var(--font-size-h1);
-    font-weight: 600;
+    font-weight: 700;
     color: #000000;
-    line-height: 4.125vw;
+    line-height: 3.4vw;
     margin: 0 0 1.56vw 0;
     text-align: left;
     text-transform: uppercase;
@@ -2472,7 +2472,7 @@ img {
 .treatment-warning-reason-number {
     width: 3.8vw;
     height: 3.8vw;
-    border-radius: 50%;
+    border-radius: 0.8vw;
     background: rgba(17, 47, 85, 1);
     display: flex;
     align-items: center;
@@ -2488,8 +2488,8 @@ img {
     width: 0.078vw;
     height: 3.36vw;
     /* margin-top: 10px; */
-    background-image: radial-gradient(circle, #2E3D58 0.078vw, transparent 0.078vw);
-    background-size: 0.078vw 0.23vw;
+    background-image: radial-gradient(circle, #2E3D58 0.75px, transparent 0.75px);
+    background-size: 1.5px 4.5px;
     background-repeat: repeat-y;
     background-position: center;
 }
@@ -2502,7 +2502,7 @@ img {
 .treatment-warning-reason-title {
     font-size: var(--font-size-h6);
     font-weight: 500;
-    color: #2E3D58;
+    color: rgba(25, 25, 25, 1);
     margin: 0 0 0.52vw 0;
     line-height: 1.72vw;
     text-align: left;
@@ -5339,7 +5339,7 @@ img {
   text-align: left;
   font-size: var(--font-size-h5);
   font-weight: 900;
-  color: rgba(17, 47, 85, 1);
+  color: rgba(25, 25, 25, 1);
   margin: 0;
   line-height: 1.2;
   font-family: 'Geist', sans-serif;
@@ -12092,4 +12092,4 @@ img {
 }
 
 
-/*# sourceMappingURL=main.e299c15e.css.map*/
+/*# sourceMappingURL=main.1c696105.css.map*/
