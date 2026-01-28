@@ -1,20 +1,20 @@
 .personal-guarantee {
     width: 100%;
     background: #FFFFFF;
-    padding: 80px 0;
+    padding: 4.17vw 0;
 }
 
 .personal-guarantee-container {
     width: 100%;
-    max-width: 1920px;
+    max-width: 100vw;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 10%;
 }
 
 .personal-guarantee-content {
     display: grid;
-    grid-template-columns: 540px 1fr 540px;
-    gap: 30px;
+    grid-template-columns: 0.8fr 0.8fr 0.8fr;
+    gap: 1.56vw;
     align-items: stretch;
 }
 
@@ -26,23 +26,23 @@
 }
 
 .personal-guarantee-left > *:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 1.55vw;
 }
 
 .personal-guarantee-name {
     font-size: var(--font-size-body);
     font-weight: 500;
-    color: rgba(46, 61, 88, 1);
+    color: rgba(25, 25, 25, 1);
     text-align: left;
     font-family: 'Geist', sans-serif;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.52vw;
 }
 
 .personal-guarantee-name-bar {
-    width: 4px;
-    height: 24px;
+    width: 0.21vw;
+    height: 1.25vw;
     background: rgba(46, 61, 88, 1);
     flex-shrink: 0;
 }
@@ -50,13 +50,13 @@
 .personal-guarantee-title-wrapper {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: 0.78vw;
     position: relative;
 }
 
 .personal-guarantee-badge {
-    width: 40px;
-    height: 40px;
+    width: 2.08vw;
+    height: 2.08vw;
     border-radius: 50%;
     background: #485B85;
     color: #FFFFFF;
@@ -67,80 +67,149 @@
     font-weight: 700;
     font-family: 'Geist', sans-serif;
     flex-shrink: 0;
-    margin-top: 5px;
+    margin-top: 0.26vw;
 }
 
 .personal-guarantee-title {
-    font-size: var(--font-size-h1);
+    font-size: 2.1vw;
     font-weight: 600;
-    line-height: 60px;
+    line-height: 3.13vw;
     color: #000000;
     text-align: left;
     font-family: 'Geist', sans-serif;
     text-transform: uppercase;
     flex: 1;
+    margin-bottom: 1.55vw;
 }
 
 .personal-guarantee-title span {
     text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 5px;
+    text-decoration-thickness: 0.16vw;
+    text-underline-offset: 0.26vw;
     color: #485B85;
 }
 
 .personal-guarantee-description {
     font-size: var(--font-size-h8);
     font-weight: 300;
-    line-height: 33px;
+    line-height: 1.72vw;
     color: rgba(26, 26, 26, 0.75);
     text-align: left;
     font-family: 'Geist', sans-serif;
 }
 
-.personal-guarantee-link {
-    font-size: var(--font-size-body);
-    font-weight: 500;
-    color: #485B85;
-    text-decoration: underline;
+.personal-guarantee-button {
+    padding: 0.31vw 0.31vw 0.31vw 1.56vw;
+    border-radius: 2.6vw;
+    border: 0.052vw solid #2E3D58;
+    font-weight: 700;
+    font-size: var(--font-size-button);
+    line-height: 0.89vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1.56vw;
     font-family: 'Geist', sans-serif;
-    transition: color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
     align-self: flex-start;
 }
 
-.personal-guarantee-link:hover {
-    color: #2E3D58;
+.personal-guarantee-btn-primary {
+    background: #485B85;
+    color: #FFFFFF;
+}
+
+.personal-guarantee-btn-primary span {
+    color: #FFFFFF;
+    transition: color 0.3s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 3;
+}
+
+.personal-guarantee-btn-primary:hover span {
+    color: #485B85;
+    transform: translateX(3.5vw);
+}
+
+.personal-guarantee-btn-icon {
+    width: 3.13vw;
+    height: 3.13vw;
+    border-radius: 50%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.personal-guarantee-btn-icon svg {
+    width: 0.73vw;
+    height: 0.63vw;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.personal-guarantee-button:hover .personal-guarantee-btn-icon svg {
+    transform: translateX(-10.1vw) rotate(40deg);
+}
+
+.personal-guarantee-button::after {
+    content: '';
+    position: absolute;
+    right: 0.31vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.13vw;
+    height: 3.13vw;
+    border-radius: 50%;
+    background: #FFFFFF;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.personal-guarantee-button:hover::after {
+    width: 41.67vw;
+    height: 41.67vw;
+    right: -20.83vw;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .personal-guarantee-stats {
     display: flex;
-    gap: 20px;
+    gap: 0.5vw;
     flex-wrap: wrap;
     margin-top: auto;
 }
 
 .personal-guarantee-stat-item {
     background: rgba(235, 235, 235, 1);
-    border-radius: 10px;
-    padding: 10px 5px;
+    border-radius: 0.52vw;
+    padding: 0.8vw 0.26vw;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.25vw;
     flex: 1;
-    min-width: 150px;
+    min-width: 7.81vw;
 }
 
 .personal-guarantee-stat-value {
     text-align: center;
-    font-size: 40px;
+    font-size: 2.08vw;
     font-weight: 600;
-    color: #485B85;
+    color: rgba(25, 25, 25, 1);
     font-family: 'Geist', sans-serif;
-    line-height: 40px;
+    line-height: 2.08vw;
 }
 
 .personal-guarantee-stat-label {
     text-align: center;
-    font-size: 14px;
+    font-size: 0.73vw;
     font-weight: 300;
     color: rgba(144, 144, 144, 1);
     font-family: 'Geist', sans-serif;
@@ -157,8 +226,8 @@
 .personal-guarantee-doctor-image {
     position: relative;
     width: 100%;
-    max-width: 558px;
-    border-radius: 20px;
+    max-width: 29.06vw;
+    border-radius: 1.04vw;
     overflow: hidden;
     height: 100%;
     min-height: 100%;
@@ -171,71 +240,150 @@
     display: block;
 }
 
-.personal-guarantee-email-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 84px;
-    height: 74px;
-    background: #F5E6D3;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    z-index: 10;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-.personal-guarantee-email-icon::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    background: #FFFFFF;
-    border-radius: 8px;
-    z-index: 1;
-}
-
-.personal-guarantee-email-icon::after {
-    content: '';
+.personal-guarantee-doctor-image .googing-play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 48px;
-    height: 48px;
-    background: #485B85;
+    width: 4.17vw;
+    height: 4.17vw;
+    background: #FFFFFF;
     border-radius: 50%;
-    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+    box-sizing: content-box;
 }
 
-.personal-guarantee-email-icon svg {
+.personal-guarantee-doctor-image .googing-play-button::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 4.17vw;
+    height: 4.17vw;
+    background: #FFFFFF;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.personal-guarantee-doctor-image .googing-play-button::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 4.17vw;
+    height: 4.17vw;
+    background: #FFFFFF;
+    border-radius: 50%;
+    transition: all 200ms;
+}
+
+.personal-guarantee-doctor-image .googing-play-button:hover::after {
+    background-color: #f5f5f5;
+}
+
+.personal-guarantee-doctor-image .googing-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.personal-guarantee-doctor-image .googing-play-button svg {
+    width: 1.16vw;
+    height: 1.4vw;
+    transform: translateX(0.1vw);
     position: relative;
     z-index: 3;
 }
 
-.personal-guarantee-email-icon svg path {
-    stroke: #FFFFFF;
+@keyframes pulse-border {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
 }
 
-/* .personal-guarantee-email-icon:hover {
-    transform: scale(1.05);
-} */
+.personal-guarantee-doctor-image .skils-info-card {
+    width: 28.0vw;
+    position: absolute;
+    bottom: 0.5vw;
+    left: 0.5vw;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 1.04vw;
+    border: 0.03vw solid rgba(255, 255, 255, 1);
+    border-top: 0.108vw solid rgba(255, 255, 255, 1);
+    padding: 0.26vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.42vw;
+    z-index: 10;
+}
 
-/* .personal-guarantee-email-icon:hover::after {
-    background: #2E3D58;
-} */
+.personal-guarantee-doctor-image .skils-info-card-inner {
+    background: #FFFFFF;
+    padding: 0.52vw 0.52vw 0.52vw 1vw;
+    gap: 1.56vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.8vw;
+}
 
-/* .personal-guarantee-email-icon svg {
-    width: 20px;
-    height: 16px;
-} */
+.personal-guarantee-doctor-image .skils-info-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.personal-guarantee-doctor-image .skils-info-card-text {
+    font-size: var(--font-size-body);
+    width: 90%;
+    font-weight: 500;
+    color: rgba(25, 25, 25, 1);
+    margin: 0 0 0.25vw 0;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.personal-guarantee-doctor-image .skils-info-card-subtext {
+    font-weight: 300;
+    color: #1A1A1ABF;
+    margin: 0;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.personal-guarantee-doctor-image .skils-info-card-icon {
+    width: 4.69vw;
+    height: 4.69vw;
+    border-radius: 0.8vw;
+    background: rgba(17, 47, 85, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.personal-guarantee-doctor-image .skils-info-card-icon svg {
+    width: 2.5vw;
+    height: 2.5vw;
+}
 
 /* Правая секция - гарантии */
 .personal-guarantee-right {
@@ -245,7 +393,7 @@
 }
 
 .personal-guarantee-item:not(:last-child) {
-    margin-bottom: 30px;
+    margin-bottom: 1.56vw;
 }
 
 /* .personal-guarantee-item:last-child {
@@ -254,40 +402,43 @@
 
 .personal-guarantee-item {
     background: #F5F5F5;
-    border-radius: 20px;
-    padding: 10px;
+    border-radius: 1.04vw;
+    padding: 0.52vw;
     display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    gap: 1.04vw;
+    height: 100%;
+    align-items: center;
 }
 
 .personal-guarantee-item-icon {
-    width: 73px;
-    height: 73px;
+    width: 3.15vw;
+    height: 3.15vw;
     border-radius: 50%;
-    background: #485B85;
+    background: rgba(17, 47, 85, 1);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    align-self: flex-start;
 }
 
 /* .personal-guarantee-item-icon svg {
-    width: 33px;
-    height: 33px;
+    width: 1.72vw;
+    height: 1.72vw;
 } */
 
 .personal-guarantee-item-content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.52vw;
+    justify-content: center;
 }
 
 .personal-guarantee-item-title {
     font-size: var(--font-size-h6);
     font-weight: 500;
-    color: rgba(46, 61, 88, 1);
+    color: rgba(25, 25, 25, 1);
     text-align: left;
     font-family: 'Geist', sans-serif;
     line-height: 1.2;
@@ -299,197 +450,25 @@
     color: rgba(26, 26, 26, 0.75);
     text-align: left;
     font-family: 'Geist', sans-serif;
-    line-height: 28px;
+    line-height: 1.46vw;
 }
 
-@media (max-width: 1650px) {
-    .personal-guarantee-content { 
-        grid-template-columns: 500px 1fr 500px;
-    }
-    .personal-guarantee-title {
-        line-height: 50px;
-    }
-
-    .personal-guarantee-title span {
-        text-decoration-thickness: 2.5px;
-        text-underline-offset: 4px;
-    }
-
-    .personal-guarantee-description {
-        line-height: 27px;
-    }
-
-    .personal-guarantee-item-description {
-        line-height: 24px;
-    }
-
-    .personal-guarantee-item-icon {
-        width: 60px;
-        height: 60px;
-    }
-
-    .personal-guarantee-item-icon svg {
-        width: 28px;
-        height: 28px;
-    }
-
-    .personal-guarantee-stat-value {
-        font-size: 32px;
-        line-height: 32px;
-    }
-}
-
-@media (max-width: 1500px) {
-    .personal-guarantee-content { 
-        grid-template-columns: 450px 1fr 450px;
-    }
-}
-
-@media (max-width: 1367px) {
-    .personal-guarantee-content { 
-        grid-template-columns: 400px 1fr 400px;
-    }
-
-    .personal-guarantee-item-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .personal-guarantee-item-icon svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .personal-guarantee-item:not(:last-child) {
-        margin-bottom: 10px;
-    }
-
-    .personal-guarantee-item {
-        gap: 10px;
-    }
-
-    .personal-guarantee-content {
-        gap: 10px;
-    }
-
-    .personal-guarantee-title {
-        line-height: 45px;
-    }
-
-    .personal-guarantee-title span {
-        text-decoration-thickness: 2.5px;
-        text-underline-offset: 4px;
-    }
-
-    .personal-guarantee-description {
-        line-height: 24px;
-    }
-
-    .personal-guarantee-item-description {
-        line-height: 21px;
-    }
-}
-
-@media (max-width: 1200px) {
-    .personal-guarantee-content { 
-        grid-template-columns: 300px 1fr 300px;
-    }
-
-    .personal-guarantee-title {
-        line-height: 40px;
-    }
-
-    .personal-guarantee-title span {
-        text-decoration-thickness: 2px;
-        text-underline-offset: 3px;
-    }
-
-    .personal-guarantee-description {
-        line-height: 20px;
-    }
-
-    .personal-guarantee-item-description {
-        line-height: 19px;
-    }
-}
-
-@media (max-width: 1025px) {
-    /* .personal-guarantee-item:not(:last-child) {
-        margin-bottom: 0px;
-    } */
-
-    .personal-guarantee-left > *:not(:last-child) {
-        margin-bottom: 10px;
-    }
-
-    .personal-guarantee-stats {
-        gap: 10px;
-    }
-
-    .personal-guarantee-title {
-        line-height: 36px;
-    }
-
-    .personal-guarantee-title span {
-        text-decoration-thickness: 1.8px;
-        text-underline-offset: 2.5px;
-    }
-
-    .personal-guarantee-description {
-        line-height: 18px;
-    }
-
-    .personal-guarantee-item-description {
-        line-height: 18px;
-    }
-}
-
-@media (max-width: 1000px) {
-    .personal-guarantee-content { 
-        grid-template-columns: 250px 1fr 250px;
-    }
-}
-
-@media (max-width: 890px) {
-    .personal-guarantee {
-        padding: 25px 0;
-    }
-
+@media (max-width: 2200px) {
     .personal-guarantee-container {
-        padding: 0 25px;
+        padding: 0 2.6vw;
     }
+}
 
-    .personal-guarantee-title {
-        line-height: 32px;
+@media (min-width: 2201px) {
+    .personal-guarantee-doctor-image .skils-info-card {
+        width: 24.6vw;
     }
-
-    .personal-guarantee-title span {
-        text-decoration-thickness: 1.5px;
-        text-underline-offset: 2px;
+    
+    .personal-guarantee-doctor-image .skils-info-card-text {
+        font-size: 0.9vw;
     }
-
-    .personal-guarantee-description {
-        line-height: 18px;
-    }
-
-    .personal-guarantee-item-description {
-        line-height: 16px;
-    }
-
-    .personal-guarantee-item-title {
-        font-size: 12px;
-    }
-
-    .personal-guarantee-item-description {
-        font-size: 10px;
-    }
-
-    .personal-guarantee-stat-item {
-        padding: 5px 5px;
-        gap: 5px;
-    }
-
-    .personal-guarantee-stats {
-        gap: 5px;
+    
+    .personal-guarantee-doctor-image .skils-info-card-subtext {
+        font-size: 0.8vw;
     }
 }

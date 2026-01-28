@@ -1429,7 +1429,7 @@ const Kvis = () => {
             onChange={(e) => setPrivacyConsent(e.target.checked)}
           />
           <label htmlFor="kvis-consent" style={{ lineHeight: '1.5' }}>
-            Подтверждаю, что ознакомлен(а) с текстом{' '}
+            Подтверждаю, что ознакомлен с текстом{' '}
             <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }}>
               согласия на обработку персональных данных
             </a>

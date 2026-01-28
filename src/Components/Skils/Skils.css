@@ -184,12 +184,12 @@
   bottom: 2vw;
   left: 8.5vw;
   background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 1vw;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1.04vw;
   border: 0.03vw solid rgba(255, 255, 255, 1);
   border-top: 0.108vw solid rgba(255, 255, 255, 1);
-  padding: 0.25vw;
+  padding: 0.26vw;
   display: flex;
   flex-direction: column;
   gap: 0.42vw;

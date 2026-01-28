@@ -29,33 +29,28 @@ const WhyChooseUs = () => {
 
   return (
     <div className="why-choose-us-container">
-      <h2 className="why-choose-us-title why-choose-us-title-top">
+      <h2 className="why-choose-us-title why-choose-us-title-top" style={{ display: 'block' }}>
         ПОЧЕМУ ЖИТЕЛИ РАССКАЗОВКИ <span className="why-choose-us-title-highlight">ВЫБИРАЮТ НАС</span>?
       </h2>
       <div className="why-choose-us-content">
         <div className="why-choose-us-left">
-          <h2 className="why-choose-us-title why-choose-us-title-inline">
-            ПОЧЕМУ ЖИТЕЛИ РАССКАЗОВКИ <span className="why-choose-us-title-highlight">ВЫБИРАЮТ НАС</span>?
-          </h2>
           <div className="why-choose-us-left-content">
             <div className="why-choose-us-items">
             {items.map((item, index) => (
               <React.Fragment key={index}>
                 <div className="why-choose-us-item">
                   <div className="why-choose-us-item-dots">
-                    <svg width="32" height="76" viewBox="0 0 32 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 32.0005)" fill="#2E3D58" fillOpacity="0.7"/>
-                      <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 18.5234 13.4736)" fill="#2E3D58" fillOpacity="0.7"/>
-                      <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 18.5234 32.0005)" fill="#2E3D58"/>
-                    </svg>
+                    <span className="why-choose-us-item-number">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                   </div>
                   <div className="why-choose-us-item-content">
                     <h3 className="why-choose-us-item-title">{item.title}</h3>
                     <p className="why-choose-us-item-description">{item.description}</p>
                   </div>
                   <div className="why-choose-us-item-arrow">
-                    <svg width="50" height="76" viewBox="0 0 50 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M42.2865 28.3582L43.7808 28.489L43.9116 26.9947L42.4173 26.864L42.2865 28.3582ZM18.341 46.4928C17.7064 47.0253 17.6236 47.9714 18.1561 48.6061C18.6886 49.2407 19.6348 49.3234 20.2694 48.7909L19.3052 47.6419L18.341 46.4928ZM40.8075 45.2642L42.3018 45.395L43.7808 28.489L42.2865 28.3582L40.7923 28.2275L39.3132 45.1335L40.8075 45.2642ZM42.2865 28.3582L42.4173 26.864L25.5113 25.3849L25.3806 26.8792L25.2498 28.3735L42.1558 29.8525L42.2865 28.3582ZM42.2865 28.3582L41.3224 27.2092L18.341 46.4928L19.3052 47.6419L20.2694 48.7909L43.2507 29.5073L42.2865 28.3582Z" fill="#33363F"/>
+                    <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21.6502 3.72285L24.1407 3.94074L24.3586 1.45026L21.8681 1.23237L21.6502 3.72285ZM0.89216 17.8774C-0.165528 18.7649 -0.303487 20.3418 0.584017 21.3995C1.47152 22.4572 3.04841 22.5952 4.1061 21.7077L2.49913 19.7925L0.89216 17.8774ZM20.4177 17.8112L22.9082 18.0291L24.1407 3.94074L21.6502 3.72285L19.1598 3.50496L17.9272 17.5933L20.4177 17.8112ZM21.6502 3.72285L21.8681 1.23237L7.77981 -0.000202287L7.56192 2.49028L7.34403 4.98077L21.4324 6.21334L21.6502 3.72285ZM21.6502 3.72285L20.0433 1.80774L0.89216 17.8774L2.49913 19.7925L4.1061 21.7077L23.2572 5.63796L21.6502 3.72285Z" fill="#485B85"/>
                     </svg>
                   </div>
                 </div>

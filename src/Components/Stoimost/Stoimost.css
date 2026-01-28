@@ -1,20 +1,20 @@
 .stoimost-container {
   width: 100%;
-  padding: 0px 50px 50px 50px;
+  padding: 0  10% 2.604vw 10%;
   box-sizing: border-box;
-  background-color: #EBEBEB;
+  background-color: #FFFFFF;
 }
 
 .stoimost-content {
   width: 100%;
-  max-width: 1920px;
+  max-width: 100vw;
   margin: 0 auto;
-  background: #FFFFFF;
-  border-radius: 20px;
-  padding: 10px 15px 10px 50px;
+  background: rgba(235, 235, 235, 1);
+  border-radius: 1.042vw;
+  padding: 0.521vw 0.781vw 0.521vw 2.604vw;
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 2.604vw;
   position: relative;
   overflow: hidden;
   min-width: 0;
@@ -22,15 +22,16 @@
 
 .stoimost-woman-image {
   flex-shrink: 0;
-  width: 346px;
-  height: 220px;
-  min-width: 280px;
-  max-width: 346px;
-  border-radius: 20px;
+  width: 18.021vw;
+  height: 11.458vw;
+  min-width: 14.583vw;
+  max-width: 18.021vw;
+  border-radius: 1.042vw;
   overflow: hidden;
-  margin-left: -40px;
+  margin-left: -2.083vw;
   position: relative;
   z-index: 1;
+  border: 0.15vw solid rgba(255, 255, 255, 1);
 }
 
 .stoimost-woman-image img {
@@ -45,14 +46,14 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.521vw;
   z-index: 2;
   min-width: 0;
 }
 
 .stoimost-title {
   text-align: left;
-  font-size: var(--font-size-h3-5);
+  font-size: var(--font-size-h5);
   font-weight: 700;
   color: #000000;
   margin: 0;
@@ -66,22 +67,22 @@
   font-weight: 300;
   color: #1A1A1ABF;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.74vw;
   font-family: 'Geist', sans-serif;
 }
 
 .stoimost-button {
-  padding: 6px 6px 6px 30px;
-  border-radius: 50px;
-  border: 1px solid #2E3D58;
-  font-weight: 500;
+  padding: 0.313vw 0.313vw 0.313vw 1.563vw;
+  border-radius: 2.604vw;
+  border: 0.052vw solid #2E3D58;
+  font-weight: 700;
   font-size: var(--font-size-button);
-  line-height: 17px;
+  line-height: 0.885vw;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 1.563vw;
   font-family: 'Geist', sans-serif;
   position: relative;
   overflow: hidden;
@@ -102,12 +103,12 @@
 
 .stoimost-btn-primary:hover span {
   color: #485B85;
-  transform: translateX(80px);
+  transform: translateX(3.567vw);
 }
 
 .stoimost-btn-icon {
-  width: 60px;
-  height: 60px;
+  width: 3.125vw;
+  height: 3.125vw;
   border-radius: 50%;
   background: #FFFFFF;
   display: flex;
@@ -119,23 +120,23 @@
 }
 
 .stoimost-btn-icon svg {
-  width: 19px;
-  height: 18px;
+  width: 0.73vw;
+  height: 0.63vw;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .stoimost-button:hover .stoimost-btn-icon svg {
-  transform: translateX(-200px) rotate(40deg);
+  transform: translateX(-11.417vw) rotate(40deg);
 }
 
 .stoimost-button::after {
   content: '';
   position: absolute;
-  right: 6px;
+  right: 0.313vw;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
+  width: 3.125vw;
+  height: 3.125vw;
   border-radius: 50%;
   background: #FFFFFF;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -144,233 +145,15 @@
 }
 
 .stoimost-button:hover::after {
-  width: 800px;
-  height: 800px;
-  right: -400px;
+  width: 41.667vw;
+  height: 41.667vw;
+  right: -20.833vw;
   top: 50%;
   transform: translateY(-50%);
 }
 
-@media (max-width: 1650px) {
-  .stoimost-content {
-    gap: 40px;
-  }
-  .stoimost-woman-image {
-    width: 273px;
-    height: 175px;
-    min-width: 273px;
-    max-width: 273px;
-  }
-
-  .stoimost-btn-icon {
-    width: 48px;
-    height: 48px;
-  }
-
-  .stoimost-button {
-    padding: 5px 5px 5px 24px;
-    gap: 24px;
-  }
-
-  .stoimost-btn-icon svg {
-    width: 11px;
-    height: 9px;
-  }
-
-  .stoimost-button::after {
-    width: 48px;
-    height: 48px;
-  }
-
-  .stoimost-button:hover .stoimost-btn-icon svg {
-    transform: translateX(-180px) rotate(40deg);
-  }
-
-  .stoimost-btn-primary:hover span {
-    transform: translateX(60px);
-  }
-
-  .stoimost-button:hover::after {
-    width: 640px;
-    height: 640px;
-    right: -320px;
-  }
-}
-
-@media (max-width: 1367px) {
-  .stoimost-content {
-    gap: 30px;
-  }
-  .stoimost-button {
-    font-size: 9px;
-  }
+@media (max-width: 2200px) { 
   .stoimost-container {
-    padding: 0px 35px 35px 35px;
-  }
-  .stoimost-description {
-    line-height: 28px;
-  }
-  .stoimost-content {
-    padding: 7px 10px 7px 47px;
-  }
-
-  .stoimost-button:hover .stoimost-btn-icon svg {
-    transform: translateX(-160px) rotate(40deg);
-  }
-
-  .stoimost-btn-primary:hover span {
-    transform: translateX(60px);
-  }
-
-  .stoimost-woman-image {
-    width: 246px;
-    height: 157px;
-    min-width: 246px;
-    max-width: 246px;
-  }
-
-  .stoimost-btn-icon {
-    width: 43px;
-    height: 43px;
-  }
-
-  .stoimost-btn-icon svg {
-    width: 10px;
-    height: 8px;
-  }
-
-  .stoimost-button::after {
-    width: 43px;
-    height: 43px;
+    padding: 0 2.6vw 4.2vw 2.6vw;
   }
 }
-
-@media (max-width: 1200px) {
-  .stoimost-button {
-    font-size: 8px;
-  }
-
-  .stoimost-description {
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  .stoimost-woman-image {
-    width: 216px;
-    height: 137px;
-    min-width: 216px;
-    max-width: 216px;
-    margin-left: -40px;
-  }
-
-  .stoimost-btn-icon {
-    width: 38px;
-    height: 38px;
-  }
-
-  .stoimost-btn-icon svg {
-    width: 9px;
-    height: 7px;
-  }
-
-  .stoimost-button::after {
-    width: 38px;
-    height: 38px;
-  }
-
-  .stoimost-button {
-    padding: 4px 4px 4px 20px;
-    gap: 20px;
-  }
-
-  .stoimost-button:hover .stoimost-btn-icon svg {
-    transform: translateX(-140px) rotate(40deg);
-  }
-
-  .stoimost-btn-primary:hover span {
-    transform: translateX(50px);
-  }
-
-  .stoimost-button:hover::after {
-    width: 560px;
-    height: 560px;
-    right: -280px;
-  }
-}
-
-@media (max-width: 1025px) {
-  .stoimost-description {
-    font-size: 11px;
-  }
-  
-  .stoimost-woman-image {
-    width: 184px;
-    height: 117px;
-    min-width: 184px;
-    max-width: 184px;
-    margin-left: -40px;
-  }
-
-  .stoimost-btn-icon {
-    width: 32.03px;
-    height: 32.03px;
-  }
-
-  .stoimost-button::after {
-    width: 32.03px;
-    height: 32.03px;
-  }
-
-  .stoimost-button {
-    padding: 3.5px 3.5px 3.5px 16px;
-  }
-
-  .stoimost-button:hover .stoimost-btn-icon svg {
-    transform: translateX(-130px) rotate(40deg);
-  }
-
-  .stoimost-btn-primary:hover span {
-    transform: translateX(40px);
-  }
-}
-
-@media (max-width: 890px) {
-  .stoimost-container {
-    padding: 0px 25px 25px 25px;
-  }
-}
-
-/* @media (max-width: 768px) {
-  .stoimost-container {
-    padding: 20px 15px;
-  }
-
-  .stoimost-content {
-    flex-direction: column;
-    padding: 30px 20px;
-    gap: 24px;
-  }
-
-  .stoimost-woman-image {
-    width: 200px;
-    height: 200px;
-    min-width: 200px;
-    max-width: 200px;
-    margin-left: 0;
-    align-self: flex-start;
-  }
-
-  .stoimost-title {
-    font-size: var(--font-size-h3-5);
-  }
-
-  .stoimost-description {
-    font-size: var(--font-size-body-small);
-  }
-
-  .stoimost-button {
-    width: 100%;
-    justify-content: center;
-  }
-} */
-

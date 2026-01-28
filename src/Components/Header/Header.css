@@ -361,14 +361,14 @@
 
 @keyframes pulse {
     0% {
-        transform: scale(0.8);
+        transform: scale(0.5);
         opacity: 0;
     }
     50% {
         opacity: 1;
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(0.55);
         opacity: 0;
     }
 }
@@ -392,11 +392,11 @@
     content: '';
     position: absolute;
     border: 0.1vw solid #485B85;
-    left: -0.7vw;
+    left: -0.05vw;
     opacity: 0;
-    right: -0.7vw;
-    top: -0.7vw;
-    bottom: -0.7vw;
+    right: -0.05vw;
+    top: -0.05vw;
+    bottom: -0.05vw;
     border-radius: 50%;
     animation: pulse 2.5s linear infinite;
     z-index: -1;
@@ -412,11 +412,11 @@
     content: '';
     position: absolute;
     border: 0.1vw solid #485B85;
-    left: -0.7vw;
+    left: -0.02vw;
     opacity: 0;
-    right: -0.7vw;
-    top: -0.7vw;
-    bottom: -0.7vw;
+    right: -0.02vw;
+    top: -0.02vw;
+    bottom: -0.02vw;
     border-radius: 50%;
     animation: pulse 2.5s linear infinite;
     z-index: -1;
@@ -464,11 +464,11 @@
     content: '';
     position: absolute;
     border: 0.1vw solid #485B85;
-    left: -1vw;
+    left: -0.1vw;
     opacity: 0;
-    right: -1vw;
-    top: -1vw;
-    bottom: -1vw;
+    right: -0.1vw;
+    top: -0.1vw;
+    bottom: -0.1vw;
     border-radius: 50%;
     animation: pulse 2.5s linear infinite;
     z-index: -1;
@@ -712,7 +712,7 @@
 }
 
 .header_nuv-btn-1:hover .header_nuv-btn-icon svg {
-    transform: translateX(max(-11.0vw, calc(-10% - 20.56vw))) rotate(40deg);
+    transform: translateX(max(-10.1vw, calc(-10% - 15.56vw))) rotate(40deg);
 }
 
 .header_nuv-btn-1::after {
@@ -1077,6 +1077,360 @@
 .header_nuv-carousel-dot.active {
     background: #000000;
     height: 0.52vw;
+}
+
+@media (max-width: 780px) {
+    /* Скрываем навигацию */
+    .header-nav-wrapper,
+    .header-nav {
+        display: none;
+    }
+    
+    /* В шапке оставляем только лого и кнопку меню */
+    .header-top-row {
+        justify-content: space-between;
+    }
+    
+    .header-clinic-info,
+    .header-location,
+    .header-calculator-btn,
+    .header-contact-wrapper .header-phone-icon,
+    .header-contact-wrapper .header-contact-block {
+        display: none;
+    }
+    
+    .header-contact-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Размеры лого */
+    .header-logo img {
+        width: 20.26vw;
+        height: 6.41vw;
+    }
+    
+    /* Размеры кнопки меню */
+    .header-menu-btn {
+        padding: 2.05vw 2.56vw;
+        gap: 1.54vw;
+        border-radius: 6.41vw;
+    }
+    
+    .header-menu-btn span {
+        font-size: 1.92vw;
+        font-weight: 500;
+    }
+    
+    .header-menu-icons svg {
+        width: 2.56vw;
+        height: 1.28vw;
+    }
+    
+    /* Изменяем порядок элементов в header_nuv */
+    .header_nuv {
+        flex-direction: column;
+        gap: 2.56vw;
+        padding: 0 2.56vw;
+    }
+    
+    /* Фотография и блок - первый порядок */
+    .header_nuv > div:last-child {
+        order: 1;
+        width: 100%;
+        position: relative;
+    }
+    
+    .header_nuv-doctor-image {
+        width: 100%;
+        height: auto;
+        max-height: 89.74vw;
+        position: relative;
+    }
+    
+    .header_nuv-doctor-image img {
+        width: 100%;
+        height: auto;
+        max-height: 89.74vw;
+        object-fit: cover;
+    }
+    
+    /* Блок header-center-card позиционируем на фотографии */
+    .header_nuv {
+        position: relative;
+    }
+    
+    .header_nuv-left .header-center-card {
+        position: absolute;
+        top: -28.85vw;
+        bottom: auto;
+        right: 1.28vw;
+        left: auto;
+        max-width: calc(100% - 5.13vw);
+        width: auto;
+        min-width: 200px;
+        z-index: 10;
+    }
+    
+    .header-center-title {
+        font-size: 1.92vw;
+    }
+    
+    .header-center-description {
+        font-size: 1.54vw;
+    }
+    
+    .header-center-icon {
+        width: 1.41vw;
+        height: 1.41vw;
+    }
+    
+    .header-center-arrow {
+        width: 1.79vw;
+        height: 1.67vw;
+    }
+    
+    /* Заголовок и подзаголовок с кнопками - второй порядок */
+    .header_nuv-left {
+        order: 2;
+        flex: none;
+        width: 100%;
+        position: relative;
+    }
+    
+    .header_nuv-left-text {
+        width: 100%;
+        font-size: 5.77vw;
+        font-weight: 700;
+        line-height: 8.33vw;
+    }
+    
+    .header_nuv-left-text span {
+        text-decoration-thickness: 0.26vw;
+        text-underline-offset: 0.64vw;
+    }
+    
+    .header_nuv-left-text-description {
+        width: 100%;
+        font-size: 2.56vw;
+        font-weight: 300;
+        line-height: 4.23vw;
+        margin-top: 1.92vw;
+    }
+    
+    .header_nuv-left-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.92vw;
+        margin-top: 3.85vw;
+        align-items: center;
+    }
+    
+    .header_nuv-btn {
+        padding: 3.59vw 5.13vw;
+        border-radius: 6.41vw;
+        font-weight: 500;
+        border: none;
+        font-size: 2.31vw;
+        line-height: 2.44vw;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        font-family: 'Geist', sans-serif;
+    }
+    
+    .header_nuv-btn-1 {
+        padding: 0.77vw 0.77vw 0.77vw 3.21vw;
+        border-radius: 6.41vw;
+        border: 0.13vw solid #2E3D58;
+        font-weight: 500;
+        font-size: 2.31vw;
+        line-height: 2.18vw;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 3.85vw;
+        font-family: 'Geist', sans-serif;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .header_nuv-btn-icon {
+        width: 7.69vw;
+        height: 7.69vw;
+        border-radius: 50%;
+        background: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .header_nuv-btn-icon svg {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 2.05vw;
+        height: 1.79vw;
+    }
+    
+    /* Подгоняем псевдоэлемент ::after под размер белого круга */
+    .header_nuv-btn-1::after {
+        right: 0.77vw;
+        width: 7.69vw;
+        height: 7.69vw;
+    }
+    
+    .header_nuv-btn-1:hover::after {
+        width: 102.56vw;
+        height: 102.56vw;
+        right: -51.28vw;
+    }
+
+    /* Настройки расстояний для анимации текста и стрелки (как на 1920px) */
+    .header_nuv-btn-primary:hover span {
+        transform: translateX(70px);
+    }
+
+    .header_nuv-btn-1:hover .header_nuv-btn-icon svg {
+        transform: translateX(-235px) rotate(40deg);
+    }
+    
+    .header_nuv-left-about {
+        display: flex;
+        align-items: center;
+        gap: 1.92vw;
+        margin-top: 7.69vw;
+        margin-bottom: 3.85vw;
+    }
+    
+    .header_nuv-tooth-icon {
+        width: 5.13vw;
+        height: 5.13vw;
+        border-radius: 50%;
+        background: #485B85;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .header_nuv-tooth-icon svg {
+        width: 2.44vw;
+        height: 2.31vw;
+    }
+    
+    .header_nuv-about-text {
+        font-size: 2.56vw;
+    }
+    
+    /* Карусель - третий порядок */
+    .header_nuv-right {
+        order: 3;
+        width: 100%;
+        margin-top: 0;
+    }
+    
+    .header_nuv-carousel-wrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.92vw;
+    }
+    
+    .header_nuv-carousel {
+        min-height: 38.46vw;
+        height: 38.46vw;
+        border-radius: 16px;
+    }
+    
+    .header_nuv-carousel-dots-wrapper {
+        flex-direction: row;
+        padding: 0;
+    }
+    
+    .header_nuv-carousel-dots {
+        flex-direction: row;
+        gap: 0.64vw;
+    }
+    
+    .header_nuv-carousel-dot {
+        width: 0.64vw;
+        height: 0.64vw;
+    }
+    
+    .header_nuv-carousel-dot.active {
+        width: 1.28vw;
+        height: 0.64vw;
+    }
+    
+    .header_nuv-ratings {
+        order: 4;
+        width: 100%;
+        margin-top: 2.56vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header_nuv-rating-card {
+        width: 17.95vw;
+        height: 6.67vw;
+        padding: 1.03vw 1.67vw;
+        border-radius: 1.03vw;
+        gap: 0.77vw;
+    }
+    
+    .header_nuv-rating-icon {
+        height: 2.05vw;
+    }
+    
+    .header_nuv-rating-value {
+        font-size: 2.05vw;
+        margin-right: 0.51vw;
+    }
+    
+    .header_nuv-rating-stars {
+        gap: 0.38vw;
+    }
+    
+    .header_nuv-rating-stars svg {
+        width: 1.79vw;
+        height: 1.67vw;
+    }
+    
+    .header_nuv-ratings-nav {
+        gap: 1.03vw;
+        margin-left: auto;
+    }
+    
+    .header_nuv-ratings-counter {
+        font-size: 2.05vw;
+        font-weight: 500;
+        min-width: auto;
+    }
+    
+    .header_nuv-nav-btn {
+        width: 6.67vw;
+        height: 6.67vw;
+    }
+    
+    .header_nuv-nav-progress {
+        width: 6.67vw;
+        height: 6.67vw;
+    }
+    
+    .header_nuv-nav-progress circle {
+        stroke-width: 0.13vw !important;
+    }
+    
+    .header_nuv-nav-arrow {
+        width: 1.03vw;
+        height: 1.54vw;
+    }
 }
 
 @media (max-width: 2200px) {

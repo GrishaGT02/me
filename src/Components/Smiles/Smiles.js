@@ -19,24 +19,24 @@ const Smiles = () => {
       solution: "Установка дентального имплантата на место 24 зуба верхней челюсти."
     },
     {
-      problem: "Проблема 2",
-      solution: "Решение 2"
+      problem: "Имплантация нижней челюсти all-",
+      solution: "Установка дентального имплантата на место 24 зуба верхней челюсти."
     },
     {
-      problem: "Проблема 3",
-      solution: "Решение 3"
+      problem: "Имплантация нижней челюсти all-",
+      solution: "Установка дентального имплантата на место 24 зуба верхней челюсти."
     },
     {
-      problem: "Проблема 4",
-      solution: "Решение 4"
+      problem: "Имплантация нижней челюсти all-",
+      solution: "Установка дентального имплантата на место 24 зуба верхней челюсти."
     },
     {
-      problem: "Проблема 5",
-      solution: "Решение 5"
+      problem: "Имплантация нижней челюсти all-",
+      solution: "Установка дентального имплантата на место 24 зуба верхней челюсти."
     },
     {
-      problem: "Проблема 6",
-      solution: "Решение 6"
+      problem: "Имплантация нижней челюсти all-",
+      solution: "Установка дентального имплантата на место 24 зуба верхней челюсти."
     }
   ];
   
@@ -216,15 +216,27 @@ const Smiles = () => {
                         <motion.strong
                           key={`problem-title-${realIndex}`}
                           className="smiles-text-span"
-                          initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                          animate={{ y: 0, opacity: 1 }}
-                          exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                          transition={{
-                            duration: 0.8,
-                            ease: [0.25, 0.40, 0.70, 0.94]
+                          initial={{ y: 100, opacity: 0 }}
+                          animate={{ 
+                            y: 0, 
+                            opacity: 1,
+                            transition: {
+                              duration: 0.6,
+                              delay: 0,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }
+                          }}
+                          exit={{ 
+                            y: 100, 
+                            opacity: 0,
+                            transition: {
+                              duration: 0.4,
+                              delay: 0,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }
                           }}
                         >
-                          Проблема
+                          Проблема:
                         </motion.strong>
                       </AnimatePresence>
                     </div>
@@ -235,11 +247,23 @@ const Smiles = () => {
                             key={`problem-1-${realIndex}`}
                             className="smiles-text-span"
                             initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            transition={{
-                              duration: 0.8,
-                              ease: [0.25, 0.40, 0.70, 0.94]
+                            animate={{ 
+                              y: 0, 
+                              opacity: 1,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0.1,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
+                            }}
+                            exit={{ 
+                              y: 100, 
+                              opacity: 0,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
                             }}
                           >
                             {problemLine1}
@@ -251,11 +275,23 @@ const Smiles = () => {
                             key={`problem-2-${realIndex}`}
                             className="smiles-text-span"
                             initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            transition={{
-                              duration: 0.8,
-                              ease: [0.25, 0.40, 0.70, 0.94]
+                            animate={{ 
+                              y: 0, 
+                              opacity: 1,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0.2,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
+                            }}
+                            exit={{ 
+                              y: 100, 
+                              opacity: 0,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
                             }}
                           >
                             {problemLine2}
@@ -270,15 +306,27 @@ const Smiles = () => {
                         <motion.strong
                           key={`solution-title-${realIndex}`}
                           className="smiles-text-span"
-                          initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                          animate={{ y: 0, opacity: 1 }}
-                          exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                          transition={{
-                            duration: 0.8,
-                            ease: [0.25, 0.40, 0.70, 0.94]
+                          initial={{ y: 100, opacity: 0 }}
+                          animate={{ 
+                            y: 0, 
+                            opacity: 1,
+                            transition: {
+                              duration: 0.6,
+                              delay: 0,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }
+                          }}
+                          exit={{ 
+                            y: 100, 
+                            opacity: 0,
+                            transition: {
+                              duration: 0.4,
+                              delay: 0,
+                              ease: [0.25, 0.40, 0.70, 0.94]
+                            }
                           }}
                         >
-                          Решение
+                          Решение:
                         </motion.strong>
                       </AnimatePresence>
                     </div>
@@ -289,11 +337,23 @@ const Smiles = () => {
                             key={`solution-1-${realIndex}`}
                             className="smiles-text-span"
                             initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            transition={{
-                              duration: 0.8,
-                              ease: [0.25, 0.40, 0.70, 0.94]
+                            animate={{ 
+                              y: 0, 
+                              opacity: 1,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0.2,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
+                            }}
+                            exit={{ 
+                              y: 100, 
+                              opacity: 0,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
                             }}
                           >
                             {solutionLine1}
@@ -305,11 +365,23 @@ const Smiles = () => {
                             key={`solution-2-${realIndex}`}
                             className="smiles-text-span"
                             initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            transition={{
-                              duration: 0.8,
-                              ease: [0.25, 0.40, 0.70, 0.94]
+                            animate={{ 
+                              y: 0, 
+                              opacity: 1,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0.2,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
+                            }}
+                            exit={{ 
+                              y: 100, 
+                              opacity: 0,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
                             }}
                           >
                             {solutionLine2}
@@ -321,11 +393,23 @@ const Smiles = () => {
                             key={`solution-3-${realIndex}`}
                             className="smiles-text-span"
                             initial={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={hasStartedAnimation ? { y: 100, opacity: 0 } : false}
-                            transition={{
-                              duration: 0.8,
-                              ease: [0.25, 0.40, 0.70, 0.94]
+                            animate={{ 
+                              y: 0, 
+                              opacity: 1,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0.2,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
+                            }}
+                            exit={{ 
+                              y: 100, 
+                              opacity: 0,
+                              transition: {
+                                duration: 0.8,
+                                delay: 0,
+                                ease: [0.25, 0.40, 0.70, 0.94]
+                              }
                             }}
                           >
                             {solutionLine3}
@@ -338,12 +422,13 @@ const Smiles = () => {
                 {/* Навигация */}
                 <div className="smiles-navigation">
                   <span className="smiles-slide-counter">{realIndex + 1}/{totalSlides}</span>
-                  <button 
+                <button 
                     className="smiles-nav-btn" 
                     onClick={goToPrevSlide}
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
-                  >
+                    style={{ border: '0.052vw solid rgba(0, 0, 0, 0.2)' }}
+                >
                     <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.9375 1.06055L2.9375 7.06055L8.9375 13.0605" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
                     </svg>
@@ -387,6 +472,7 @@ const Smiles = () => {
             
             {/* Правая часть: фото рта и текст */}
             <div className="smiles-mouth-section">
+              <div className="smiles-mouth-section-content">
               <div className="smiles-mouth-images">
                 <div className="smiles-mouth-before">
                   <img src={image2} alt="Mouth before treatment" />
@@ -399,13 +485,21 @@ const Smiles = () => {
                 <p className="smiles-panel-info-main">Имплантация премиум коронки Any Ridge. Установка под ключ</p>
                 <p className="smiles-panel-info-small">Срок лечения 1 день</p>
               </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Правая панель - Врач */}
         <div className="smiles-panel smiles-panel-right">
-          <img src={dockImage} alt="Doctor" />
+          <div className="smiles-panel-right-image-wrapper">
+            <img src={dockImage} alt="Doctor" />
+            <div className="googing-play-button">
+              <svg viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.14062 20.8873V4.2563C1.14062 2.88492 1.14062 2.19847 1.38456 1.79272C1.59747 1.43858 1.92563 1.20607 2.28995 1.15048C2.70722 1.08681 3.219 1.40972 4.2411 2.05461L17.4204 10.3701L17.4252 10.3726C18.5547 11.0853 19.1197 11.4418 19.3051 11.917C19.4668 12.3315 19.4668 12.81 19.3051 13.2245C19.1195 13.7003 18.5531 14.0583 17.4204 14.773L4.2411 23.0885C3.21827 23.7338 2.70737 24.0555 2.28995 23.9918C1.92563 23.9362 1.59747 23.7037 1.38456 23.3496C1.14062 22.9438 1.14062 22.2587 1.14062 20.8873Z" fill="#112F55" stroke="#112F55" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
     </div>

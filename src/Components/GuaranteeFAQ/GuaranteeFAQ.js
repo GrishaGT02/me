@@ -11,7 +11,7 @@ const GuaranteeFAQ = () => {
     {
       question: 'Вы даете гарантию? На что именно?',
       answers: [
-        'Да, гарантия до 10 лет на имплантацию и до 2 лет на терапию. Все прописано в договоре, который вы подписываете перед началом лечения. Гарантия распространяется на качество выполненных работ и используемые материалы.'
+        'Да, гарантия до 10 лет на имплантацию и до 2 лет на терапию. Все прописано в договоре Да, гарантия до 10 лет на имплантацию и до 2 лет на терапию. Все прописано в договореДа, гарантия до 10 лет на имплантацию и до 2 лет на терапию. Все прописано в договореДа, гарантия до 10 лет на имплантацию и до 2 лет на терапию. Все прописано в договоре'
       ]
     },
     {
@@ -56,30 +56,34 @@ const GuaranteeFAQ = () => {
 
   const plusIcon = (
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 7H7M7 7H13M7 7V13M7 7V1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M1 7H7M7 7H13M7 7V13M7 7V1" stroke="#485B85" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 
   const emailIcon = (
-    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 2L8.10764 6.61227L8.10967 6.61396C8.78785 7.11128 9.12714 7.3601 9.49876 7.45621C9.82723 7.54117 10.1725 7.54117 10.501 7.45621C10.8729 7.36001 11.2132 7.11047 11.8926 6.61227C11.8926 6.61227 15.8101 3.60594 18 2M1 11.8002V4.2002C1 3.08009 1 2.51962 1.21799 2.0918C1.40973 1.71547 1.71547 1.40973 2.0918 1.21799C2.51962 1 3.08009 1 4.2002 1H15.8002C16.9203 1 17.4796 1 17.9074 1.21799C18.2837 1.40973 18.5905 1.71547 18.7822 2.0918C19 2.5192 19 3.07899 19 4.19691V11.8036C19 12.9215 19 13.4805 18.7822 13.9079C18.5905 14.2842 18.2837 14.5905 17.9074 14.7822C17.48 15 16.921 15 15.8031 15H4.19691C3.07899 15 2.5192 15 2.0918 14.7822C1.71547 14.5905 1.40973 14.2842 1.21799 13.9079C1 13.4801 1 12.9203 1 11.8002Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22.4824 5.18945C22.4989 5.86303 22.5 6.6277 22.5 7.5V10C22.5 13.5355 22.4997 15.303 21.4014 16.4014C20.303 17.4997 18.5355 17.5 15 17.5H7.5C3.96447 17.5 2.19698 17.4997 1.09863 16.4014C0.00028325 15.303 0 13.5355 0 10V7.5C0 6.62771 0.000106283 5.86303 0.0166016 5.18945L10.0361 10.7559C10.791 11.1751 11.709 11.1751 12.4639 10.7559L22.4824 5.18945ZM15 0C18.5355 0 20.303 0.000283242 21.4014 1.09863C21.7842 1.48145 22.0309 1.94612 22.1934 2.53809C22.0907 2.56411 21.9895 2.60336 21.8926 2.65723L11.25 8.57031L0.607422 2.65723C0.510175 2.6032 0.408676 2.56411 0.305664 2.53809C0.468131 1.946 0.715761 1.4815 1.09863 1.09863C2.19698 0.000283265 3.96447 0 7.5 0H15Z" fill="white"/>
+    </svg>
+  );
+
+  const playIcon = (
+    <svg viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.14062 20.8873V4.2563C1.14062 2.88492 1.14062 2.19847 1.38456 1.79272C1.59747 1.43858 1.92563 1.20607 2.28995 1.15048C2.70722 1.08681 3.219 1.40972 4.2411 2.05461L17.4204 10.3701L17.4252 10.3726C18.5547 11.0853 19.1197 11.4418 19.3051 11.917C19.4668 12.3315 19.4668 12.81 19.3051 13.2245C19.1195 13.7003 18.5531 14.0583 17.4204 14.773L4.2411 23.0885C3.21827 23.7338 2.70737 24.0555 2.28995 23.9918C1.92563 23.9362 1.59747 23.7037 1.38456 23.3496C1.14062 22.9438 1.14062 22.2587 1.14062 20.8873Z" fill="#112F55" stroke="#112F55" strokeWidth="2.28571" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 
   return (
     <div className="guarantee-faq">
       <div className="guarantee-faq-container">
-        <div className="guarantee-faq-header-text">
-          <h2 className="guarantee-faq-title">
-            Мы <span>искренне заботимся</span> о каждом пациенте, а они, в свою очередь, делятся своими благодарностями это лучшая оценка нашей работы!
-          </h2>
-          <p className="guarantee-faq-subtitle">
-            И мы не боимся реальных отзывов! Вы можете посмотреть не только отзывы на нашем сайте, но и независимые оценки на популярных площадках: Яндекс.Карты, 2ГИС, Zoon и другие. Наша репутация для Вас прозрачна, как и наши принципы работы.
-          </p>
-        </div>
         <div className="guarantee-faq-content">
-          {/* Левая секция - Аккордеон */}
+          {/* Левая секция - Текст и FAQ */}
           <div className="guarantee-faq-left">
+            <h2 className="guarantee-faq-title">
+              ОТВЕТЫ НА <span>ЧАСТЫЕ ВОПРОСЫ</span>
+            </h2>
+            <p className="guarantee-faq-description">
+              Отвечаем на любые Ваши вопросы! А если Вашего вопроса здесь нет, задайте свой вопрос, и мы ответим на него лично!
+            </p>
             <div className="guarantee-faq-grid">
               {faqItems.map((item, index) => (
                 <div 
@@ -113,8 +117,24 @@ const GuaranteeFAQ = () => {
           <div className="guarantee-faq-right">
             <div className="guarantee-faq-doctor-image">
               <img src={doctorImage} alt="Doctor" />
-              <div className="guarantee-faq-email-icon" onClick={handleClick}>
-                {emailIcon}
+              <div className="guarantee-faq-play-button">
+                {playIcon}
+              </div>
+              <div className="guarantee-faq-form">
+                <div className="guarantee-faq-form-inner">
+                  <div className="guarantee-faq-form-content">
+                    <h3 className="guarantee-faq-form-title">Задайте свой вопрос</h3>
+                    <p className="guarantee-faq-form-description">Ответим максимально быстро и поможем именно в Вашей ситуации</p>
+                    {/* <input 
+                      type="text" 
+                      className="guarantee-faq-form-input" 
+                      placeholder="Введите ваш вопрос"
+                    /> */}
+                  </div>
+                  <div className="guarantee-faq-form-icon" onClick={handleClick}>
+                    {emailIcon}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
