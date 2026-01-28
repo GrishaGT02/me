@@ -296,3 +296,9 @@
     padding: 0 2.6vw;
 }
 }
+
+@media (min-width: 2200px) {
+    .guarantees-top {
+        grid-template-columns: 1fr 22vw;
+    }
+}

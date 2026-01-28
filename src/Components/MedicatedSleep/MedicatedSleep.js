@@ -47,7 +47,7 @@ const MedicatedSleep = () => {
                         {cards.slice(0, 2).map((card, index) => (
                             <div key={index} className="medicated-sleep-card">
                                 <div className="medicated-sleep-card-icon">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 32.0005)" fill="#2E3D58" fillOpacity="0.7"/>
                                         <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 18.5234 13.4736)" fill="#2E3D58" fillOpacity="0.7"/>
                                         <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 18.5234 32.0005)" fill="#2E3D58"/>
@@ -58,7 +58,7 @@ const MedicatedSleep = () => {
                                     <div className="medicated-sleep-card-description">{card.description}</div>
                                 </div>
                                 <div className="medicated-sleep-card-arrow">
-                                    <svg width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M31.5 13.0605L32.5607 14.1212L33.6213 13.0605L32.5607 11.9999L31.5 13.0605ZM1.5 11.5605C0.671571 11.5605 -2.6932e-06 12.2321 -2.76562e-06 13.0605C-2.83805e-06 13.889 0.671571 14.5605 1.5 14.5605L1.5 13.0605L1.5 11.5605ZM19.5 25.0605L20.5607 26.1212L32.5607 14.1212L31.5 13.0605L30.4393 11.9999L18.4393 23.9999L19.5 25.0605ZM31.5 13.0605L32.5607 11.9999L20.5607 -0.00011349L19.5 1.06055L18.4393 2.12121L30.4393 14.1212L31.5 13.0605ZM31.5 13.0605L31.5 11.5605L1.5 11.5605L1.5 13.0605L1.5 14.5605L31.5 14.5605L31.5 13.0605Z" fill="#485B85"/>
                                     </svg>
                                 </div>
@@ -74,7 +74,7 @@ const MedicatedSleep = () => {
                         {cards.slice(2, 4).map((card, index) => (
                             <div key={index} className="medicated-sleep-card">
                                 <div className="medicated-sleep-card-icon">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 0 32.0005)" fill="#2E3D58" fillOpacity="0.7"/>
                                         <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 18.5234 13.4736)" fill="#2E3D58" fillOpacity="0.7"/>
                                         <rect width="13.4739" height="13.4739" rx="6.73693" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 18.5234 32.0005)" fill="#2E3D58"/>
@@ -85,7 +85,7 @@ const MedicatedSleep = () => {
                                     <div className="medicated-sleep-card-description">{card.description}</div>
                                 </div>
                                 <div className="medicated-sleep-card-arrow">
-                                    <svg width="34" height="27" viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg viewBox="0 0 34 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M31.5 13.0605L32.5607 14.1212L33.6213 13.0605L32.5607 11.9999L31.5 13.0605ZM1.5 11.5605C0.671571 11.5605 -2.6932e-06 12.2321 -2.76562e-06 13.0605C-2.83805e-06 13.889 0.671571 14.5605 1.5 14.5605L1.5 13.0605L1.5 11.5605ZM19.5 25.0605L20.5607 26.1212L32.5607 14.1212L31.5 13.0605L30.4393 11.9999L18.4393 23.9999L19.5 25.0605ZM31.5 13.0605L32.5607 11.9999L20.5607 -0.00011349L19.5 1.06055L18.4393 2.12121L30.4393 14.1212L31.5 13.0605ZM31.5 13.0605L31.5 11.5605L1.5 11.5605L1.5 13.0605L1.5 14.5605L31.5 14.5605L31.5 13.0605Z" fill="#485B85"/>
                                     </svg>
                                 </div>

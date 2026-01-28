@@ -61,8 +61,12 @@ const WhyChooseUs = () => {
           </div>
         </div>
         <div className="why-choose-us-right">
-          <img src={image1} alt="Doctors team" className="why-choose-us-image why-choose-us-image-first" />
-          <img src={image2} alt="Doctors team" className="why-choose-us-image why-choose-us-image-second" />
+          <div className="why-choose-us-image-first-wrapper">
+            <img src={image1} alt="Doctors team" className="why-choose-us-image why-choose-us-image-first" />
+          </div>
+          <div className="why-choose-us-image-second-wrapper">
+            <img src={image2} alt="Doctors team" className="why-choose-us-image why-choose-us-image-second" />
+          </div>
         </div>
       </div>
     </div>

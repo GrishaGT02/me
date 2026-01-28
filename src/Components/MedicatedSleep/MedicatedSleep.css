@@ -250,6 +250,11 @@
     align-self: flex-start;
 }
 
+.medicated-sleep-card-icon svg {
+    width: 1.67vw;
+    height: 1.67vw;
+}
+
 .medicated-sleep-card-content {
     display: flex;
     flex-direction: column;
@@ -275,6 +280,11 @@
 .medicated-sleep-card-arrow {
     align-self: flex-end;
     margin-top: auto;
+}
+
+.medicated-sleep-card-arrow svg {
+    width: 1.77vw;
+    height: 1.41vw;
 }
 
 @media (max-width: 2200px) {

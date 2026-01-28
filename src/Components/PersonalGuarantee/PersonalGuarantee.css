@@ -422,10 +422,10 @@
     align-self: flex-start;
 }
 
-/* .personal-guarantee-item-icon svg {
+.personal-guarantee-item-icon svg {
     width: 1.72vw;
     height: 1.72vw;
-} */
+}
 
 .personal-guarantee-item-content {
     flex: 1;
