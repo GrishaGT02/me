@@ -1,6 +1,6 @@
 .carousel-container {
   width: 100%;
-  padding: 2.6vw 0px;
+  padding: 2.6vw 0;
   box-sizing: border-box;
   background-color: rgba(235, 235, 235, 1);
   position: relative;
@@ -113,7 +113,7 @@
   padding: 1.46vw 3.65vw;
   border-radius: 2.6vw;
   background: #485B85;
-  border: 1px solid #2E3D58;
+  border: 0.052vw solid #2E3D58;
   color: #FFFFFF;
   font-size: var(--font-size-button);
   font-weight: 700;
@@ -187,4 +187,66 @@
 .carousel-dot.active {
   background-color: #00a651;
   transform: scale(1.2);
+}
+
+@media (max-width: 780px) {
+  .carousel-slides-wrapper {
+    height: 33.205vw;
+  }
+
+  .carousel-slides-track {
+    gap: 2.564vw;
+  }
+
+  .carousel-wrapper {
+    width: 93.974vw;
+    height: 33.205vw;
+    border-radius: 2.564vw;
+  }
+
+  .carousel-slide {
+    padding: 0.641vw;
+  }
+
+  .carousel-slide-image {
+    width: 38.462vw;
+    height: 31.923vw;
+  }
+
+  .carousel-slide-image img {
+    border-radius: 1.923vw;
+  }
+
+  .carousel-slide-content {
+    height: 31.923vw;
+    padding: 2.564vw 1.282vw 3.846vw 1.282vw;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.923vw;
+    border-radius: 1.282vw;
+  }
+
+  .carousel-slide-text {
+    gap: 0.641vw;
+  }
+
+  .carousel-slide-title {
+    font-size: 3.205vw;
+    font-weight: 600;
+  }
+
+  .carousel-slide-subtitle {
+    font-size: 2.308vw;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .carousel-slide-button {
+    padding: 2.821vw 8.974vw;
+    border-radius: 16.667vw;
+    font-size: 2.308vw;
+    font-weight: 500;
+    /* align-self: flex-end; */
+  }
 }

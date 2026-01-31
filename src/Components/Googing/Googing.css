@@ -440,3 +440,178 @@
         font-size: var(--font-size-h1);
     }
 }
+
+@media (max-width: 780px) {
+    .googing-title {
+        width: 100%;
+        font-size: 5.77vw;
+        font-weight: 700;
+        line-height: 8.33vw;
+    }
+
+    .googing-title span {
+        text-decoration-thickness: 0.26vw;
+        text-underline-offset: 0.64vw;
+    }
+
+    .googing-description {
+        width: 100%;
+        font-size: 3.2vw;
+        font-weight: 300;
+        line-height: 4.73vw;
+        margin-top: 1.92vw;
+    }
+
+    .googing-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .googing-left {
+        width: 100%;
+    }
+
+    .googing-doctor-image {
+        height: 102.564vw;
+        width: 100%;
+        border-radius: 2.564vw;
+    }
+
+    .googing-doctor-image img {
+        border-radius: 2.564vw;
+    }
+
+    .googing-doctor-info {
+        padding: 0.641vw;
+        border-radius: 2.564vw;
+    }
+
+    .googing-doctor-info-card {
+        border-radius: 1.923vw;
+    }
+
+    .googing-doctor-image .googing-play-button {
+        width: 80px !important;
+        height: 80px !important;
+        box-sizing: border-box !important;
+    }
+
+    .googing-doctor-image .googing-play-button::before,
+    .googing-doctor-image .googing-play-button::after {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .googing-doctor-image .googing-play-button svg {
+        width: 20px !important;
+        height: 24px !important;
+    }
+
+    .googing-doctor-name {
+        font-size: 3.462vw;
+        font-weight: 700;
+    }
+
+    .googing-doctor-title {
+        font-size: 1.795vw;
+        font-weight: 300;
+    }
+
+    .googing-doctor-info-card {
+        padding: 1.026vw 2.564vw;
+        gap: 3.846vw;
+    }
+
+    .googing-doctor-contact {
+        width: 7.692vw;
+        height: 7.692vw;
+        border-radius: 10.564vw;
+    }
+
+    .googing-doctor-contact svg {
+        width: 3.846vw;
+        height: 3.077vw;
+    }
+
+    .googing-right {
+        width: 100%;
+    }
+
+    .googing-form-card {
+        width: 100%;
+        height: auto;
+        padding: 3.59vw 2.56vw;
+    }
+
+    .googing-form-title {
+        width: 100%;
+        font-size: 5.77vw;
+        font-weight: 700;
+        line-height: 8.33vw;
+    }
+
+    .googing-form-title span {
+        text-decoration-thickness: 0.26vw;
+        text-underline-offset: 0.64vw;
+    }
+
+    .googing-form-description {
+        width: 100%;
+        font-size: 2.76vw;
+        font-weight: 300;
+        line-height: 4.23vw;
+        margin-top: 1.92vw;
+    }
+
+    .googing-form-buttons {
+        gap: 1.92vw;
+        margin-top: 3.85vw;
+    }
+
+    .googing-btn {
+        padding: 3.59vw 5.13vw;
+        border-radius: 6.41vw;
+        font-size: 1.5vw;
+        line-height: 2.44vw;
+    }
+
+    .googing-btn-1 {
+        padding: 0.77vw 0.77vw 0.77vw 3.21vw;
+        border-radius: 6.41vw;
+        font-size: 1.65vw;
+        line-height: 2.18vw;
+        gap: 3.85vw;
+    }
+
+    .googing-btn-icon {
+        width: 7.69vw;
+        height: 7.69vw;
+    }
+
+    .googing-btn-icon svg {
+        width: 2.05vw;
+        height: 1.79vw;
+    }
+
+    .googing-btn-1::after {
+        right: 0.77vw;
+        width: 7.69vw;
+        height: 7.69vw;
+    }
+
+    .googing-btn-1:hover::after {
+        width: 102.56vw;
+        height: 102.56vw;
+        right: -51.28vw;
+    }
+
+    .googing-form-disclaimer {
+        font-size: 1.795vw;
+        font-weight: 300;
+        margin-top: 7.692vw;
+    }
+
+    .googing {
+        padding: 9vw 2.6vw;
+    }
+}
