@@ -27,7 +27,7 @@ import Footer from './Components/Footer/Footer';
 import FooterBottom from './Components/FooterBottom/FooterBottom';
 // import Modal from './Components/Modal/Modal';
 import Carousel from './Components/Carousel/Carousel';
-import ProfileCards from './Components/ProfileCards/ProfileCards';
+// import ProfileCards from './Components/ProfileCards/ProfileCards';
 import './App.css';
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
         <Header />
         <Carousel />
         <Kvis />
-        <ProfileCards />
+        {/* <ProfileCards /> */}
         <Googing />
         <Skils />
         <TreatmentWarning />
