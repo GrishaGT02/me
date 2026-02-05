@@ -346,6 +346,33 @@
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Эффект блика для кнопки */
+.googing-btn-1 .flare {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation: flareAnimation 3s infinite;
+    left: -170%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+    filter: blur(0px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -170%;
+    }
+    50% {
+        left: 170%;
+    }
+    100% {
+        left: 170%;
+    }
+}
+
 .googing-btn-1:hover .googing-btn-icon svg {
     transform: translateX(max(-12.7vw, calc(-10% - 30.56vw))) rotate(40deg);
 }
@@ -419,6 +446,7 @@
     color: #666666;
     font-family: 'Geist', sans-serif;
     cursor: pointer;
+    text-align: left;
 }
 
 .googing-form-disclaimer {
@@ -614,4 +642,15 @@
     .googing {
         padding: 9vw 2.6vw;
     }
+}
+
+.kvis-privacy-link {
+    color: rgba(26, 26, 26, 0.75);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.kvis-privacy-link:hover {
+    text-decoration: underline;
+    color: rgba(26, 26, 26, 1);
 }

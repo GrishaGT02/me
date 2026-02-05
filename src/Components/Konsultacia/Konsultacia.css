@@ -1,6 +1,6 @@
 .konsultacia-container {
   width: 100%;
-  padding: 0 10% 4vw 10%;
+  padding: 0 10% 2.5vw 10%;
   box-sizing: border-box;
   background-color: white;
 }
@@ -30,6 +30,8 @@
   margin-right: -2.08vw;
   position: relative;
   z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 1);
+  transition: transform 0.3s ease;
 }
 
 .konsultacia-doctor-image img {
@@ -38,6 +40,11 @@
   object-fit: cover;
   object-position: center 20%;
   display: block;
+  transform: scaleX(-1);
+}
+
+.konsultacia-doctor-image:hover {
+  transform: translateX(-3px);
 }
 
 .konsultacia-text-block {
@@ -150,8 +157,35 @@
   transform: translateY(-50%);
 }
 
+/* Эффект блика для кнопки */
+.konsultacia-button .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg);
+  animation: flareAnimation 3s infinite;
+  left: -170%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+  filter: blur(0px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes flareAnimation {
+  0% {
+    left: -170%;
+  }
+  50% {
+    left: 170%;
+  }
+  100% {
+    left: 170%;
+  }
+}
+
 @media (max-width: 2200px) { 
   .konsultacia-container {
-    padding: 0 2.6vw 4.2vw 2.6vw;
+    padding: 0 2.6vw 2.5vw 2.6vw;
   }
 }

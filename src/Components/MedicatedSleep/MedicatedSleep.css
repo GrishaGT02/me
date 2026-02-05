@@ -126,12 +126,13 @@
 
 .medicated-sleep-consultation-title {
     text-align: left;
-    font-size: 2.05vw;
+    font-size: 1.406vw;
     font-weight: 700;
     color: #000000;
     margin: 0;
     line-height: 1.2;
     font-family: 'Geist', sans-serif;
+    text-transform: uppercase;
 }
 
 .medicated-sleep-consultation-description {
@@ -198,6 +199,33 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Эффект блика для кнопки */
+.medicated-sleep-consultation-button .flare {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation: flareAnimation 3s infinite;
+    left: -170%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+    filter: blur(0px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -170%;
+    }
+    50% {
+        left: 170%;
+    }
+    100% {
+        left: 170%;
+    }
+}
+
 .medicated-sleep-consultation-button:hover .medicated-sleep-consultation-btn-icon svg {
     transform: translateX(-11.9vw) rotate(40deg);
 }
@@ -236,6 +264,7 @@
     margin-right: -2.08vw;
     position: relative;
     z-index: 1;
+    transition: transform 0.3s ease;
 }
 
 .medicated-sleep-consultation-doctors-image img {
@@ -244,6 +273,10 @@
     object-fit: cover;
     object-position: center;
     display: block;
+}
+
+.medicated-sleep-consultation-doctors-image:hover {
+    transform: translateX(-3px);
 }
 
 .medicated-sleep-card-icon {
@@ -283,8 +316,8 @@
 }
 
 .medicated-sleep-card-arrow svg {
-    width: 1.77vw;
-    height: 1.41vw;
+    width: 1.172vw;
+    height: 0.938vw;
 }
 
 @media (max-width: 2200px) {

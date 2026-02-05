@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import logo from '../../assec/f75f26dc6cd4ff859268de37e425468cec2292a4.png';
+import PrivacyModal from '../PrivacyModal/PrivacyModal';
 import './Footer.css';
 
 const Footer = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [consent, setConsent] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showPolicyModal, setShowPolicyModal] = useState(false);
 
   const formatPhoneNumber = (value) => {
     // Удаляем все нецифровые символы
@@ -149,6 +152,7 @@ const Footer = () => {
                     maxLength={17}
                   />
                   <button type="submit" className="footer-submit-btn footer-btn-primary">
+                    <div className="flare"></div>
                     <span>Записаться</span>
                     <div className="footer-btn-icon">
                       <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -164,7 +168,16 @@ const Footer = () => {
                     checked={consent}
                     onChange={(e) => setConsent(e.target.checked)}
                   />
-                  <label htmlFor="footer-consent">Даю согласие на обработку персональных данных</label>
+                  <label htmlFor="footer-consent" style={{ lineHeight: '1.5' }}>
+                    Подтверждаю, что ознакомлен с текстом{' '}
+                    <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }}>
+                      согласия на обработку персональных данных
+                    </a>
+                    {' '}и согласен с{' '}
+                    <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPolicyModal(true); }}>
+                      политикой конфиденциальности
+                    </a>
+                  </label>
                 </div>
               </form>
             </div>
@@ -520,6 +533,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      <PrivacyModal
+        showPrivacyModal={showPrivacyModal}
+        showPolicyModal={showPolicyModal}
+        onClosePrivacy={() => setShowPrivacyModal(false)}
+        onClosePolicy={() => setShowPolicyModal(false)}
+      />
     </footer>
   );
 };

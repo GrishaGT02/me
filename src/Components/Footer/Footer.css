@@ -55,7 +55,7 @@
   color: rgba(26, 26, 26, 0.75);
   margin: 0;
   font-family: 'Geist', sans-serif;
-  line-height: 34px;
+  line-height: 1.25vw;
   text-align: left;
 }
 
@@ -158,7 +158,7 @@
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  border: 0.052vw solid rgba(25, 25, 25, 0.2);
+  border: 0.052vw solid #EBEBEB;
   border-radius: 4.5vw;
   overflow: hidden;
   background: white;
@@ -191,7 +191,7 @@
   top: 0.22vw;
   bottom: 0.22vw;
   width: 0.052vw;
-  background: rgba(235, 235, 235, 1);
+  background: #EBEBEB;
 }
 
 
@@ -236,23 +236,23 @@
 } */
 
 .footer-submit-btn {
-  padding: 0.31vw 0.31vw 0.31vw 1.56vw;
-  border-radius: 2.6vw;
-  border: 0.052vw solid #2E3D58;
-  font-weight: 500;
-  font-size: var(--font-size-body);
-  line-height: 0.89vw;
-  cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 1.56vw;
-  font-family: 'Geist', sans-serif;
+  gap: 1.3vw;
+  padding: 1.04vw 1.6vw;
+  border: 0.052vw solid #485B85;
+  border-radius: 2.6vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
   position: relative;
   overflow: hidden;
-  flex-shrink: 0;
-  white-space: nowrap;
-  min-width: fit-content;
+  background: #485B85;
+  font-family: 'Geist', sans-serif;
+}
+
+.footer-submit-btn:hover {
+  background: #FFFFFF;
 }
 
 .footer-btn-primary {
@@ -261,66 +261,80 @@
 }
 
 .footer-btn-primary span {
+  font-size: var(--font-size-button);
   color: #FFFFFF;
-  transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  line-height: 0.94vw;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  z-index: 3;
+  z-index: 2;
 }
 
 .footer-btn-primary:hover span {
+  transform: translateX(min(2.2vw, 4.8vw));
   color: #485B85;
-  transform: translateX(min(3.65vw, 15.31vw));
 }
 
 .footer-btn-icon {
-  width: 3.125vw;
-  height: 3.125vw;
-  border-radius: 50%;
-  background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   position: relative;
   z-index: 2;
+  width: 0.63vw;
+  height: 0.57vw;
 }
 
 .footer-btn-icon svg {
-  width: 0.73vw;
-  height: 0.63vw;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-btn-icon svg path {
+  fill: #FFFFFF;
+  transition: fill 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-submit-btn:hover .footer-btn-icon svg {
-  transform: translateX(max(-8.2vw, calc(-10% - 30.56vw))) rotate(40deg);
+  transform: translateX(max(-5.35vw, calc(-10% - 20.04vw))) rotate(40deg);
 }
 
-.footer-submit-btn::after {
-  content: '';
+.footer-submit-btn:hover .footer-btn-icon svg path {
+  fill: #485B85;
+}
+
+/* Эффект блика для кнопки */
+.footer-submit-btn .flare {
   position: absolute;
-  right: 0.31vw;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3.125vw;
-  height: 3.125vw;
-  border-radius: 50%;
-  background: #FFFFFF;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 0;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg);
+  animation: flareAnimation 3s infinite;
+  left: -170%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+  filter: blur(0px);
+  z-index: 1;
   pointer-events: none;
 }
 
-.footer-submit-btn:hover::after {
-  width: 41.67vw;
-  height: 41.67vw;
-  right: -20.83vw;
-  top: 50%;
-  transform: translateY(-50%);
+@keyframes flareAnimation {
+  0% {
+    left: -170%;
+  }
+  50% {
+    left: 170%;
+  }
+  100% {
+    left: 170%;
+  }
 }
+
 
 .footer-form-checkbox {
   display: flex;
-  align-items: center;
   gap: 0.53vw;
   justify-content: flex-start;
 }
@@ -357,6 +371,7 @@
 }
 
 .footer-form-checkbox label {
+  text-align: left;
   font-size: var(--font-size-body-small);
   font-weight: 400;
   color: #666666;
@@ -475,7 +490,7 @@
   width: 70%;
   font-size: var(--font-size-body);
   font-weight: 500;
-  color: rgba(26, 26, 26, 0.75);
+  color: rgba(26, 26, 26, 0.55);
   margin: 0;
   font-family: 'Geist', sans-serif;
   line-height: 1.5;
@@ -538,7 +553,7 @@
   margin-right: auto;
   font-size: var(--font-size-body);
   font-weight: 500;
-  color: rgba(26, 26, 26, 0.75);
+  color: rgba(26, 26, 26, 0.55);
   margin: 0;
   font-family: 'Geist', sans-serif;
   line-height: 1.5;
@@ -624,4 +639,15 @@
     height: 3.125vw;
     right: 0.31vw;
   }
+}
+
+.kvis-privacy-link {
+  color: rgba(26, 26, 26, 0.75);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.kvis-privacy-link:hover {
+  text-decoration: underline;
+  color: rgba(26, 26, 26, 1);
 }

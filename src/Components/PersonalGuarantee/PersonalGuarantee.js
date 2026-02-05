@@ -1,19 +1,77 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useModal } from '../../context/ModalContext';
 import doctorImage from '../../assec/dock.jpg';
 import './PersonalGuarantee.css';
 
 const PersonalGuarantee = () => {
     const { openModal } = useModal();
+    const [animatedValue, setAnimatedValue] = useState(0);
+    const statsRef = useRef(null);
+    const animationFrameRef = useRef(null);
+    const timeoutRef = useRef(null);
 
     const handleClick = () => {
         openModal();
     };
 
+    useEffect(() => {
+        let isRunning = true;
+
+        const animate = () => {
+            if (!isRunning) return;
+            
+            let currentValue = 0;
+            const targetValue = 15;
+            const duration = 4000; // 2 секунды для анимации
+            const startTime = Date.now();
+
+            const animateFrame = () => {
+                if (!isRunning) return;
+                
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Используем easing функцию для плавности
+                const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                currentValue = Math.floor(easeOutQuart * targetValue);
+                
+                setAnimatedValue(currentValue);
+
+                if (progress < 1) {
+                    animationFrameRef.current = requestAnimationFrame(animateFrame);
+                } else {
+                    // Задержка на финальном значении 15 (1 секунда)
+                    timeoutRef.current = setTimeout(() => {
+                        if (isRunning) {
+                            setAnimatedValue(0); // Сбрасываем на 0 для повторения
+                            animate(); // Запускаем анимацию снова
+                        }
+                    }, 1000);
+                }
+            };
+
+            animationFrameRef.current = requestAnimationFrame(animateFrame);
+        };
+
+        // Запускаем анимацию сразу
+        animate();
+
+        return () => {
+            isRunning = false;
+            if (animationFrameRef.current) {
+                cancelAnimationFrame(animationFrameRef.current);
+            }
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
+
     const stats = [
         {
-            value: '15 лет',
-            label: 'опыт работы'
+            value: `${animatedValue} лет`,
+            label: 'опыт работы',
+            isAnimated: true
         },
         {
             value: '100+',
@@ -80,6 +138,7 @@ const PersonalGuarantee = () => {
                         Когда пациент доверяет нам своё здоровье -  он доверяет его лично мне. Я не просто управляю клиникой, я несу персональную ответственность за работу каждого специалиста и за результат, который Вы получите. Ваша  улыбка — это моя профессиональная репутация, которую я берегу больше всего.
                         </div>
                         <button className="personal-guarantee-button personal-guarantee-btn-primary" onClick={handleClick}>
+                            <div className="flare"></div>
                             <span>Напишите мне письмо</span>
                             <div className="personal-guarantee-btn-icon">
                                 <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +146,7 @@ const PersonalGuarantee = () => {
                                 </svg>
                             </div>
                         </button>
-                        <div className="personal-guarantee-stats">
+                        <div className="personal-guarantee-stats" ref={statsRef}>
                             {stats.map((stat, index) => (
                                 <div key={index} className="personal-guarantee-stat-item">
                                     <div className="personal-guarantee-stat-value">{stat.value}</div>

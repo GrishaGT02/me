@@ -8,6 +8,9 @@ import './Reviews.css';
 
 const Reviews = () => {
   const { openModal } = useModal();
+  const [animatedValue1, setAnimatedValue1] = useState(0);
+  const animationFrameRef1 = useRef(null);
+  const timeoutRef1 = useRef(null);
   
   const reviews = [
     {
@@ -79,7 +82,7 @@ const Reviews = () => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setCurrentSlide((prev) => prev + 1);
-    }, 4000);
+    }, 2000);
     
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -211,6 +214,56 @@ const Reviews = () => {
     return null;
   };
 
+  useEffect(() => {
+    let isRunning1 = true;
+
+    const animate1 = () => {
+      if (!isRunning1) return;
+      
+      let currentValue = 0;
+      const targetValue = 100;
+      const duration = 4000;
+      const startTime = Date.now();
+
+      const animateFrame = () => {
+        if (!isRunning1) return;
+        
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        currentValue = Math.floor(easeOutQuart * targetValue);
+        
+        setAnimatedValue1(currentValue);
+
+        if (progress < 1) {
+          animationFrameRef1.current = requestAnimationFrame(animateFrame);
+        } else {
+          timeoutRef1.current = setTimeout(() => {
+            if (isRunning1) {
+              setAnimatedValue1(0);
+              animate1();
+            }
+          }, 1000);
+        }
+      };
+
+      animationFrameRef1.current = requestAnimationFrame(animateFrame);
+    };
+
+    animate1();
+
+    return () => {
+      isRunning1 = false;
+      if (animationFrameRef1.current) {
+        cancelAnimationFrame(animationFrameRef1.current);
+      }
+      if (timeoutRef1.current) {
+        clearTimeout(timeoutRef1.current);
+      }
+    };
+  }, []);
+
   const handleClick = () => {
     openModal();
   };
@@ -229,7 +282,7 @@ const Reviews = () => {
           </div>
           <div className="reviews-header-stats">
             <div className="reviews-stat-item">
-              <div className="reviews-stat-value">100+</div>
+              <div className="reviews-stat-value">{animatedValue1}+</div>
               <div className="reviews-stat-label">отзывов</div>
             </div>
             <div className="reviews-stat-item reviews-stat-item-active">
@@ -423,6 +476,7 @@ const Reviews = () => {
                 <span>Загрузить свой видео-отзыв</span>
               </button>
               <button className="reviews-leave-review-btn" onClick={handleClick}>
+                <div className="flare"></div>
                 <span>Оставить отзыв</span>
                 <div className="reviews-leave-review-btn-icon">
                   <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

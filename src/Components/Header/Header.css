@@ -341,6 +341,21 @@
     fill: #485B85;
 }
 
+/* Эффект блика для кнопки калькулятора */
+.header-calculator-btn .flare {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation: flareAnimation 3s infinite;
+    left: -170%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+    filter: blur(0px);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .header-contact-wrapper {
     display: flex;
     align-items: center;
@@ -373,6 +388,17 @@
     }
 }
 
+@keyframes pulse-border-phone {
+    0% {
+        transform: translate(-50%, -50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
 .header-phone-icon {
     width: 2.86vw;
     height: 2.86vw;
@@ -385,46 +411,38 @@
     position: relative;
     z-index: 100;
     overflow: visible;
+    box-sizing: content-box;
 }
 
-.header-phone-icon:hover::before,
-.header-phone-icon:hover::after {
-    content: '';
+.header-phone-icon:hover::before {
+    content: "";
     position: absolute;
-    border: 0.1vw solid #485B85;
-    left: -0.05vw;
-    opacity: 0;
-    right: -0.05vw;
-    top: -0.05vw;
-    bottom: -0.05vw;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 2.86vw;
+    height: 2.86vw;
+    background: #485B85;
     border-radius: 50%;
-    animation: pulse 2.5s linear infinite;
-    z-index: -1;
-    pointer-events: none;
+    animation: pulse-border-phone 1500ms ease-out infinite;
 }
 
 .header-phone-icon:hover::after {
-    animation-delay: 1.25s;
-}
-
-.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon::before,
-.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon::after {
-    content: '';
+    content: "";
     position: absolute;
-    border: 0.1vw solid #485B85;
-    left: -0.02vw;
-    opacity: 0;
-    right: -0.02vw;
-    top: -0.02vw;
-    bottom: -0.02vw;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 2.86vw;
+    height: 2.86vw;
+    background: #485B85;
     border-radius: 50%;
-    animation: pulse 2.5s linear infinite;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.header-contact-wrapper:has(.header-contact-block:hover):not(:has(.header-menu-btn:hover)) .header-phone-icon::after {
-    animation-delay: 1.25s;
+    transition: all 200ms;
+    background-color: rgba(72, 91, 133, 0.9);
 }
 
 .header-phone-icon svg {
@@ -433,7 +451,7 @@
     transform-origin: center;
     animation: swing 2s ease-in-out infinite;
     position: relative;
-    z-index: 101;
+    z-index: 3;
 }
 
 .header-phone-icon-fixed {
@@ -446,12 +464,13 @@
     justify-content: center;
     position: fixed;
     bottom: 2vw;
-    right: 2vw;
+    right: 1vw;
     z-index: 1000;
     overflow: visible;
     cursor: pointer;
     box-shadow: 0 0.26vw 0.78vw rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: content-box;
 }
 
 .header-phone-icon-fixed:hover {
@@ -459,24 +478,35 @@
     box-shadow: 0 0.39vw 1.04vw rgba(0, 0, 0, 0.3);
 }
 
-.header-phone-icon-fixed:hover::before,
-.header-phone-icon-fixed:hover::after {
-    content: '';
+.header-phone-icon-fixed:hover::before {
+    content: "";
     position: absolute;
-    border: 0.1vw solid #485B85;
-    left: -0.1vw;
-    opacity: 0;
-    right: -0.1vw;
-    top: -0.1vw;
-    bottom: -0.1vw;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 4vw;
+    height: 4vw;
+    background: #485B85;
     border-radius: 50%;
-    animation: pulse 2.5s linear infinite;
-    z-index: -1;
-    pointer-events: none;
+    animation: pulse-border-phone 1500ms ease-out infinite;
 }
 
 .header-phone-icon-fixed:hover::after {
-    animation-delay: 1.25s;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 4vw;
+    height: 4vw;
+    background: #485B85;
+    border-radius: 50%;
+    transition: all 200ms;
+    background-color: rgba(72, 91, 133, 0.9);
 }
 
 .header-phone-icon-fixed svg {
@@ -485,7 +515,7 @@
     transform-origin: center;
     animation: swing 2s ease-in-out infinite;
     position: relative;
-    z-index: 101;
+    z-index: 3;
 }
 
 .header-contact-block {
@@ -748,6 +778,33 @@
     height: 0.63vw;
 }
 
+/* Эффект блика для кнопки "Записаться на приём" */
+.header_nuv-btn-1 .flare {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation: flareAnimation 3s infinite;
+    left: -170%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+    filter: blur(0px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -170%;
+    }
+    50% {
+        left: 170%;
+    }
+    100% {
+        left: 170%;
+    }
+}
+
 .header_nuv-left-about {
     display: flex;
     align-items: center;
@@ -875,8 +932,8 @@
 .header_nuv-rating-card {
     height: 3.5vw;
     background: #FFFFFF;
-    border: none;
-    box-shadow: 0 0 0 0.026vw rgba(235, 235, 235, 1);
+    border: 1px solid rgba(215, 215, 215, 1);
+    /* box-shadow: 0 0 0 0.026vw rgba(235, 235, 235, 1); */
     border-radius: 0.63vw;
     padding: 0.63vw;
     display: flex;
@@ -1310,7 +1367,7 @@
         width: 5.13vw;
         height: 5.13vw;
         border-radius: 50%;
-        background: #485B85;
+    background: #485B85;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1454,7 +1511,7 @@
     .header-top-row {
         gap: 1.2vw;
     }
-
+    
     .header-clinic-text {
         font-size: 0.82vw;
     }
@@ -1545,7 +1602,7 @@
         padding: 0.73vw 1.32vw;
         border-radius: 2.27vw;
     }
-
+    
     .header-menu-btn span {
         font-size: 0.82vw;
         }

@@ -136,6 +136,17 @@
   }
 }
 
+@keyframes pulse-border-phone-footer {
+  0% {
+    transform: translate(-50%, -50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+}
+
 .footer-bottom-dark-phone-icon {
   width: 2.86vw;
   height: 2.86vw;
@@ -148,46 +159,38 @@
   position: relative;
   z-index: 100;
   overflow: visible;
+  box-sizing: content-box;
 }
 
-.footer-bottom-dark-phone-icon:hover::before,
-.footer-bottom-dark-phone-icon:hover::after {
-  content: '';
+.footer-bottom-dark-phone-icon:hover::before {
+  content: "";
   position: absolute;
-  border: 0.1vw solid #FFFFFF;
-  left: -0.7vw;
-  opacity: 0;
-  right: -0.7vw;
-  top: -0.7vw;
-  bottom: -0.7vw;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 2.86vw;
+  height: 2.86vw;
+  background: #FFFFFF;
   border-radius: 50%;
-  animation: footer-bottom-dark-pulse 2.5s linear infinite;
-  z-index: -1;
-  pointer-events: none;
+  animation: pulse-border-phone-footer 1500ms ease-out infinite;
 }
 
 .footer-bottom-dark-phone-icon:hover::after {
-  animation-delay: 1.25s;
-}
-
-.footer-bottom-dark-contact-wrapper:has(.footer-bottom-dark-contact-block:hover) .footer-bottom-dark-phone-icon::before,
-.footer-bottom-dark-contact-wrapper:has(.footer-bottom-dark-contact-block:hover) .footer-bottom-dark-phone-icon::after {
-  content: '';
+  content: "";
   position: absolute;
-  border: 0.1vw solid #FFFFFF;
-  left: -0.7vw;
-  opacity: 0;
-  right: -0.7vw;
-  top: -0.7vw;
-  bottom: -0.7vw;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 2.86vw;
+  height: 2.86vw;
+  background: #FFFFFF;
   border-radius: 50%;
-  animation: footer-bottom-dark-pulse 2.5s linear infinite;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.footer-bottom-dark-contact-wrapper:has(.footer-bottom-dark-contact-block:hover) .footer-bottom-dark-phone-icon::after {
-  animation-delay: 1.25s;
+  transition: all 200ms;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-bottom-dark-phone-icon svg {
@@ -196,7 +199,7 @@
   transform-origin: center;
   animation: footer-bottom-dark-swing 2s ease-in-out infinite;
   position: relative;
-  z-index: 101;
+  z-index: 3;
 }
 
 .footer-bottom-dark-phone-icon svg path {

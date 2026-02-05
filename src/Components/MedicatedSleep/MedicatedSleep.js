@@ -104,6 +104,7 @@ const MedicatedSleep = () => {
                             </p>
                         </div>
                         <button className="medicated-sleep-consultation-button medicated-sleep-consultation-btn-primary" onClick={handleClick}>
+                            <div className="flare"></div>
                             <span>Бесплатная консультация</span>
                             <div className="medicated-sleep-consultation-btn-icon">
                                 <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -363,7 +363,10 @@ const Carousel = () => {
                     <h2 className="carousel-slide-title">{slide.title}</h2>
                     <p className="carousel-slide-subtitle">{slide.subtitle}</p>
                   </div>
-                  <button className="carousel-slide-button">{slide.buttonText}</button>
+                  <button className="carousel-slide-button">
+                    <div className="flare"></div>
+                    {slide.buttonText}
+                  </button>
                 </div>
               </div>
             </div>

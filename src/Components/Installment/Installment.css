@@ -100,7 +100,7 @@
 .installment-button {
   padding: 0.31vw 0.31vw 0.31vw 1.56vw;
   border-radius: 2.6vw;
-  border: 0.052vw solid #2E3D58;
+  border: 0.052vw solid rgba(245, 245, 245, 1);
   font-weight: 700;
   font-size: var(--font-size-body);
   line-height: 0.89vw;

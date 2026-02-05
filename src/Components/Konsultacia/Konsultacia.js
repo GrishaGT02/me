@@ -22,6 +22,7 @@ const Konsultacia = () => {
           </p>
         </div>
         <button className="konsultacia-button konsultacia-btn-primary" onClick={handleClick}>
+          <div className="flare"></div>
           <span>ЗАПИСАТЬСЯ НА ПРИЁМ</span>
           <div className="konsultacia-btn-icon">
             <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

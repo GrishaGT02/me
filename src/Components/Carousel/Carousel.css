@@ -113,6 +113,8 @@
   padding: 1.46vw 3.65vw;
   border-radius: 2.6vw;
   background: #485B85;
+  position: relative;
+  overflow: hidden;
   border: 0.052vw solid #2E3D58;
   color: #FFFFFF;
   font-size: var(--font-size-button);
@@ -128,6 +130,33 @@
 .carousel-slide-button:hover {
   background: #FFFFFF;
   color: #485B85;
+}
+
+/* Эффект блика для кнопки */
+.carousel-slide-button .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg);
+  animation: flareAnimation 3s infinite;
+  left: -170%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+  filter: blur(0px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes flareAnimation {
+  0% {
+    left: -170%;
+  }
+  50% {
+    left: 170%;
+  }
+  100% {
+    left: 170%;
+  }
 }
 
 .carousel-btn {

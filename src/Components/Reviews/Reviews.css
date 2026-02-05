@@ -59,7 +59,7 @@
   gap: 0;
   border-radius: 0.5vw;
   overflow: hidden;
-  border: 0.052vw solid rgba(17, 47, 85, 1);
+  border: 0.052vw solid rgba(215, 215, 215, 1);
 }
 
 .reviews-stat-item {
@@ -83,15 +83,23 @@
 
 .reviews-stat-value {
   width: 8vw;
-  font-size: 2.08vw;
+  font-size: 1.72vw;
   font-weight: 700;
   line-height: 1;
   color: #485B85;
   font-family: 'Geist', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .reviews-stat-item-active .reviews-stat-value {
   color: #FFFFFF;
+}
+
+.reviews-stat-item:first-child .reviews-stat-value,
+.reviews-stat-item:last-child .reviews-stat-value {
+  color: rgba(17, 47, 85, 1);
 }
 
 .reviews-stat-label {
@@ -519,7 +527,7 @@
   /* width: 8.33vw;
   height: 3.13vw; */
   background: #FFFFFF;
-  border: 0.03vw solid rgba(72, 91, 133, 1);
+  border: 0.03vw solid #D7D7D7;
   border-radius: 0.63vw;
   padding: 0.5vw 0.8vw;
   display: flex;
@@ -587,7 +595,7 @@
   padding: 0.31vw 0.31vw 0.31vw 1.56vw;
   border-radius: 2.6vw;
   border: 0.052vw solid #2E3D58;
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--font-size-button);
   line-height: 0.89vw;
   cursor: pointer;
@@ -659,6 +667,33 @@
   transform: translateY(-50%);
 }
 
+/* Эффект блика для кнопки */
+.reviews-leave-review-btn .flare {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 45px;
+  transform: skewX(-45deg);
+  animation: flareAnimation 3s infinite;
+  left: -170%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+  filter: blur(0px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes flareAnimation {
+  0% {
+    left: -170%;
+  }
+  50% {
+    left: 170%;
+  }
+  100% {
+    left: 170%;
+  }
+}
+
 .reviews-leave-review-btn-icon svg path {
   fill: #485B85;
   transition: fill 0.3s ease;
@@ -667,5 +702,24 @@
 @media (max-width: 2200px) {
   .reviews-container {
     padding: 0 2.6vw;
+  }
+}
+
+@media (min-width: 2200px) {
+  .reviews-header-stats {
+    max-width: 30vw;
+  }
+  
+  .reviews-stat-value {
+    font-size: 1.8vw;
+    width: 7vw;
+  }
+  
+  .reviews-stat-item {
+    padding: 0.6vw 0.2vw;
+  }
+  
+  .reviews-stat-label {
+    font-size: 0.65vw;
   }
 }

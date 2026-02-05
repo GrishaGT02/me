@@ -166,6 +166,7 @@ const Header = () => {
                 </div>
                 
                 <div className="header-calculator-btn">
+                    <div className="flare"></div>
                     <span>Калькулятор стоимости лечения</span>
                     <div className="header-calculator-btn-icon">
                             <svg viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,6 +235,7 @@ const Header = () => {
                             Подробнее
                         </button>
                         <button className="header_nuv-btn-1 header_nuv-btn-primary">
+                            <div className="flare"></div>
                             <span>Записаться на прием</span>
                             <div className="header_nuv-btn-icon">
                                 <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

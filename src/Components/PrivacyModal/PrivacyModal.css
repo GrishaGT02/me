@@ -1,0 +1,111 @@
+/* Модальное окно с согласием на обработку персональных данных */
+.kvis-privacy-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+
+.kvis-privacy-modal {
+  background: #FFFFFF;
+  border-radius: 1.04vw;
+  max-width: 60vw;
+  max-height: 90vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+}
+
+.kvis-privacy-modal-close {
+  position: absolute;
+  top: 1.04vw;
+  right: 1.04vw;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.52vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+  transition: opacity 0.3s ease;
+}
+
+.kvis-privacy-modal-close:hover {
+  opacity: 0.7;
+}
+
+.kvis-privacy-modal-close svg {
+  width: 1.25vw;
+  height: 1.25vw;
+}
+
+.kvis-privacy-modal-content {
+  padding: 2.6vw;
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 47, 85, 0.3) transparent;
+}
+
+.kvis-privacy-modal-content::-webkit-scrollbar {
+  width: 0.52vw;
+}
+
+.kvis-privacy-modal-content::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 1.04vw 0;
+}
+
+.kvis-privacy-modal-content::-webkit-scrollbar-thumb {
+  background: rgba(17, 47, 85, 0.3);
+  border-radius: 0.26vw;
+  transition: background 0.3s ease;
+}
+
+.kvis-privacy-modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 47, 85, 0.5);
+}
+
+.kvis-privacy-modal-title {
+  font-size: 1.56vw;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0 0 1.56vw 0;
+  font-family: 'Geist', sans-serif;
+}
+
+.kvis-privacy-modal-text {
+  font-size: 0.83vw;
+  line-height: 1.5;
+  color: #1A1A1A;
+  font-family: 'Geist', sans-serif;
+}
+
+.kvis-privacy-modal-text p {
+  margin: 0 0 1.04vw 0;
+}
+
+.kvis-privacy-modal-text ul {
+  margin: 0 0 1.04vw 0;
+  padding-left: 1.56vw;
+}
+
+.kvis-privacy-modal-text li {
+  margin: 0 0 0.52vw 0;
+}
+
+.kvis-privacy-modal-text strong {
+  font-weight: 700;
+}
+

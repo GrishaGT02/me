@@ -35,3 +35,20 @@ img {
   -ms-user-select: none;
   pointer-events: auto;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27CAFC;
+  -webkit-border-radius: 100px;
+  border: 1px solid #27CAFC;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #276EFC;
+  -webkit-border-radius: 1px;
+  border: 1px solid #f2911c;
+}

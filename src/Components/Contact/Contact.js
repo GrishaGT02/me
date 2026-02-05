@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import annaImage from '../../assec/profil.jpg';
+import PrivacyModal from '../PrivacyModal/PrivacyModal';
 import './Contact.css';
 
 const Contact = () => {
@@ -7,6 +8,8 @@ const Contact = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [consent, setConsent] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const [showPolicyModal, setShowPolicyModal] = useState(false);
 
   const formatPhoneNumber = (value) => {
     // Удаляем все нецифровые символы
@@ -211,11 +214,19 @@ const Contact = () => {
                       checked={consent}
                       onChange={(e) => setConsent(e.target.checked)}
                     />
-                    <label htmlFor="contact-consent">
-                      Даю согласие на обработку персональных данных
+                    <label htmlFor="contact-consent" style={{ lineHeight: '1.5' }}>
+                      Подтверждаю, что ознакомлен с текстом{' '}
+                      <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }}>
+                        согласия на обработку персональных данных
+                      </a>
+                      {' '}и согласен с{' '}
+                      <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPolicyModal(true); }}>
+                        политикой конфиденциальности
+                      </a>
                     </label>
                   </div>
                   <button type="submit" className="contact-submit-btn contact-btn-primary">
+                    <div className="flare"></div>
                     <span>Получить скидку 10%</span>
                     <div className="contact-btn-icon">
                       <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -314,6 +325,13 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <PrivacyModal
+        showPrivacyModal={showPrivacyModal}
+        showPolicyModal={showPolicyModal}
+        onClosePrivacy={() => setShowPrivacyModal(false)}
+        onClosePolicy={() => setShowPolicyModal(false)}
+      />
     </div>
   );
 };

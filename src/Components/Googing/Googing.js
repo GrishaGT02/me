@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import doctorImage from '../../assec/block33.jpg';
+import PrivacyModal from '../PrivacyModal/PrivacyModal';
 import './Googing.css';
 
 const Googing = () => {
+    const [consent, setConsent] = useState(false);
+    const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+    const [showPolicyModal, setShowPolicyModal] = useState(false);
+
     return (
         <div className="googing">
             <div className="googing-container">
@@ -50,6 +55,7 @@ const Googing = () => {
                             <div className="googing-form-buttons">
                                 <button className="googing-btn googing-btn-secondary">ЗАГРУЗИТЬ ДОКУМЕНТЫ</button>
                                 <button className="googing-btn-1 googing-btn-primary">
+                                    <div className="flare"></div>
                                     <span>ОТПРАВИТЬ НА КОНСИЛИУМ</span>
                                     <div className="googing-btn-icon">
                                         <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,8 +65,22 @@ const Googing = () => {
                                 </button>
                             </div>
                             <div className="googing-form-checkbox">
-                                <input type="checkbox" id="googing-consent" />
-                                <label htmlFor="googing-consent">Даю согласие на обработку персональных данных</label>
+                                <input 
+                                    type="checkbox" 
+                                    id="googing-consent"
+                                    checked={consent}
+                                    onChange={(e) => setConsent(e.target.checked)}
+                                />
+                                <label htmlFor="googing-consent" style={{ lineHeight: '1.5' }}>
+                                    Подтверждаю, что ознакомлен с текстом{' '}
+                                    <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPrivacyModal(true); }}>
+                                        согласия на обработку персональных данных
+                                    </a>
+                                    {' '}и согласен с{' '}
+                                    <a href="#" className="kvis-privacy-link" onClick={(e) => { e.preventDefault(); setShowPolicyModal(true); }}>
+                                        политикой конфиденциальности
+                                    </a>
+                                </label>
                             </div>
                             <div className="googing-form-disclaimer">
                                 * предложение ограничено для первых 5 обращений в декабре.
@@ -69,6 +89,13 @@ const Googing = () => {
                     </div>
                 </div>
             </div>
+
+            <PrivacyModal
+                showPrivacyModal={showPrivacyModal}
+                showPolicyModal={showPolicyModal}
+                onClosePrivacy={() => setShowPrivacyModal(false)}
+                onClosePolicy={() => setShowPolicyModal(false)}
+            />
         </div>
     );
 };

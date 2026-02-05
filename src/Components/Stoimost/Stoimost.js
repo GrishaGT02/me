@@ -25,6 +25,7 @@ const Stoimost = () => {
           </p>
         </div>
         <button className="stoimost-button stoimost-btn-primary" onClick={handleClick}>
+          <div className="flare"></div>
           <span>Бесплатная консультация</span>
           <div className="stoimost-btn-icon">
             <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">

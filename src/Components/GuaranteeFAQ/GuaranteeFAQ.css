@@ -44,6 +44,7 @@
 }
 
 .guarantee-faq-description {
+  width: 38.17vw;
   font-weight: 300;
   font-size: var(--font-size-h8);
   line-height: 1.72vw;
@@ -153,6 +154,7 @@
 }
 
 .guarantee-faq-answers {
+  width: 55.17vw;
   display: flex;
   flex-direction: column;
   gap: 0.63vw;
@@ -209,9 +211,9 @@
 
 .guarantee-faq-play-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 45%;
+  left: 43%;
+  /* transform: translate(-50%, -50%); */
   width: 4.17vw;
   height: 4.17vw;
   background: #FFFFFF;
@@ -362,8 +364,8 @@
 }
 
 .guarantee-faq-form-icon {
-  width: 3.15vw;
-  height: 3.15vw;
+  width: calc(3.15vw - 5px);
+  height: calc(3.15vw - 5px);
   border-radius: 0.8vw;
   background: rgba(17, 47, 85, 1);
   display: flex;

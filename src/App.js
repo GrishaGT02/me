@@ -2,7 +2,7 @@ import React from 'react';
 import { ModalProvider } from './context/ModalContext';
 import Header from './Components/Header/Header';
 import Googing from './Components/Googing/Googing';
-// import Usluga from './Components/Usluga/Usluga';
+import Usluga from './Components/Usluga/Usluga';
 import Skils from './Components/Skils/Skils';
 import TreatmentWarning from './Components/TreatmentWarning/TreatmentWarning';
 // import Zayavka from './Components/Zayavka/Zayavka';
@@ -27,7 +27,8 @@ import Footer from './Components/Footer/Footer';
 import FooterBottom from './Components/FooterBottom/FooterBottom';
 // import Modal from './Components/Modal/Modal';
 import Carousel from './Components/Carousel/Carousel';
-// import ProfileCards from './Components/ProfileCards/ProfileCards';
+import ProfileCards from './Components/ProfileCards/ProfileCards';
+import Location from './Components/Location/Location';
 import './App.css';
 
 function App() {
@@ -37,11 +38,12 @@ function App() {
         <Header />
         <Carousel />
         <Kvis />
-        {/* <ProfileCards /> */}
         <Googing />
         <Skils />
         <TreatmentWarning />
         <Konsultacia />
+        <Usluga />
+        <ProfileCards />
         <Smiles />
         <WhyChooseUs />
         <Stoimost />
@@ -51,10 +53,10 @@ function App() {
         <Installment />
         <Reviews />
         <GuaranteeFAQ />
+        <Location />
         <Contact />
-        {/* <FixedPrice />
-        <Usluga />
-        <Modal />
+        {/* <FixedPrice /> */}
+        {/*<Modal />
         <Zayavka />
         <Oprosnik />
         <Zapis />

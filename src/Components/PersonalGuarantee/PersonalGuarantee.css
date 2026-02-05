@@ -25,9 +25,9 @@
     height: 100%;
 }
 
-.personal-guarantee-left > *:not(:last-child) {
+/* .personal-guarantee-left > *:not(:last-child) {
     margin-bottom: 1.55vw;
-}
+} */
 
 .personal-guarantee-name {
     font-size: var(--font-size-body);
@@ -38,6 +38,30 @@
     display: flex;
     align-items: center;
     gap: 0.52vw;
+    position: relative;
+    margin-bottom: 0.52vw;
+    padding: 0.52vw;
+}
+
+.personal-guarantee-name span {
+    transition: opacity 0.3s ease;
+}
+
+.personal-guarantee-name:hover span {
+    opacity: 0;
+}
+
+.personal-guarantee-name::after {
+    content: 'Основатель, главный врач, хирург, имплантолог';
+    position: absolute;
+    left: calc(0.52vw + 0.21vw + 0.52vw);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.personal-guarantee-name:hover::after {
+    opacity: 1;
 }
 
 .personal-guarantee-name-bar {
@@ -96,6 +120,7 @@
     color: rgba(26, 26, 26, 0.75);
     text-align: left;
     font-family: 'Geist', sans-serif;
+    margin-bottom: 1.56vw;
 }
 
 .personal-guarantee-button {
@@ -153,6 +178,33 @@
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Эффект блика для кнопки */
+.personal-guarantee-button .flare {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation: flareAnimation 3s infinite;
+    left: -170%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
+    filter: blur(0px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -170%;
+    }
+    50% {
+        left: 170%;
+    }
+    100% {
+        left: 170%;
+    }
+}
+
 .personal-guarantee-button:hover .personal-guarantee-btn-icon svg {
     transform: translateX(-10.1vw) rotate(40deg);
 }
@@ -200,7 +252,7 @@
 
 .personal-guarantee-stat-value {
     text-align: center;
-    font-size: 2.08vw;
+    font-size: 1.823vw;
     font-weight: 600;
     color: rgba(25, 25, 25, 1);
     font-family: 'Geist', sans-serif;
@@ -407,7 +459,7 @@
     display: flex;
     gap: 1.04vw;
     height: 100%;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .personal-guarantee-item-icon {
@@ -432,7 +484,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.52vw;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .personal-guarantee-item-title {
