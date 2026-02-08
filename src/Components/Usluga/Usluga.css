@@ -378,17 +378,7 @@
 
 /* Эффект блика для кнопки */
 .usluga-card-button-details .flare {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 45px;
-  transform: skewX(-45deg);
-  animation: flareAnimation 3s infinite;
-  left: -170%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), #fff);
-  filter: blur(0px);
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 @keyframes flareAnimation {
@@ -406,6 +396,172 @@
 @media (max-width: 2200px) {
   .usluga-container {
     padding: 2.5vw 2.6vw 4vw 2.6vw;
+  }
+}
+
+@media (max-width: 780px) {
+  .usluga-container {
+    padding: 0 2.6vw 12.821vw 2.6vw;
+  }
+
+  .usluga-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    margin-bottom: 0;
+  }
+
+  .usluga-title span {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .usluga-description {
+    width: 100%;
+    font-size: 3.333vw;
+    font-weight: 300;
+    line-height: 4.73vw;
+    margin-top: 0;
+    padding-top: 1.282vw;
+    margin-bottom: 6.41vw;
+  }
+
+  .usluga-cards {
+    flex-direction: column;
+  }
+
+  .usluga-card {
+    width: 100%;
+    height: 22.051vw;
+    border-radius: 2.564vw;
+  }
+
+  .usluga-card.active {
+    width: 100%;
+    height: 109.615vw;
+    border-radius: 2.564vw;
+  }
+
+  .usluga-card-label {
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%) rotate(-0deg);
+    transform-origin: center center;
+  }
+
+  .usluga-card:nth-child(1) .usluga-card-label,
+  .usluga-card:nth-child(2) .usluga-card-label,
+  .usluga-card:nth-child(3) .usluga-card-label,
+  .usluga-card:nth-child(4) .usluga-card-label {
+    font-size: 7.692vw;
+  }
+
+  .usluga-card:nth-child(5) .usluga-card-label {
+    font-size: 5.0vw;
+  }
+
+  .usluga-card-number {
+    bottom: auto;
+    top: 50%;
+    right: 2.564vw;
+    left: auto;
+    transform: translateY(-50%);
+    width: 9.359vw;
+    height: 9.359vw;
+    font-size: 2.308vw;
+  }
+
+  .usluga-card-main-title {
+    font-size: 10.897vw;
+  }
+
+  .usluga-card:nth-child(5) .usluga-card-main-title {
+    font-size: 7.092vw;
+  }
+
+  .usluga-card-button-text {
+    font-size: 2.308vw;
+    padding: 1.282vw 1.25vw;
+    border-radius: 1.282vw;
+  }
+
+  .usluga-card-buttons-row {
+    gap: 1.282vw;
+  }
+
+  .usluga-card-button-details {
+    font-size: 2.564vw;
+    border-radius: 19.231vw;
+    padding-left: 4.359vw;
+    gap: 4.359vw;
+  }
+
+  .usluga-card-button-details::after {
+    right: 0.77vw;
+    width: 8.718vw;
+    height: 8.718vw;
+    border-radius: 19.231vw;
+  }
+
+  .usluga-card-button-details:hover::after {
+    width: 120vw;
+    height: 120vw;
+    right: -60vw;
+  }
+
+  .usluga-card-button-icon {
+    width: 8.718vw;
+    height: 8.718vw;
+  }
+
+  .usluga-card-button-icon svg {
+    width: 2.051vw;
+    height: 1.667vw;
+  }
+
+  .usluga-card-button-details:hover span {
+    transform: translateX(8.974vw);
+  }
+
+  .usluga-card-button-details:hover .usluga-card-button-icon svg {
+    transform: translateX(-21.821vw) rotate(40deg);
+  }
+
+  .usluga-card.active .usluga-card-buttons-left {
+    gap: 1.282vw;
+  }
+
+  .usluga-card.active .usluga-card-buttons-row {
+    gap: 1.282vw;
+  }
+
+  .usluga-card.active .usluga-card-button-text {
+    font-size: 2.308vw;
+    padding: 1.282vw 1.25vw;
+  }
+
+  .usluga-card:nth-child(2).active .usluga-card-buttons-left,
+  .usluga-card:nth-child(4).active .usluga-card-buttons-left {
+    max-width: 100%;
+    gap: 1.282vw;
+  }
+
+  .usluga-card:nth-child(2).active .usluga-card-button-text {
+    font-size: 1.795vw;
+    padding: 1.282vw 1.25vw;
+    border-radius: 1.282vw;
+  }
+
+  .usluga-card:nth-child(4).active .usluga-card-button-text {
+    font-size: 2.308vw;
+    padding: 1.282vw 1.25vw;
+    border-radius: 1.282vw;
+  }
+
+  .usluga-card:nth-child(2).active .usluga-card-buttons-row,
+  .usluga-card:nth-child(4).active .usluga-card-buttons-row {
+    gap: 1.282vw;
   }
 }
 

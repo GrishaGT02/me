@@ -916,6 +916,7 @@
   width: 1.04vw;
   height: 0.78vw;
   flex-shrink: 0;
+  border: 0.064vw solid rgba(25, 25, 25, 0.411);
 }
 
 .kvis-phone-prefix span {
@@ -1236,7 +1237,7 @@
 
 @media (max-width: 780px) {
   .kvis-container {
-    padding: 9.564vw 1.923vw;
+    padding: 12.82vw 1.923vw 8.97vw 1.923vw;
   }
 
   .kvis-card {
@@ -1262,6 +1263,39 @@
     order: 1;
   }
 
+  .kvis-image-section-right .kvis-doctor-image-wrapper,
+  .kvis-image-section.kvis-image-section-right .kvis-doctor-image-wrapper {
+    position: relative;
+  }
+
+  .kvis-image-section-right .kvis-play-button,
+  .kvis-image-section.kvis-image-section-right .kvis-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15.38vw;
+    height: 15.38vw;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kvis-image-section-right .kvis-play-button::before,
+  .kvis-image-section-right .kvis-play-button::after,
+  .kvis-image-section.kvis-image-section-right .kvis-play-button::before,
+  .kvis-image-section.kvis-image-section-right .kvis-play-button::after {
+    width: 15.38vw;
+    height: 15.38vw;
+  }
+
+  .kvis-image-section-right .kvis-play-button svg,
+  .kvis-image-section.kvis-image-section-right .kvis-play-button svg {
+    width: 3.46vw;
+    height: 4.36vw;
+  }
+
   .kvis-image-section {
     order: 1;
     width: 100%;
@@ -1282,19 +1316,19 @@
   }
 
   .kvis-play-button {
-    width: 10.256vw;
-    height: 10.256vw;
+    width: 15.38vw;
+    height: 15.38vw;
   }
 
   .kvis-play-button::before,
   .kvis-play-button::after {
-    width: 10.256vw;
-    height: 10.256vw;
+    width: 15.38vw;
+    height: 15.38vw;
   }
 
   .kvis-play-button svg {
-    width: 2.564vw;
-    height: 3.077vw;
+    width: 3.46vw;
+    height: 4.36vw;
   }
 
   .kvis-progress-bar-container {
@@ -1304,16 +1338,38 @@
   }
 
   .kvis-progress-bar {
-    height: 5.769vw;
+    height: 7.179vw;
     border-radius: 1.282vw;
   }
 
   .kvis-progress-bar-fill {
+    height: calc(100% - 0.513vw);
     border-radius: 1.026vw;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3) 0.51vw,
+      transparent 0.51vw,
+      transparent 1.15vw
+    );
+    background-size: 1.67vw 1.67vw;
+    animation: progressBarStripesMobile 1s linear infinite;
+    position: absolute;
+    left: 0.256vw;
+    top: 0.256vw;
+  }
+
+  @keyframes progressBarStripesMobile {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 1.67vw 1.67vw;
+    }
   }
 
   .kvis-progress-text {
-    font-size: 2.308vw;
+    font-size: 3.077vw;
     font-weight: 700;
   }
 
@@ -1324,18 +1380,28 @@
   }
 
   .kvis-ready-bar {
-    height: 5.769vw;
+    height: 7.179vw;
     border-radius: 1.282vw;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3) 0.51vw,
+      transparent 0.51vw,
+      transparent 1.15vw
+    );
+    background-size: 1.67vw 1.67vw;
+    animation: progressBarStripesMobile 1s linear infinite;
+    gap: 3.85vw;
   }
 
   .kvis-ready-text {
-    font-size: 2.308vw;
+    font-size: 3.077vw;
     font-weight: 700;
   }
 
   .kvis-ready-bar svg {
-    width: 2.564vw;
-    height: 2.564vw;
+    width: 3.33vw;
+    height: 3.33vw;
   }
 
   .kvis-calculator-title {
@@ -1353,22 +1419,22 @@
 
   .kvis-calculator-subtitle {
     width: 100%;
-    font-size: 2.56vw;
+    font-size: 3.59vw;
     font-weight: 300;
     line-height: 4.23vw;
-    margin-top: 1.3vw;
+    margin-top: 2.56vw;
     margin-bottom: 0;
   }
 
   .kvis-title {
-    margin-top: 7.692vw;
+    margin-top: 10.26vw;
     margin-bottom: 6.41vw;
-    font-size: 3.462vw;
+    font-size: 4.10vw;
     font-weight: 500;
   }
 
   .kvis-option {
-    padding: 4.487vw 2.564vw;
+    padding: 3.85vw 2.56vw;
     border-radius: 2.564vw;
   }
 
@@ -1377,8 +1443,8 @@
   }
 
   .kvis-checkbox {
-    width: 3.846vw;
-    height: 3.846vw;
+    width: 5.13vw;
+    height: 5.13vw;
     border-radius: 0.641vw;
   }
 
@@ -1387,13 +1453,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1.154vw;
-    height: 0.897vw;
+    width: 1.54vw;
+    height: 1.15vw;
   }
 
   .kvis-checkbox.checked::before {
-    width: 2.564vw;
-    height: 2.564vw;
+    width: 3.33vw;
+    height: 3.33vw;
     top: 50%;
     left: 50%;
     right: auto;
@@ -1403,16 +1469,38 @@
   }
 
   .kvis-option-text {
-    font-size: 2.308vw;
+    font-size: 2.82vw;
     font-weight: 500;
   }
 
   .kvis-options-grid {
+    grid-template-columns: 1fr;
     gap: 2.564vw;
+    margin-bottom: 6.41vw;
+  }
+
+  .kvis-navigation {
+    /* flex-direction: column; */
+    align-items: stretch;
+    gap: 2.564vw;
+  }
+
+  .kvis-navigation.kvis-navigation-step6 {
+    display: flex;
+    margin-top: 6.41vw;
   }
 
   .kvis-discount-message {
     gap: 1.923vw;
+    order: 1;
+  }
+
+  .kvis-next-wrapper {
+    order: 2;
+    width: auto;
+    max-width: 100%;
+    align-self: flex-end;
+    margin-top: 5.13vw;
   }
 
   .kvis-discount-icon {
@@ -1430,16 +1518,17 @@
   }
 
   .kvis-discount-text {
-    width: 43.333vw;
-    font-size: 2.308vw;
+    /* width: 43.333vw; */
+    font-size: 2.56vw;
     font-weight: 300;
     line-height: 3.59vw;
   }
 
   .kvis-btn-next {
+    width: auto;
     padding: 0.77vw 0.77vw 0.77vw 3.21vw;
     border-radius: 6.41vw;
-    font-size: 2.31vw;
+    font-size: 3.21vw;
     line-height: 2.18vw;
     gap: 3.85vw;
   }
@@ -1467,11 +1556,46 @@
   }
 
   .kvis-btn-next.header_nuv-btn-primary:hover span {
-    transform: translateX(8.974vw);
+    transform: translateX(8.24vw);
   }
 
   .kvis-btn-next:hover .header_nuv-btn-icon svg {
-    transform: translateX(-14.103vw) rotate(40deg);
+    transform: translateX(-16.103vw) rotate(40deg);
+  }
+
+  .kvis-btn-next.header_nuv-btn-1.header_nuv-btn-primary {
+    width: auto;
+    padding: 0.77vw 0.77vw 0.77vw 3.21vw;
+    border-radius: 6.41vw;
+    font-size: 3.21vw;
+    line-height: 2.18vw;
+    gap: 3.85vw;
+  }
+
+  .kvis-btn-next.header_nuv-btn-1.header_nuv-btn-primary .header_nuv-btn-icon {
+    width: 7.69vw;
+    height: 7.69vw;
+  }
+
+  .kvis-btn-next.header_nuv-btn-1.header_nuv-btn-primary .header_nuv-btn-icon svg {
+    width: 2.05vw;
+    height: 1.79vw;
+  }
+
+  .kvis-btn-next.header_nuv-btn-1.header_nuv-btn-primary::after {
+    right: 0.77vw;
+    width: 7.69vw;
+    height: 7.69vw;
+  }
+
+  .kvis-btn-next.header_nuv-btn-1.header_nuv-btn-primary:hover::after {
+    width: 102.56vw;
+    height: 102.56vw;
+    right: -51.28vw;
+  }
+
+  .kvis-btn-next.kvis-btn-submit.header_nuv-btn-1.header_nuv-btn-primary {
+    font-size: 2.31vw;
   }
 
   .kvis-btn-submit.header_nuv-btn-primary:hover span {
@@ -1485,7 +1609,7 @@
   .kvis-btn-back {
     padding: 3.59vw 5.13vw;
     border-radius: 6.41vw;
-    font-size: 2.31vw;
+    font-size: 2.82vw;
     line-height: 2.44vw;
     border: 0.13vw solid #E0E0E0;
   }
@@ -1495,30 +1619,31 @@
   }
 
   .kvis-discount-current {
+    font-size: 2.82vw;
+    line-height: 3.59vw;
+  }
+
+  .kvis-discount-hint {
     font-size: 2.31vw;
     line-height: 3.08vw;
   }
 
-  .kvis-discount-hint {
-    font-size: 1.79vw;
-    line-height: 2.56vw;
-  }
-
   .kvis-final-title {
-    font-size: 3.77vw;
+    font-size: 5.0vw;
     font-weight: 600;
-    line-height: 5.33vw;
+    line-height: 7.05vw;
+    margin-bottom: 2.56vw;
   }
 
   .kvis-promo-text {
-    font-size: 2.56vw;
+    font-size: 3.33vw;
     font-weight: 300;
-    line-height: 4.23vw;
+    line-height: 5.13vw;
   }
 
   .kvis-offer-cards {
     gap: 2.56vw;
-    margin-top: 3.59vw;
+    margin-top: 6.41vw;
   }
 
   .kvis-offer-card {
@@ -1539,7 +1664,7 @@
   }
 
   .kvis-offer-text {
-    font-size: 2.31vw;
+    font-size: 2.82vw;
     font-weight: 500;
     line-height: 3.85vw;
   }
@@ -1562,14 +1687,18 @@
 
   .kvis-inputs-section {
     flex-direction: column;
-    gap: 1.92vw;
-    margin-top: 4vw;
+    gap: 3.85vw;
+    margin-top: 6.41vw;
   }
 
   .kvis-input {
     padding: 2.67vw 3.21vw;
     border-radius: 2.56vw;
     font-size: 2.31vw;
+  }
+
+  .kvis-input.kvis-name-input {
+    font-size: 2.56vw;
   }
 
   .kvis-phone-input-wrapper {
@@ -1593,7 +1722,7 @@
 
   .kvis-phone-input {
     padding: 2.67vw 3.21vw;
-    font-size: 2.31vw;
+    font-size: 2.56vw;
   }
 
   .kvis-checkbox-label {
@@ -1610,6 +1739,7 @@
   .googing-form-checkbox {
     gap: 1.36vw;
     width: 100%;
+    margin-top: 2.56vw;
   }
 
   .googing-form-checkbox input[type="checkbox"] {
@@ -1624,15 +1754,19 @@
   }
 
   .googing-form-checkbox input[type="checkbox"]:checked::after {
-    width: 0.77vw;
-    height: 0.51vw;
-    border-width: 0.13vw;
-    top: 0.26vw;
-    left: 0.26vw;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.38vw;
+    height: 0.77vw;
+    border: solid white;
+    border-width: 0 0.26vw 0.26vw 0;
+    transform: translate(-50%, -60%) rotate(45deg);
   }
 
   .googing-form-checkbox label {
-    font-size: 1.79vw;
+    font-size: 2.56vw;
     line-height: 2.56vw;
   }
 }

@@ -308,3 +308,147 @@
 }
 
 }
+
+@media (max-width: 780px) {
+  .treatment-warning-container {
+    padding: 4.2vw 2.6vw 8.974vw 2.6vw;
+  }
+
+  .treatment-warning-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .treatment-warning-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    margin-bottom: 0;
+  }
+
+  .treatment-warning-title-highlight {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .treatment-warning-left {
+    gap: 0;
+  }
+
+  .treatment-warning-intro {
+    width: 100%;
+    font-size: 3.333vw;
+    font-weight: 300;
+    line-height: 4.73vw;
+    margin-top: 0;
+    padding-top: 2.564vw;
+    margin-bottom: 6.41vw;
+  }
+
+  .treatment-warning-carousel {
+    height: 40.385vw;
+  }
+
+  .treatment-warning-carousel-wrapper {
+    flex-direction: column;
+    gap: 2.564vw;
+  }
+
+  .treatment-warning-carousel-dots-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    order: 2;
+  }
+
+  .treatment-warning-carousel-dots {
+    display: flex;
+    flex-direction: row;
+    gap: 0.64vw;
+    position: relative;
+    z-index: 2;
+  }
+
+  .treatment-warning-carousel-dot {
+    width: 0.77vw;
+    height: 0.77vw;
+    border-radius: 50%;
+  }
+
+  .treatment-warning-carousel-dot.active {
+    width: 2.05vw;
+    height: 0.77vw;
+    border-radius: 12.82vw;
+    background: #000000;
+  }
+
+  .treatment-warning-main {
+    gap: 6.41vw;
+  }
+
+  .treatment-warning-reason-number {
+    width: 9.359vw;
+    height: 9.359vw;
+    font-size: 3.205vw;
+    border-radius: 1.923vw;
+  }
+
+  .treatment-warning-reason-number-wrapper {
+    gap: 3.846vw;
+  }
+
+  .treatment-warning-reason-connector {
+    height: 8.205vw;
+    background-image: radial-gradient(circle, #2E3D58 0.096vw, transparent 0.096vw);
+    background-size: 0.192vw 0.577vw;
+  }
+
+  .treatment-warning-reason-item {
+    gap: 3.846vw;
+  }
+
+  .treatment-warning-reason-title {
+    font-size: 4.487vw;
+    font-weight: 700;
+    margin-bottom: 1.282vw;
+    line-height: 6.41vw;
+  }
+
+  .treatment-warning-reason-description {
+    width: 100%;
+    font-size: 3.333vw;
+    font-weight: 300;
+    line-height: 5.128vw;
+  }
+
+  .treatment-warning-right {
+    gap: 6.41vw;
+  }
+
+  .treatment-warning-tip {
+    padding: 0;
+    gap: 1.923vw;
+  }
+
+  .treatment-warning-tip-icon {
+    width: 3.846vw;
+    height: 3.846vw;
+  }
+
+  .treatment-warning-tip-icon svg {
+    width: 120%;
+    height: 120%;
+  }
+
+  .treatment-warning-tip-text {
+    width: 100%;
+    font-size: 3.333vw;
+    line-height: 5.128vw;
+    font-weight: 300;
+  }
+}

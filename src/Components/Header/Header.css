@@ -1187,7 +1187,7 @@
         width: 5.26vw;
         height: 2.28vw;
     }
-
+    
     .header-menu-bottom-line {
         transform-origin: right center;
         transition: transform 0.3s ease;
@@ -1380,7 +1380,7 @@
         color: #485B85;
         transform: translateX(22.974vw);
     }
-
+    
     /* Подгоняем псевдоэлемент ::after под размер белого круга */
     .header_nuv-btn-1::after {
         content: '';
@@ -1444,7 +1444,7 @@
         margin-top: 0;
         position: relative;
     }
-
+    
     .header_nuv-carousel-wrapper {
         width: 100%;
         display: flex;
@@ -1493,7 +1493,7 @@
     }
     
     .header_nuv-rating-card {
-        width: 29.8vw;
+        width: 29.5vw;
         height: 12.87vw;
         padding: 1.03vw 1.67vw;
         border-radius: 1.03vw;

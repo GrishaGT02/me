@@ -470,6 +470,10 @@
 }
 
 @media (max-width: 780px) {
+    .googing-header {
+        margin-bottom: 5.128vw;
+    }
+
     .googing-title {
         width: 100%;
         font-size: 5.77vw;
@@ -484,10 +488,10 @@
 
     .googing-description {
         width: 100%;
-        font-size: 3.2vw;
+        font-size: 3.333vw;
         font-weight: 300;
         line-height: 4.73vw;
-        margin-top: 1.92vw;
+        margin-top: 2.564vw;
     }
 
     .googing-content {
@@ -519,20 +523,20 @@
     }
 
     .googing-doctor-image .googing-play-button {
-        width: 80px !important;
-        height: 80px !important;
-        box-sizing: border-box !important;
+        width: 15.38vw;
+        height: 15.38vw;
+        box-sizing: content-box;
     }
 
     .googing-doctor-image .googing-play-button::before,
     .googing-doctor-image .googing-play-button::after {
-        width: 80px !important;
-        height: 80px !important;
+        width: 15.38vw;
+        height: 15.38vw;
     }
 
     .googing-doctor-image .googing-play-button svg {
-        width: 20px !important;
-        height: 24px !important;
+        width: 3.46vw;
+        height: 4.36vw;
     }
 
     .googing-doctor-name {
@@ -599,14 +603,14 @@
     .googing-btn {
         padding: 3.59vw 5.13vw;
         border-radius: 6.41vw;
-        font-size: 1.5vw;
+        font-size: 2.08vw;
         line-height: 2.44vw;
     }
 
     .googing-btn-1 {
         padding: 0.77vw 0.77vw 0.77vw 3.21vw;
         border-radius: 6.41vw;
-        font-size: 1.65vw;
+        font-size: 2.308vw;
         line-height: 2.18vw;
         gap: 3.85vw;
     }
@@ -634,13 +638,13 @@
     }
 
     .googing-form-disclaimer {
-        font-size: 1.795vw;
+        font-size: 2.051vw;
         font-weight: 300;
         margin-top: 7.692vw;
     }
 
     .googing {
-        padding: 9vw 2.6vw;
+        padding: 9vw 2.6vw 6.41vw 2.6vw;
     }
 }
 
