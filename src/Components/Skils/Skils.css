@@ -294,3 +294,132 @@
       font-size: 2.6vw;
   } */
 }
+
+@media (max-width: 780px) {
+  .skils-container {
+    padding: 9vw 2.6vw;
+  }
+
+  .skils-fear-icon {
+    width: 8.3vw;
+    height: 8.3vw;
+    border-radius: 1.5vw;
+  }
+
+  .skils-fear-icon svg {
+    width: 3.1vw;
+    height: 3.1vw;
+  }
+
+  .skils-fear-connector {
+    width: 2px;
+    height: 8.14vw;
+    margin-top: 1.4vw;
+  }
+
+  .skils-tip {
+    padding: 3.8vw 0vw;
+    gap: 2vw;
+  }
+
+  .skils-tip-icon {
+    width: 3.8vw;
+    height: 3.8vw;
+  }
+
+  .skils-tip-text {
+    font-size: 2.8vw;
+    line-height: 4.2vw;
+  }
+
+  .skils-fear-item {
+    gap: 5vw;
+  }
+
+  .skils-fear-title {
+    font-size: 3.2vw;
+    margin-bottom: 1.3vw;
+  }
+
+  .skils-fears-list {
+    gap: 4.2vw;
+  }
+
+  .skils-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+  }
+
+  .skils-title span,
+  .skils-title-highlight {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .skils-subtitle {
+    width: 100%;
+    font-size: 3.2vw;
+    font-weight: 300;
+    line-height: 4.73vw;
+    margin-top: 1.92vw;
+  }
+
+  .skils-fear-description {
+    font-size: 2.8vw;
+    line-height: 4.2vw;
+  }
+
+  .skils-top-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.56vw;
+    margin-bottom: 2.6vw;
+  }
+
+  .skils-top-left {
+    width: 100%;
+  }
+
+  .skils-top-right {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .skils-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.6vw;
+  }
+
+  .skils-left {
+    width: 100%;
+    order: 1;
+  }
+
+  .skils-right {
+    width: 100%;
+    order: 2;
+    height: 102.564vw;
+  }
+
+  .skils-image-wrapper {
+    height: 102.564vw;
+    width: 100%;
+    border-radius: 2.564vw;
+  }
+
+  .skils-image {
+    border-radius: 2.564vw;
+  }
+
+  .skils-info-card {
+    padding: 0.641vw;
+    border-radius: 2.564vw;
+  }
+
+  .skils-info-card-inner {
+    border-radius: 1.923vw;
+  }
+}
