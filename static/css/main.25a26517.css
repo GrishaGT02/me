@@ -1322,32 +1322,46 @@ img {
     
     /* Размеры лого */
     .header-logo img {
-        width: 20.26vw;
-        height: 6.41vw;
+        width: 24.26vw;
+        height: 7.71vw;
     }
     
     /* Размеры кнопки меню */
     .header-menu-btn {
-        padding: 2.05vw 2.56vw;
-        gap: 1.54vw;
+        padding: 2.7vw 4.76vw;
+        gap: 1.94vw;
         border-radius: 6.41vw;
     }
     
+    .header-top-row {
+        margin-bottom: 2.6vw;
+    }
+
     .header-menu-btn span {
-        font-size: 1.92vw;
+        font-size: 3.1vw;
         font-weight: 500;
     }
     
     .header-menu-icons svg {
-        width: 2.56vw;
-        height: 1.28vw;
+        width: 5.26vw;
+        height: 2.28vw;
+    }
+
+    .header-menu-bottom-line {
+        transform-origin: right center;
+        transition: transform 0.3s ease;
+    }
+
+    .header-menu-btn:hover .header-menu-bottom-line {
+        transform: scaleX(1.2) translateX(0.0vw);
     }
     
     /* Изменяем порядок элементов в header_nuv */
     .header_nuv {
         flex-direction: column;
-        gap: 2.56vw;
+        gap: 6.36vw;
         padding: 0 2.56vw;
+        position: relative;
     }
     
     /* Фотография и блок - первый порядок */
@@ -1362,6 +1376,7 @@ img {
         height: auto;
         max-height: 89.74vw;
         position: relative;
+        border-radius: 2.2vw;
     }
     
     .header_nuv-doctor-image img {
@@ -1376,34 +1391,43 @@ img {
         position: relative;
     }
     
+    .header-center-item {
+        gap: 1.3vw;
+    }
+    
     .header_nuv-left .header-center-card {
         position: absolute;
-        top: -28.85vw;
+        top: -51.9vw;
         bottom: auto;
-        right: 1.28vw;
+        right: 1.4svw;
         left: auto;
         max-width: calc(100% - 5.13vw);
-        width: auto;
-        min-width: 25.641vw;
+        width: 65vw;
+        /* min-width: 25.641vw; */
         z-index: 10;
+        padding: 1.7vw 4.22vw 2.6vw 3.32vw;
+        border-radius: 1.7vw;
     }
     
     .header-center-title {
-        font-size: 1.92vw;
+        font-size: 3.1vw;
+        margin-bottom: 0.9vw;
     }
     
     .header-center-description {
-        font-size: 1.54vw;
+        font-size: 2.3vw;
     }
     
     .header-center-icon {
-        width: 1.41vw;
-        height: 1.41vw;
+        width: 2.1vw;
+        height: 2.1vw;
+        margin-top: 1.1vw;
     }
     
     .header-center-arrow {
-        width: 1.79vw;
-        height: 1.67vw;
+        width: 3.5vw;
+        height: 2.7vw;
+        margin-top: 1.5vw;
     }
     
     /* Заголовок и подзаголовок с кнопками - второй порядок */
@@ -1416,7 +1440,7 @@ img {
     
     .header_nuv-left-text {
         width: 100%;
-        font-size: 5.77vw;
+        font-size: 6.37vw;
         font-weight: 700;
         line-height: 8.33vw;
     }
@@ -1431,7 +1455,7 @@ img {
         font-size: 2.56vw;
         font-weight: 300;
         line-height: 4.23vw;
-        margin-top: 1.92vw;
+        margin-top: 3.72vw;
     }
     
     .header_nuv-left-buttons {
@@ -1440,13 +1464,14 @@ img {
         gap: 1.92vw;
         margin-top: 3.85vw;
         align-items: center;
+        width: 100%;
     }
     
     .header_nuv-btn {
-        padding: 3.59vw 5.13vw;
+        padding: 5.38vw 5.13vw;
         border-radius: 6.41vw;
         font-weight: 500;
-        border: none;
+        /* border: none; */
         font-size: 2.31vw;
         line-height: 2.44vw;
         cursor: pointer;
@@ -1454,6 +1479,8 @@ img {
         display: flex;
         align-items: center;
         font-family: 'Geist', sans-serif;
+        width: 40%;
+        justify-content: center;
     }
     
     .header_nuv-btn-1 {
@@ -1471,11 +1498,13 @@ img {
         font-family: 'Geist', sans-serif;
         position: relative;
         overflow: hidden;
+        width: 60%;
+        justify-content: space-between;
     }
     
     .header_nuv-btn-icon {
-        width: 7.69vw;
-        height: 7.69vw;
+        width: 11.54vw;
+        height: 11.54vw;
         border-radius: 50%;
         background: #FFFFFF;
         display: flex;
@@ -1484,47 +1513,72 @@ img {
         flex-shrink: 0;
         position: relative;
         z-index: 2;
+        margin-left: auto;
     }
     
     .header_nuv-btn-icon svg {
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 2.05vw;
+        width: 2.31vw;
         height: 1.79vw;
     }
     
+    /* Стили для анимации синей кнопки */
+    .header_nuv-btn-primary {
+        background: #485B85;
+        color: #FFFFFF;
+    }
+
+    .header_nuv-btn-primary span {
+        color: #FFFFFF;
+        transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        z-index: 3;
+    }
+
+    .header_nuv-btn-primary:hover span {
+        color: #485B85;
+        transform: translateX(22.974vw);
+    }
+
     /* Подгоняем псевдоэлемент ::after под размер белого круга */
     .header_nuv-btn-1::after {
+        content: '';
+        position: absolute;
         right: 0.77vw;
-        width: 7.69vw;
-        height: 7.69vw;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 11.54vw;
+        height: 11.54vw;
+        border-radius: 50%;
+        background: #FFFFFF;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 0;
+        pointer-events: none;
     }
     
     .header_nuv-btn-1:hover::after {
-        width: 102.56vw;
-        height: 102.56vw;
-        right: -51.28vw;
-    }
-
-    /* Настройки расстояний для анимации текста и стрелки (как на 1920px) */
-    .header_nuv-btn-primary:hover span {
-        transform: translateX(8.974vw);
+        width: 200vw;
+        height: 200vw;
+        right: -100vw;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .header_nuv-btn-1:hover .header_nuv-btn-icon svg {
-        transform: translateX(-30.128vw) rotate(40deg);
+        transform: translateX(-42.028vw) rotate(40deg);
     }
     
     .header_nuv-left-about {
         display: flex;
         align-items: center;
-        gap: 1.92vw;
+        gap: 2.56vw;
         margin-top: 7.69vw;
-        margin-bottom: 3.85vw;
+        margin-bottom: 2.56vw;
     }
     
     .header_nuv-tooth-icon {
-        width: 5.13vw;
-        height: 5.13vw;
+        width: 7.05vw;
+        height: 7.05vw;
         border-radius: 50%;
     background: #485B85;
         display: flex;
@@ -1534,12 +1588,12 @@ img {
     }
     
     .header_nuv-tooth-icon svg {
-        width: 2.44vw;
-        height: 2.31vw;
+        width: 3.21vw;
+        height: 3.21vw;
     }
     
     .header_nuv-about-text {
-        font-size: 2.56vw;
+        font-size: 3.21vw;
     }
     
     /* Карусель - третий порядок */
@@ -1547,25 +1601,27 @@ img {
         order: 3;
         width: 100%;
         margin-top: 0;
+        position: relative;
     }
-    
+
     .header_nuv-carousel-wrapper {
         width: 100%;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1.92vw;
+        gap: 0;
+        position: static;
     }
     
     .header_nuv-carousel {
-        min-height: 38.46vw;
-        height: 38.46vw;
-        border-radius: 2.051vw;
+        min-height: 51.28vw;
+        height: 51.28vw;
+        border-radius: 2.564vw;
+        border: 0.128vw solid rgba(215, 215, 215, 1);
+        order: 1;
+        width: 100%;
     }
     
-    .header_nuv-carousel-dots-wrapper {
-        flex-direction: row;
-        padding: 0;
-    }
     
     .header_nuv-carousel-dots {
         flex-direction: row;
@@ -1573,70 +1629,140 @@ img {
     }
     
     .header_nuv-carousel-dot {
-        width: 0.64vw;
-        height: 0.64vw;
+        width: 0.77vw;
+        height: 0.77vw;
     }
     
     .header_nuv-carousel-dot.active {
-        width: 1.28vw;
-        height: 0.64vw;
+        width: 2.05vw;
+        height: 0.77vw;
+        border-radius: 12.82vw;
     }
     
     .header_nuv-ratings {
         order: 4;
         width: 100%;
-        margin-top: 2.56vw;
+        margin-top: 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+        gap: 2.56vw;
+        align-items: flex-start;
+        position: relative;
+        padding-top: 2.56vw;
     }
     
     .header_nuv-rating-card {
-        width: 17.95vw;
-        height: 6.67vw;
+        width: 29.8vw;
+        height: 12.87vw;
         padding: 1.03vw 1.67vw;
         border-radius: 1.03vw;
         gap: 0.77vw;
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .header_nuv-rating-icon {
-        height: 2.05vw;
+        height: 2.56vw;
+        display: block;
+        margin-left: 18%;
+    }
+    
+    .header_nuv-rating-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.21vw;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
     
     .header_nuv-rating-value {
-        font-size: 2.05vw;
+        font-size: 2.56vw;
         margin-right: 0.51vw;
     }
     
     .header_nuv-rating-stars {
         gap: 0.38vw;
+        justify-content: center;
     }
     
     .header_nuv-rating-stars svg {
-        width: 1.79vw;
-        height: 1.67vw;
+        width: 2.05vw;
+        height: 1.92vw;
     }
     
     .header_nuv-ratings-nav {
-        gap: 1.03vw;
-        margin-left: auto;
+        gap: 2.03vw;
+        margin-left: 0;
+        order: 2;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        display: flex;
+        margin-top: 3.86vw;
+        padding-top: 0;
+        position: relative;
     }
     
+    /* Точки карусели по центру блока header_nuv-ratings-nav */
+    /* Позиционируем относительно header_nuv (общего родителя) */
+    .header_nuv-carousel-dots-wrapper {
+        position: absolute !important;
+        top: calc(51.28vw + 10.36vw + 11.67vw + 2.56vw + 1.3vw) !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        margin-top: 0 !important;
+        flex-direction: row;
+        padding: 0;
+        width: auto;
+        min-width: 20vw;
+        justify-content: center;
+        align-items: center;
+        display: flex !important;
+        flex-shrink: 0;
+        z-index: 100 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        background: transparent;
+    }
+    
+    .header_nuv-carousel-dots {
+        display: flex !important;
+        visibility: visible !important;
+    }
+    
+    .header_nuv-carousel-dot {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Стрелки и счетчик справа */
+    .header_nuv-ratings-counter,
+    .header_nuv-nav-btn {
+        position: relative;
+        z-index: 2;
+    }
+    
+    
     .header_nuv-ratings-counter {
-        font-size: 2.05vw;
+        font-size: 2.56vw;
         font-weight: 500;
         min-width: auto;
     }
     
     .header_nuv-nav-btn {
-        width: 6.67vw;
-        height: 6.67vw;
+        width: 8vw;
+        height: 8vw;
     }
     
     .header_nuv-nav-progress {
-        width: 6.67vw;
-        height: 6.67vw;
+        width: 8vw;
+        height: 8vw;
     }
     
     .header_nuv-nav-progress circle {
@@ -1648,7 +1774,7 @@ img {
         height: 1.54vw;
     }
     .header {
-        padding: 1.04vw 0 3.5vw 0;
+        padding: 3.2vw 0 7.69vw 0;
     }
 }
 
@@ -3398,6 +3524,135 @@ img {
   /* .googing-title {
       font-size: 2.6vw;
   } */
+}
+
+@media (max-width: 780px) {
+  .skils-container {
+    padding: 9vw 2.6vw;
+  }
+
+  .skils-fear-icon {
+    width: 8.3vw;
+    height: 8.3vw;
+    border-radius: 1.5vw;
+  }
+
+  .skils-fear-icon svg {
+    width: 3.1vw;
+    height: 3.1vw;
+  }
+
+  .skils-fear-connector {
+    width: 2px;
+    height: 8.14vw;
+    margin-top: 1.4vw;
+  }
+
+  .skils-tip {
+    padding: 3.8vw 0vw;
+    gap: 2vw;
+  }
+
+  .skils-tip-icon {
+    width: 3.8vw;
+    height: 3.8vw;
+  }
+
+  .skils-tip-text {
+    font-size: 2.8vw;
+    line-height: 4.2vw;
+  }
+
+  .skils-fear-item {
+    gap: 5vw;
+  }
+
+  .skils-fear-title {
+    font-size: 3.2vw;
+    margin-bottom: 1.3vw;
+  }
+
+  .skils-fears-list {
+    gap: 4.2vw;
+  }
+
+  .skils-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+  }
+
+  .skils-title span,
+  .skils-title-highlight {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .skils-subtitle {
+    width: 100%;
+    font-size: 3.2vw;
+    font-weight: 300;
+    line-height: 4.73vw;
+    margin-top: 1.92vw;
+  }
+
+  .skils-fear-description {
+    font-size: 2.8vw;
+    line-height: 4.2vw;
+  }
+
+  .skils-top-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.56vw;
+    margin-bottom: 2.6vw;
+  }
+
+  .skils-top-left {
+    width: 100%;
+  }
+
+  .skils-top-right {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .skils-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.6vw;
+  }
+
+  .skils-left {
+    width: 100%;
+    order: 1;
+  }
+
+  .skils-right {
+    width: 100%;
+    order: 2;
+    height: 102.564vw;
+  }
+
+  .skils-image-wrapper {
+    height: 102.564vw;
+    width: 100%;
+    border-radius: 2.564vw;
+  }
+
+  .skils-image {
+    border-radius: 2.564vw;
+  }
+
+  .skils-info-card {
+    padding: 0.641vw;
+    border-radius: 2.564vw;
+  }
+
+  .skils-info-card-inner {
+    border-radius: 1.923vw;
+  }
 }
 .treatment-warning-container {
     width: 100%;
@@ -10817,13 +11072,14 @@ img {
   }
 
   .carousel-wrapper {
-    width: 93.974vw;
+    width: 115.38vw;
     height: 33.205vw;
     border-radius: 2.564vw;
   }
 
   .carousel-slide {
     padding: 0.641vw;
+    height: 37.82vw;
   }
 
   .carousel-slide-image {
@@ -10837,7 +11093,7 @@ img {
 
   .carousel-slide-content {
     height: 31.923vw;
-    padding: 2.564vw 1.282vw 3.846vw 1.282vw;
+    padding: 1.564vw 1.282vw 3.846vw 1.282vw;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -10846,26 +11102,37 @@ img {
   }
 
   .carousel-slide-text {
-    gap: 0.641vw;
+    gap: 1.28vw;
   }
 
   .carousel-slide-title {
-    font-size: 3.205vw;
-    font-weight: 600;
+    font-size: 3.85vw;
+    font-weight: 700;
+    line-height: 5.77vw;
   }
 
   .carousel-slide-subtitle {
-    font-size: 2.308vw;
+    font-size: 2.95vw;
     font-weight: 300;
-    line-height: 1.4;
+    line-height: 4.49vw;
   }
 
   .carousel-slide-button {
-    padding: 2.821vw 8.974vw;
+    padding: 3.33vw 10.26vw;
     border-radius: 16.667vw;
-    font-size: 2.308vw;
+    font-size: 2.56vw;
     font-weight: 500;
-    /* align-self: flex-end; */
+    align-self: flex-end;
+    margin-left: auto;
+    margin-top: auto;
+  }
+  
+  .carousel-slide-content {
+    align-items: flex-start;
+  }
+  
+  .carousel-container {
+    padding: 12.82vw 0;
   }
 }
 
@@ -12276,4 +12543,4 @@ img {
 }
 
 
-/*# sourceMappingURL=main.e9aff92f.css.map*/
+/*# sourceMappingURL=main.25a26517.css.map*/
