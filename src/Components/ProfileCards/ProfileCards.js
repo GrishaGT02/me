@@ -65,15 +65,29 @@ const ProfileCards = () => {
     }
   ];
 
-  // Количество карточек, видимых одновременно
-  const cardsPerView = 4;
+  // Определяем, мобильная ли версия
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 780);
+  
+  // Количество карточек, видимых одновременно (1 для мобильной, 4 для десктопа)
+  const cardsPerView = isMobile ? 1 : 4;
   // Всего слайдов: по количеству врачей
   const totalSlides = doctors.length;
+
+  // Отслеживаем изменение размера экрана
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 780);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   
   // Создаем слайды для бесконечной прокрутки
   const extendedDoctors = [...doctors, ...doctors, ...doctors];
   
-  const [currentSlide, setCurrentSlide] = useState(totalSlides);
+  const [currentSlide, setCurrentSlide] = useState(() => {
+    return window.innerWidth <= 780 ? 0 : totalSlides;
+  });
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   
@@ -201,7 +215,11 @@ const ProfileCards = () => {
           <div 
             className="profile-cards-carousel-slides" 
             style={{
-              transform: `translateX(calc(-${currentSlide} * (100% / ${cardsPerView})))`,
+              transform: isMobile 
+                ? currentSlide === 0
+                  ? 'translateX(0)'
+                  : `translateX(calc(-100% - ${currentSlide * 6.41}vw - ${(currentSlide - 1) * 76.923}vw))`
+                : `translateX(calc(-${currentSlide} * (100% / ${cardsPerView})))`,
               transition: isTransitioning ? 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
             }}
           >
@@ -232,14 +250,48 @@ const ProfileCards = () => {
             <div className="profile-cards-slide-counter">
               {realIndex + 1}/{totalSlides}
             </div>
-            <button className="profile-cards-nav-btn" onClick={goToPrevSlide}>
-              <svg className="profile-cards-nav-arrow" width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 2L2 10L11 18" stroke="rgba(0, 0, 0, 0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <button 
+              className="profile-cards-nav-btn" 
+              onClick={goToPrevSlide}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              style={{ border: '0.052vw solid rgba(0, 0, 0, 0.2)' }}
+            >
+              <svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.9375 1.06055L2.9375 7.06055L8.9375 13.0605" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
               </svg>
             </button>
-            <button className="profile-cards-nav-btn" onClick={goToNextSlide}>
-              <svg className="profile-cards-nav-arrow" width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 2L11 10L2 18" stroke="rgba(0, 0, 0, 0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <button 
+              className="profile-cards-nav-btn" 
+              onClick={goToNextSlide}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
+              <svg className="profile-cards-nav-progress" width="60" height="60" viewBox="0 0 60 60">
+                <circle
+                  cx="30"
+                  cy="30"
+                  r="29"
+                  fill="none"
+                  stroke="#E0E0E0"
+                  strokeWidth="1"
+                />
+                <circle
+                  cx="30"
+                  cy="30"
+                  r="29"
+                  fill="none"
+                  stroke="#485B85"
+                  strokeWidth="1"
+                  strokeDasharray={`${2 * Math.PI * 29}`}
+                  strokeDashoffset={`${2 * Math.PI * 29 * (1 - (realIndex + 1) / totalSlides)}`}
+                  strokeLinecap="round"
+                  transform="rotate(-90 30 30)"
+                  style={{ transition: 'stroke-dashoffset 0.5s ease' }}
+                />
+              </svg>
+              <svg className="profile-cards-nav-arrow" width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.0625 13.0605L7.0625 7.06055L1.0625 1.06055" stroke="#1A1A1A" strokeOpacity="0.75" strokeWidth="3"/>
               </svg>
             </button>
           </div>

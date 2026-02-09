@@ -561,19 +561,55 @@
   border-color: #485B85;
 }
 
+.profile-cards-nav-btn:hover svg:not(.profile-cards-nav-progress):not(.profile-cards-nav-arrow) path {
+  stroke: #FFFFFF;
+  stroke-opacity: 1;
+}
+
 .profile-cards-nav-btn:hover .profile-cards-nav-arrow path {
   stroke: #FFFFFF;
   stroke-opacity: 1;
 }
 
+.profile-cards-nav-btn:hover .profile-cards-nav-progress circle:nth-child(2) {
+  stroke: #ffffff !important;
+}
+
+.profile-cards-nav-btn:hover .profile-cards-nav-progress circle:first-child {
+  stroke: #485B85 !important;
+}
+
+.profile-cards-nav-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.profile-cards-nav-progress circle {
+  transition: stroke 0.3s ease;
+  stroke-width: 0.1vw !important;
+}
+
 .profile-cards-nav-arrow {
   position: relative;
   z-index: 1;
+  width: 0.521vw;
+  height: 0.781vw;
+}
+
+.profile-cards-nav-arrow path {
+  transition: stroke 0.3s ease, stroke-opacity 0.3s ease;
+}
+
+.profile-cards-nav-btn svg:not(.profile-cards-nav-progress):not(.profile-cards-nav-arrow) {
   width: 0.677vw;
   height: 1.042vw;
 }
 
-.profile-cards-nav-arrow path {
+.profile-cards-nav-btn svg:not(.profile-cards-nav-progress):not(.profile-cards-nav-arrow) path {
   transition: stroke 0.3s ease, stroke-opacity 0.3s ease;
 }
 
@@ -589,6 +625,292 @@
   .profile-cards-navigation {
     padding-left: 2.6vw;
     padding-right: 2.6vw;
+  }
+}
+
+@media (max-width: 780px) {
+  .profile-cards-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    margin-bottom: 0;
+  }
+
+  .profile-cards-title span {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .profile-cards-description {
+    width: 100%;
+    font-size: 3.333vw;
+    font-weight: 300;
+    line-height: 4.73vw;
+    margin-top: 2.564vw;
+    /* padding-top: 1.282vw; */
+    margin-bottom: 6.41vw;
+  }
+
+  .profile-cards-carousel-slides {
+    gap: 6.41vw;
+  }
+
+  .profile-cards-carousel-slide {
+    width: 76.923vw;
+    min-width: 76.923vw;
+    padding: 0;
+    flex-shrink: 0;
+  }
+
+  .profile-cards-carousel-slide:first-child {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .profile-cards-carousel-slide .card {
+    width: 76.923vw;
+    height: 115.385vw;
+    border-radius: 2.564vw;
+  }
+
+  .card-top-elements {
+    padding: 4.744vw 3.846vw;
+  }
+
+  .card-status-badge {
+    padding: 0.9vw 2.564vw;
+    gap: 1.282vw;
+    border-radius: 15.385vw;
+  }
+
+  .card-status-badge .card-status-text {
+    font-size: 2.179vw;
+    line-height: 4.359vw;
+  }
+
+  .card-status-badge .card-status-dot {
+    width: 1.282vw;
+    height: 1.282vw;
+  }
+
+  .card-status-badge .card-status-dot.online::after {
+    width: 1.282vw;
+    height: 1.282vw;
+  }
+
+  .card-favorite-button {
+    width: 9.487vw;
+    height: 9.487vw;
+    padding: 0;
+  }
+
+  .card-favorite-button svg {
+    width: 3.59vw;
+    height: 3.205vw;
+  }
+
+  .card-bottom-content {
+    border-radius: 3.077vw;
+  }
+
+  .card-name {
+    font-size: 4.487vw;
+  }
+
+  .card-verified-icon {
+    width: 4.487vw;
+    height: 4.487vw;
+  }
+
+  .card-name-row {
+    gap: 2.564vw;
+  }
+
+  .card-specialization {
+    font-size: 2.564vw;
+    margin-bottom: 3.846vw;
+  }
+
+  .card-stats {
+    gap: 1.282vw;
+  }
+
+  .card-rating {
+    padding: 1.026vw 1.667vw;
+    gap: 1.282vw;
+    border-radius: 6.41vw;
+  }
+
+  .card-rating-value {
+    font-size: 3.205vw;
+  }
+
+  .card-rating-stars svg {
+    width: 1.538vw;
+    height: 1.538vw;
+  }
+
+  .card-likes {
+    padding: 1.026vw 1.667vw;
+    gap: 0.513vw;
+    border-radius: 6.41vw;
+  }
+
+  .card-likes-value {
+    font-size: 3.205vw;
+  }
+
+  .card-likes-text {
+    font-size: 2.436vw;
+  }
+
+  .card-stats {
+    margin-bottom: 3.205vw;
+  }
+
+  .card-description {
+    font-size: 2.564vw;
+    line-height: 3.846vw;
+  }
+
+  .card-bottom-content {
+    padding: 3.205vw;
+  }
+
+  .card-appointment-button {
+    width: 45.641vw;
+    border-radius: 19.231vw;
+    padding-left: 4.359vw;
+    gap: 4.359vw;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 2.564vw;
+    line-height: 3.974vw;
+  }
+
+  .card-appointment-button-icon {
+    width: 9.231vw;
+    height: 9.231vw;
+    border-radius: 19.231vw;
+  }
+
+  .card-appointment-button-icon svg {
+    width: 3.59vw;
+    height: 3.333vw;
+  }
+
+  .card-appointment-button::after {
+    right: 0.77vw;
+    width: 9.231vw;
+    height: 9.231vw;
+    border-radius: 19.231vw;
+  }
+
+  .card-appointment-button:hover::after {
+    width: 120vw;
+    height: 120vw;
+    right: -60vw;
+  }
+
+  .card-appointment-button:hover span {
+    transform: translateX(10.1vw);
+  }
+
+  .card-appointment-button:hover .card-appointment-button-icon svg {
+    transform: translateX(-34.821vw) rotate(40deg);
+  }
+
+  .profile-cards-navigation {
+    flex-direction: column;
+    align-items: center;
+    gap: 3.846vw;
+    margin-top: 6.41vw;
+  }
+
+  .profile-cards-carousel-dots-wrapper {
+    position: static;
+    transform: none;
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .profile-cards-carousel-dots {
+    display: flex;
+    flex-direction: row;
+    gap: 0.64vw;
+  }
+
+  .profile-cards-carousel-dot {
+    width: 0.77vw;
+    height: 0.77vw;
+    border-radius: 50%;
+  }
+
+  .profile-cards-carousel-dot.active {
+    width: 2.05vw;
+    height: 0.77vw;
+    border-radius: 12.82vw;
+  }
+
+  .profile-cards-nav-controls {
+    order: 2;
+    margin-left: 0;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 2.03vw;
+  }
+
+  .profile-cards-nav-btn {
+    width: 9.359vw;
+    height: 9.359vw;
+    border: none;
+    background: #FFFFFF;
+    position: relative;
+  }
+
+  .profile-cards-nav-btn:hover {
+    background: #485B85;
+  }
+
+  .profile-cards-nav-btn:hover .profile-cards-nav-arrow path {
+    stroke: #FFFFFF;
+    stroke-opacity: 1;
+  }
+
+  .profile-cards-nav-btn:hover .profile-cards-nav-progress circle:nth-child(2) {
+    stroke: #ffffff !important;
+  }
+
+  .profile-cards-nav-btn:hover .profile-cards-nav-progress circle:first-child {
+    stroke: #485B85 !important;
+  }
+
+  .profile-cards-nav-progress {
+    width: 100%;
+    height: 100%;
+  }
+
+  .profile-cards-nav-arrow {
+    position: relative;
+    z-index: 1;
+    width: 2.051vw;
+    height: 3.077vw;
+  }
+
+  .profile-cards-nav-btn svg:not(.profile-cards-nav-progress):not(.profile-cards-nav-arrow) {
+    width: 2.051vw;
+    height: 3.077vw;
+  }
+
+  .profile-cards-slide-counter {
+    font-size: 3.59vw;
+    font-weight: 300;
   }
 }
 
