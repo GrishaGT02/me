@@ -630,3 +630,342 @@
   color: rgba(26, 26, 26, 1);
 }
 
+@media (max-width: 780px) {
+  .contact {
+    padding-top: 12.82vw;
+    padding-bottom: 12.82vw;
+  }
+
+  .contact-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    margin-bottom: 8.97vw;
+  }
+
+  .contact-title span {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .contact-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    grid-template-columns: 1fr;
+    border-radius: 2.56vw;
+    padding: 2.56vw;
+  }
+
+  .contact-left-section {
+    order: 1;
+    width: 100%;
+    gap: 6.41vw;
+  }
+
+  .contact-right {
+    order: 2;
+    width: 100%;
+    max-width: 100%;
+    grid-column: 1;
+  }
+
+  .contact-top-section {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .contact-form-image {
+    order: 1;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 3.85vw;
+    border-radius: 1.92vw;
+    height: 85.26vw;
+    overflow: hidden;
+  }
+
+  .contact-form-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .contact-top-content {
+    order: 2;
+    width: 100%;
+  }
+
+  .contact-form-bottom {
+    width: 100%;
+    gap: 2.56vw;
+  }
+
+  .contact-inputs-section {
+    flex-direction: column;
+    gap: 3.85vw;
+  }
+
+  .contact-input.contact-name-input {
+    order: 1;
+  }
+
+  .contact-phone-input-wrapper {
+    order: 2;
+  }
+
+  .contact-input.contact-name-input {
+    padding: 3.33vw 2.56vw;
+    font-size: 2.31vw;
+    line-height: 3.59vw;
+    border-radius: 2.56vw;
+  }
+
+  .contact-phone-prefix {
+    padding: 3.33vw 2.56vw;
+    gap: 1.92vw;
+  }
+
+  .contact-phone-prefix span {
+    font-size: 2.31vw;
+    line-height: 3.59vw;
+  }
+
+  .contact-phone-prefix svg {
+    width: 3.21vw;
+    height: 2.18vw;
+  }
+
+  .contact-input.contact-phone-input {
+    padding: 3.33vw 2.56vw;
+    font-size: 2.31vw;
+    line-height: 3.59vw;
+    border-radius: 2.56vw;
+  }
+
+  .contact-phone-input-wrapper {
+    border-radius: 2.56vw;
+  }
+
+  .contact-form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.68vw;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .contact-form-checkbox input[type="checkbox"] {
+    width: 1.92vw;
+    height: 1.92vw;
+    border-radius: 0.26vw;
+    border: 0.067vw solid #EBEBEB;
+    background: #EBEBEB;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .contact-form-checkbox input[type="checkbox"]:checked {
+    background: rgba(72, 91, 133, 1);
+    border-color: rgba(46, 61, 88, 1);
+  }
+
+  .contact-form-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0.15vw;
+    height: 0.49vw;
+    border: solid white;
+    border-width: 0 0.21vw 0.21vw 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
+
+  .contact-form-checkbox label {
+    font-size: 2.31vw;
+    line-height: 3.59vw;
+    font-weight: 400;
+    color: #666666;
+    font-family: 'Geist', sans-serif;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .contact-promo-text {
+    font-size: 3.46vw;
+    line-height: 4.49vw;
+  }
+
+  .contact-top-content {
+    gap: 2.56vw;
+  }
+
+  .contact-offer-card {
+    padding: 3.85vw 2.56vw;
+    gap: 2.56vw;
+    border-radius: 2.56vw;
+  }
+
+  .contact-offer-icon {
+    width: 7.69vw;
+    height: 7.69vw;
+    border-radius: 0.96vw;
+  }
+
+  .contact-offer-icon svg {
+    width: 3.08vw;
+    height: 3.08vw;
+  }
+
+  .contact-offer-icon-large svg {
+    width: 3.85vw;
+    height: 3.85vw;
+  }
+
+  .contact-offer-text {
+    font-size: 2.56vw;
+    line-height: 3.59vw;
+  }
+
+  .contact-offer-checkbox.checked {
+    width: 5.13vw;
+    height: 5.13vw;
+    border-width: 0.32vw;
+    border-radius: 0.90vw;
+  }
+
+  .contact-offer-checkbox.checked svg {
+    width: 1.3vw;
+    height: 1.45vw;
+  }
+
+  .contact-form-submit {
+    gap: 2.56vw;
+  }
+
+  .contact-submit-btn.contact-btn-primary {
+    font-size: 2.56vw;
+    padding: 0.77vw 0.77vw 0.77vw 4.36vw;
+    border-radius: 6.41vw;
+    gap: 3.85vw;
+    width: 46.79vw;
+    box-sizing: border-box;
+    margin-bottom: 12.82vw;
+  }
+
+  .contact-submit-btn.contact-btn-primary span {
+    font-size: 2.56vw;
+  }
+
+  .contact-btn-icon {
+    width: 8.72vw;
+    height: 8.72vw;
+    margin-left: auto;
+  }
+
+  .contact-btn-icon svg {
+    width: 2.56vw;
+    height: 2.18vw;
+  }
+
+  .contact-submit-btn::after {
+    right: 0.77vw;
+    width: 8.72vw;
+    height: 8.72vw;
+  }
+
+  .contact-submit-btn:hover::after {
+    width: 102.56vw;
+    height: 102.56vw;
+    right: -51.28vw;
+  }
+
+  .contact-submit-btn:hover .contact-btn-icon svg {
+    transform: translateX(max(-36.7vw, calc(-10% - 40.56vw))) rotate(40deg);
+  }
+
+  .contact-submit-btn.contact-btn-primary:hover span {
+    transform: translateX(max(11.7vw, calc(-10% - 30.56vw)));
+  }
+
+  .contact-right {
+    border-radius: 2.56vw;
+    padding: 2.56vw 6.41vw;
+    gap: 3.85vw;
+  }
+
+  .contact-right-title {
+    font-size: 4.49vw;
+    line-height: 6.41vw;
+  }
+
+  .contact-info-cards {
+    gap: 2.56vw;
+  }
+
+  .contact-info-card {
+    border-radius: 2.56vw;
+    padding: 3.21vw 2.56vw;
+    gap: 2.56vw;
+  }
+
+  .contact-info-icon {
+    width: 7.69vw;
+    height: 7.69vw;
+  }
+
+  .contact-info-icon svg {
+    width: 2.56vw;
+    height: 2.56vw;
+  }
+
+  .contact-info-label {
+    font-size: 2.56vw;
+    line-height: 4.49vw;
+  }
+
+  .contact-info-value {
+    font-size: 2.31vw;
+    line-height: 4.49vw;
+  }
+
+  .contact-social-divider {
+    margin-top: 5.13vw;
+  }
+
+  .contact-social-text {
+    font-size: 2.18vw;
+    line-height: 2.95vw;
+  }
+
+  .contact-social {
+    gap: 3.85vw;
+  }
+
+  .contact-social-icon {
+    width: 4.49vw;
+    height: 4.49vw;
+  }
+
+  .contact-social-icon svg {
+    width: 4.49vw;
+    height: 4.49vw;
+  }
+
+  .contact-social-icons {
+    gap: 5.13vw;
+  }
+
+  .contact-hours {
+    font-size: 2.18vw;
+    line-height: 2.95vw;
+  }
+}
+

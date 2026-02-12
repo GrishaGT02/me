@@ -217,6 +217,88 @@
   }
 }
 
+@media (max-width: 780px) {
+  .why-choose-us-container {
+    padding: 12.82vw 2.6vw 6.41vw 2.6vw;
+  }
+
+  .why-choose-us-title.why-choose-us-title-top {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    margin-bottom: 6.41vw;
+  }
+
+  .why-choose-us-title-highlight {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .why-choose-us-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .why-choose-us-right {
+    order: 1;
+    height: 105.13vw;
+    gap: 1.28vw;
+    margin-bottom: 6.41vw;
+  }
+
+  .why-choose-us-image-first-wrapper {
+    /* flex: none; */
+    height: 97.9vw;
+    border-radius: 1.28vw;
+  }
+
+  .why-choose-us-image-second-wrapper {
+    /* flex: none; */
+    height: 105.0vw;
+    border-radius: 1.28vw;
+  }
+
+  /* .why-choose-us-image-first {
+    height: 52.56vw;
+  }
+
+  .why-choose-us-image-second {
+    height: 52.56vw;
+  } */
+
+  .why-choose-us-left {
+    order: 2;
+  }
+
+  .why-choose-us-item {
+    padding: 3.85vw 0;
+    gap: 3.85vw;
+  }
+
+  .why-choose-us-item-number {
+    font-size: 5.77vw;
+  }
+
+  .why-choose-us-item-title {
+    font-size: 3.59vw;
+  }
+
+  .why-choose-us-item-content {
+    gap: 1.28vw;
+  }
+
+  .why-choose-us-item-description {
+    font-size: 3.85vw;
+  }
+
+  .why-choose-us-item-arrow svg {
+    width: 3.21vw;
+    height: 2.56vw;
+  }
+}
+
 @media (min-width: 2200px) {
   .why-choose-us-image.why-choose-us-image-first {
     transform: translateX(-0%);

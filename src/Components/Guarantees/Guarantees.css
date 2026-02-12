@@ -307,3 +307,174 @@
         grid-template-columns: 1fr 22vw;
     }
 }
+
+@media (max-width: 780px) {
+    .guarantees {
+        padding-top: 3.85vw;
+        padding-bottom: 0;
+    }
+
+    .guarantees-top {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 6.41vw;
+    }
+
+    .guarantees-left {
+        order: 1;
+        gap: 2.56vw;
+    }
+
+    .guarantees-right {
+        order: 2;
+    }
+
+    .guarantees-small-title {
+        gap: 1.28vw;
+    }
+
+    .guarantees-small-title span {
+        font-size: 3.21vw;
+    }
+
+    .guarantees-small-title-bar {
+        width: 0.38vw;
+        height: 5.13vw;
+    }
+
+    .guarantees-main-title {
+        width: 100%;
+        font-size: 5.77vw;
+        font-weight: 700;
+        line-height: 8.33vw;
+        /* margin-bottom: 3.85vw; */
+    }
+
+    .guarantees-main-title span {
+        text-decoration-thickness: 0.26vw;
+        text-underline-offset: 0.64vw;
+    }
+
+    .guarantees-description {
+        font-size: 3.33vw;
+        line-height: 5.13vw;
+    }
+
+    .guarantees-right {
+        align-self: center;
+    }
+
+    .guarantees-item {
+        gap: 2.56vw;
+    }
+
+    .guarantees-item-icon {
+        width: 6.79vw;
+        height: 8.08vw;
+    }
+
+    .guarantees-item-icon svg {
+        width: 6.79vw;
+        height: 8.08vw;
+    }
+
+    .guarantees-item-content-wrapper {
+        gap: 4.49vw;
+    }
+
+    .guarantees-years {
+        font-size: 6.67vw;
+        line-height: 9.62vw;
+    }
+
+    .guarantees-item-description {
+        font-size: 2.56vw;
+        line-height: 3.85vw;
+    }
+
+    .guarantees-item-text {
+        gap: 1.41vw;
+    }
+
+    .guarantees-consultation-content {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 2.564vw;
+        gap: 0;
+        border-radius: 2.56vw;
+    }
+
+    .guarantees-consultation-doctor-image {
+        order: 1;
+        width: 100%;
+        height: 44.872vw;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 3.846vw;
+        border-radius: 2.564vw;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .guarantees-consultation-text-block {
+        order: 2;
+        gap: 0;
+        width: 100%;
+    }
+
+    .guarantees-consultation-title {
+        font-size: 5.0vw;
+        line-height: 7.051vw;
+        font-weight: 600;
+        margin-bottom: 3.846vw;
+    }
+
+    .guarantees-consultation-description {
+        font-size: 3.333vw;
+        line-height: 5.128vw;
+        margin-bottom: 3.846vw;
+    }
+
+    .guarantees-consultation-button {
+        order: 3;
+        width: 45.641vw;
+        font-size: 2.179vw;
+        border-radius: 19.231vw;
+        padding: 0.77vw 0.77vw 0.77vw 3.21vw;
+        justify-content: space-between;
+        margin-left: auto;
+    }
+
+    .guarantees-consultation-btn-icon {
+        width: 8.718vw;
+        height: 8.718vw;
+        border-radius: 19.231vw;
+        margin-left: auto;
+    }
+
+    .guarantees-consultation-btn-icon svg {
+        width: 2.051vw;
+        height: 1.667vw;
+    }
+
+    .guarantees-consultation-button::after {
+        right: 0.77vw;
+        width: 8.718vw;
+        height: 8.718vw;
+        border-radius: 19.231vw;
+    }
+
+    .guarantees-consultation-button:hover::after {
+        width: 120vw;
+        height: 120vw;
+        right: -60vw;
+    }
+
+    .guarantees-consultation-btn-primary:hover span {
+        transform: translateX(8.974vw);
+    }
+
+    .guarantees-consultation-button:hover .guarantees-consultation-btn-icon svg {
+        transform: translateX(-35.521vw) rotate(40deg);
+    }
+}

@@ -249,3 +249,114 @@
     padding: 1.04vw 2.6vw 4.17vw 2.6vw;
   }
 }
+
+@media (max-width: 780px) {
+  .installment-container {
+    padding-top: 12.82vw;
+    padding-bottom: 0;
+  }
+
+  .installment-card {
+    padding: 2.56vw;
+    flex-direction: column;
+  }
+
+  .installment-card-left {
+    order: 1;
+    align-items: center;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .installment-card-right {
+    order: 2;
+  }
+
+  .installment-card {
+    border-radius: 2.56vw;
+  }
+
+  .installment-card-title {
+    font-size: 5.13vw;
+    line-height: 8.33vw;
+  }
+
+  .installment-card-description {
+    font-size: 3.33vw;
+    line-height: 5.13vw;
+    margin-bottom: 2.31vw;
+    width: 100%;
+  }
+
+  .installment-button {
+    font-size: 2.56vw;
+    padding: 0.77vw 0.7vw 0.77vw 1.92vw;
+    border-radius: 6.41vw;
+    gap: 3.85vw;
+    width: 43.59vw;
+    box-sizing: border-box;
+    margin-bottom: 12.82vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .installment-button-icon {
+    width: 7.69vw;
+    height: 7.69vw;
+    margin-left: auto;
+  }
+
+  .installment-button-icon svg {
+    width: 2.05vw;
+    height: 1.79vw;
+  }
+
+  .installment-button::after {
+    right: 0.77vw;
+    width: 7.69vw;
+    height: 7.69vw;
+  }
+
+  .installment-button:hover::after {
+    width: 102.56vw;
+    height: 102.56vw;
+    right: -51.28vw;
+  }
+
+  .installment-button:hover .installment-button-icon svg {
+    transform: translateX(max(-33.7vw, calc(-15% - 40.56vw))) rotate(40deg);
+  }
+
+  .installment-button:hover span {
+    transform: translateX(max(15.2vw, calc(-10% - 35.56vw)));
+  }
+
+  .installment-card-right {
+    border-radius: 1.92vw;
+    height: 78.21vw;
+    padding: 9.87vw 2.56vw 7.69vw 2.56vw;
+  }
+
+  .installment-card-right-title {
+    margin: 0;
+    font-size: 3.46vw;
+  }
+
+  .installment-stat-value {
+    font-size: 19.23vw;
+  }
+
+  .installment-stats {
+    margin-top: 5.13vw;
+  }
+
+  .installment-stat-label {
+    font-size: 4.49vw;
+  }
+
+  .installment-card-bottom-text {
+    margin-top: 3.85vw;
+    font-size: 3.33vw;
+    line-height: 5.13vw;
+  }
+}

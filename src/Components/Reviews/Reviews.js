@@ -70,11 +70,20 @@ const Reviews = () => {
   const [currentSlide, setCurrentSlide] = useState(reviews.length);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 780);
   const carouselRef = useRef(null);
   
   // Вычисляем реальный индекс для отображения в счетчике
   const realIndex = currentSlide % reviews.length;
   const totalSlides = reviews.length;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 780);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (isPaused) return;
@@ -148,7 +157,7 @@ const Reviews = () => {
   const getPlatformCard = (platform, rating) => {
     if (platform === '2GIS') {
       return (
-        <div className="reviews-rating-card">
+        <div className="otzov-rating-card">
           <img src={gisIcon} alt="2ГИС" className="reviews-rating-icon" />
           <div className="reviews-rating-content">
             <div className="reviews-rating-stars">
@@ -164,7 +173,7 @@ const Reviews = () => {
       );
     } else if (platform === 'ZOON') {
       return (
-        <div className="reviews-rating-card">
+        <div className="otzov-rating-card">
           <img className="reviews-rating-icon" src={zoonIcon} alt="ZOON" />
           <div className="reviews-rating-content">
             <div className="reviews-rating-stars">
@@ -180,7 +189,7 @@ const Reviews = () => {
       );
     } else if (platform === 'Яндекс Карты') {
       return (
-        <div className="reviews-rating-card">
+        <div className="otzov-rating-card">
           <img src={yandexIcon} alt="Яндекс Карты" className="reviews-rating-icon" />
           <div className="reviews-rating-content">
             <div className="reviews-rating-stars">
@@ -196,7 +205,7 @@ const Reviews = () => {
       );
     } else if (platform === 'YELL.RU') {
       return (
-        <div className="reviews-rating-card">
+        <div className="otzov-rating-card">
           <img src={yandexIcon} alt="YELL.RU" className="reviews-rating-icon" />
           <div className="reviews-rating-content">
             <div className="reviews-rating-stars">
@@ -309,7 +318,9 @@ const Reviews = () => {
             <div 
               className="reviews-carousel-slides" 
               style={{ 
-                transform: `translateX(calc(-${currentSlide} * (100% / 3)))`,
+                transform: isMobile 
+                  ? `translateX(calc(-${currentSlide} * 100%))`
+                  : `translateX(calc(-${currentSlide} * (100% / 3)))`,
                 transition: isTransitioning ? 'transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
               }}
             >

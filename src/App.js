@@ -25,7 +25,7 @@ import Installment from './Components/Installment/Installment';
 import Kvis from './Components/Kvis/Kvis';
 import Footer from './Components/Footer/Footer';
 import FooterBottom from './Components/FooterBottom/FooterBottom';
-// import Modal from './Components/Modal/Modal';
+import Modal from './Components/Modal/Modal';
 import Carousel from './Components/Carousel/Carousel';
 import ProfileCards from './Components/ProfileCards/ProfileCards';
 import Location from './Components/Location/Location';
@@ -54,10 +54,11 @@ function App() {
         <Reviews />
         <GuaranteeFAQ />
         <Location />
+        <Kvis />
         <Contact />
         {/* <FixedPrice /> */}
-        {/*<Modal />
-        <Zayavka />
+        <Modal />
+        {/*<Zayavka />
         <Oprosnik />
         <Zapis />
         <Fich1 />

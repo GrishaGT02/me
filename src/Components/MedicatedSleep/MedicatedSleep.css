@@ -331,3 +331,178 @@
     padding: 0 2.6vw;
   }
 }
+
+@media (max-width: 780px) {
+  .medicated-sleep {
+    padding: 12.82vw 0;
+  }
+
+  .medicated-sleep-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    margin-bottom: 3.85vw;
+  }
+
+  .medicated-sleep-title span {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .medicated-sleep-description {
+    font-size: 3.33vw;
+    line-height: 5.13vw;
+  }
+
+  .medicated-sleep-header {
+    margin-bottom: 6.41vw;
+  }
+
+  .medicated-sleep-content {
+    flex-direction: column;
+    gap: 2.56vw;
+  }
+
+  .medicated-sleep-center-image {
+    order: 1;
+    flex: none;
+    height: 44.87vw;
+    border-radius: 2.56vw;
+    overflow: hidden;
+  }
+
+  .medicated-sleep-center-image img {
+    height: 100%;
+    border-radius: 2.56vw;
+  }
+
+  .medicated-sleep-cards-left {
+    order: 2;
+    gap: 2.56vw;
+  }
+
+  .medicated-sleep-cards-right {
+    order: 3;
+    gap: 2.56vw;
+  }
+
+  .medicated-sleep-card {
+    padding: 3.85vw;
+    gap: 3.85vw;
+    border-radius: 2.56vw;
+  }
+
+  .medicated-sleep-card-icon {
+    width: 4.10vw;
+    height: 4.10vw;
+  }
+
+  .medicated-sleep-card-icon svg {
+    width: 4.10vw;
+    height: 4.10vw;
+  }
+
+  .medicated-sleep-card-title {
+    font-size: 3.59vw;
+  }
+
+  .medicated-sleep-card-content {
+    gap: 1.28vw;
+  }
+
+  .medicated-sleep-card-description {
+    font-size: 3.33vw;
+    line-height: 5.13vw;
+  }
+
+  .medicated-sleep-card-arrow svg {
+    width: 3.85vw;
+    height: 3.08vw;
+  }
+
+  .medicated-sleep-consultation {
+    padding-top: 6.41vw;
+  }
+
+  .medicated-sleep-consultation-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2.564vw;
+    gap: 0;
+    border-radius: 2.564vw;
+  }
+
+  .medicated-sleep-consultation-doctors-image {
+    order: 1;
+    width: 100%;
+    height: 44.872vw;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3.846vw;
+    border-radius: 2.564vw;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .medicated-sleep-consultation-text-block {
+    order: 2;
+    gap: 0;
+  }
+
+  .medicated-sleep-consultation-title {
+    font-size: 5.0vw;
+    line-height: 7.051vw;
+    font-weight: 600;
+    margin-bottom: 3.846vw;
+  }
+
+  .medicated-sleep-consultation-description {
+    font-size: 3.333vw;
+    line-height: 5.128vw;
+    margin-bottom: 3.846vw;
+  }
+
+  .medicated-sleep-consultation-button {
+    order: 3;
+    width: 45.641vw;
+    font-size: 2.179vw;
+    border-radius: 19.231vw;
+    padding: 0.77vw 0.77vw 0.77vw 3.21vw;
+    justify-content: space-between;
+    margin-left: auto;
+  }
+
+  .medicated-sleep-consultation-btn-icon {
+    width: 8.718vw;
+    height: 8.718vw;
+    border-radius: 19.231vw;
+    margin-left: auto;
+  }
+
+  .medicated-sleep-consultation-btn-icon svg {
+    width: 2.051vw;
+    height: 1.667vw;
+  }
+
+  .medicated-sleep-consultation-button::after {
+    right: 0.77vw;
+    width: 8.718vw;
+    height: 8.718vw;
+    border-radius: 19.231vw;
+  }
+
+  .medicated-sleep-consultation-button:hover::after {
+    width: 120vw;
+    height: 120vw;
+    right: -60vw;
+  }
+
+  .medicated-sleep-consultation-btn-primary:hover span {
+    transform: translateX(8.974vw);
+  }
+
+  .medicated-sleep-consultation-button:hover .medicated-sleep-consultation-btn-icon svg {
+    transform: translateX(-35.521vw) rotate(40deg);
+  }
+}

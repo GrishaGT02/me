@@ -1214,16 +1214,16 @@
     
     .header_nuv-doctor-image {
         width: 100%;
-        height: auto;
-        max-height: 89.74vw;
+        height: 128.21vw;
+        max-height: 128.21vw;
         position: relative;
         border-radius: 2.2vw;
     }
     
     .header_nuv-doctor-image img {
         width: 100%;
-        height: auto;
-        max-height: 89.74vw;
+        height: 100%;
+        max-height: 128.21vw;
         object-fit: cover;
     }
     
@@ -1293,9 +1293,9 @@
     
     .header_nuv-left-text-description {
         width: 100%;
-        font-size: 2.56vw;
+        font-size: 3.85vw;
         font-weight: 300;
-        line-height: 4.23vw;
+        line-height: 5.77vw;
         margin-top: 3.72vw;
     }
     
@@ -1311,9 +1311,9 @@
     .header_nuv-btn {
         padding: 5.38vw 5.13vw;
         border-radius: 6.41vw;
-        font-weight: 500;
+        font-weight: 600;
         /* border: none; */
-        font-size: 2.31vw;
+        font-size: 2.82vw;
         line-height: 2.44vw;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -1329,7 +1329,7 @@
         border-radius: 6.41vw;
         border: 0.13vw solid #2E3D58;
         font-weight: 500;
-        font-size: 2.31vw;
+        font-size: 2.82vw;
         line-height: 2.18vw;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -1369,6 +1369,11 @@
         color: #FFFFFF;
     }
 
+    .header_nuv-btn-1.header_nuv-btn-primary {
+        font-weight: 700;
+        padding-left: 6.41vw;
+    }
+
     .header_nuv-btn-primary span {
         color: #FFFFFF;
         transition: color 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1378,7 +1383,7 @@
 
     .header_nuv-btn-primary:hover span {
         color: #485B85;
-        transform: translateX(22.974vw);
+        transform: translateX(13.474vw);
     }
     
     /* Подгоняем псевдоэлемент ::after под размер белого круга */
@@ -1616,6 +1621,28 @@
     }
     .header {
         padding: 3.2vw 0 7.69vw 0;
+    }
+
+    .header-phone-icon-fixed {
+        width: 9.38vw;
+        height: 9.38vw;
+        bottom: 2.56vw;
+        right: 2.56vw;
+    }
+
+    .header-phone-icon-fixed svg {
+        width: 3.64vw;
+        height: 3.64vw;
+    }
+
+    .header-phone-icon-fixed:hover::before {
+        width: 9.38vw;
+        height: 9.38vw;
+    }
+
+    .header-phone-icon-fixed:hover::after {
+        width: 9.38vw;
+        height: 9.38vw;
     }
 }
 

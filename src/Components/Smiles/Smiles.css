@@ -533,6 +533,29 @@
     margin-top: 3.846vw;
   }
 
+  .smiles-panel-right-image-wrapper {
+    height: 115.38vw;
+    border-radius: 2.56vw;
+    overflow: hidden;
+  }
+
+  .smiles-panel-right-image-wrapper .googing-play-button {
+    width: 15.38vw;
+    height: 15.38vw;
+    box-sizing: content-box;
+  }
+
+  .smiles-panel-right-image-wrapper .googing-play-button::before,
+  .smiles-panel-right-image-wrapper .googing-play-button::after {
+    width: 15.38vw;
+    height: 15.38vw;
+  }
+
+  .smiles-panel-right-image-wrapper .googing-play-button svg {
+    width: 3.46vw;
+    height: 4.36vw;
+  }
+
   .smiles-main-content {
     display: flex;
     flex-direction: column;
@@ -559,13 +582,32 @@
   .smiles-carousel {
     border-radius: 2.564vw;
     height: 120vw;
+    min-height: 115vw;
+    overflow: hidden;
+  }
+
+  .smiles-carousel-slides {
+    height: 100%;
+    width: 100%;
+  }
+
+  .smiles-carousel-slide {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    min-height: 115vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .smiles-carousel-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
+    height: auto;
+    min-height: 115vw;
+    object-fit: contain;
+    object-position: center;
+    display: block;
   }
 
   .smiles-carousel-dots-wrapper {
@@ -674,7 +716,7 @@
     margin-bottom: 3.846vw;
     margin-top: 5vw;
     border-radius: 1.282vw;
-    padding: 0.641vw;
+    padding: 1.28vw;
     width: 100%;
   }
 
@@ -687,20 +729,21 @@
     font-size: 4.487vw;
     font-weight: 700;
     line-height: 6.41vw;
+    text-align: left;
   }
 
   .smiles-mouth-section-content {
     border-radius: 0.641vw;
-    padding: 0.641vw 0.641vw 1.282vw 0.641vw;
+    padding: 1.03vw;
     width: 100%;
     /* margin-top: 10vw; */
   }
 
   .smiles-mouth-images {
-    gap: 0.321vw;
+    gap: 1.28vw;
     margin-bottom: 2.372vw;
-    padding: 0.321vw;
-    border-radius: 0.321vw;
+    padding: 1.28vw;
+    border-radius: 1.28vw;
     width: 100%;
   }
 
@@ -713,7 +756,8 @@
   }
 
   .smiles-panel-info-small {
-    padding: 0 2.667vw;
+    padding: 0 1.385vw;
     font-size: 3.333vw;
+    text-align: left;
   }
 }

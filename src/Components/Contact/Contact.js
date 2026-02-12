@@ -10,6 +10,7 @@ const Contact = () => {
   const [phoneError, setPhoneError] = useState(false);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showPolicyModal, setShowPolicyModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const formatPhoneNumber = (value) => {
     // Удаляем все нецифровые символы
@@ -71,7 +72,33 @@ const Contact = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  // Функция для отправки данных на backend
+  const sendFormData = async (formData) => {
+    try {
+      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      
+      const response = await fetch(`${API_URL}/api/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || 'Ошибка при отправке заявки');
+      }
+
+      return result;
+    } catch (error) {
+      console.error('Ошибка отправки:', error);
+      throw error;
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userName || userName.trim() === '') {
       alert('Пожалуйста, введите ваше имя');
@@ -92,11 +119,32 @@ const Contact = () => {
       alert('Пожалуйста, дайте согласие на обработку персональных данных');
       return;
     }
-    console.log('Form submitted:', { userName, phoneNumber, consent });
-    alert('Спасибо! Анна свяжется с вами в течение 1-2 минут.');
-    setUserName('');
-    setPhoneNumber('');
-    setConsent(false);
+    
+    if (isSubmitting) return; // Предотвращаем повторную отправку
+    
+    setIsSubmitting(true);
+    
+    // Формируем данные для отправки
+    const phoneDigits = phoneNumber.replace(/\D/g, '');
+    const formData = {
+      name: userName.trim(),
+      phone: phoneDigits,
+      service: 'Консультация / запись на прием',
+      privacyConsent: consent
+    };
+
+    try {
+      await sendFormData(formData);
+      alert('Спасибо! Анна свяжется с вами в течение 1-2 минут.');
+      setUserName('');
+      setPhoneNumber('');
+      setConsent(false);
+    } catch (error) {
+      console.error('Ошибка отправки:', error);
+      alert('Произошла ошибка при отправке заявки. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const benefits = [
@@ -225,9 +273,9 @@ const Contact = () => {
                       </a>
                     </label>
                   </div>
-                  <button type="submit" className="contact-submit-btn contact-btn-primary">
+                  <button type="submit" className="contact-submit-btn contact-btn-primary" disabled={isSubmitting || !consent}>
                     <div className="flare"></div>
-                    <span>Получить скидку 10%</span>
+                    <span>{isSubmitting ? 'Отправка...' : 'Получить скидку 10%'}</span>
                     <div className="contact-btn-icon">
                       <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.7592 2.88185L18.6868 3.0505L18.8555 1.12286L16.9278 0.954215L16.7592 2.88185ZM0.692446 13.8375C-0.126203 14.5244 -0.232985 15.7449 0.453944 16.5636C1.14087 17.3822 2.36138 17.489 3.18003 16.8021L1.93624 15.3198L0.692446 13.8375ZM15.8052 13.7862L17.7328 13.9549L18.6868 3.0505L16.7592 2.88185L14.8316 2.7132L13.8776 13.6176L15.8052 13.7862ZM16.7592 2.88185L16.9278 0.954215L6.02349 0.000207278L5.85484 1.92784L5.68619 3.85548L16.5906 4.80949L16.7592 2.88185ZM16.7592 2.88185L15.5154 1.39956L0.692446 13.8375L1.93624 15.3198L3.18003 16.8021L18.003 4.36415L16.7592 2.88185Z" fill="#485B85"/>

@@ -32,7 +32,7 @@ const Guarantees = () => {
                     <div className="guarantees-left">
                         <div className="guarantees-small-title">
                             <div className="guarantees-small-title-bar"></div>
-                            <span>Лечитесь без тревоги за будущее. Все наши гарантии — в договоре!</span>
+                            <span>Все наши гарантии - в договоре!</span>
                         </div>
                         <div className="guarantees-main-title">
                             Мы на стороне пациента! Поэтому все наши обязательства - не просто слова, а пункты договора, которые <span>защищают Ваши интересы</span>!

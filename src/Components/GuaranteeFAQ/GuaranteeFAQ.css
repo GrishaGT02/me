@@ -209,7 +209,7 @@
   left: 0;
 }
 
-.guarantee-faq-play-button {
+.guarantee-faq-doctor-play-button {
   position: absolute;
   top: 45%;
   left: 43%;
@@ -227,7 +227,7 @@
   box-sizing: content-box;
 }
 
-.guarantee-faq-play-button::before {
+.guarantee-faq-doctor-play-button::before {
   content: "";
   position: absolute;
   z-index: 0;
@@ -242,7 +242,7 @@
   animation: pulse-border 1500ms ease-out infinite;
 }
 
-.guarantee-faq-play-button::after {
+.guarantee-faq-doctor-play-button::after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -257,15 +257,15 @@
   transition: all 200ms;
 }
 
-.guarantee-faq-play-button:hover::after {
+.guarantee-faq-doctor-play-button:hover::after {
   background-color: #f5f5f5;
 }
 
-.guarantee-faq-play-button:hover {
+.guarantee-faq-doctor-play-button:hover {
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-.guarantee-faq-play-button svg {
+.guarantee-faq-doctor-play-button svg {
   width: 1.16vw;
   height: 1.4vw;
   transform: translateX(0.1vw);
@@ -388,5 +388,182 @@
 @media (max-width: 2200px) {
   .guarantee-faq-container  {
     padding: 0 2.6vw;
+  }
+}
+
+@media (max-width: 780px) {
+  .guarantee-faq {
+    padding-top: 12.82vw;
+    padding-bottom: 0;
+  }
+
+  .guarantee-faq-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .guarantee-faq-left {
+    order: 1;
+  }
+
+  .guarantee-faq-right {
+    order: 2;
+  }
+
+  .guarantee-faq-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    margin-bottom: 2.56vw;
+  }
+
+  .guarantee-faq-title span {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .guarantee-faq-description {
+    font-size: 3.33vw;
+    line-height: 5.13vw;
+    margin-bottom: 8.97vw;
+    width: 100%;
+  }
+
+  .guarantee-faq-card {
+    height: 15.38vw;
+    padding: 3.85vw;
+  }
+
+  .guarantee-faq-card.open {
+    height: 57.69vw;
+    padding: 3.85vw;
+  }
+
+  .guarantee-faq-text {
+    font-size: 3.85vw;
+    line-height: 6.41vw;
+  }
+
+  .guarantee-faq-icon-wrapper {
+    width: 7.69vw;
+    height: 7.69vw;
+  }
+
+  .guarantee-faq-icon {
+    width: 7.69vw;
+    height: 7.69vw;
+  }
+
+  .guarantee-faq-icon svg {
+    width: 2.56vw;
+    height: 2.56vw;
+  }
+
+  .guarantee-faq-accordion {
+    font-size: 3.33vw;
+    line-height: 5.13vw;
+  }
+
+  .guarantee-faq-card.open .guarantee-faq-accordion {
+    padding-top: 6.41vw;
+  }
+
+  .guarantee-faq-grid {
+    height: auto;
+    max-height: none;
+    gap: 1.28vw;
+  }
+
+  .guarantee-faq-card {
+    border-radius: 2.56vw;
+  }
+
+  .guarantee-faq-answers {
+    width: 100%;
+  }
+
+  .guarantee-faq-answer-text {
+    font-size: 3.33vw;
+    line-height: 5.13vw;
+    width: 100%;
+  }
+
+  .guarantee-faq-right {
+    margin-top: 7.69vw;
+  }
+
+  .guarantee-faq-doctor-image {
+    border-radius: 2.56vw;
+  }
+
+  .guarantee-faq-doctor-image {
+    height: 115.38vw;
+  }
+
+  .guarantee-faq-doctor-image img {
+    height: 115.38vw;
+  }
+
+  .guarantee-faq-doctor-play-button {
+    width: 15.38vw !important;
+    height: 15.38vw !important;
+    box-sizing: content-box;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .guarantee-faq-doctor-play-button::before,
+  .guarantee-faq-doctor-play-button::after {
+    width: 15.38vw !important;
+    height: 15.38vw !important;
+  }
+
+  .guarantee-faq-doctor-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1) !important;
+  }
+
+  .guarantee-faq-doctor-play-button svg {
+    width: 3.46vw !important;
+    height: 4.36vw !important;
+    transform: translateX(0.1vw) !important;
+  }
+
+  .guarantee-faq-form {
+    padding: 0.66vw;
+    border-radius: 2.56vw;
+    width: calc(100% - 2.62vw);
+    left: 1.28vw;
+    bottom: 1.26vw;
+    /* gap: 0.64vw; */
+  }
+
+  .guarantee-faq-form-inner {
+    border-radius: 1.92vw;
+    padding: 1.03vw 1.28vw;
+    gap: 2.56vw;
+  }
+
+  .guarantee-faq-form-title {
+    font-size: 3.85vw;
+    line-height: 6.41vw;
+    font-weight: 700;
+  }
+
+  .guarantee-faq-form-description {
+    font-size: 2.56vw;
+    line-height: 3.85vw;
+  }
+
+  .guarantee-faq-form-icon {
+    width: 10.9vw;
+    height: 10.9vw;
+    border-radius: 1.92vw;
+  }
+
+  .guarantee-faq-form-icon svg {
+    width: 3.08vw;
+    height: 2.41vw;
   }
 }

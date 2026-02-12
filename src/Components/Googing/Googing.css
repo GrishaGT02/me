@@ -504,7 +504,7 @@
     }
 
     .googing-doctor-image {
-        height: 102.564vw;
+        height: 115.38vw;
         width: 100%;
         border-radius: 2.564vw;
     }
@@ -577,8 +577,8 @@
 
     .googing-form-title {
         width: 100%;
-        font-size: 5.77vw;
-        font-weight: 700;
+        font-size: 5.13vw;
+        font-weight: 600;
         line-height: 8.33vw;
     }
 
@@ -589,10 +589,10 @@
 
     .googing-form-description {
         width: 100%;
-        font-size: 2.76vw;
+        font-size: 3.33vw;
         font-weight: 300;
-        line-height: 4.23vw;
-        margin-top: 1.92vw;
+        line-height: 5.13vw;
+        margin: 0;
     }
 
     .googing-form-buttons {
@@ -601,28 +601,52 @@
     }
 
     .googing-btn {
-        padding: 3.59vw 5.13vw;
+        padding: 3.59vw 7.18vw;
         border-radius: 6.41vw;
-        font-size: 2.08vw;
+        font-size: 1.79vw;
         line-height: 2.44vw;
+        width: 43.59vw;
+        box-sizing: border-box;
+    }
+
+    .googing-btn.googing-btn-secondary {
+        text-align: center;
+        justify-content: center;
     }
 
     .googing-btn-1 {
-        padding: 0.77vw 0.77vw 0.77vw 3.21vw;
+        padding: 0.77vw 1.79vw 0.77vw 4.87vw;
         border-radius: 6.41vw;
-        font-size: 2.308vw;
+        font-size: 1.79vw;
         line-height: 2.18vw;
         gap: 3.85vw;
+        width: 43.59vw;
+        box-sizing: border-box;
+    }
+
+    .googing-btn-1.googing-btn-primary {
+        padding-left: 1.92vw;
+        padding-right: 0.7vw;
     }
 
     .googing-btn-icon {
         width: 7.69vw;
         height: 7.69vw;
+        flex-shrink: 0;
+        margin-left: auto;
     }
 
     .googing-btn-icon svg {
         width: 2.05vw;
         height: 1.79vw;
+    }
+
+    .googing-btn-1:hover .googing-btn-icon svg {
+        transform: translateX(max(-33.7vw, calc(-15% - 40.56vw))) rotate(40deg);
+    }
+
+    .googing-btn-1.googing-btn-primary:hover span {
+        transform: translateX(max(11.7vw, calc(-10% - 35.56vw)));
     }
 
     .googing-btn-1::after {
@@ -638,13 +662,13 @@
     }
 
     .googing-form-disclaimer {
-        font-size: 2.051vw;
+        font-size: 2.56vw;
         font-weight: 300;
         margin-top: 7.692vw;
     }
 
     .googing {
-        padding: 9vw 2.6vw 6.41vw 2.6vw;
+        padding: 10.26vw 2.6vw 12.82vw 2.6vw;
     }
 }
 

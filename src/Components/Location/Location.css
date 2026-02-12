@@ -519,10 +519,10 @@
 
 .location-panorama-image {
   flex-shrink: 0;
-  width: 18.021vw;
-  height: 11.458vw;
+  width: 20.833vw;
+  height: 9.115vw;
   min-width: 14.583vw;
-  max-width: 18.021vw;
+  max-width: 20.833vw;
   border-radius: 1.042vw;
   overflow: hidden;
   margin-left: -2.083vw;
@@ -695,6 +695,333 @@
 
   .location-info-cards {
     width: min(22.042vw, 23.5vw);
+  }
+}
+
+@media (max-width: 780px) {
+  .location {
+    padding-top: 12.82vw;
+    padding-bottom: 0;
+  }
+
+  .location-top-header {
+    gap: 1.28vw;
+  }
+
+  .location-top-header span {
+    font-size: 3.21vw;
+    margin-top: 1.28vw;
+  }
+
+  .location-top-header-bar {
+    width: 0.38vw;
+    height: 5.13vw;
+  }
+
+  .location-header {
+    flex-direction: column;
+    gap: 2.56vw;
+    margin-bottom: 8.97vw;
+  }
+
+  .location-title {
+    order: 1;
+  }
+
+  .location-description {
+    order: 2;
+  }
+
+  .location-title {
+    width: 100%;
+    font-size: 5.77vw;
+    font-weight: 700;
+    line-height: 8.33vw;
+    /* margin-bottom: 2.56vw; */
+  }
+
+  .location-title-highlight {
+    text-decoration-thickness: 0.26vw;
+    text-underline-offset: 0.64vw;
+  }
+
+  .location-description {
+    font-size: 2.82vw;
+    line-height: 4.23vw;
+    padding-top: 0;
+    width: 100%;
+  }
+
+  .location-content {
+    flex-direction: column;
+    height: auto;
+    align-items: stretch;
+    gap: 2.56vw;
+  }
+
+  .location-video-main {
+    order: 1;
+    width: 100%;
+    height: auto;
+    min-height: 50vw;
+  }
+
+  .location-video-wrapper {
+    height: 76.92vw;
+    border-radius: 2.56vw;
+  }
+
+  .location-video-image {
+    height: 76.92vw;
+  }
+
+  .location-video-main .location-video-wrapper {
+    height: 76.92vw;
+  }
+
+  .location-videos-secondary {
+    order: 2;
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+    gap: 2.56vw;
+  }
+
+  .location-video-secondary {
+    height: auto;
+    min-height: 76.92vw;
+    flex: none;
+  }
+
+  .location-video-secondary .location-video-wrapper {
+    height: 76.92vw;
+  }
+
+  .location-video-secondary:nth-child(1) {
+    order: 1;
+  }
+
+  .location-video-secondary:nth-child(2) {
+    order: 2;
+  }
+
+  .location-info-cards {
+    order: 3;
+    width: 100%;
+    height: auto;
+    gap: 2.56vw;
+    margin-bottom: 1.22vw;
+  }
+
+  .location-info-card {
+    padding: 7.95vw 2.56vw;
+    border-radius: 2.56vw;
+    gap: 3.85vw;
+    border: 0.13vw solid rgba(215, 215, 215, 1);
+    box-shadow: 0 0 2.56vw 0 rgba(0, 0, 0, 0.07);
+  }
+
+  .location-info-card-content {
+    gap: 1.28vw;
+  }
+
+  .location-info-card-title {
+    font-size: 3.59vw;
+  }
+
+  .location-info-card-description {
+    font-size: 2.56vw;
+    line-height: 3.85vw;
+  }
+
+  .location-info-card-icon {
+    width: 7.69vw;
+    height: 7.69vw;
+  }
+
+  .location-info-card-icon svg {
+    width: 1.79vw;
+    height: 1.41vw;
+  }
+
+  .location-video-overlay {
+    padding: 2.56vw;
+  }
+
+  .location-video-badge {
+    padding: 1.54vw;
+    gap: 2.31vw;
+    border-radius: 1.54vw;
+  }
+
+  .location-video-badge-icon {
+    width: 4.62vw;
+    height: 4.62vw;
+  }
+
+  .location-video-badge-icon img {
+    width: 2.18vw;
+    height: 2.69vw;
+  }
+
+  .location-video-badge span {
+    font-size: 2.82vw;
+  }
+
+  .location-video-text {
+    font-size: 2.56vw;
+    line-height: 3.85vw;
+    width: auto;
+  }
+
+  .location-video-bottom {
+    padding: 2.56vw;
+  }
+
+  .guarantee-faq-play-button {
+    width: 11.54vw !important;
+    height: 11.54vw !important;
+    margin-top: 9.28vw;
+    margin-left: 1.28vw;
+  }
+
+  .guarantee-faq-play-button::before {
+    width: 11.54vw !important;
+    height: 11.54vw !important;
+  }
+
+  .guarantee-faq-play-button::after {
+    width: 11.54vw !important;
+    height: 11.54vw !important;
+  }
+
+  .guarantee-faq-play-button svg {
+    width: 2.56vw !important;
+    height: 3.21vw !important;
+  }
+
+  .location-video-secondary .guarantee-faq-play-button {
+    width: 11.54vw !important;
+    height: 11.54vw !important;
+  }
+
+  .location-video-secondary .guarantee-faq-play-button::before {
+    width: 11.54vw !important;
+    height: 11.54vw !important;
+  }
+
+  .location-video-secondary .guarantee-faq-play-button::after {
+    width: 11.54vw !important;
+    height: 11.54vw !important;
+  }
+
+  .location-video-secondary .guarantee-faq-play-button svg {
+    width: 2.56vw !important;
+    height: 3.21vw !important;
+  }
+
+  .location-map {
+    height: 128.21vw;
+    border-radius: 2.56vw;
+  }
+
+  .map-widget-map-component {
+    height: 128.21vw !important;
+  }
+
+  .location-map-info {
+    max-width: none;
+  }
+
+  .location-map-info-item {
+    font-size: 2.31vw;
+    line-height: 3.59vw;
+    padding: 1.28vw;
+  }
+
+  .location-panorama-section {
+    margin-top: 2.56vw;
+  }
+
+  .location-panorama-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2.564vw;
+    gap: 0;
+    border-radius: 2.564vw;
+  }
+
+  .location-panorama-image {
+    order: 1;
+    width: 100%;
+    height: 44.872vw;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3.846vw;
+    border-radius: 2.564vw;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .location-panorama-text-block {
+    order: 2;
+    gap: 0;
+  }
+
+  .location-panorama-title {
+    font-size: 5.0vw;
+    line-height: 7.051vw;
+    font-weight: 600;
+    margin-bottom: 3.846vw;
+  }
+
+  .location-panorama-description {
+    font-size: 3.333vw;
+    line-height: 5.128vw;
+    margin-bottom: 3.846vw;
+  }
+
+  .location-panorama-button {
+    order: 3;
+    width: 45.641vw;
+    font-size: 2.179vw;
+    border-radius: 19.231vw;
+    padding: 0.77vw 0.77vw 0.77vw 3.21vw;
+    justify-content: space-between;
+    margin-left: auto;
+  }
+
+  .location-panorama-btn-icon {
+    width: 8.718vw;
+    height: 8.718vw;
+    border-radius: 19.231vw;
+    margin-left: auto;
+  }
+
+  .location-panorama-btn-icon svg {
+    width: 2.051vw;
+    height: 1.667vw;
+  }
+
+  .location-panorama-button::after {
+    right: 0.77vw;
+    width: 8.718vw;
+    height: 8.718vw;
+    border-radius: 19.231vw;
+  }
+
+  .location-panorama-button:hover::after {
+    width: 120vw;
+    height: 120vw;
+    right: -60vw;
+  }
+
+  .location-panorama-button:hover .location-panorama-btn-icon svg {
+    transform: translateX(max(-34.7vw, calc(-10% - 40.56vw))) rotate(40deg);
+  }
+
+  .location-panorama-button:hover span {
+    transform: translateX(max(13.3vw, calc(-10% - 30.56vw)));
   }
 }
 

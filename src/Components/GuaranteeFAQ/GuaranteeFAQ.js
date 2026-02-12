@@ -117,7 +117,7 @@ const GuaranteeFAQ = () => {
           <div className="guarantee-faq-right">
             <div className="guarantee-faq-doctor-image">
               <img src={doctorImage} alt="Doctor" />
-              <div className="guarantee-faq-play-button">
+              <div className="guarantee-faq-doctor-play-button">
                 {playIcon}
               </div>
               <div className="guarantee-faq-form">

@@ -284,3 +284,19 @@
   }
 }
 
+@media (max-width: 780px) {
+  .footer-bottom-dark-content {
+    display: none;
+  }
+
+  .footer-bottom-dark-links {
+    padding: 6.41vw;
+    flex-direction: column;
+    gap: 6.41vw;
+  }
+
+  .footer-bottom-dark-link {
+    font-size: 1.79vw;
+  }
+}
+
