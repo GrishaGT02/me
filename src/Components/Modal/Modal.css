@@ -246,7 +246,7 @@
   font-family: 'Geist', sans-serif;
   position: relative;
   overflow: hidden;
-  width: 15.625vw;
+  width: 16.625vw;
   justify-content: space-between;
 }
 
@@ -265,7 +265,7 @@
 
 .modal-form .googing-btn-primary:hover span {
   color: #485B85;
-  transform: translateX(min(4.65vw, 15.31vw));
+  transform: translateX(min(4.3vw, 15.31vw));
 }
 
 .modal-form .googing-btn-icon {
@@ -314,7 +314,7 @@
 }
 
 .modal-form .googing-btn-1:hover .googing-btn-icon svg {
-  transform: translateX(max(-14.7vw, calc(-10% - 30.56vw))) rotate(40deg);
+  transform: translateX(max(-12.7vw, calc(-10% - 30.56vw))) rotate(40deg);
 }
 
 .modal-form .googing-btn-1::after {
